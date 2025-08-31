@@ -14,6 +14,12 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: "Inter_Bold";
+  src: url("./assets/fonts/Intrer_18pt-Bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
 
 body {
   font-family: "Poppins", sans-serif;

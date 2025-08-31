@@ -62,7 +62,7 @@ const Header = () => {
         </div>
         <div className="flex gap-1">
           {/* Navigation */}
-          <nav className="flex items-center space-x-6 text-lg text-gray-700 py-4 px-8 relative">
+          <nav className="flex items-center space-x-6 text-lg text-black py-4 px-8 relative">
             {navItems.map((item) => (
               <div className="relative" key={item.key}>
                 <button

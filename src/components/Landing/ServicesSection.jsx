@@ -77,7 +77,7 @@ function Services() {
                 WebkitFontSmoothing: "antialiased",
               }}
             >
-              <h3 className="text-2xl font-bold text-black text-center">
+              <h3 className="text-2xl font-bold text-black text-center" >
                 EXECUTIVE SEARCH
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2">
@@ -119,7 +119,7 @@ function Services() {
                     insights for confident hiring decisions.
                   </p>
                 </div>
-                <div className="">
+                <div className="flex justify-center self-center">
                   <img
                     src={ReferenceCheck}
                     alt="Reference Check AI"

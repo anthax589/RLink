@@ -1,0 +1,176 @@
+import React from "react";
+
+// Job Categories Component
+const JobCategories = () => {
+  const managementCategories = [
+    "カントリーマネージャー",
+    "CEO / COO / CFO / CxO",
+    "経営企画",
+    "事業企画",
+    "戦略コンサルタント",
+  ];
+
+  const businessCategories = [
+    "セールス",
+    "マーケティング",
+    "カスタマーサクセス",
+    "経理・財務",
+    "サプライチェーン",
+    "人事・総務",
+    "法務",
+  ];
+
+  const technologyCategories = [
+    "エンジニア",
+    "バックエンド",
+    "フロントエンド",
+    "SRE",
+    "PM・PMO",
+    "システムエンジニア",
+    "ITコンサルタント",
+  ];
+
+  const CategoryButton = ({ children }) => (
+    <button className="px-4 py-2 text-sm font-medium text-white bg-[#565757] hover:bg-gray-700 transition-colors duration-200">
+      {children}
+    </button>
+  );
+   const GradientDivider = () => {
+     return (
+       <div className="relative flex items-center w-6xl mx-auto top-13">
+         {/* Left circle */}
+         <div className="w-2 h-2 bg-gray-400 rounded-full"></div>
+
+         {/* Gradient line */}
+         <div className="flex-1 h-[2px] bg-gradient-to-r from-gray-300 via-gray-400 to-gray-300"></div>
+
+         {/* Right circle */}
+         <div className="w-2 h-2 bg-gray-400 rounded-full"></div>
+       </div>
+     );
+   };
+  return (
+    <div className="bg-gradient-to-b from-[#FDFDFD] to-[#FDFEFF] py-12 px-4">
+      <div className="max-w-4xl mx-auto">
+        {/* Header */}
+        <div className="text-center mb-12">
+          <h1 className="text-3xl font-bold text-black mb-8">
+            <span className="text-[#1867D1]"> R</span>Linkの担当職種一覧
+          </h1>
+
+          {/* Management & Business Leader Section */}
+          <div className="mb-8">
+            <h2 className="text-lg font-semibold text-gray-800 mb-4">
+              経営・ビジネスリーダー職
+            </h2>
+            <div className="flex flex-wrap justify-center gap-2 mb-6">
+              {managementCategories.map((category, index) => (
+                <CategoryButton key={index}>{category}</CategoryButton>
+              ))}
+            </div>
+          </div>
+
+          {/* Business & Corporate Section */}
+          <div className="mb-8">
+            <h2 className="text-lg font-semibold text-gray-800 mb-4">
+              ビジネス・コーポレート
+            </h2>
+            <div className="flex flex-wrap justify-center gap-2 mb-6">
+              {businessCategories.map((category, index) => (
+                <CategoryButton key={index}>{category}</CategoryButton>
+              ))}
+            </div>
+          </div>
+
+          {/* Technology & Consulting Section */}
+          <div className="mb-8">
+            <h2 className="text-lg font-semibold text-gray-800 mb-4">
+              テクノロジー・コンサルティング
+            </h2>
+            <div className="flex flex-wrap justify-center gap-2">
+              {technologyCategories.map((category, index) => (
+                <CategoryButton key={index}>{category}</CategoryButton>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* Decorative Divider */}
+      <GradientDivider />
+    </div>
+  );
+};
+
+// Strengths Component
+const CompanyStrengths = () => {
+  const StrengthCard = ({ title, subtitle, description }) => (
+    <div className="bg-white p-6 shadow-lg">
+      <h3 className="text-lg font-bold text-black mb-2">{title}</h3>
+      <p className="text-[#1867D1] font-medium mb-3">{subtitle}</p>
+      <p className="text-black text-md leading-relaxed">{description}</p>
+    </div>
+  );
+
+  const strengths = [
+    {
+      title: "Strength 01",
+      subtitle: "エグゼクティブ・ハイクラス専門の転職支援",
+      description:
+        "豊富な実績とともに、金融業界専門でのハイクラス転職支援を展開することで、その実績に基づいた業界に特化した転職支援が強みです。私た研修を通じてアップスキルしたコンサルタント達が転職希望者を転職成功まで導きます。",
+    },
+    {
+      title: "Strength 02",
+      subtitle: "直接スカウト・ヘッドハンティング・マッチングサービス提供",
+      description:
+        "幹部候補人材の採用は各社共通の課題となっており、クライアント企業には、ヘッドハンター・スカウト・CXO、専門機関経験者をコンサルタントとして配置しており、スカウトメールやヘッドハンティングに対応しております。",
+    },
+    {
+      title: "Strength 03",
+      subtitle: "バイリンガル人材への豊富なサポート経験",
+      description:
+        "バイリンガル人材の転職成功に関する豊富な実績とノウハウがあります。近年グローバル化において外国人の採用ニーズ・各市場でのプロフェッショナル人材確保が急務となっております。",
+    },
+    {
+      title: "Strength 04",
+      subtitle: "高い専門性を持つ担当者",
+      description:
+        "高い専門性を持つ各領域を担当するコンサルタントがクライアント企業の課題解決に貢献いたします。この専門力のノウハウと豊富な実績によってより確実なマッチングにより、早期決定に寄与いたします。",
+    },
+  ];
+
+  return (
+    <div className="bg-gradient-to-b from-[#F3F4F5] to-[#373738] py-12 px-4">
+      <div className="max-w-4xl mx-auto">
+        {/* Strengths Section */}
+        <div className="text-center mb-8">
+          <h2 className="text-3xl font-bold text-black">
+            <span className="text-[#1867D1]">R</span>Linkの4つの強み
+          </h2>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-6">
+          {strengths.map((strength, index) => (
+            <StrengthCard
+              key={index}
+              title={strength.title}
+              subtitle={strength.subtitle}
+              description={strength.description}
+            />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// Main App Component that combines both
+const RLinkInterface = () => {
+  return (
+    <div className="min-h-screen">
+      <JobCategories />
+      <CompanyStrengths />
+    </div>
+  );
+};
+
+export default RLinkInterface;
