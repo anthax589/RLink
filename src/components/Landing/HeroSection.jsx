@@ -1,4 +1,4 @@
-import HeroImg from "../assets/hero-img.svg";
+import HeroImg from "../../assets/hero-img.svg";
 
 const HeroSection = () => {
   return (
@@ -8,13 +8,19 @@ const HeroSection = () => {
     >
       {/* Content */}
       <div className="max-w-5xl text-left">
-        <h1 className="text-[120px] font-extrabold text-gray-900 ">
+        <h1
+          className="text-[120px] font-bold text-[#1B2A37] "
+          style={{ fontFamily: "Poppins, sans-serif" }}
+        >
           RLink Partners
         </h1>
-        <p className="text-[39px] font-semibold text-gray-700 mb-2">
+        <p
+          className="text-[39px] font-bold text-[#1B2A37] mb-2"
+          style={{ fontFamily: "Poppins, sans-serif" }}
+        >
           Your Gateway to the Next Leadership Stage
         </p>
-        <p className="text-sm text-gray-500">
+        <p className="text-md text-[#1B2A37]" >
           Connecting Visionary Leaders with Breakthrough Growth-Stage Startups
           in Japan
         </p>

@@ -56,7 +56,9 @@ const Header = () => {
       <div className="flex items-center justify-between w-full bg-white shadow relative">
         {/* Logo */}
         <div className="font-bold text-2xl tracking-wide py-4 px-8">
-          <a href="#">LOGO</a>
+          <a href="#" className="text-black">
+            LOGO
+          </a>
         </div>
         <div className="flex gap-1">
           {/* Navigation */}
@@ -112,7 +114,7 @@ const Header = () => {
                 background: "linear-gradient(90deg, #1867D1 0%, #000000 100%)",
               }}
             >
-              Label
+              採用情報
             </button>
           </div>
         </div>
