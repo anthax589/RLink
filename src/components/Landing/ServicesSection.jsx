@@ -7,7 +7,7 @@ import Marquee from "react-fast-marquee";
 function Services() {
   return (
     <div
-      className="bg-[linear-gradient(to_right,#1353AA,#051428)] min-h-fit py-10 flex flex-col items-center justify-center "
+      className="bg-[linear-gradient(to_right,#1353AA,#051428)] min-h-fit py-20 flex flex-col items-center justify-center "
       style={{ fontFamily: "'Inter', sans-serif" }}
     >
       {/* Header */}
