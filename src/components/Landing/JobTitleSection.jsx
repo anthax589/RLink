@@ -140,7 +140,7 @@ const CompanyStrengths = () => {
 
   return (
     <div className="bg-gradient-to-b from-[#F3F4F5] to-[#373738] py-12 px-4">
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         {/* Strengths Section */}
         <div className="text-center mb-8">
           <h2 className="text-3xl font-bold text-black">
@@ -148,7 +148,7 @@ const CompanyStrengths = () => {
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 gap-16">
           {strengths.map((strength, index) => (
             <StrengthCard
               key={index}
