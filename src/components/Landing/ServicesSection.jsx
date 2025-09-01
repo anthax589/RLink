@@ -1,7 +1,7 @@
 import React from "react";
-import RPO from "../../assets/img/RPO.png";
-import Excecutive from "../../assets/img/ExecuSearch.png";
-import ReferenceCheck from "../../assets/img/ReferenceCheck.png";
+import RPO from "../../assets/img/RPO.webp";
+import Excecutive from "../../assets/img/ExecuSearch.webp";
+import ReferenceCheck from "../../assets/img/ReferenceCheck.webp";
 import Marquee from "react-fast-marquee";
 
 function Services() {

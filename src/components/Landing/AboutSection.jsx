@@ -1,4 +1,4 @@
-import AboutUsBackground from "../../assets/img/AboutUsBg.png";
+import AboutUsBackground from "../../assets/img/AboutUsBg.webp";
 const AboutSection = () => {
   return (
     <div style={{ backgroundImage: `url(${AboutUsBackground})` }} className="bg-cover bg-no-repeat bg-center">
