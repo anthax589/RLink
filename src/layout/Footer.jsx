@@ -141,7 +141,7 @@ const Footer = () => {
       {/* Copyright */}
       <div className="border-t border-white  w-full">
         <p className="text-center text-sm text-blue-100 py-10">
-          Copyright © 2024 RLink All Rights Reserved
+          Copyright © 2025 RLink All Rights Reserved
         </p>
       </div>
     </footer>
