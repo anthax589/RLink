@@ -109,7 +109,7 @@ const Header = () => {
           {/* Right Side */}
           <div className="h-16">
             <button
-              className="w-40 h-full flex text-xl items-center justify-center text-white shadow"
+              className="w-40 h-full flex text-xl items-center rounded-l-md justify-center text-white shadow"
               style={{
                 background: "linear-gradient(90deg, #1867D1 0%, #000000 100%)",
               }}
