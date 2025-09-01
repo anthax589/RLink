@@ -1,11 +1,13 @@
-import Header from "../components/Landing/Header";
+import Header from "../shared/Header";
 import HeroSection from "../components/Landing/HeroSection";
 import AboutSection from "../components/Landing/AboutSection";
 import Services from "../components/Landing/ServicesSection";
 import JobTitleSection from "../components/Landing/JobTitleSection";
 import ContactSection from "../components/Landing/ContactSection";
-import Footer from "../layout/Footer";
+import Footer from "../shared/Footer";
 const LandingPage = () => {
+  const footerBgColor = "bg-[#1867D1]";
+
   return (
     <>
       <Header />
@@ -14,7 +16,7 @@ const LandingPage = () => {
       <Services />
       <JobTitleSection />
       <ContactSection />
-      <Footer />
+      <Footer footerBgColor={footerBgColor} />
     </>
   );
 };

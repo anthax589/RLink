@@ -1,6 +1,6 @@
 import React from "react";
 
-const Footer = () => {
+const Footer = ({footerBgColor}) => {
   const footerData = {
     about: {
       title: "会社について",
@@ -33,7 +33,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-[#1867D1] text-white">
+    <footer className={`${footerBgColor} text-white`}>
       <div className="max-w-6xl mx-auto px-6 py-12">
         {/* Logo */}
         <div className="mb-8">

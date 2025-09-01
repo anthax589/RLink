@@ -13,8 +13,8 @@ const Header = () => {
       key: "about",
       label: "会社について",
       links: [
-        { label: "会社概要", href: "#" },
-        { label: "ミッション", href: "#" },
+        { label: "会社概要", href: "#services" },
+        { label: "ミッション", href: "#services" },
       ],
     },
     {
@@ -53,9 +53,9 @@ const Header = () => {
 
   return (
     <header className="fixed top-0 left-0 w-full bg-white shadow z-50">
-      <div className="flex items-center justify-between w-full bg-white shadow relative">
+      <div className="flex items-center text-[24px] justify-between w-full bg-white shadow relative">
         {/* Logo */}
-        <div className="font-bold text-2xl tracking-wide py-4 px-8">
+        <div className="font-bold  tracking-wide py-4 px-8">
           <a href="#" className="text-black">
             LOGO
           </a>
@@ -107,9 +107,9 @@ const Header = () => {
           </nav>
 
           {/* Right Side */}
-          <div className="h-16">
+          <div className="">
             <button
-              className="w-40 h-full flex text-xl items-center rounded-l-md justify-center text-white shadow"
+              className="w-[240px] h-[94px]  flex text-xl items-center rounded-l-md justify-center text-white shadow"
               style={{
                 background: "linear-gradient(90deg, #1867D1 0%, #000000 100%)",
               }}
