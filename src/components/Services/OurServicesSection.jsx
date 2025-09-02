@@ -76,13 +76,13 @@ const ServiceCard = ({ img, title, subtitle, description, isLast }) => (
 );
 
 const OurServicesSection = () => (
-  <section className="relative bg-cover px-6 lg:px-16 py-10">
+  <section className="relative bg-cover px-6 lg:px-16 py-10 bg-white text-black">
     <div className="w-full flex flex-col items-center">
       <h2
         className="mb-5 text-[36px] font-bold"
         style={{ fontFamily: "Poppins, sans-serif" }}
       >
-        サービス
+        Our Services
       </h2>
       <p
         className="mb-5 text-[36px]"
