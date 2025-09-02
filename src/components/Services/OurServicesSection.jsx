@@ -29,7 +29,7 @@ const services = [
 
 const ServiceCard = ({ img, title, subtitle, description, isLast }) => (
   <div
-    className="grid grid-cols-2 py-25  max-w-7xl mx-auto"
+    className="grid grid-cols-2 py-25  max-w-7xl 2xl:max-w-[90vw] mx-auto"
     style={
       !isLast
         ? {
