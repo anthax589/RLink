@@ -79,7 +79,7 @@ function Services() {
             {serviceCards.map((card, index) => (
               <div
                 key={`card-${index}`}
-                className="grid grid-cols-1 bg-white rounded-md p-3 mx-auto shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-95"
+                className="grid grid-cols-1 bg-white rounded-md p-3 mx-auto shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
                 style={{
                   width: "450px",
                   minWidth: "650px",
@@ -89,14 +89,21 @@ function Services() {
                   WebkitFontSmoothing: "antialiased",
                 }}
               >
-                <h3 className="text-2xl font-bold text-black text-nowrap text-center">
+                <h3
+                  className="text-2xl font-bold text-black text-nowrap text-center"
+                  style={{ fontFamily: "Inter_Bold" }}
+                >
                   {card.title}
                 </h3>
                 <div className="flex flex-col md:flex-row md:items-center md:justify-evenly ">
                   <div className="flex items-center justify-center">
                     <p
-                      className="text-black leading-relaxed self-center 2xl:text-xl text-center md:text-left tracking-wide font-normal"
-                      style={{ letterSpacing: "0.025em", lineHeight: "1.7" }}
+                      className="text-black leading-relaxed self-center xl:text-lg 2xl:text-xl text-center md:text-left tracking-wide font-normal"
+                      style={{
+                        letterSpacing: "0.025em",
+                        lineHeight: "1.7",
+                        fontFamily: "Inter",
+                      }}
                     >
                       {card.content}
                     </p>
@@ -116,7 +123,7 @@ function Services() {
             {serviceCards.map((card, index) => (
               <div
                 key={`card-duplicate-${index}`}
-                className="grid grid-cols-1 bg-white rounded-md p-3 mx-auto shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-95"
+                className="grid grid-cols-1 bg-white rounded-md p-3 mx-auto shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105  "
                 style={{
                   width: "450px",
                   minWidth: "650px",
@@ -126,14 +133,21 @@ function Services() {
                   WebkitFontSmoothing: "antialiased",
                 }}
               >
-                <h3 className="text-2xl font-bold text-black text-nowrap text-center">
+                <h3
+                  className="text-2xl font-bold text-black text-nowrap text-center"
+                  style={{ fontFamily: "Inter_Bold" }}
+                >
                   {card.title}
                 </h3>
                 <div className="flex flex-col md:flex-row md:items-center md:justify-evenly">
                   <div className="flex items-center justify-center">
                     <p
-                      className="text-black leading-relaxed self-center 2xl:text-xl text-center md:text-left tracking-wide font-normal"
-                      style={{ letterSpacing: "0.025em", lineHeight: "1.7" }}
+                      className="text-black leading-relaxed self-center xl:text-lg 2xl:text-xl text-center md:text-left tracking-wide font-normal"
+                      style={{
+                        letterSpacing: "0.025em",
+                        lineHeight: "1.7",
+                        fontFamily: "Inter",
+                      }}
                     >
                       {card.content}
                     </p>

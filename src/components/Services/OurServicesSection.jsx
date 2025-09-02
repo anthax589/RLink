@@ -29,11 +29,11 @@ const services = [
 
 const ServiceCard = ({ img, title, subtitle, description, isLast }) => (
   <div
-    className="grid grid-cols-2 py-30 mt-20 gap-7"
+    className="grid grid-cols-2 py-25  max-w-7xl mx-auto"
     style={
       !isLast
         ? {
-            borderBottom: "4px solid",
+            borderBottom: "2px solid",
             borderImage:
               "linear-gradient(275deg, rgba(24,103,209,1) 0%, rgba(0,0,0,1) 89%) 1",
             borderImageSlice: 1,
@@ -42,18 +42,32 @@ const ServiceCard = ({ img, title, subtitle, description, isLast }) => (
     }
   >
     <div className="relative">
-      <img src={img} alt={title} className="w-full h-auto" />
+      <img src={img} alt={title} className="w-full h-96" />
     </div>
-    <div className="flex flex-col justify-center p-6">
-      <h3 className="text-[64px] font-bold mb-10">
+    <div
+      className="flex flex-col justify-center relative"
+      style={
+        title === "RPO"
+          ? {
+              position: "relative",
+            }
+          : {}
+      }
+    >
+      <h3
+        className="text-[60px] xl:text-5xl font-bold mb-10"
+        style={{ fontFamily: "Lato-Bold" }}
+      >
         {title}
         {subtitle && <span className="block text-[40px]">{subtitle}</span>}
       </h3>
-      <p className="text-[24px] mb-10">{description}</p>
+      <p className="text-[24px] mb-10" style={{ fontFamily: "Lato-Regular" }}>
+        {description}
+      </p>
       <div className="flex justify-center">
         <button
-          className="w-[512px] h-[98px] flex justify-center items-center gap-2 text-[32px] mt-5 px-6 py-3 border-2 border-black bg-[#F4F2F2] text-black rounded-[5px]
-    transition-all duration-300 ease-in-out hover:scale-105 hover:bg-black hover:text-white"
+          className="w-[20vw] h-[10vh] flex justify-center items-center gap-2 text-[32px] mt-5 px-6 py-3 border-2 border-black bg-[#F4F2F2] text-black rounded-[5px]
+    transition-all duration-300 ease-in-out hover:scale-105 hover:bg-black hover:text-white mb-4"
         >
           VIEW MORE
           <svg
@@ -71,28 +85,36 @@ const ServiceCard = ({ img, title, subtitle, description, isLast }) => (
           </svg>
         </button>
       </div>
+      {title === "RPO" && (
+        <div
+          className="absolute bottom-0 left-0 right-[-100vw]"
+          style={{
+            height: "2px",
+            backgroundImage:
+              "linear-gradient(275deg, rgba(24,103,209,1) 0%, rgba(0,0,0,1) 89%)",
+          }}
+        ></div>
+      )}
     </div>
   </div>
 );
 
 const OurServicesSection = () => (
-  <section className="relative bg-cover px-6 lg:px-16 py-10 bg-white text-black">
+  <section className="relative bg-cover  lg: py-14 bg-white text-black">
     <div className="w-full flex flex-col items-center">
       <h2
         className="mb-5 text-[36px] font-bold"
-        style={{ fontFamily: "Poppins, sans-serif" }}
+        style={{ fontFamily: "Lato-Regular" }}
       >
         Our Services
       </h2>
-      <p
-        className="mb-5 text-[36px]"
-        style={{ fontFamily: "Poppins, sans-serif" }}
-      >
+      <p className="mb-5 text-[36px]" style={{ fontFamily: "Lato-Regular" }}>
         Transforming Talent Acquisition through Expertise, Technology, and AI
       </p>
       <div
-        className="w-[157px] h-1 mt-5"
+        className="w-[157px]  mt-5"
         style={{
+          height: "2px",
           backgroundImage:
             "linear-gradient(275deg,rgba(24, 103, 209, 1) 0%, rgba(0, 0, 0, 1) 89%)",
         }}

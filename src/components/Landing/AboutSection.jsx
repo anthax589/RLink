@@ -6,7 +6,7 @@ const AboutSection = () => {
         <div className="max-w-4xl pl-20">
           {/* Title */}
           <div className="flex items-start mb-6">
-            <span className="text-xl font-bold text-[#5B5B5B] 2xl:text-3xl">
+            <span className="text-xl font-bold text-[#5B5B5B] xl:text-2xl 2xl:text-3xl">
               ● About Us
             </span>
           </div>
