@@ -54,8 +54,8 @@ function Services() {
       <div className="mb-16 flex flex-col items-center justify-center">
         <TypewriterOnScroll
           text="- サービス -"
-          delay={100}
-          threshold={0.4}
+          delay={20}
+          threshold={0.5}
           className="ml-2"
           letterClassName="text-white text-lg 2xl:text-2xl font-bold tracking-widest mb-4 text-center"
         />
