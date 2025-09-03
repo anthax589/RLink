@@ -47,9 +47,15 @@ export default function TypewriterOnScroll({
       {letters.map((letter, i) => (
         <span
           key={i}
-          className={`transition-opacity duration-300 ${
-            i < lettersShown ? "opacity-100" : "opacity-0"
-          } ${letterClassName}`}
+          style={{
+            display: "inline-block",
+            transition:
+              "transform 0.4s cubic-bezier(.5,1.8,.5,1), opacity 0.4s",
+            transitionDelay: `${i * delay}ms`,
+            transform: i < lettersShown ? "translateY(0)" : "translateY(-1em)",
+            opacity: i < lettersShown ? 1 : 0,
+          }}
+          className={letterClassName}
         >
           {letter}
         </span>

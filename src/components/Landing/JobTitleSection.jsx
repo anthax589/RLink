@@ -1,6 +1,7 @@
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import TypewriterOnScroll from "../../animation/TypeWriterOnScroll";
 // import TypewriterOnScroll from "../../animation/TypeWriterOnScroll";
 // Job Categories Component
 const JobCategories = () => {
@@ -60,13 +61,15 @@ const JobCategories = () => {
         <div className="max-w-4xl mx-auto">
           {/* Header */}
           <div className="text-center mb-12">
-            <h1
-              className="text-3xl font-bold text-black mb-8"
-              data-aos="fade-down"
-              data-aos-offset="200"
-              data-aos-easing="ease-out-sine"
-            >
-              <span className="text-[#1867D1]"> R</span>Linkの担当職種一覧
+            <h1 className="text-3xl font-bold text-black mb-8">
+              <span className="text-[#1867D1]">R</span>
+              <TypewriterOnScroll
+                text="Linkの担当職種一覧"
+                delay={80}
+                threshold={0.5}
+                className="inline-flex"
+                letterClassName="inline-block"
+              />
             </h1>
 
             {/* Management & Business Leader Section */}
@@ -158,12 +161,16 @@ const CompanyStrengths = () => {
       <div className="bg-gradient-to-b from-[#F3F4F5] to-[#373738] py-12 px-4">
         <div className="max-w-6xl mx-auto">
           {/* Strengths Section */}
-          <div
-            className="text-center mb-8"
-            data-aos="fade-down"
-          >
+          <div className="text-center mb-8" data-aos="fade-down">
             <h2 className="text-3xl font-bold text-black">
-              <span className="text-[#1867D1]">R</span>Linkの4つの強み
+              <span className="text-[#1867D1]">R</span>
+              <TypewriterOnScroll
+              text="Linkの4つの強み"
+              delay={80}
+              threshold={0.5}
+              className="inline-flex"
+              letterClassName="inline-block"
+              />
             </h2>
           </div>
 

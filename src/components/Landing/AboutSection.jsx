@@ -22,8 +22,8 @@ const AboutSection = () => {
               </span>
               <TypewriterOnScroll
                 text="About Us"
-                delay={150}
-                threshold={0.3}
+                delay={20}
+                threshold={0.5}
                 className="ml-2"
                 letterClassName="text-xl font-bold text-[#5B5B5B] xl:text-2xl 2xl:text-3xl relative "
               />
@@ -45,11 +45,11 @@ const AboutSection = () => {
           </p>
 
           {/* Button */}
-         <div className="pl-6">
+          <div className="pl-6">
             <button className="px-13 2xl:px-14 py-3 bg-[#545555] text-white text-sm  2xl:text-lg tracking-wide shadow hover:bg-gray-800 transition rounded-md ">
               VIEW MORE
             </button>
-         </div>
+          </div>
         </div>
       </section>
     </div>
