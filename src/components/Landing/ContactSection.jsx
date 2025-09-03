@@ -47,9 +47,9 @@ function ContactSection() {
   };
 
   return (
-    <div className="min-h-screen bg-white py-12 px-4">
+    <div className="min-h-fit bg-white py-20 px-4">
       <div className="max-w-6xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
+        <div className="grid lg:grid-cols-2 gap-12 items-start mx-auto">
           {/* Left Side - Contact Information */}
           <div className="bg-white p-8 lg:p-12">
             <h1 className="text-4xl font-bold text-black mb-8">CONTACT US</h1>

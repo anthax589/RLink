@@ -13,16 +13,16 @@ const Header = () => {
       key: "about",
       label: "会社について",
       links: [
-        { label: "会社概要", href: "#services" },
-        { label: "ミッション", href: "#services" },
+        { label: "会社概要", href: "#" },
+        { label: "ミッション", href: "#" },
       ],
     },
     {
       key: "services",
       label: "サービス",
       links: [
-        { label: "開発", href: "#" },
-        { label: "デザイン", href: "#" },
+        { label: "開発", href: "#services" },
+        { label: "デザイン", href: "#services" },
       ],
     },
     {
