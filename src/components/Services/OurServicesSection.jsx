@@ -29,7 +29,7 @@ const services = [
 
 const ServiceCard = ({ img, title, subtitle, description, isLast }) => (
   <div
-    className="grid grid-cols-2 py-25  max-w-7xl 2xl:max-w-[90vw] mx-auto"
+    className="grid grid-cols-2 py-25  max-w-7xl 2xl:max-w-[90vw] mx-auto "
     style={
       !isLast
         ? {
@@ -66,7 +66,7 @@ const ServiceCard = ({ img, title, subtitle, description, isLast }) => (
       </p>
       <div className="flex justify-center">
         <button
-          className="w-[20vw] h-[10vh] flex justify-center items-center gap-2 text-[32px] mt-5 px-6 py-3 border-2 border-black bg-[#F4F2F2] text-black rounded-[5px]
+          className="w-[15vw] h-[8vh] flex justify-center items-center gap-2 text-2xl mt-5 px-6 py-3 border-2 border-black bg-[#F4F2F2] text-black rounded-[5px]
     transition-all duration-300 ease-in-out hover:scale-105 hover:bg-black hover:text-white mb-4"
         >
           VIEW MORE
@@ -87,7 +87,7 @@ const ServiceCard = ({ img, title, subtitle, description, isLast }) => (
       </div>
       {title === "RPO" && (
         <div
-          className="absolute bottom-0 left-0 right-[-100vw]"
+          className="absolute bottom-0 left-0 right-[-4.5vw]"
           style={{
             height: "2px",
             backgroundImage:

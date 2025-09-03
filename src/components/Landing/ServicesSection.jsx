@@ -3,7 +3,7 @@ import RPO from "../../assets/services_assets/rpo_img.svg";
 import Excecutive from "../../assets/services_assets/executive_img.svg";
 import ReferenceCheck from "../../assets/services_assets/reference_img.svg";
 import Marquee from "react-fast-marquee";
-
+import TypewriterOnScroll from "../../animation/TypeWriterOnScroll";
 function Services() {
   // Define service card content for reuse
   const serviceCards = [
@@ -51,10 +51,14 @@ function Services() {
       style={{ fontFamily: "'Inter', sans-serif" }}
     >
       {/* Header */}
-      <div className="text-center mb-16">
-        <h2 className="text-white text-lg 2xl:text-2xl font-bold tracking-widest mb-4">
-          - サービス -
-        </h2>
+      <div className="mb-16 flex flex-col items-center justify-center">
+        <TypewriterOnScroll
+          text="- サービス -"
+          delay={100}
+          threshold={0.4}
+          className="ml-2"
+          letterClassName="text-white text-lg 2xl:text-2xl font-bold tracking-widest mb-4 text-center"
+        />
         <h1 className="text-white text-3xl xl:text-4xl font-bold leading-tight text-nowrap">
           Transforming Talent Acquisition through Expertise, Technology, and AI
         </h1>

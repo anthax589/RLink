@@ -1,5 +1,7 @@
-import React from "react";
-
+import Aos from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
+// import TypewriterOnScroll from "../../animation/TypeWriterOnScroll";
 // Job Categories Component
 const JobCategories = () => {
   const managementCategories = [
@@ -35,69 +37,79 @@ const JobCategories = () => {
       {children}
     </button>
   );
-   const GradientDivider = () => {
-     return (
-       <div className="relative flex items-center w-6xl mx-auto top-13">
-         {/* Left circle */}
-         <div className="w-2 h-2 bg-gray-400 rounded-full"></div>
+  const GradientDivider = () => {
+    return (
+      <div className="relative flex items-center w-6xl mx-auto top-13">
+        {/* Left circle */}
+        <div className="w-2 h-2 bg-gray-400 rounded-full"></div>
 
-         {/* Gradient line */}
-         <div className="flex-1 h-[2px] bg-gradient-to-r from-gray-300 via-gray-400 to-gray-300"></div>
+        {/* Gradient line */}
+        <div className="flex-1 h-[2px] bg-gradient-to-r from-gray-300 via-gray-400 to-gray-300"></div>
 
-         {/* Right circle */}
-         <div className="w-2 h-2 bg-gray-400 rounded-full"></div>
-       </div>
-     );
-   };
+        {/* Right circle */}
+        <div className="w-2 h-2 bg-gray-400 rounded-full"></div>
+      </div>
+    );
+  };
   return (
-    <div className="bg-gradient-to-b from-[#FDFDFD] to-[#FDFEFF] py-12 px-4">
-      <div className="max-w-4xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-3xl font-bold text-black mb-8">
-            <span className="text-[#1867D1]"> R</span>Linkの担当職種一覧
-          </h1>
+    useEffect(() => {
+      Aos.init({ duration: 1500 });
+    }, []),
+    (
+      <div className="bg-gradient-to-b from-[#FDFDFD] to-[#F4F5F7] py-12 px-4">
+        <div className="max-w-4xl mx-auto">
+          {/* Header */}
+          <div className="text-center mb-12">
+            <h1
+              className="text-3xl font-bold text-black mb-8"
+              data-aos="fade-down"
+              data-aos-offset="200"
+              data-aos-easing="ease-out-sine"
+            >
+              <span className="text-[#1867D1]"> R</span>Linkの担当職種一覧
+            </h1>
 
-          {/* Management & Business Leader Section */}
-          <div className="mb-8">
-            <h2 className="text-lg font-semibold text-gray-800 mb-4">
-              経営・ビジネスリーダー職
-            </h2>
-            <div className="flex flex-wrap justify-center gap-2 mb-6">
-              {managementCategories.map((category, index) => (
-                <CategoryButton key={index}>{category}</CategoryButton>
-              ))}
+            {/* Management & Business Leader Section */}
+            <div className="mb-8">
+              <h2 className="text-lg font-semibold text-gray-800 mb-4">
+                経営・ビジネスリーダー職
+              </h2>
+              <div className="flex flex-wrap justify-center gap-2 mb-6">
+                {managementCategories.map((category, index) => (
+                  <CategoryButton key={index}>{category}</CategoryButton>
+                ))}
+              </div>
             </div>
-          </div>
 
-          {/* Business & Corporate Section */}
-          <div className="mb-8">
-            <h2 className="text-lg font-semibold text-gray-800 mb-4">
-              ビジネス・コーポレート
-            </h2>
-            <div className="flex flex-wrap justify-center gap-2 mb-6">
-              {businessCategories.map((category, index) => (
-                <CategoryButton key={index}>{category}</CategoryButton>
-              ))}
+            {/* Business & Corporate Section */}
+            <div className="mb-8">
+              <h2 className="text-lg font-semibold text-gray-800 mb-4">
+                ビジネス・コーポレート
+              </h2>
+              <div className="flex flex-wrap justify-center gap-2 mb-6">
+                {businessCategories.map((category, index) => (
+                  <CategoryButton key={index}>{category}</CategoryButton>
+                ))}
+              </div>
             </div>
-          </div>
 
-          {/* Technology & Consulting Section */}
-          <div className="mb-8">
-            <h2 className="text-lg font-semibold text-gray-800 mb-4">
-              テクノロジー・コンサルティング
-            </h2>
-            <div className="flex flex-wrap justify-center gap-2">
-              {technologyCategories.map((category, index) => (
-                <CategoryButton key={index}>{category}</CategoryButton>
-              ))}
+            {/* Technology & Consulting Section */}
+            <div className="mb-8">
+              <h2 className="text-lg font-semibold text-gray-800 mb-4">
+                テクノロジー・コンサルティング
+              </h2>
+              <div className="flex flex-wrap justify-center gap-2">
+                {technologyCategories.map((category, index) => (
+                  <CategoryButton key={index}>{category}</CategoryButton>
+                ))}
+              </div>
             </div>
           </div>
         </div>
+        {/* Decorative Divider */}
+        <GradientDivider />
       </div>
-      {/* Decorative Divider */}
-      <GradientDivider />
-    </div>
+    )
   );
 };
 
@@ -139,27 +151,35 @@ const CompanyStrengths = () => {
   ];
 
   return (
-    <div className="bg-gradient-to-b from-[#F3F4F5] to-[#373738] py-12 px-4">
-      <div className="max-w-6xl mx-auto">
-        {/* Strengths Section */}
-        <div className="text-center mb-8">
-          <h2 className="text-3xl font-bold text-black">
-            <span className="text-[#1867D1]">R</span>Linkの4つの強み
-          </h2>
-        </div>
+    useEffect(() => {
+      Aos.init({ duration: 1500 });
+    }, []),
+    (
+      <div className="bg-gradient-to-b from-[#F3F4F5] to-[#373738] py-12 px-4">
+        <div className="max-w-6xl mx-auto">
+          {/* Strengths Section */}
+          <div
+            className="text-center mb-8"
+            data-aos="fade-down"
+          >
+            <h2 className="text-3xl font-bold text-black">
+              <span className="text-[#1867D1]">R</span>Linkの4つの強み
+            </h2>
+          </div>
 
-        <div className="grid md:grid-cols-2 gap-16">
-          {strengths.map((strength, index) => (
-            <StrengthCard
-              key={index}
-              title={strength.title}
-              subtitle={strength.subtitle}
-              description={strength.description}
-            />
-          ))}
+          <div className="grid md:grid-cols-2 gap-16">
+            {strengths.map((strength, index) => (
+              <StrengthCard
+                key={index}
+                title={strength.title}
+                subtitle={strength.subtitle}
+                description={strength.description}
+              />
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+    )
   );
 };
 

@@ -8,7 +8,7 @@ const Footer = ({footerBgColor}) => {
     },
     services: {
       title: "サービス",
-      links: ["リクルート", "MyTalent", "Mytrend", "RXO"],
+      links: [ "Executive Search", "RPO", "Reference Check App"],
     },
     news: {
       title: "ニュース",
@@ -34,14 +34,14 @@ const Footer = ({footerBgColor}) => {
 
   return (
     <footer className={`${footerBgColor} text-white`}>
-      <div className="max-w-6xl mx-auto px-6 py-12">
+      <div className="max-w-7xl mx-auto  py-12">
         {/* Logo */}
-        <div className="mb-8">
+        <div className="mb-8 pl-14">
           <h2 className="text-2xl font-bold">LOGO</h2>
         </div>
 
         {/* Footer Links Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-8 mb-5">
+        <div className="flex justify-evenly md:grid-cols-4 lg:grid-cols-7   gap-8 mb-5">
           {/* 会社について */}
           <div>
             <h3 className="font-semibold mb-4">{footerData.about.title}</h3>
@@ -62,7 +62,7 @@ const Footer = ({footerBgColor}) => {
           {/* サービス */}
           <div>
             <h3 className="font-semibold mb-4">{footerData.services.title}</h3>
-            <ul className="space-y-2">
+            <ul className="space-y-2 w-40">
               {footerData.services.links.map((link, index) => (
                 <li key={index}>
                   <a
