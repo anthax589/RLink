@@ -28,10 +28,10 @@ const HeroSection = () => {
           </h1> */}
           <TypewriterOnScroll
             text="RLink Partners"
-            delay={100}
-            threshold={0.4}
-            className=""
-            letterClassName="text-[120px] font-bold text-[#1B2A37]"
+            delay={30}
+            threshold={0.5}
+            className="text-[120px] font-bold text-[#1B2A37]"
+            letterClassName=""
           />
 
           <p
