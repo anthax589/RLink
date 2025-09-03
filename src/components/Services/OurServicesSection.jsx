@@ -29,7 +29,7 @@ const services = [
 
 const ServiceCard = ({ img, title, subtitle, description, isLast }) => (
   <div
-    className="grid grid-cols-2 py-25  max-w-7xl 2xl:max-w-[90vw] mx-auto overflow-x-hidden"
+    className="grid grid-cols-2 py-25  max-w-7xl 2xl:max-w-[90vw] mx-auto "
     style={
       !isLast
         ? {
@@ -87,7 +87,7 @@ const ServiceCard = ({ img, title, subtitle, description, isLast }) => (
       </div>
       {title === "RPO" && (
         <div
-          className="absolute bottom-0 left-0 right-[-100vw]"
+          className="absolute bottom-0 left-0 right-[-4.5vw]"
           style={{
             height: "2px",
             backgroundImage:
