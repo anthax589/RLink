@@ -1,8 +1,5 @@
-import Aos from "aos";
-import "aos/dist/aos.css";
-import { useEffect } from "react";
 import TypewriterOnScroll from "../../animation/TypeWriterOnScroll";
-// import TypewriterOnScroll from "../../animation/TypeWriterOnScroll";
+
 // Job Categories Component
 const JobCategories = () => {
   const managementCategories = [
@@ -53,9 +50,6 @@ const JobCategories = () => {
     );
   };
   return (
-    useEffect(() => {
-      Aos.init({ duration: 1500 });
-    }, []),
     (
       <div className="bg-gradient-to-b from-[#FDFDFD] to-[#F4F5F7] py-12 px-4">
         <div className="max-w-4xl mx-auto">
@@ -154,14 +148,12 @@ const CompanyStrengths = () => {
   ];
 
   return (
-    useEffect(() => {
-      Aos.init({ duration: 1500 });
-    }, []),
+  
     (
       <div className="bg-gradient-to-b from-[#F3F4F5] to-[#373738] py-12 px-4">
         <div className="max-w-6xl mx-auto">
           {/* Strengths Section */}
-          <div className="text-center mb-8" data-aos="fade-down">
+          <div className="text-center mb-8">
             <h2 className="text-3xl font-bold text-black">
               <span className="text-[#1867D1]">R</span>
               <TypewriterOnScroll
