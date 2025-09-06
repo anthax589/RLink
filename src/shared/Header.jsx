@@ -204,7 +204,6 @@ const Header = () => {
           transition: opacity 0.3s ease, visibility 0.4s ease;
           background: #000000;
           border-radius: 0;
-          border-top: 4px solid #333333;
           box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
         }
 
