@@ -1,10 +1,17 @@
 import React, { useState } from "react";
 
 const Header = () => {
-  const [openDropdown, setOpenDropdown] =
-    useState(null); /* Button colors on hover without animations */
+  const [openDropdown, setOpenDropdown] = useState(null);
+  // Add state for active animation style (1, 2, or 3)
+  const [activeAnimation, setActiveAnimation] = useState(1);
+
   const toggleDropdown = (menu) => {
     setOpenDropdown(openDropdown === menu ? null : menu);
+  };
+
+  // Function to change the active animation
+  const changeAnimation = (animationNumber) => {
+    setActiveAnimation(animationNumber);
   };
 
   // Dropdown items config
@@ -126,16 +133,10 @@ const Header = () => {
           }
         }
 
-        /* Button colors on hover without animations */
-        .button-1:hover {
-          background-color: #000000;
-        }
-
-        .button-2:hover {
-          background-color: #000000;
-        }
-
-        .button-3:hover {
+        /* Button colors - hover removed */
+        .button-1,
+        .button-2,
+        .button-3 {
           background-color: #000000;
         }
 
@@ -164,7 +165,7 @@ const Header = () => {
 
         @keyframes expandFromCenter {
           0% {
-            transform: translateY(-10px) scaleX(0.8);
+            transform: translateY(-5px) scaleX(0.4);
             opacity: 0;
           }
           50% {
@@ -190,12 +191,16 @@ const Header = () => {
           }
         }
 
+        /* Background animations removed */
+
         .dropdown-1 {
           transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
           background: #000000;
         }
 
-        .group:hover .dropdown-1 {
+        /* Main navigation hover behavior */
+        .group:hover .dropdown-1,
+        .dropdown-1:hover {
           animation: slideDown 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94)
             forwards;
         }
@@ -207,7 +212,8 @@ const Header = () => {
           box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
         }
 
-        .group:hover .dropdown-2 {
+        .group:hover .dropdown-2,
+        .dropdown-2:hover {
           animation: revealCurtain 0.5s cubic-bezier(0.23, 1, 0.32, 1) forwards;
         }
 
@@ -216,8 +222,39 @@ const Header = () => {
           background: #000000;
         }
 
-        .group:hover .dropdown-3 {
+        .group:hover .dropdown-3,
+        .dropdown-3:hover {
           animation: slideUp 0.7s cubic-bezier(0.68, -0.6, 0.32, 1.6) forwards;
+        }
+
+        /* Gap filler to prevent accidental hover-out */
+        .nav-item-gap-filler {
+          position: absolute;
+          bottom: -10px; /* Extends below the nav item */
+          left: 0;
+          width: 100%;
+          height: 15px; /* Creates an invisible bridge to the dropdown */
+          background: transparent;
+          z-index: 40;
+        }
+
+        /* Additional hover behaviors for dropdowns */
+        .group:hover .dropdown-1,
+        .dropdown-1:hover {
+          opacity: 1;
+          visibility: visible;
+        }
+
+        .group:hover .dropdown-2,
+        .dropdown-2:hover {
+          opacity: 1;
+          visibility: visible;
+        }
+
+        .group:hover .dropdown-3,
+        .dropdown-3:hover {
+          opacity: 1;
+          visibility: visible;
         }
       `}</style>
       <div className="flex items-center text-[24px] justify-between w-full bg-white shadow relative">
@@ -231,20 +268,23 @@ const Header = () => {
         {/* Circular menu buttons with hover effect */}
         <div className="absolute left-1/6 transform -translate-x-1/2 flex gap-16">
           {circularMenuItems.map((item, index) => (
-            <div key={index} className="group relative">
+            <div key={index} className="relative">
               <button
+                onClick={() => changeAnimation(index + 1)}
                 className={`text-white rounded-full w-8 h-8 flex items-center justify-center transition-colors duration-300 ${
                   index === 0
-                    ? "bg-black button-1"
+                    ? "button-1"
                     : index === 1
-                    ? "bg-black button-2"
-                    : "bg-black button-3"
+                    ? "button-2"
+                    : "button-3"
+                } ${
+                  activeAnimation === index + 1 ? "ring-2 ring-blue-400" : ""
                 }`}
               >
                 {item.number}
               </button>
               <div
-                className={`absolute left-1/2 transform -translate-x-1/2 mt-2 w-[300vw] h-96 border rounded-none shadow-lg opacity-0 invisible z-50 group-hover:opacity-100 group-hover:visible ${
+                className={`absolute left-1/2 transform -translate-x-1/2 mt-2 w-[30vw] h-96 border rounded-none shadow-lg opacity-0 invisible z-50 ${
                   index === 0
                     ? "dropdown-1"
                     : index === 1
@@ -310,11 +350,8 @@ const Header = () => {
           {/* Navigation */}
           <nav className="flex items-center space-x-6 text-lg text-black py-4 px-8 relative">
             {navItems.map((item) => (
-              <div className="relative" key={item.key}>
-                <button
-                  onClick={() => toggleDropdown(item.key)}
-                  className="flex items-center hover:text-blue-600"
-                >
+              <div className="relative group" key={item.key}>
+                <button className="flex items-center hover:text-blue-600 relative">
                   {item.label}
                   <span className="ml-1">
                     <svg
@@ -333,21 +370,72 @@ const Header = () => {
                       />
                     </svg>
                   </span>
+                  <div className="nav-item-gap-filler"></div>
                 </button>
 
-                {openDropdown === item.key && (
-                  <div className="absolute left-0 mt-2 w-48 bg-white border rounded shadow-lg">
-                    {item.links.map((link, idx) => (
-                      <a
-                        key={idx}
-                        href={link.href}
-                        className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
-                      >
-                        {link.label}
-                      </a>
-                    ))}
+                <div
+                  className={`fixed left-0 w-full mt-2 h-96 shadow-lg opacity-0 invisible z-50 group-hover:visible hover:visible ${
+                    activeAnimation === 1
+                      ? "dropdown-1"
+                      : activeAnimation === 2
+                      ? "dropdown-2"
+                      : "dropdown-3"
+                  }`}
+                  style={{
+                    borderTop: "1px solid rgba(200, 200, 200, 0.1)",
+                  }}
+                >
+                  <div className="container mx-auto max-w-6xl px-4 py-10 flex justify-center items-center">
+                    <div
+                      className={`flex flex-wrap gap-8 justify-center ${
+                        activeAnimation === 1
+                          ? "flex-row"
+                          : activeAnimation === 2
+                          ? "flex-col"
+                          : "grid grid-cols-3"
+                      }`}
+                    >
+                      {item.links.map((link, idx) => (
+                        <a
+                          key={idx}
+                          href={link.href}
+                          className={`flex justify-center py-3 text-white text-lg font-medium px-6 text-center transition-all duration-200 ${
+                            activeAnimation === 1
+                              ? "hover:underline hover:text-blue-300"
+                              : activeAnimation === 2
+                              ? "hover:underline hover:text-emerald-300"
+                              : "hover:underline hover:text-amber-300"
+                          }`}
+                          style={{
+                            animation:
+                              activeAnimation === 1
+                                ? `fadeIn 0.5s ease-out ${
+                                    idx * 0.1 + 0.2
+                                  }s both`
+                                : activeAnimation === 2
+                                ? `fadeScale 0.4s ease-out ${
+                                    idx * 0.1 + 0.5
+                                  }s both`
+                                : `slideInFromSide 0.4s ease-out ${
+                                    idx * 0.08 + 0.2
+                                  }s both`,
+                            opacity: 0,
+                            transformOrigin:
+                              activeAnimation === 2 ? "top" : "center",
+                            textShadow:
+                              activeAnimation === 1
+                                ? "0 0 10px rgba(100, 170, 255, 0.3)"
+                                : activeAnimation === 2
+                                ? "0 0 10px rgba(100, 255, 170, 0.3)"
+                                : "0 0 10px rgba(255, 200, 100, 0.3)",
+                          }}
+                        >
+                          {link.label}
+                        </a>
+                      ))}
+                    </div>
                   </div>
-                )}
+                </div>
               </div>
             ))}
           </nav>
