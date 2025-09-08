@@ -5,7 +5,8 @@ const Header = () => {
   // Add state for active animation style (1, 2, or 3)
   const [activeAnimation, setActiveAnimation] = useState(1);
 
-  const toggleDropdown = (menu) => {
+  // Toggle dropdown function, can be used for mobile menu or other interactions
+  const _toggleDropdown = (menu) => {
     setOpenDropdown(openDropdown === menu ? null : menu);
   };
 
@@ -193,9 +194,16 @@ const Header = () => {
 
         /* Background animations removed */
 
+        /* ==== DROPDOWN 1 STYLES ==== */
+        /* Content-width dropdown with slide down animation */
+        /* Used when activeAnimation === 1 */
         .dropdown-1 {
           transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
-          background: #000000;
+          background: white;
+          backdrop-filter: blur(8px);
+          -webkit-backdrop-filter: blur(8px);
+          border: 1px solid rgba(255, 255, 255, 0.3);
+          box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
         }
 
         /* Main navigation hover behavior */
@@ -205,11 +213,17 @@ const Header = () => {
             forwards;
         }
 
+        /* ==== DROPDOWN 2 STYLES ==== */
+        /* Full-width dropdown with curtain reveal animation */
+        /* Used when activeAnimation === 2 */
         .dropdown-2 {
           transition: opacity 0.3s ease, visibility 0.4s ease;
-          background: #000000;
-          border-radius: 0;
-          box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+          background: white;
+          backdrop-filter: blur(8px);
+          -webkit-backdrop-filter: blur(8px);
+          border: 1px solid rgba(255, 255, 255, 0.3);
+          /* Removed border-radius: 0; to allow Tailwind rounded classes to work */
+          box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
         }
 
         .group:hover .dropdown-2,
@@ -217,9 +231,16 @@ const Header = () => {
           animation: revealCurtain 0.5s cubic-bezier(0.23, 1, 0.32, 1) forwards;
         }
 
+        /* ==== DROPDOWN 3 STYLES ==== */
+        /* Full-width dropdown with slide up animation */
+        /* Used when activeAnimation === 3 */
         .dropdown-3 {
           transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
-          background: #000000;
+          background: white;
+          backdrop-filter: blur(8px);
+          -webkit-backdrop-filter: blur(8px);
+          border: 1px solid rgba(255, 255, 255, 0.3);
+          box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
         }
 
         .group:hover .dropdown-3,
@@ -230,7 +251,7 @@ const Header = () => {
         /* Gap filler to prevent accidental hover-out */
         .nav-item-gap-filler {
           position: absolute;
-          bottom: -10px; /* Extends below the nav item */
+          bottom: -15px; /* Extends below the nav item */
           left: 0;
           width: 100%;
           height: 15px; /* Creates an invisible bridge to the dropdown */
@@ -257,7 +278,7 @@ const Header = () => {
           visibility: visible;
         }
       `}</style>
-      <div className="flex items-center text-[24px] justify-between w-full bg-white shadow relative">
+      <div className="flex items-center text-[24px] justify-between w-full bg-white shadow relative z-50">
         {/* Logo */}
         <div className="font-bold tracking-wide py-4 px-8">
           <a href="#" className="text-black">
@@ -265,10 +286,16 @@ const Header = () => {
           </a>
         </div>
 
-        {/* Circular menu buttons with hover effect */}
+        {/* Circular menu buttons to switch between dropdown animation styles */}
         <div className="absolute left-1/6 transform -translate-x-1/2 flex gap-16">
           {circularMenuItems.map((item, index) => (
             <div key={index} className="relative">
+              {/* 
+                DROPDOWN STYLE CONTROL BUTTONS
+                - Button 1: Controls dropdown style 1 (content-width)
+                - Button 2: Controls dropdown style 2 (full-width with curtain effect)
+                - Button 3: Controls dropdown style 3 (full-width with slide up)
+              */}
               <button
                 onClick={() => changeAnimation(index + 1)}
                 className={`text-white rounded-full w-8 h-8 flex items-center justify-center transition-colors duration-300 ${
@@ -373,68 +400,106 @@ const Header = () => {
                   <div className="nav-item-gap-filler"></div>
                 </button>
 
+                {/* 
+                  MAIN DROPDOWN CONTAINER
+                  - Changes class based on activeAnimation state (1, 2, or 3)
+                  - Each animation type has different positioning and styling
+                */}
                 <div
-                  className={`fixed left-0 w-full mt-2 h-96 shadow-lg opacity-0 invisible z-50 group-hover:visible hover:visible ${
+                  className={`${
                     activeAnimation === 1
-                      ? "dropdown-1"
+                      ? "absolute left-1/2 transform -translate-x-1/2 mt-2 w-auto min-w-[175px] h-42 rounded-lg overflow-hidden shadow-lg opacity-0 invisible z-60 group-hover:visible hover:visible text-center text-nowrap dropdown-1"
                       : activeAnimation === 2
-                      ? "dropdown-2"
-                      : "dropdown-3"
+                      ? "fixed left-1/2 transform -translate-x-1/2 mt-2 w-auto min-w-[80vw] overflow-hidden rounded-lg shadow-lg opacity-0 invisible z-60 group-hover:visible hover:visible dropdown-2"
+                      : "absolute left-1/2 transform -translate-x-1/2 mt-2 min-w-[200px] rounded-lg overflow-visible shadow-lg opacity-0 invisible z-60 group-hover:visible hover:visible dropdown-3"
                   }`}
-                  style={{
-                    borderTop: "1px solid rgba(200, 200, 200, 0.1)",
-                  }}
                 >
-                  <div className="container mx-auto max-w-6xl px-4 py-10 flex justify-center items-center">
-                    <div
-                      className={`flex flex-wrap gap-8 justify-center ${
-                        activeAnimation === 1
-                          ? "flex-row"
-                          : activeAnimation === 2
-                          ? "flex-col"
-                          : "grid grid-cols-3"
-                      }`}
-                    >
-                      {item.links.map((link, idx) => (
-                        <a
-                          key={idx}
-                          href={link.href}
-                          className={`flex justify-center py-3 text-white text-lg font-medium px-6 text-center transition-all duration-200 ${
-                            activeAnimation === 1
-                              ? "hover:underline hover:text-blue-300"
-                              : activeAnimation === 2
-                              ? "hover:underline hover:text-emerald-300"
-                              : "hover:underline hover:text-amber-300"
-                          }`}
-                          style={{
-                            animation:
-                              activeAnimation === 1
-                                ? `fadeIn 0.5s ease-out ${
-                                    idx * 0.1 + 0.2
-                                  }s both`
-                                : activeAnimation === 2
-                                ? `fadeScale 0.4s ease-out ${
-                                    idx * 0.1 + 0.5
-                                  }s both`
-                                : `slideInFromSide 0.4s ease-out ${
-                                    idx * 0.08 + 0.2
-                                  }s both`,
-                            opacity: 0,
-                            transformOrigin:
-                              activeAnimation === 2 ? "top" : "center",
-                            textShadow:
-                              activeAnimation === 1
-                                ? "0 0 10px rgba(100, 170, 255, 0.3)"
-                                : activeAnimation === 2
-                                ? "0 0 10px rgba(100, 255, 170, 0.3)"
-                                : "0 0 10px rgba(255, 200, 100, 0.3)",
-                          }}
-                        >
-                          {link.label}
-                        </a>
-                      ))}
+                  {activeAnimation === 1 ? (
+                    /* === DROPDOWN 1 CONTENT === */
+                    <div className="px-4 py-5">
+                      <div className="flex flex-col justify-center gap-6">
+                        {item.links.map((link, idx) => (
+                          <a
+                            key={idx}
+                            href={link.href}
+                            className="block py-2 px-3 text-black hover:text-blue-800  transition-all"
+                            style={{
+                              animation: `fadeIn 0.5s ease-out ${
+                                idx * 0.1 + 0.2
+                              }s both`,
+                              opacity: 0,
+                            }}
+                          >
+                            {link.label}
+                          </a>
+                        ))}
+                      </div>
                     </div>
-                  </div>
+                  ) : activeAnimation === 2 ? (
+                    /* === DROPDOWN 2 CONTENT (Limited width) === */
+                    <div className="px-10 py-6 ">
+                      <div className="py-3">
+                        <h2 className="text-xl font-bold mb-2 text-center">
+                          {item.label}
+                        </h2>
+                      </div>
+                      <hr className="mb-4" />
+                      <div className="flex flex-col gap-3">
+                        {/* Simple column with just the navItem's links */}
+                        <div>
+                          {item.links.map((link, idx) => (
+                            <a
+                              key={idx}
+                              href={link.href}
+                              className="block py-2 px-4 text-black hover:text-blue-800 hover:bg-gray font-medium transition-all "
+                              style={{
+                                animation: `fadeIn 0.5s ease-out ${
+                                  idx * 0.1 + 0.2
+                                }s both`,
+                              }}
+                            >
+                              {link.label}
+                            </a>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  ) : (
+                    /* === DROPDOWN 3 CONTENT - Based on the Reference Image === */
+                    <div className="relative pt-0 px-0 pb-0 bg-white rounded-lg shadow-md border border-gray-200">
+                      {/* Custom triangle - perfectly aligned with dropdown */}
+                      <div
+                        className="absolute -top-2 left-1/2 transform -translate-x-1/2 z-80"
+                        style={{
+                          width: 0,
+                          height: 0,
+                          borderLeft: "8px solid transparent",
+                          borderRight: "8px solid transparent",
+                          borderBottom: "8px solid black",
+                          filter: "drop-shadow(0px -1px 1px rgba(0,0,0,0.1))",
+                        }}
+                      ></div>
+                      {/* Black bar to connect the triangle with dropdown */}
+                      <div className=" rounded-t-lg"></div>
+                      <div className="flex flex-col bg-white pt-1">
+                        {item.links.map((link, idx) => (
+                          <a
+                            key={idx}
+                            href={link.href}
+                            className="block py-3 px-4 text-black font-medium text-md  hover:text-blue-800 transition-all text-center "
+                            style={{
+                              animation: `slideInFromSide 0.4s ease-out ${
+                                idx * 0.08 + 0.2
+                              }s both`,
+                              opacity: 0,
+                            }}
+                          >
+                            {link.label}
+                          </a>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
             ))}
