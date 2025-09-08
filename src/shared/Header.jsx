@@ -468,19 +468,6 @@ const Header = () => {
                     /* === DROPDOWN 3 CONTENT - Based on the Reference Image === */
                     <div className="relative pt-0 px-0 pb-0 bg-white rounded-lg shadow-md border border-gray-200">
                       {/* Custom triangle - perfectly aligned with dropdown */}
-                      <div
-                        className="absolute -top-2 left-1/2 transform -translate-x-1/2 z-80"
-                        style={{
-                          width: 0,
-                          height: 0,
-                          borderLeft: "8px solid transparent",
-                          borderRight: "8px solid transparent",
-                          borderBottom: "8px solid black",
-                          filter: "drop-shadow(0px -1px 1px rgba(0,0,0,0.1))",
-                        }}
-                      ></div>
-                      {/* Black bar to connect the triangle with dropdown */}
-                      <div className=" rounded-t-lg"></div>
                       <div className="flex flex-col bg-white pt-1">
                         {item.links.map((link, idx) => (
                           <a
