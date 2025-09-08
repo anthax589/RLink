@@ -218,12 +218,11 @@ const Header = () => {
         /* Used when activeAnimation === 2 */
         .dropdown-2 {
           transition: opacity 0.3s ease, visibility 0.4s ease;
-          background: white;
-          backdrop-filter: blur(8px);
-          -webkit-backdrop-filter: blur(8px);
+          background: rgba(255, 255, 255, 0.25);
+          backdrop-filter: blur(12px);
+          -webkit-backdrop-filter: blur(12px);
           border: 1px solid rgba(255, 255, 255, 0.3);
-          /* Removed border-radius: 0; to allow Tailwind rounded classes to work */
-          box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
         }
 
         .group:hover .dropdown-2,
@@ -410,7 +409,7 @@ const Header = () => {
                     activeAnimation === 1
                       ? "absolute left-1/2 transform -translate-x-1/2 mt-2 w-auto min-w-[175px] h-42 rounded-lg overflow-hidden shadow-lg opacity-0 invisible z-60 group-hover:visible hover:visible text-center text-nowrap dropdown-1"
                       : activeAnimation === 2
-                      ? "fixed left-1/2 transform -translate-x-1/2 mt-2 w-auto min-w-[80vw] overflow-hidden rounded-lg shadow-lg opacity-0 invisible z-60 group-hover:visible hover:visible dropdown-2"
+                      ? "fixed left-1/2 transform -translate-x-1/2 mt-2 w-full  overflow-hidden shadow-lg opacity-0 invisible z-60 group-hover:visible hover:visible dropdown-2"
                       : "absolute left-1/2 transform -translate-x-1/2 mt-2 min-w-[200px] rounded-lg overflow-visible shadow-lg opacity-0 invisible z-60 group-hover:visible hover:visible dropdown-3"
                   }`}
                 >
@@ -437,13 +436,13 @@ const Header = () => {
                     </div>
                   ) : activeAnimation === 2 ? (
                     /* === DROPDOWN 2 CONTENT (Limited width) === */
-                    <div className="px-10 py-6 ">
+                    <div className="px-28 py-6 bg-transparent text-black">
                       <div className="py-3">
                         <h2 className="text-xl font-bold mb-2 text-center">
                           {item.label}
                         </h2>
                       </div>
-                      <hr className="mb-4" />
+                      <hr className="mb-4 border-gray-300" />
                       <div className="flex flex-col gap-3">
                         {/* Simple column with just the navItem's links */}
                         <div>
@@ -451,7 +450,7 @@ const Header = () => {
                             <a
                               key={idx}
                               href={link.href}
-                              className="block py-2 px-4 text-black hover:text-blue-800 hover:bg-gray font-medium transition-all "
+                              className="block py-2 px-4 text-black hover:text-blue-800  hover:bg-opacity-20 rounded transition-all font-medium"
                               style={{
                                 animation: `fadeIn 0.5s ease-out ${
                                   idx * 0.1 + 0.2
