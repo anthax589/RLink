@@ -101,6 +101,11 @@ const Header = () => {
           }
         }
 
+        /* Add arrow animation styles */
+        .group:hover svg {
+          transform: rotate(180deg);
+        }
+
         @keyframes flipIn {
           0% {
             opacity: 0;
@@ -295,7 +300,7 @@ const Header = () => {
           <nav className="flex items-center space-x-6 text-lg text-black py-4 px-8 relative">
             {navItems.map((item) => (
               <div className="relative group" key={item.key}>
-                <button className="flex items-center hover:text-blue-600 relative">
+                <button className="flex items-center hover:text-blue-600 relative group">
                   {item.label}
                   <span className="ml-1">
                     <svg
@@ -304,7 +309,7 @@ const Header = () => {
                       viewBox="0 0 10 10"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
-                      className={`transition-transform duration-200 ${
+                      className={`transition-transform duration-300 ease-in-out group-hover:rotate-180 ${
                         openDropdown === item.key ? "rotate-180" : ""
                       }`}
                     >
@@ -317,30 +322,29 @@ const Header = () => {
                   <div className="nav-item-gap-filler"></div>
                 </button>
                 <div
-                  className={"absolute left-1/2 transform -translate-x-1/2 mt-2 w-auto min-w-[175px] h-42 rounded-lg overflow-hidden shadow-lg opacity-0 invisible z-60 group-hover:visible hover:visible text-center text-nowrap dropdown-1"
-
+                  className={
+                    "absolute left-1/2 transform -translate-x-1/2 mt-2 w-auto min-w-[175px] h-42 rounded-lg overflow-hidden shadow-lg opacity-0 invisible z-60 group-hover:visible hover:visible text-center text-nowrap dropdown-1"
                   }
                 >
-                 
-                    <div className="px-4 py-5">
-                      <div className="flex flex-col justify-center gap-6">
-                        {item.links.map((link, idx) => (
-                          <a
-                            key={idx}
-                            href={link.href}
-                            className="block py-2 px-3 text-black hover:text-blue-800  transition-all"
-                            style={{
-                              animation: `fadeIn 0.5s ease-out ${
-                                idx * 0.1 + 0.2
-                              }s both`,
-                              opacity: 0,
-                            }}
-                          >
-                            {link.label}
-                          </a>
-                        ))}
-                      </div>
+                  <div className="px-4 py-5">
+                    <div className="flex flex-col justify-center gap-6">
+                      {item.links.map((link, idx) => (
+                        <a
+                          key={idx}
+                          href={link.href}
+                          className="block py-2 px-3 text-black hover:text-blue-800  transition-all"
+                          style={{
+                            animation: `fadeIn 0.5s ease-out ${
+                              idx * 0.1 + 0.2
+                            }s both`,
+                            opacity: 0,
+                          }}
+                        >
+                          {link.label}
+                        </a>
+                      ))}
                     </div>
+                  </div>
                 </div>
               </div>
             ))}

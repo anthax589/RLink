@@ -54,7 +54,7 @@ const HeroSection = () => {
 
   return (
     <div
-      className="h-auto flex items-center overflow-hidden section-container hero-section"
+      className="h-screen flex items-center overflow-hidden section-container hero-section"
     >
       {/* Video Background */}
       <video
