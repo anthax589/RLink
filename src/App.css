@@ -43,3 +43,15 @@
 body {
   font-family: "Poppins", sans-serif;
 }
+
+/* Fix for border issue between sections */
+.section-container,
+div[style*="backgroundImage"],
+section {
+  border: none !important;
+  border-top: none !important;
+  border-bottom: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
