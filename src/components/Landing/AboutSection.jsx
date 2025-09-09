@@ -9,13 +9,18 @@ const AboutSection = () => {
   }, []);
   return (
     <div
-      style={{ backgroundImage: `url(${AboutUsBackground})` }}
-      className="bg-cover bg-no-repeat bg-center"
+      style={{
+        backgroundImage: `url(${AboutUsBackground})`,
+      }}
+      className="bg-cover bg-no-repeat bg-center section-container about-section"
     >
-      <section className=" px-6 lg:px-16 xl:pb-30 2xl:pb-40  border-gray-200">
+      <section
+        className="px-6 lg:px-16 xl:pb-30 2xl:pb-40"
+        style={{ border: "none" }}
+      >
         <div className="max-w-4xl pl-20">
           {/* Title */}
-          <div className="flex items-start mb-6">
+          <div className="flex items-start py-5">
             <div className="flex items-start mb-6 relative ">
               <span className="text-xl font-bold text-[#5B5B5B] xl:text-2xl 2xl:text-3xl">
                 ●

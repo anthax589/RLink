@@ -11,8 +11,20 @@ const LandingPage = () => {
   return (
     <>
       <Header />
-      <HeroSection />
-      <AboutSection />
+      <div style={{ position: "relative", zIndex: "1" }}>
+        <HeroSection />
+      </div>
+      <div
+        style={{
+          position: "relative",
+          zIndex: "2",
+          marginTop: "-2px",
+          borderTop: "none",
+          border: "0",
+        }}
+      >
+        <AboutSection />
+      </div>
       <Services />
       <JobTitleSection />
       <ContactSection />
