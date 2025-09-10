@@ -1,4 +1,4 @@
-import HeroImg from "../../assets/hero-img.svg";
+import Fallback from "../../assets/img/FallbackImg.webp";
 import { useEffect, useRef, useState } from "react";
 import intro from "../../assets/video/intro.mp4";
 
@@ -64,7 +64,7 @@ const HeroSection = () => {
         muted
         playsInline
         preload="auto"
-        poster={HeroImg} /* Use a poster image while video loads */
+        poster={Fallback}
       >
         <source src={intro} type="video/mp4" />
         {/* Fallback message if video cannot be played */}
