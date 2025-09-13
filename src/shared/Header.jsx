@@ -1,9 +1,12 @@
 import React, { useState } from "react";
+import { useVideoContext } from "../context/useVideoContext";
 
 const Header = () => {
   const [openDropdown, setOpenDropdown] = useState(null);
   // Add state for active animation style (1, 2, or 3)
   const [activeAnimation, setActiveAnimation] = useState(1);
+  // Get video context to control videos from buttons
+  const { activeVideo, setActiveVideo } = useVideoContext();
 
   // Toggle dropdown function, can be used for mobile menu or other interactions
   const _toggleDropdown = (menu) => {
@@ -13,6 +16,8 @@ const Header = () => {
   // Function to change the active animation
   const changeAnimation = (animationNumber) => {
     setActiveAnimation(animationNumber);
+    // Also change the active video
+    setActiveVideo(animationNumber);
   };
 
   // Dropdown items config

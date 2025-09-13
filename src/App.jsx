@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import LandingPage from "./pages/LandingPage";
 import ServicesPage from "./pages/ServicesPage";
 import "./App.css";
+import { VideoProvider } from "./context/VideoProvider";
 
 // Add global style to prevent border issues
 const globalStyle = `
@@ -25,12 +26,14 @@ function App() {
   }, []);
 
   return (
-    <div className="w-full">
-      {/* Add global style to prevent border issues */}
-      <style dangerouslySetInnerHTML={{ __html: globalStyle }} />
-      {page === "#landing" && <LandingPage />}
-      {page === "#services" && <ServicesPage />}
-    </div>
+    <VideoProvider>
+      <div className="w-full">
+        {/* Add global style to prevent border issues */}
+        <style dangerouslySetInnerHTML={{ __html: globalStyle }} />
+        {page === "#landing" && <LandingPage />}
+        {page === "#services" && <ServicesPage />}
+      </div>
+    </VideoProvider>
   );
 }
 
