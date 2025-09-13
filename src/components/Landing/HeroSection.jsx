@@ -3,8 +3,8 @@ import { useEffect, useRef, useState } from "react";
 import { useVideoContext } from "../../context/useVideoContext";
 import intro from "../../assets/video/intro.mp4";
 // Import additional video sources
-import introVideo2 from "../../assets/video/1.mp4"; // Make sure to add these video files
-import introVideo3 from "../../assets/video/2.mp4"; // Make sure to add these video files
+import introVideo2 from "../../assets/video/1.mp4";
+import introVideo3 from "../../assets/video/2.mp4"; 
 
 const HeroSection = () => {
   const videoRef = useRef(null);
