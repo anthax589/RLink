@@ -1,13 +1,33 @@
 import Fallback from "../../assets/img/FallbackImg.webp";
 import { useEffect, useRef, useState } from "react";
+import { useVideoContext } from "../../context/useVideoContext";
 import intro from "../../assets/video/intro.mp4";
+// Import additional video sources
+import introVideo2 from "../../assets/video/1.mp4"; // Make sure to add these video files
+import introVideo3 from "../../assets/video/2.mp4"; // Make sure to add these video files
 
 const HeroSection = () => {
   const videoRef = useRef(null);
   const [videoEnded, setVideoEnded] = useState(false);
+  // Get active video from context
+  const { activeVideo } = useVideoContext();
+
+  // Function to get the current video source based on activeVideo
+  const getVideoSource = () => {
+    switch (activeVideo) {
+      case 1:
+        return intro;
+      case 2:
+        return introVideo2;
+      case 3:
+        return introVideo3;
+      default:
+        return intro;
+    }
+  };
 
   useEffect(() => {
-    // Attempt to play the video when the component mounts
+    // Attempt to play the video when the component mounts or when activeVideo changes
     const videoElement = videoRef.current;
 
     if (videoElement) {
@@ -47,15 +67,15 @@ const HeroSection = () => {
 
       // Cleanup function to remove event listeners when component unmounts
       return () => {
-        videoElement.removeEventListener("ended", handleVideoEnd);
+        if (videoElement) {
+          videoElement.removeEventListener("ended", handleVideoEnd);
+        }
       };
     }
-  }, []);
+  }, [activeVideo]); // Re-run effect when activeVideo changes
 
   return (
-    <div
-      className="h-screen flex items-center overflow-hidden section-container hero-section"
-    >
+    <div className="h-screen flex items-center overflow-hidden section-container hero-section">
       {/* Video Background */}
       <video
         ref={videoRef}
@@ -65,8 +85,9 @@ const HeroSection = () => {
         playsInline
         preload="auto"
         poster={Fallback}
+        key={activeVideo} // Add key prop to force re-render when video changes
       >
-        <source src={intro} type="video/mp4" />
+        <source src={getVideoSource()} type="video/mp4" />
         {/* Fallback message if video cannot be played */}
         Your browser does not support the video tag.
       </video>
