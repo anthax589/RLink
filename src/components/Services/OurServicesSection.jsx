@@ -66,8 +66,8 @@ const ServiceCard = ({ img, title, subtitle, description, isLast }) => (
       </p>
       <div className="flex justify-center">
         <button
-          className="w-[15vw] h-[8vh] flex justify-center items-center gap-2 text-2xl mt-5 px-6 py-3 border-2 border-black bg-[#F4F2F2] text-black rounded-[5px]
-    transition-all duration-300 ease-in-out hover:scale-105 hover:bg-black hover:text-white mb-4"
+          className="w-[10vw] h-[8vh] flex justify-center items-center gap-2 text-md text-nowrap mt-5 px-6 py-3 border-2 border-black bg-[#F4F2F2] text-black rounded-[5px]
+    transition-all duration-300 ease-in-out hover:scale-105  hover:bg-black hover:text-white mb-4"
         >
           VIEW MORE
           <svg

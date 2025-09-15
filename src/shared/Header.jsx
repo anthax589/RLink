@@ -314,8 +314,8 @@ const Header = () => {
                       viewBox="0 0 10 10"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
-                      className={`transition-transform duration-300 ease-in-out group-hover:rotate-180 ${
-                        openDropdown === item.key ? "rotate-180" : ""
+                      className={`transition-transform duration-300 ease-in-out group-hover:rotate-2 ${
+                        openDropdown === item.key ? "rotate-2" : ""
                       }`}
                     >
                       <path
