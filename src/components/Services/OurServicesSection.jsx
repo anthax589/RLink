@@ -54,7 +54,7 @@ const ServiceCard = ({ img, title, description, index }) => (
           {title}
         </h3>
         <p
-          className="text-black leading-relaxed text-base lg:text-lg text-nowrap"
+          className="text-black leading-relaxed text-base lg:text-md text-nowrap"
           style={{ fontFamily: "Lato-Regular" }}
         >
           {description}
@@ -68,7 +68,7 @@ const ServiceCard = ({ img, title, description, index }) => (
               : "ml-10"
           }`}
         >
-          <button className="inline-flex  items-center gap-2 px-10 py-2 border border-black bg-transparent text-black rounded font-medium transition-all duration-300 hover:bg-black hover:text-white hover:scale-105">
+          <button className="inline-flex  items-center gap-2 px-16 py-2 border border-black bg-transparent text-black rounded font-medium transition-all duration-300 hover:bg-black hover:text-white hover:scale-105">
             VIEW MORE →
           </button>
         </div>
@@ -80,7 +80,7 @@ const ServiceCard = ({ img, title, description, index }) => (
       <div
         className="mt-16 mx-auto"
         style={{
-          width: "104%",
+          width: "100%",
           height: "2px",
           background:
             "linear-gradient(275deg, rgba(24,103,209,1) 0%, rgba(0,0,0,1) 89%)",
@@ -96,7 +96,7 @@ const OurServicesSection = () => {
       <div className="max-w-7xl mx-auto px-4 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-12">
+          <h2 className="text-3xl lg:text-4xl font-bold text-black mb-12">
             サービス
           </h2>
 
@@ -108,7 +108,7 @@ const OurServicesSection = () => {
                 <br className="hidden lg:block" />
                 性のある採用・人材活用が求められています。
               </p>
-              <p className="text-black leading-relaxed text-2xl font-medium text-nowrap">
+              <p className="text-black leading-relaxed text-xl font-medium text-nowrap">
                 即戦力人材の確保から、採用戦略の仕組みづくりからの実行支
                 <br className="hidden lg:block" />
                 援、までを一気通貫で提供し、企業の成長ステージに応じた最適
