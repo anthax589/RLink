@@ -2,6 +2,8 @@
 import { useEffect, useState } from "react";
 import LandingPage from "./pages/LandingPage";
 import ServicesPage from "./pages/ServicesPage";
+import CompanyProfile from "./pages/CompanyOverview";
+import CompanyMission from "./pages/CompanyMission";
 import "./App.css";
 import { VideoProvider } from "./context/VideoProvider";
 
@@ -32,6 +34,9 @@ function App() {
         <style dangerouslySetInnerHTML={{ __html: globalStyle }} />
         {page === "#landing" && <LandingPage />}
         {page === "#services" && <ServicesPage />}
+        {page === "#company-profile" && <CompanyProfile />}
+        {page === "#company-mission" && <CompanyMission />}
+
       </div>
     </VideoProvider>
   );
