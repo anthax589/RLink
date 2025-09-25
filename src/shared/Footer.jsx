@@ -1,43 +1,45 @@
 import React from "react";
-
-const Footer = ({footerBgColor}) => {
+import RLinkLogo from "../assets/img/RLinkFooterLogo.png";
+const Footer = () => {
   const footerData = {
     about: {
       title: "会社について",
-      links: ["会社概要", "会社沿革", "トップメッセージ", "経営陣紹介"],
+      links: ["会社概要", "会社沿革"],
     },
     services: {
       title: "サービス",
-      links: [ "Executive Search", "RPO", "Reference Check App"],
+      links: [
+        "人材紹介",
+        "採用戦略アドバイザリー＆RPO",
+        "HRプロダクト",
+        "人材派遣・業務委託",
+      ],
     },
     news: {
       title: "ニュース",
       links: ["お知らせ", "プレスリリース", "メディア掲載"],
     },
     recruit: {
-      title: "採用情報",
-      links: ["採用サイト"],
-    },
-    support: {
-      title: "採用情報",
-      links: ["採用サイト"],
-    },
-    blog: {
       title: "ブログ",
       links: [],
     },
-    contact: {
+    support: {
       title: "お問い合わせ",
       links: [],
     },
   };
 
   return (
-    <footer className={`${footerBgColor} text-white`}>
+    <footer className='bg-black text-white'>
       <div className="max-w-7xl mx-auto  py-12">
         {/* Logo */}
         <div className="mb-8 pl-14">
-          <h2 className="text-2xl font-bold">LOGO</h2>
+          <a href="/" className="text-white flex items-center ">
+            <div className="flex items-center text-2xl font-bold">
+              <img src={RLinkLogo} alt="R-Link Logo" className="h-10" />
+              <span className="text-[#1867D1] pl-3">R</span>Link Partners
+            </div>
+          </a>
         </div>
 
         {/* Footer Links Grid */}
@@ -62,7 +64,7 @@ const Footer = ({footerBgColor}) => {
           {/* サービス */}
           <div>
             <h3 className="font-semibold mb-4">{footerData.services.title}</h3>
-            <ul className="space-y-2 w-40">
+            <ul className="space-y-2 w-48 text-nowrap">
               {footerData.services.links.map((link, index) => (
                 <li key={index}>
                   <a
@@ -125,16 +127,6 @@ const Footer = ({footerBgColor}) => {
                 </li>
               ))}
             </ul>
-          </div>
-
-          {/* ブログ */}
-          <div>
-            <h3 className="font-semibold mb-4">{footerData.blog.title}</h3>
-          </div>
-
-          {/* お問い合わせ */}
-          <div>
-            <h3 className="font-semibold mb-4">{footerData.contact.title}</h3>
           </div>
         </div>
       </div>

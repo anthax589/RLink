@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useVideoContext } from "../context/useVideoContext";
-
+import RLinkLogo from "../assets/img/RLinkLogo.png";
 const Header = () => {
   const [openDropdown, setOpenDropdown] = useState(null);
   // Add state for active animation style (1, 2, or 3)
@@ -26,8 +26,8 @@ const Header = () => {
       key: "about",
       label: "会社について",
       links: [
-        { label: "会社概要", href: "#" },
-        { label: "ミッション", href: "#" },
+        { label: "会社概要", href: "#company-profile" },
+        { label: "ミッション", href: "#company-mission" },
       ],
     },
     {
@@ -213,14 +213,17 @@ const Header = () => {
       `}</style>
       <div className="flex items-center text-[24px] justify-between w-full bg-white shadow relative z-50">
         {/* Logo */}
-        <div className="font-bold tracking-wide py-4 px-8">
-          <a href="#" className="text-black">
-            LOGO
+        <div className="font-bold tracking-wide py-4 px-8 flex">
+          <a href="/" className="text-black flex items-center ">
+            <div className="flex items-center">
+              <img src={RLinkLogo} alt="R-Link Logo" className="h-10" />
+              <span className="text-[#1867D1] pl-3">R</span>Link Partners
+            </div>
           </a>
         </div>
 
         {/* Circular menu buttons to switch between dropdown animation styles */}
-        <div className="absolute left-1/6 transform -translate-x-1/2 flex gap-16">
+        <div className="absolute left-96 transform -translate-x-1/2 flex gap-16">
           {circularMenuItems.map((item, index) => (
             <div key={index} className="relative">
               <button

@@ -6,8 +6,6 @@ import JobTitleSection from "../components/Landing/JobTitleSection";
 import ContactSection from "../components/Landing/ContactSection";
 import Footer from "../shared/Footer";
 const LandingPage = () => {
-  const footerBgColor = "bg-[#1867D1]";
-
   return (
     <>
       <Header />
@@ -28,7 +26,7 @@ const LandingPage = () => {
       <Services />
       <JobTitleSection />
       <ContactSection />
-      <Footer footerBgColor={footerBgColor} />
+      <Footer/>
     </>
   );
 };
