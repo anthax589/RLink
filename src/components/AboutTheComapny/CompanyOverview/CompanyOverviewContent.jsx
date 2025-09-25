@@ -1,5 +1,5 @@
 import React from "react";
-import companyProfile from "../../../assets/img/companyProfileBackGround.png";
+import companyProfile from "../../../assets/img/CompanyProfileBackGround.png";
 export default function CompanyOverview() {
   const companyData = [
     {
