@@ -1,24 +1,14 @@
 import React, { useState } from "react";
-import { useVideoContext } from "../context/useVideoContext";
 import RLinkLogo from "../assets/img/RLinkLogo.png";
 const Header = () => {
   const [openDropdown, setOpenDropdown] = useState(null);
-  // Add state for active animation style (1, 2, or 3)
-  const [activeAnimation, setActiveAnimation] = useState(1);
-  // Get video context to control videos from buttons
-  const { activeVideo, setActiveVideo } = useVideoContext();
 
   // Toggle dropdown function, can be used for mobile menu or other interactions
   const _toggleDropdown = (menu) => {
     setOpenDropdown(openDropdown === menu ? null : menu);
   };
 
-  // Function to change the active animation
-  const changeAnimation = (animationNumber) => {
-    setActiveAnimation(animationNumber);
-    // Also change the active video
-    setActiveVideo(animationNumber);
-  };
+
 
   // Dropdown items config
   const navItems = [
@@ -60,34 +50,6 @@ const Header = () => {
       links: [
         { label: "サポート", href: "#" },
         { label: "営業窓口", href: "#" },
-      ],
-    },
-  ];
-
-  // Menu items for the circular buttons
-  const circularMenuItems = [
-    {
-      number: "1",
-      links: [
-        { label: "Home", href: "#" },
-        { label: "About Us", href: "#" },
-        { label: "Services", href: "#" },
-      ],
-    },
-    {
-      number: "2",
-      links: [
-        { label: "Products", href: "#" },
-        { label: "Solutions", href: "#" },
-        { label: "Case Studies", href: "#" },
-      ],
-    },
-    {
-      number: "3",
-      links: [
-        { label: "Blog", href: "#" },
-        { label: "News", href: "#" },
-        { label: "Events", href: "#" },
       ],
     },
   ];
@@ -221,88 +183,6 @@ const Header = () => {
             </div>
           </a>
         </div>
-
-        {/* Circular menu buttons to switch between dropdown animation styles */}
-        <div className="absolute left-96 transform -translate-x-1/2 flex gap-16">
-          {circularMenuItems.map((item, index) => (
-            <div key={index} className="relative">
-              <button
-                onClick={() => changeAnimation(index + 1)}
-                className={`text-white rounded-full w-8 h-8 flex items-center justify-center transition-colors duration-300 ${
-                  index === 0
-                    ? "button-1"
-                    : index === 1
-                    ? "button-2"
-                    : "button-3"
-                } ${
-                  activeAnimation === index + 1 ? "ring-2 ring-blue-400" : ""
-                }`}
-              >
-                {item.number}
-              </button>
-              <div
-                className={`absolute left-1/2 transform -translate-x-1/2 mt-2 w-[30vw] h-96 border rounded-none shadow-lg opacity-0 invisible z-50 ${
-                  index === 0
-                    ? "dropdown-1"
-                    : index === 1
-                    ? "dropdown-2"
-                    : "dropdown-3"
-                }`}
-                style={{
-                  borderColor:
-                    index === 0
-                      ? "rgba(51, 51, 51, 0.5)"
-                      : index === 1
-                      ? "rgba(68, 68, 68, 0.5)"
-                      : "rgba(85, 85, 85, 0.5)",
-                }}
-              >
-                <div className="container mx-auto px-8 py-4 flex justify-center items-center">
-                  <div
-                    className={`flex flex-wrap gap-8 justify-center ${
-                      index === 0
-                        ? "flex-row"
-                        : index === 1
-                        ? "flex-col"
-                        : "grid grid-cols-3"
-                    }`}
-                  >
-                    {item.links.map((link, idx) => (
-                      <a
-                        key={idx}
-                        href={link.href}
-                        className={`flex justify-center mx-auto py-3 text-white font-medium px-6 text-center transition-all duration-200 ${
-                          index === 0
-                            ? "hover:bg-white/10 rounded-full hover:tracking-wider"
-                            : index === 1
-                            ? "hover:bg-white/5 border-b border-transparent hover:border-white hover:scale-105"
-                            : "hover:bg-white/5 rounded-md hover:translate-y-[-5px]"
-                        }`}
-                        style={{
-                          animation:
-                            index === 0
-                              ? `fadeIn 0.5s ease-out ${idx * 0.1 + 0.2}s both`
-                              : index === 1
-                              ? `fadeScale 0.4s ease-out ${
-                                  idx * 0.1 + 0.5
-                                }s both`
-                              : `slideInFromSide 0.4s ease-out ${
-                                  idx * 0.08 + 0.2
-                                }s both`,
-                          opacity: 0,
-                          transformOrigin: index === 1 ? "top" : "center",
-                        }}
-                      >
-                        {/* {link.label} */}
-                      </a>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-
         <div className="flex gap-1">
           {/* Navigation */}
           <nav className="flex items-center space-x-6 text-lg text-black py-4 px-8 relative">

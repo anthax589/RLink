@@ -3,7 +3,7 @@ import servicesIcon from "../../assets/services_assets/services.svg";
 import executiveImg from "../../assets/services_assets/executive_img.svg";
 import rpoImg from "../../assets/services_assets/rpo_img.svg";
 import hrImg from "../../assets/services_assets/reference_img.svg"; // Add your HR image
-
+import servicesbackground from "../../assets/services_assets/image 4.svg";
 const services = [
   {
     img: executiveImg,
@@ -92,7 +92,7 @@ const ServiceCard = ({ img, title, description, index }) => (
 
 const OurServicesSection = () => {
   return (
-    <section className="bg-white py-16 lg:py-24">
+    <section className="bg-white py-16 lg:py-24"style={{backgroundImage: `url(${servicesbackground})`, backgroundSize: 'cover', backgroundPosition: 'center'}}>
       <div className="max-w-7xl mx-auto px-4 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
@@ -118,7 +118,7 @@ const OurServicesSection = () => {
             </div>
             <div className="flex justify-center">
               <img
-                src={servicesIcon} // Replace with: servicesIcon
+                src={servicesIcon} 
                 alt="Services Icon"
                 className="w-auto h-68 object-contain"
               />
