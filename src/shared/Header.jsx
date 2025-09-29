@@ -1,5 +1,7 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import RLinkLogo from "../assets/img/RLinkLogo.png";
+
 const Header = () => {
   const [openDropdown, setOpenDropdown] = useState(null);
 
@@ -7,8 +9,6 @@ const Header = () => {
   const _toggleDropdown = (menu) => {
     setOpenDropdown(openDropdown === menu ? null : menu);
   };
-
-
 
   // Dropdown items config
   const navItems = [
@@ -25,31 +25,31 @@ const Header = () => {
       label: "サービス",
       links: [
         { label: "開発", href: "/services" },
-        { label: "デザイン", href: "#services" },
+        { label: "デザイン", href: "/services#design" }, // Changed from #services
       ],
     },
     {
       key: "news",
       label: "ニュース",
       links: [
-        { label: "最新情報", href: "#" },
-        { label: "プレスリリース", href: "#" },
+        { label: "最新情報", href: "/news" }, // Changed from #
+        { label: "プレスリリース", href: "/press" }, // Changed from #
       ],
     },
     {
       key: "blog",
       label: "ブログ",
       links: [
-        { label: "記事一覧", href: "#" },
-        { label: "カテゴリ", href: "#" },
+        { label: "記事一覧", href: "/blog" }, // Changed from #
+        { label: "カテゴリ", href: "/blog/categories" }, // Changed from #
       ],
     },
     {
       key: "contact",
       label: "お問い合わせ",
       links: [
-        { label: "サポート", href: "#" },
-        { label: "営業窓口", href: "#" },
+        { label: "サポート", href: "/contact/support" }, // Changed from #
+        { label: "営業窓口", href: "/contact/sales" }, // Changed from #
       ],
     },
   ];
@@ -176,12 +176,12 @@ const Header = () => {
       <div className="flex items-center text-[24px] justify-between w-full bg-white shadow relative z-50">
         {/* Logo */}
         <div className="font-bold tracking-wide py-4 px-8 flex">
-          <a href="/" className="text-black flex items-center ">
+          <Link to="/" className="text-black flex items-center">
             <div className="flex items-center">
               <img src={RLinkLogo} alt="R-Link Logo" className="h-10" />
               <span className="text-[#1867D1] pl-3">R</span>Link Partners
             </div>
-          </a>
+          </Link>
         </div>
         <div className="flex gap-1">
           {/* Navigation */}
@@ -217,10 +217,10 @@ const Header = () => {
                   <div className="px-4 py-5">
                     <div className="flex flex-col justify-center gap-6">
                       {item.links.map((link, idx) => (
-                        <a
+                        <Link
                           key={idx}
-                          href={link.href}
-                          className="block py-2 px-3 text-black hover:text-blue-800  transition-all"
+                          to={link.href}
+                          className="block py-2 px-3 text-black hover:text-blue-800 transition-all"
                           style={{
                             animation: `fadeIn 0.5s ease-out ${
                               idx * 0.1 + 0.2
@@ -229,7 +229,7 @@ const Header = () => {
                           }}
                         >
                           {link.label}
-                        </a>
+                        </Link>
                       ))}
                     </div>
                   </div>
@@ -240,14 +240,15 @@ const Header = () => {
 
           {/* Right Side */}
           <div className="">
-            <button
+            <Link
+              to="/recruitment-business"
               className="w-36 h-[94px] flex text-xl items-center justify-center text-white shadow"
               style={{
                 background: "linear-gradient(90deg, #1867D1 0%, #000000 100%)",
               }}
             >
               採用情報
-            </button>
+            </Link>
           </div>
         </div>
       </div>
