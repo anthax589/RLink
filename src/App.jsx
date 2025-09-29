@@ -1,12 +1,12 @@
 // App.jsx
-import { useEffect, useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LandingPage from "./pages/LandingPage";
 import ServicesPage from "./pages/ServicesPage";
 import CompanyProfile from "./pages/CompanyOverview";
 import CompanyMission from "./pages/CompanyMission";
-import "./App.css";
+import RecruitmentBusiness from "./pages/RecruitmentBusinessContents";
 import { VideoProvider } from "./context/VideoProvider";
-
+import "./App.css";
 // Add global style to prevent border issues
 const globalStyle = `
   .section-container, .hero-section, .about-section {
@@ -19,25 +19,24 @@ const globalStyle = `
 `;
 
 function App() {
-  const [page, setPage] = useState(window.location.hash || "#landing");
-
-  useEffect(() => {
-    const onHashChange = () => setPage(window.location.hash || "#landing");
-    window.addEventListener("hashchange", onHashChange);
-    return () => window.removeEventListener("hashchange", onHashChange);
-  }, []);
-
   return (
     <VideoProvider>
-      <div className="w-full">
-        {/* Add global style to prevent border issues */}
-        <style dangerouslySetInnerHTML={{ __html: globalStyle }} />
-        {page === "#landing" && <LandingPage />}
-        {page === "#services" && <ServicesPage />}
-        {page === "#company-profile" && <CompanyProfile />}
-        {page === "#company-mission" && <CompanyMission />}
-
-      </div>
+      <BrowserRouter>
+        <div className="w-full">
+          {/* Add global style to prevent border issues */}
+          <style dangerouslySetInnerHTML={{ __html: globalStyle }} />
+          <Routes>
+            <Route path="/" element={<LandingPage />} />
+            <Route path="/services" element={<ServicesPage />} />
+            <Route path="/company-profile" element={<CompanyProfile />} />
+            <Route path="/company-mission" element={<CompanyMission />} />
+            <Route
+              path="/recruitment-business"
+              element={<RecruitmentBusiness />}
+            />
+          </Routes>
+        </div>
+      </BrowserRouter>
     </VideoProvider>
   );
 }
