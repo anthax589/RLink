@@ -125,70 +125,72 @@ const TableSection = () => {
           <table className="w-full border-collapse">
             <thead>
               <tr
-                className="bg-[#1867D1]/90 text-white"
+                className="bg-[#1867D1]/80 text-white"
                 style={{ fontFamily: "Lato-Bold" }}
               >
-                <th className="border border-gray-300 p-3 text-center">
+                <th className="border border-[#BEBDBD]/80 p-3 text-center">
                   Week 1
                 </th>
-                <th className="border border-gray-300 p-3 text-center">
+                <th className="border border-[#BEBDBD]/80 p-3 text-center">
                   Week 2
                 </th>
-                <th className="border border-gray-300 p-3 text-center">
+                <th className="border border-[#BEBDBD]/80 p-3 text-center">
                   Week 3
                 </th>
-                <th className="border border-gray-300 p-3 text-center">
+                <th className="border border-[#BEBDBD]/80 p-3 text-center">
                   Week 4
                 </th>
-                <th className="border border-gray-300 p-3 text-center">
+                <th className="border border-[#BEBDBD]/80 p-3 text-center">
                   Week 5
                 </th>
               </tr>
             </thead>
             <tbody>
-              <tr className="bg-white">
-                <td className="border border-gray-300 p-3">
+              <tr className="bg-[#D9D9D9]/90">
+                <td className="border border-[#BEBDBD]/80 p-3">
                   Day 1 <br />
                   プロジェクト契約
                 </td>
-                <td className="border border-gray-300 p-3">
+                <td className="border border-[#BEBDBD]/80 p-3">
                   Day 6 to 10 <br />
                   候補者との面談
                 </td>
-                <td className="border border-gray-300 p-3">
+                <td className="border border-[#BEBDBD]/80 p-3">
                   Day 11 to 12 <br />
                   プロジェクト契約
                 </td>
-                <td className="border border-gray-300 p-3">
+                <td className="border border-[#BEBDBD]/80 p-3">
                   Day 16 to 20 <br /> 1～2次面接実施
                 </td>
-                <td className="border border-gray-300 p-3">
+                <td className="border border-[#BEBDBD]/80 p-3">
                   Day 21 to 25 <br />
                   2次面接～最終面接実施
                 </td>
               </tr>
-              <tr className="bg-white">
-                <td className="border border-gray-300 p-3">
+              <tr className="bg-[#D9D9D9]/90">
+                <td className="border border-[#BEBDBD]/80 p-3">
                   Day 2 <br /> 採用責任者とのミーティング
                 </td>
-                <td className="border border-gray-300 p-3">サーチを継続</td>
-                <td className="border border-gray-300 p-3">
+                <td className="border border-[#BEBDBD]/80 p-3">サーチを継続</td>
+                <td className="border border-[#BEBDBD]/80 p-3">
                   Day 13 to 15 <br />1 次面接設定
                 </td>
-                <td className="border border-gray-300 p-3">サーチを継続</td>
-                <td className="border border-gray-300 p-3">
+                <td className="border border-[#BEBDBD]/80 p-3">サーチを継続</td>
+                <td className="border border-[#BEBDBD]/80 p-3">
                   リファレンスチェック
                 </td>
               </tr>
-              <tr className="bg-white">
-                <td className="border border-gray-300 p-3">
+              <tr className="bg-[#D9D9D9]/90">
+                <td className="boder border-[#BEBDBD]/80 p-3">
                   Day 3 to 5 <br />
                   キックオフサーチ
                 </td>
-                <td className="border border-gray-300 p-3">Week 2 レビュー</td>
-                <td className="border border-gray-300 p-3">サーチを継続</td>
-                <td className="border border-gray-300 p-3">サーチを継続</td>
-                <td className="border border-gray-300 p-3">
+                <td className="border border-[#BEBDBD]/80 p-3">
+                  Week 2 レビュー
+                </td>
+                <td className="border border-[#BEBDBD]/80 p-3">サーチを継続</td>
+                <td className="border border-[#BEBDBD]/80 p-3">サーチを継続</td>
+                <td className="border border-[#BEBDBD]/80 p-3">
                   オファー/オファー面談実施
                 </td>
               </tr>
