@@ -1,6 +1,6 @@
 
-import Executive from "../../assets/services_assets/executive_img.svg";
-import heroBg from "../../assets/services_assets/image 9.svg";
+import Executive from "../../../assets/services_assets/executive_img.svg";
+import heroBg from "../../../assets/services_assets/image 9.svg";
 const HeroSection = () => {
   return (
     <section
