@@ -120,7 +120,7 @@ const TableSection = () => {
           backgroundPosition: "center",
         }}
       >
-        <div className="max-w-5xl mx-auto overflow-x-auto">
+        <div className="max-w-5xl mx-auto flex flex-col  justify-center h-full">
           <h1 className="text-end mb-3">リテーナープロジェクト例</h1>
           <table className="w-full border-collapse">
             <thead>
@@ -277,7 +277,7 @@ const ContentBoxesSection = () => {
       >
         <h2
           className="text-2xl text-[#5B5B5B] text-center pt-10"
-          style={{ textShadow: "2px 5px 3px rgba(0, 0, 0, 0.5)" }}
+          style={{ textShadow: "2px 5px 3px rgba(0, 0, 0, 0.2)" }}
         >
           紹介実績 2025
         </h2>
@@ -299,7 +299,7 @@ const ContentBoxesSection = () => {
         ))}
         <p
           className="text-xs text-[#5B5B5B] text-center font-semibold pt-4 pb-16"
-          style={{ textShadow: "2px 5px 3px rgba(0, 0, 0, 0.5)" }}
+          style={{ textShadow: "2px 5px 3px rgba(0, 0, 0, 0.2)" }}
         >
           *記載の内容は、2025年度における全実績ではなく代表的な事例を抜粋したものです
         </p>
