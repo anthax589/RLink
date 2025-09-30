@@ -1,4 +1,4 @@
-import Executive from "../../../assets/services_assets/executive_img.svg";
+import RPO from "../../../assets/services_assets/rpo_img.svg";
 import heroBg from "../../../assets/services_assets/image 9.svg";
 const HeroSection = () => {
   return (
@@ -18,14 +18,16 @@ const HeroSection = () => {
         }}
       >
         <div className="space-y-12 ">
-          <h1 className="text-5xl">人材紹介事業</h1>
-          <p className="text-lg mt-4 mb-8 text-white text-nowrap">
-            企業の採用ニーズに応じて、リテーナー型によるプロジェクトベースのサーチから、
+          <h1 className="text-5xl">採用戦略アドバイザリー事業</h1>
+          <p className="text-lg mt-4 mb-1 text-white text-nowrap">
+            般的なRPOの業務領域を超えた、採用の仕組みづくりから伴奏型で企業の採用課題を支援します
+           </p>
             <br />
-            一般的なコンティンジェンシー型（完全成功報酬型）まで職種や要件に合わせて柔軟に対応します。
-            <br />
-            コアとなるCxOや経営幹部クラスから、即戦力となるスタッフレベルまで、最適な人材をご紹介します。
-          </p>
+           <p>
+                従来のRPOが採用プロセス管理や選考業務代行といった実務支援によるコスト削減を目的としていたのに対し、私たちは採用 <br />
+                戦略の立案から伴走し、候補者への訴求力を高める採用組織の育成と、最適な業務プロセスの設計を目指します。
+           </p>
+          
           <button className="bg-white text-black px-10 py-2 rounded flex items-center gap-2">
             {/* {Phone Icon} */}
             <svg
@@ -45,11 +47,7 @@ const HeroSection = () => {
         </div>
         <div>
           <div className="w-96 h-96 ">
-            <img
-              src={Executive}
-              alt="Executive Search"
-              className="w-full h-full"
-            />
+            <img src={RPO} alt="Executive Search" className="w-full h-full" />
           </div>
         </div>
       </div>

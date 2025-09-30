@@ -28,7 +28,7 @@ const services = [
         般的なRPOの業務領域を超えた、採用の仕組みづくりから伴奏型で企業の採用課題を支援します
       </>
     ),
-    route: "/service-details/rpo",
+    route: "/recruitment-strategy",
   },
   {
     img: hrImg,
@@ -38,7 +38,7 @@ const services = [
         「候補者の実績や人柄」をAIとデータで可視化し、採用の精度を高め、ミスマッチを防ぐ
       </>
     ),
-    route: "/service-details/hr",
+    route: "/hr-product-business",
   },
 ];
 
