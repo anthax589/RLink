@@ -1,20 +1,25 @@
 import Rectanglebg from "../../../assets/img/Rectangle 60.png";
 export default function SnappCheck() {
   return (
-    <div className="min-h-screen bg-white py-12 px-4">
+    <div className="min-h-screen bg-white  px-4">
       <div className="max-w-4xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-12">
+        <div className="text-center py-8">
           <h1 className="text-3xl font-bold mb-2">
             <span className="text-[#1867D1]">Snapp</span>
             <span className="text-black"> Check</span>
           </h1>
         </div>
-
+        {/* Decorative Lines */}
+        <div class="flex items-center w-full mx-auto">
+          <div class="w-1 h-1 bg-gray-300 rotate-45"></div>
+          <div class="flex-1 border-t border-gray-300"></div>
+          <div class="w-1 h-1 bg-gray-300 rotate-45"></div>
+        </div>
         {/* Main Content Card */}
-        <div className="bg-white  p-8 mb-8">
+        <div className="bg-white">
           {/* Title */}
-          <h2 className="text-xl font-bold text-center text-black mb-8">
+          <h2 className="text-xl font-bold text-center text-black py-12">
             AI搭載オンライン型リファレンスチェックサービス
           </h2>
 
@@ -38,12 +43,17 @@ export default function SnappCheck() {
           </div>
 
           {/* Section Title */}
-          <h3 className="text-xl font-bold text-center text-black mt-12 mb-8">
+          <h3 className="text-xl font-bold text-center text-black py-12">
             担当職種一覧
           </h3>
-
+          {/* Decorative Lines */}
+          <div class="flex items-center w-full mx-auto">
+            <div class="w-1 h-1 bg-gray-300 rotate-45"></div>
+            <div class="flex-1 border-t border-gray-300"></div>
+            <div class="w-1 h-1 bg-gray-300 rotate-45"></div>
+          </div>
           {/* Job Categories */}
-          <div className="">
+          <div className="py-8">
             {/* Back Office */}
             <div
               className="rounded p-6 w-full max-w-2xl flex flex-col justify-center mx-auto"
@@ -54,14 +64,14 @@ export default function SnappCheck() {
                 backgroundPosition: "center",
               }}
             >
-            <div className="mb-4">
-                  <h4 className="text-lg font-bold text-center text-black mb-4">
-                    バックオフィス
-                  </h4>
-                  <p className="text-center text-black text-sm">
-                    ⼀般事務、部⾨アシスタント、秘書、受付、通訳・翻訳、経理、財務、会計採⽤、労務、教育、ジェネラリスト
-                  </p>
-            </div>
+              <div className="mb-4">
+                <h4 className="text-lg font-bold text-center text-black mb-4">
+                  バックオフィス
+                </h4>
+                <p className="text-center text-black text-sm">
+                  ⼀般事務、部⾨アシスタント、秘書、受付、通訳・翻訳、経理、財務、会計採⽤、労務、教育、ジェネラリスト
+                </p>
+              </div>
               <hr className="text-[#D4D4D4] py-3" />
               <h4 className="text-center py-3 text-black">IT</h4>
               <p className="text-center text-black">
