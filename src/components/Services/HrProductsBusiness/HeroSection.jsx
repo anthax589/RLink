@@ -1,4 +1,4 @@
-import Executive from "../../../assets/services_assets/executive_img.svg";
+import RPO from "../../../assets/services_assets/rpo_img.svg";
 import heroBg from "../../../assets/services_assets/image 9.svg";
 const HeroSection = () => {
   return (
@@ -18,15 +18,11 @@ const HeroSection = () => {
         }}
       >
         <div className="space-y-12 ">
-          <h1 className="text-5xl">人材紹介事業</h1>
-          <p className="text-lg mt-4 mb-8 text-white text-nowrap">
-            企業の採用ニーズに応じて、リテーナー型によるプロジェクトベースのサーチから、
-            <br />
-            一般的なコンティンジェンシー型（完全成功報酬型）まで職種や要件に合わせて柔軟に対応します。
-            <br />
-            コアとなるCxOや経営幹部クラスから、即戦力となるスタッフレベルまで、最適な人材をご紹介します。
+          <h1 className="text-5xl pl-2">HRプロダクト事業</h1>
+          <p className="text-lg py-10 text-white text-nowrap text-start">
+            「候補者の実績や人柄」をAIとデータで可視化し、採用の精度を高め、ミスマッチを防ぐ
           </p>
-          <button className="bg-white text-black px-10 py-2 rounded flex items-center gap-2">
+          <button className="bg-white text-black px-14 py-3 rounded ml-3 flex items-center gap-2">
             {/* {Phone Icon} */}
             <svg
               width="20"
@@ -45,11 +41,7 @@ const HeroSection = () => {
         </div>
         <div>
           <div className="w-96 h-96 ">
-            <img
-              src={Executive}
-              alt="Executive Search"
-              className="w-full h-full"
-            />
+            <img src={RPO} alt="Executive Search" className="w-full h-full" />
           </div>
         </div>
       </div>

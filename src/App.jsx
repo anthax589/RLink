@@ -4,7 +4,9 @@ import LandingPage from "./pages/LandingPage";
 import ServicesPage from "./pages/ServicesPage";
 import CompanyProfile from "./pages/CompanyOverview";
 import CompanyMission from "./pages/CompanyMission";
-import RecruitmentBusiness from "./pages/RecruitmentBusinessContents";
+import RecruitmentBusiness from "./pages/RecruitmentBusiness";
+import RecruitmentStrategy from "./pages/RecruitmentStrategy";
+import HrProductBusiness from "./pages/HrProductBusiness";
 import { VideoProvider } from "./context/VideoProvider";
 import "./App.css";
 // Add global style to prevent border issues
@@ -30,10 +32,9 @@ function App() {
             <Route path="/services" element={<ServicesPage />} />
             <Route path="/company-profile" element={<CompanyProfile />} />
             <Route path="/company-mission" element={<CompanyMission />} />
-            <Route
-              path="/recruitment-business"
-              element={<RecruitmentBusiness />}
-            />
+            <Route path="/recruitment-business" element={<RecruitmentBusiness />}/>
+            <Route path="/recruitment-strategy" element={<RecruitmentStrategy />} />
+            <Route path="/hr-product-business" element={<HrProductBusiness />} />
           </Routes>
         </div>
       </BrowserRouter>
