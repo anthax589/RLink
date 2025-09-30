@@ -4,8 +4,14 @@ export default function SnappCheck() {
     <div className="min-h-screen bg-white  px-4">
       <div className="max-w-4xl mx-auto">
         {/* Header */}
-        <div className="text-center py-8">
-          <h1 className="text-3xl font-bold mb-2">
+        <div
+          className="text-center py-8"
+          style={{
+            textShadow: "2px 5px 2px rgba(0, 0, 0, 0.2 )",
+            fontFamily: "Lato-Bold",
+          }}
+        >
+          <h1 className="text-3xl  mb-2">
             <span className="text-[#1867D1]">Snapp</span>
             <span className="text-black"> Check</span>
           </h1>
@@ -19,7 +25,10 @@ export default function SnappCheck() {
         {/* Main Content Card */}
         <div className="bg-white">
           {/* Title */}
-          <h2 className="text-xl font-bold text-center text-black py-12">
+          <h2
+            className="text-xl  text-center text-black py-12"
+            style={{ fontFamily: "Lato-Regular" }}
+          >
             AI搭載オンライン型リファレンスチェックサービス
           </h2>
 
@@ -43,7 +52,13 @@ export default function SnappCheck() {
           </div>
 
           {/* Section Title */}
-          <h3 className="text-xl font-bold text-center text-black py-12">
+          <h3
+            className="text-xl  text-center text-black py-12"
+            style={{
+              textShadow: "2px 5px 2px rgba(0, 0, 0, 0.2 )",
+              fontFamily: "Lato-Regular",
+            }}
+          >
             担当職種一覧
           </h3>
           {/* Decorative Lines */}
@@ -56,25 +71,25 @@ export default function SnappCheck() {
           <div className="py-8">
             {/* Back Office */}
             <div
-              className="rounded p-6 w-full max-w-2xl flex flex-col justify-center mx-auto"
+              className="rounded p-4 w-[90vw] max-w-2xl flex flex-col justify-center mx-auto"
               style={{
                 backgroundImage: `url(${Rectanglebg})`,
-                backgroundSize: "contain",
+                backgroundSize: "100% 100%", // Changed from "contain" to stretch
                 backgroundRepeat: "no-repeat",
                 backgroundPosition: "center",
               }}
             >
-              <div className="mb-4">
-                <h4 className="text-lg font-bold text-center text-black mb-4">
+              <div className="mb-3">
+                <h4 className="text-lg font-bold text-center text-black mb-3">
                   バックオフィス
                 </h4>
-                <p className="text-center text-black text-sm">
+                <p className="text-center text-black text-sm text-nowrap scale-90 origin-center relative right-5">
                   ⼀般事務、部⾨アシスタント、秘書、受付、通訳・翻訳、経理、財務、会計採⽤、労務、教育、ジェネラリスト
                 </p>
               </div>
-              <hr className="text-[#D4D4D4] py-3" />
-              <h4 className="text-center py-3 text-black">IT</h4>
-              <p className="text-center text-black">
+              <hr className="text-[#D4D4D4] my-3" />
+              <h4 className="text-center py-2 text-black">IT</h4>
+              <p className="text-center text-black text-sm scale-90 origin-center px-4">
                 PM、PMO、SE、テスト、評価運⽤管理、ヘルプデスク
               </p>
             </div>
