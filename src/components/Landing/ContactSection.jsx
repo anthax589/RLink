@@ -211,7 +211,7 @@ function ContactSection() {
                   <label className="block text-white text-sm mb-2 w-37">
                     添付ファイル
                   </label>
-                  <label className="px-6 py-2 bg-white text-black text-sm cursor-pointer hover:bg-gray-100 inline-block rounded">
+                  <label className="px-5 py-2 bg-white text-black text-sm cursor-pointer hover:bg-gray-100 inline-block rounded">
                     Choose File
                     <input
                       type="file"
@@ -220,16 +220,16 @@ function ContactSection() {
                       className="hidden rounded"
                     />
                   </label>
-                  <div className="flex-1 px-4 py-2 bg-[#3a3a3a] text-gray-300 text-sm flex items-center rounded">
+                  <div className="flex-1 px-4 py-2 bg-[#3a3a3a] text-gray-300 text-sm flex items-center rounded border border-white ">
                     {formData.file ? formData.file.name : "Sample.docx"}
                   </div>
                 </div>
-                <p className="text-xs text-gray-300 mt-2 leading-relaxed flex justify-end">
-                  ※添付ファイルがある場合、添加してください。
+                <p className="text-[9px] text-gray-300 mt-2 leading-relaxed flex justify-end ml-auto">
+                  *添付ファイルがある場合、添加してください。
                   <br />
-                  ※許容されるファイル形式：
+                  *許容されるファイル形式：
                   <br />
-                  PDF・Word・Excel・PowerPoint、画像ファイルは10MBまで対応しております。
+                  *PDF・Word・Excel・PowerPoint、画像ファイルは10MBまで対応しております。
                 </p>
               </div>
 
