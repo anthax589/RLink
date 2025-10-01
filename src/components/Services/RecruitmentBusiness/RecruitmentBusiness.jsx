@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 // import heroBg from "../../../assets/services_assets/image 10.svg";
 
 import boxbg from "../../../assets/img/Rectangle 60.png";
@@ -201,6 +201,7 @@ const TableSection = () => {
     </>
   );
 };
+
 const ContentBoxesSection = () => {
   const contentData = [
     {
@@ -264,45 +265,95 @@ const ContentBoxesSection = () => {
     },
   ];
 
+  const [activeIndex, setActiveIndex] = useState(0);
+  const sectionRef = useRef(null);
+  const boxRefs = useRef([]);
+
+  useEffect(() => {
+    const onScroll = () => {
+      const center = window.innerHeight * 0.5;
+      let closestIndex = 0;
+      let smallestDistance = Number.POSITIVE_INFINITY;
+
+      boxRefs.current.forEach((box, index) => {
+        if (!box) return;
+        const rect = box.getBoundingClientRect();
+        const boxCenter = rect.top + rect.height / 2;
+        const distance = Math.abs(boxCenter - center);
+        if (distance < smallestDistance) {
+          smallestDistance = distance;
+          closestIndex = index;
+        }
+      });
+
+      setActiveIndex(closestIndex);
+    };
+
+    onScroll();
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
     <>
       {/* Content Boxes Section */}
       <div
-        className="px-8 space-y-10"
+        ref={sectionRef}
+        className="flex justify-center items-center min-h-[120vh] w-full px-8"
+        data-section="content-boxes"
         style={{
           backgroundImage: `url(${contentboxbg})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       >
-        <h2
-          className="text-2xl text-[#5B5B5B] text-center pt-10"
-          style={{ textShadow: "2px 5px 3px rgba(0, 0, 0, 0.2)" }}
-        >
-          紹介実績 2025
-        </h2>
-        {contentData.map((item, index) => (
-          <div
-            key={index}
-            className="p-6 rounded  h-48 mx-auto items-center justify-center flex flex-col "
-            style={{
-              backgroundImage: `url(${boxbg})`,
-              backgroundSize: "contain",
-              backgroundRepeat: "no-repeat",
-              backgroundPosition: "center",
-            }}
+        <div className="w-full max-w-2xl mx-auto">
+          <h2
+            className="text-2xl text-[#5B5B5B] text-center pt-10"
+            style={{ textShadow: "2px 5px 3px rgba(0, 0, 0, 0.2)" }}
           >
-            <p className="text-sm text-black text-center font-semibold">
-              {item.description}
-            </p>
+            紹介実績 2025
+          </h2>
+          <div className="space-y-16 py-16">
+            {contentData.map((item, index) => {
+              const isActive = index === activeIndex;
+              const isAbove = index < activeIndex;
+
+              return (
+                <div
+                  key={index}
+                  ref={(el) => (boxRefs.current[index] = el)}
+                  className="p-6 rounded h-56 mx-auto flex flex-col items-center justify-center transition-all duration-700 ease-[cubic-bezier(0.77,0,0.175,1)]"
+                  style={{
+                    backgroundImage: `url(${boxbg})`,
+                    backgroundSize: "contain",
+                    backgroundRepeat: "no-repeat",
+                    backgroundPosition: "center",
+                    opacity: isActive ? 1 : 0.18,
+                    transform: isActive
+                      ? "translateY(0px) scale(1)"
+                      : isAbove
+                      ? "translateY(-40px) scale(0.96)"
+                      : "translateY(40px) scale(0.96)",
+                    filter: isActive ? "blur(0px)" : "blur(12px)",
+                    pointerEvents: isActive ? "auto" : "none",
+                  }}
+                  data-box-index={index}
+                >
+                  <p className="text-sm text-black text-center font-semibold">
+                    {item.description}
+                  </p>
+                </div>
+              );
+            })}
           </div>
-        ))}
-        <p
-          className="text-xs text-[#5B5B5B] text-center font-semibold pt-4 pb-16"
-          style={{ textShadow: "2px 5px 3px rgba(0, 0, 0, 0.2)" }}
-        >
-          *記載の内容は、2025年度における全実績ではなく代表的な事例を抜粋したものです
-        </p>
+          <p
+            className="text-xs text-[#5B5B5B] text-center font-semibold pt-4 pb-16"
+            style={{ textShadow: "2px 5px 3px rgba(0, 0, 0, 0.2)" }}
+          >
+            *記載の内容は、2025年度における全実績ではなく代表的な事例を抜粋したものです
+          </p>
+        </div>
       </div>
     </>
   );
