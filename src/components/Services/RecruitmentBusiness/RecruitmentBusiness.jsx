@@ -305,6 +305,7 @@ const ContentBoxesSection = () => {
           backgroundImage: `url(${contentboxbg})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
+          backgroundAttachment: "fixed",
         }}
       >
         <div className="w-full max-w-2xl mx-auto">
@@ -323,19 +324,24 @@ const ContentBoxesSection = () => {
                 <div
                   key={index}
                   ref={(el) => (boxRefs.current[index] = el)}
-                  className="p-6 rounded h-56 mx-auto flex flex-col items-center justify-center transition-all duration-700 ease-[cubic-bezier(0.77,0,0.175,1)]"
+                  className="p-6 rounded-xl h-56 mx-auto flex flex-col items-center justify-center transition-all duration-[280ms] ease-[cubic-bezier(0.65,0,0.35,1)]"
                   style={{
-                    backgroundImage: `url(${boxbg})`,
-                    backgroundSize: "contain",
+                    backgroundImage: `linear-gradient(${isActive ? "rgba(240,240,240,0.65), rgba(230,230,230,0.75)" : "rgba(236,236,236,0.55), rgba(222,222,222,0.65)"}), url(${boxbg})`,
+                    backgroundSize: "cover",
                     backgroundRepeat: "no-repeat",
                     backgroundPosition: "center",
-                    opacity: isActive ? 1 : 0.18,
+                    border: "1px solid rgba(0,0,0,0.08)",
+                    backdropFilter: "blur(6px)",
+                    boxShadow: isActive
+                      ? "0 3px 15px rgba(0,0,0,0.25)"
+                      : "0 12px 30px rgba(0,0,0,0.12)",
+                    opacity: isActive ? 1 : 0.35,
                     transform: isActive
                       ? "translateY(0px) scale(1)"
                       : isAbove
-                      ? "translateY(-40px) scale(0.96)"
-                      : "translateY(40px) scale(0.96)",
-                    filter: isActive ? "blur(0px)" : "blur(12px)",
+                      ? "translateY(-30px) scale(0.97)"
+                      : "translateY(30px) scale(0.97)",
+                    filter: isActive ? "blur(0px)" : "blur(8px)",
                     pointerEvents: isActive ? "auto" : "none",
                   }}
                   data-box-index={index}
