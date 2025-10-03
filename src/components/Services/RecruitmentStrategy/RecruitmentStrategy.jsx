@@ -1,6 +1,10 @@
 import React from "react";
 import Rectanglebg from "../../../assets/img/Rectangle 60.png";
 import clientbg from "../../../assets/img/vector1.png";
+import Aos from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
+
 const flowData = [
   {
     title: "採用戦略構築・設計",
@@ -35,6 +39,10 @@ const flowData = [
 ];
 
 function RecruitmentStrategy() {
+  useEffect(() => {
+    Aos.init({ duration: 1500 });
+  }, []);
+
   return (
     <div className="min-h-screen bg-white ">
       <div className="max-w-full mx-auto">
@@ -43,19 +51,35 @@ function RecruitmentStrategy() {
           <h1
             className="text-xl  text-black pt-10"
             style={{ textShadow: "2px 5px 2px rgba(0, 0, 0, 0.3 )" }}
+            data-aos="fade-up"
+            data-aos-offset="100"
+            data-aos-delay="50"
+            data-aos-once="true"
           >
-            事業戦略や組織への深い理解に基づく採用支援
+            採用戦略アドバイザリー事業
           </h1>
         </div>
         {/* Decorative Lines */}
-        <div class="flex items-center w-1/2 mx-auto">
-          <div class="w-1 h-1 bg-gray-300 rotate-45"></div>
-          <div class="flex-1 border-t border-gray-300"></div>
-          <div class="w-1 h-1 bg-gray-300 rotate-45"></div>
+        <div
+          className="flex items-center w-1/2 mx-auto"
+          data-aos="fade-up"
+          data-aos-offset="100"
+          data-aos-delay="50"
+          data-aos-once="true"
+        >
+          <div className="w-1 h-1 bg-gray-300 rotate-45"></div>
+          <div className="flex-1 border-t border-gray-300"></div>
+          <div className="w-1 h-1 bg-gray-300 rotate-45"></div>
         </div>
         {/* Process Flow (new flowchart) */}
         <div className="w-full flex justify-center py-16 bg-white">
-          <div className="flex flex-row items-stretch w-full max-w-5xl overflow-x-auto">
+          <div
+            className="flex flex-row items-stretch w-full max-w-5xl overflow-x-auto"
+            data-aos="fade-up"
+            data-aos-offset="100"
+            data-aos-delay="50"
+            data-aos-once="true"
+          >
             {flowData.map((step, idx) => (
               <div
                 key={step.title}
@@ -118,20 +142,38 @@ function RecruitmentStrategy() {
           </div>
         </div>
         {/* Second Section */}
-        <div className="mt-16 h-screen" style={{ backgroundImage: `url(${clientbg})`, backgroundSize: 'cover', backgroundPosition: 'center',backgroundRepeat: 'no-repeat' }}>
+        <div
+          className="mt-16 h-screen"
+          style={{
+            backgroundImage: `url(${clientbg})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
+        >
           <div className="text-center mb-8">
             <h2
               className="text-lg font-bold text-black"
               style={{ textShadow: "2px 5px 2px rgba(0, 0, 0, 0.3 )" }}
+              data-aos="fade-up"
+              data-aos-offset="100"
+              data-aos-delay="50"
+              data-aos-once="true"
             >
               自社採用の戦略的アプローチ、および採用ポジションの決定支援
             </h2>
           </div>
           {/* Decorative Lines */}
-          <div class="flex items-center w-1/2 mx-auto">
-            <div class="w-1 h-1 bg-gray-300 rotate-45"></div>
-            <div class="flex-1 border-t border-gray-300"></div>
-            <div class="w-1 h-1 bg-gray-300 rotate-45"></div>
+          <div
+            className="flex items-center w-1/2 mx-auto"
+            data-aos="fade-up"
+            data-aos-offset="100"
+            data-aos-delay="50"
+            data-aos-once="true"
+          >
+            <div className="w-1 h-1 bg-gray-300 rotate-45"></div>
+            <div className="flex-1 border-t border-gray-300"></div>
+            <div className="w-1 h-1 bg-gray-300 rotate-45"></div>
           </div>
           <div className="grid md:grid-cols-1 gap-16 w-1/2 mx-auto py-16">
             {/* Client Card */}
@@ -143,6 +185,10 @@ function RecruitmentStrategy() {
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
               }}
+              data-aos="fade-up"
+              data-aos-offset="100"
+              data-aos-delay="50"
+              data-aos-once="true"
             >
               <h3 className="text-base font-bold text-black mb-6 text-center">
                 クライアント概要
@@ -167,7 +213,6 @@ function RecruitmentStrategy() {
                   企業：SaaS企業（シリーズB）
                 </li>
                 <li className="flex items-center gap-2">
-                  {" "}
                   <svg
                     width="7"
                     height="7"
@@ -182,11 +227,10 @@ function RecruitmentStrategy() {
                       transform="rotate(45 5.65723 0)"
                       fill="black"
                     />
-                  </svg>{" "}
+                  </svg>
                   従業員数：約50名
                 </li>
                 <li className="flex items-center gap-2">
-                  {" "}
                   <svg
                     width="7"
                     height="7"
@@ -201,11 +245,10 @@ function RecruitmentStrategy() {
                       transform="rotate(45 5.65723 0)"
                       fill="black"
                     />
-                  </svg>{" "}
+                  </svg>
                   人事部構成：採用担当1名、採用事務1名
                 </li>
                 <li className="flex items-center gap-2">
-                  {" "}
                   <svg
                     width="7"
                     height="7"
@@ -220,8 +263,8 @@ function RecruitmentStrategy() {
                       transform="rotate(45 5.65723 0)"
                       fill="black"
                     />
-                  </svg>{" "}
-                  弊社チーム体制：2名）
+                  </svg>
+                  弊社チーム体制：2名
                 </li>
               </ul>
             </div>
@@ -234,6 +277,10 @@ function RecruitmentStrategy() {
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
               }}
+              data-aos="fade-up"
+              data-aos-offset="100"
+              data-aos-delay="50"
+              data-aos-once="true"
             >
               <h3 className="text-base font-bold text-black mb-6 text-center">
                 課題
@@ -256,7 +303,7 @@ function RecruitmentStrategy() {
                         fill="black"
                       />
                     </svg>
-                  </div>{" "}
+                  </div>
                   複数の採用媒体を併用した結果、効果が分散し、
                   <br />
                   候補者の母集団形成ができていない
@@ -276,7 +323,7 @@ function RecruitmentStrategy() {
                       transform="rotate(45 5.65723 0)"
                       fill="black"
                     />
-                  </svg>{" "}
+                  </svg>
                   目標採用数に対し、担当人員が不足している
                 </li>
                 <li className="flex items-center gap-2">
@@ -294,7 +341,7 @@ function RecruitmentStrategy() {
                       transform="rotate(45 5.65723 0)"
                       fill="black"
                     />
-                  </svg>{" "}
+                  </svg>
                   採用難易度の高いポジションに対する理解不足
                 </li>
               </ul>

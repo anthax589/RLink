@@ -1,12 +1,19 @@
 import Executive from "../../../assets/services_assets/executive_img.svg";
 import heroBg from "../../../assets/services_assets/image 9.svg";
+import Aos from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 const HeroSection = () => {
+  useEffect(() => {
+    Aos.init({ duration: 1500 });
+  }, []);
   return (
     <section
       className="relative bg-cover h-[90vh]  "
       style={{
         backgroundImage: `linear-gradient(306deg,rgba(24, 103, 209, 1) 0%, rgba(0, 0, 0, 1) 89%)`,
       }}
+      data-aos="fade-in"
     >
       {/* Content */}
       <div
