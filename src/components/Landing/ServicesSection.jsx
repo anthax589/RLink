@@ -1,10 +1,14 @@
 import React from "react";
+import { useEffect } from "react";
 import RPO from "../../assets/services_assets/rpo_img.svg";
 import Excecutive from "../../assets/services_assets/executive_img.svg";
 import ReferenceCheck from "../../assets/services_assets/reference_img.svg";
 import Marquee from "react-fast-marquee";
 import TypewriterOnScroll from "../../animation/TypeWriterOnScroll";
+import Aos from "aos";
+import "aos/dist/aos.css";
 function Services() {
+  
   // Define service card content for reuse
   const serviceCards = [
     {
@@ -44,7 +48,9 @@ function Services() {
       alt: "Reference Check AI",
     },
   ];
-
+  useEffect(() => {
+    Aos.init({ duration: 1500 });
+  }, []);
   return (
     <div
       className="bg-[linear-gradient(to_right,#1353AA,#051428)] min-h-fit py-20 flex flex-col items-center justify-center "
@@ -59,13 +65,21 @@ function Services() {
           className="ml-2"
           letterClassName="text-white text-lg 2xl:text-2xl font-bold tracking-widest mb-4 text-center"
         />
-        <h1 className="text-white text-3xl xl:text-4xl font-bold leading-tight text-nowrap">
+        <h1
+          className="text-white text-3xl xl:text-4xl font-bold leading-tight text-nowrap"
+          data-aos="fade-up"
+          data-aos-once="true"
+        >
           Transforming Talent Acquisition through Expertise, Technology, and AI
         </h1>
       </div>
 
       {/* Services Marquee */}
-      <div className="w-full mb-12 overflow-hidden">
+      <div
+        className="w-full mb-12 overflow-hidden"
+        data-aos="fade-up"
+        data-aos-once="true"
+      >
         <Marquee
           speed={80}
           gradient={false}

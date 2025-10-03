@@ -1,5 +1,12 @@
 import Rectanglebg from "../../../assets/img/Rectangle 60.png";
+import Aos from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
+;
 export default function SnappCheck() {
+  useEffect(() => {
+    Aos.init({ duration: 1500 });
+  }, []);
   return (
     <div className="min-h-screen bg-white  px-4">
       <div className="max-w-4xl mx-auto">
@@ -11,13 +18,26 @@ export default function SnappCheck() {
             fontFamily: "Lato-Bold",
           }}
         >
-          <h1 className="text-3xl  mb-2">
+          <h1
+            className="text-3xl  mb-2"
+            data-aos="fade-up"
+            data-aos-offset="100"
+            data-aos-delay="50"
+            data-aos-once="true"
+          >
             <span className="text-[#1867D1]">Snapp</span>
             <span className="text-black"> Check</span>
           </h1>
         </div>
         {/* Decorative Lines */}
-        <div class="flex items-center w-full mx-auto">
+        <div
+          class="flex items-center w-full mx-auto"
+          className="text-2xl font-semi-bold"
+          data-aos="fade-up"
+          data-aos-offset="100"
+          data-aos-delay="50"
+          data-aos-once="true"
+        >
           <div class="w-1 h-1 bg-gray-300 rotate-45"></div>
           <div class="flex-1 border-t border-gray-300"></div>
           <div class="w-1 h-1 bg-gray-300 rotate-45"></div>
@@ -28,12 +48,22 @@ export default function SnappCheck() {
           <h2
             className="text-xl  text-center text-black py-12"
             style={{ fontFamily: "Lato-Regular" }}
+            data-aos="fade-up"
+            data-aos-offset="100"
+            data-aos-delay="50"
+            data-aos-once="true"
           >
             AI搭載オンライン型リファレンスチェックサービス
           </h2>
 
           {/* Description Paragraphs */}
-          <div className="space-y-6 text-black text-sm leading-relaxed flex flex-col items-center justify-center ">
+          <div
+            className="space-y-6 text-black text-sm leading-relaxed flex flex-col items-center justify-center "
+            data-aos="fade-up"
+            data-aos-offset="100"
+            data-aos-delay="50"
+            data-aos-once="true"
+          >
             <p className="indent-8">
               人材獲得競争が激しさを増す中、早期離職やカルチャーミスマッチは企業の成長に大きな影響を及ぼします。
               <br />
@@ -58,11 +88,21 @@ export default function SnappCheck() {
               textShadow: "2px 5px 2px rgba(0, 0, 0, 0.2 )",
               fontFamily: "Lato-Regular",
             }}
+            data-aos="fade-up"
+            data-aos-offset="100"
+            data-aos-delay="50"
+            data-aos-once="true"
           >
             担当職種一覧
           </h3>
           {/* Decorative Lines */}
-          <div class="flex items-center w-full mx-auto">
+          <div
+            class="flex items-center w-full mx-auto"
+            data-aos="fade-up"
+            data-aos-offset="100"
+            data-aos-delay="50"
+            data-aos-once="true"
+          >
             <div class="w-1 h-1 bg-gray-300 rotate-45"></div>
             <div class="flex-1 border-t border-gray-300"></div>
             <div class="w-1 h-1 bg-gray-300 rotate-45"></div>
@@ -78,12 +118,22 @@ export default function SnappCheck() {
                 backgroundRepeat: "no-repeat",
                 backgroundPosition: "center",
               }}
+              data-aos="fade-up"
+              data-aos-offset="100"
+              data-aos-delay="50"
+              data-aos-once="true"
             >
               <div className="mb-3">
                 <h4 className="text-lg font-bold text-center text-black mb-3">
                   バックオフィス
                 </h4>
-                <p className="text-center text-black text-sm text-nowrap scale-90 origin-center relative right-5">
+                <p
+                  className="text-center text-black text-sm text-nowrap scale-90 origin-center relative right-5"
+                  data-aos="fade-up"
+                  data-aos-offset="100"
+                  data-aos-delay="50"
+                  data-aos-once="true"
+                >
                   ⼀般事務、部⾨アシスタント、秘書、受付、通訳・翻訳、経理、財務、会計採⽤、労務、教育、ジェネラリスト
                 </p>
               </div>

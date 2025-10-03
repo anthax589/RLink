@@ -1,11 +1,14 @@
 import React, { useEffect, useRef, useState } from "react";
-// import heroBg from "../../../assets/services_assets/image 10.svg";
-
+import Aos from "aos";
+import "aos/dist/aos.css";
 import boxbg from "../../../assets/img/Rectangle 60.png";
 import tablebg from "../../../assets/img/tableBackground.png";
 import contentboxbg from "../../../assets/img/contentBoxbg.png";
 import introbg from "../../../assets/img/introbg.png";
 export default function FormalDocument() {
+  useEffect(() => {
+    Aos.init({ duration: 1500 });
+  }, []);
   return (
     <div className="min-h-screen bg-white  text-black">
       <div className="max-w-full mx-auto bg-transparent">
@@ -32,13 +35,25 @@ const IntroductionSection = () => {
     <>
       {/* Header */}
       <div className=" text-black py-7 text-center">
-        <h1 className="text-2xl font-semi-bold">人材紹介事業</h1>
+        <h1
+          className="text-2xl font-semi-bold"
+          data-aos="fade-up"
+          data-aos-offset="100"
+          data-aos-delay="50"
+          data-aos-once="true"
+        >
+          人材紹介事業
+        </h1>
       </div>
       {/* Introduction Section */}
       <div>
         <p
           className="text-md leading-relaxed  text-center text-black"
           style={{ fontFamily: "Lato-Regular" }}
+          data-aos="fade-up"
+          data-aos-offset="100"
+          data-aos-delay="50"
+          data-aos-once="true"
         >
           企業の採用ニーズに応じて、リテーナー型によるプロジェクトベースのサーチから、
           <br />
@@ -59,16 +74,32 @@ const TwoColumnSection = () => {
           <h1
             className="text-center text-[#1867D1] font-bold "
             style={{ textShadow: "2px 5px 3px rgba(0, 0, 0, 0.5)" }}
+            data-aos="fade-up"
+            data-aos-offset="100"
+            data-aos-delay="50"
+            data-aos-once="true"
           >
             リテーナー型
           </h1>
           {/* Decorative Lines */}
-          <div class="flex items-center w-1/2 mx-auto">
-            <div class="w-2 h-2 bg-gray-300 rotate-45"></div>
+          <div
+            class="flex items-center w-1/2 mx-auto"
+            data-aos="fade-up"
+            data-aos-offset="100"
+            data-aos-delay="50"
+            data-aos-once="true"
+          >
+            <div class="w-1 h-1 bg-gray-300 rotate-45"></div>
             <div class="flex-1 border-t border-gray-300"></div>
-            <div class="w-2 h-2 bg-gray-300 rotate-45"></div>
+            <div class="w-1 h-1 bg-gray-300 rotate-45"></div>
           </div>
-          <div className="bg-gradient-to-b from-[#DFDFDF] to-white p-5 rounded  flex items-center justify-center">
+          <div
+            className="bg-gradient-to-b from-[#DFDFDF] to-white p-5 rounded  flex items-center justify-center"
+            data-aos="fade-up"
+            data-aos-offset="100"
+            data-aos-delay="50"
+            data-aos-once="true"
+          >
             <p className="text-sm text-black text-nowrap  ">
               主に経営幹部クラスや高度専門職、またはコンフィデンシャル <br />
               案件を対象とした採用手法です。プロジェクト型で採用活動を <br />
@@ -84,17 +115,33 @@ const TwoColumnSection = () => {
           <h1
             className="text-center text-[#1867D1] font-bold"
             style={{ textShadow: "2px 5px 3px rgba(0, 0, 0, 0.5)" }}
+            data-aos="fade-up"
+            data-aos-offset="100"
+            data-aos-delay="50"
+            data-aos-once="true"
           >
             コンティンジェンシー型
           </h1>
           {/* Decorative Lines */}
-          <div class="flex items-center w-1/2 mx-auto">
-            <div class="w-2 h-2 bg-gray-300 rotate-45"></div>
+          <div
+            class="flex items-center w-1/2 mx-auto"
+            data-aos="fade-up"
+            data-aos-offset="100"
+            data-aos-delay="50"
+            data-aos-once="true"
+          >
+            <div class="w-1 h-1 bg-gray-300 rotate-45"></div>
             <div class="flex-1 border-t border-gray-300"></div>
-            <div class="w-2 h-2 bg-gray-300 rotate-45"></div>
+            <div class="w-1 h-1 bg-gray-300 rotate-45"></div>
           </div>
 
-          <div className="bg-gradient-to-b from-[#DFDFDF] to-white px-7 py-6 rounded  flex items-center justify-center">
+          <div
+            className="bg-gradient-to-b from-[#DFDFDF] to-white px-7 py-6 rounded  flex items-center justify-center"
+            data-aos="fade-up"
+            data-aos-offset="100"
+            data-aos-delay="50"
+            data-aos-once="true"
+          >
             <p className="text-sm text-black ">
               幅広い職種やレイヤーを対象とした、完全成功報酬型の <br />
               人材紹介手法です。採用決定まで費用が発生しないため、
@@ -119,10 +166,28 @@ const TableSection = () => {
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
+        data-aos="fade-up"
+        data-aos-offset="100"
+        data-aos-delay="50"
+        data-aos-once="true"
       >
         <div className="max-w-5xl mx-auto flex flex-col  justify-center h-full">
-          <h1 className="text-end mb-3">リテーナープロジェクト例</h1>
-          <table className="w-full border-collapse">
+          <h1
+            className="text-end mb-3"
+            data-aos="fade-up"
+            data-aos-offset="100"
+            data-aos-delay="50"
+            data-aos-once="true"
+          >
+            リテーナープロジェクト例
+          </h1>
+          <table
+            className="w-full border-collapse"
+            data-aos="fade-up"
+            data-aos-offset="100"
+            data-aos-delay="50"
+            data-aos-once="true"
+          >
             <thead>
               <tr
                 className="bg-[#1867D1]/80 text-white"
@@ -312,6 +377,10 @@ const ContentBoxesSection = () => {
           <h2
             className="text-2xl text-[#5B5B5B] text-center pt-10"
             style={{ textShadow: "2px 5px 3px rgba(0, 0, 0, 0.2)" }}
+            data-aos="fade-up"
+            data-aos-offset="100"
+            data-aos-delay="50"
+            data-aos-once="true"
           >
             紹介実績 2025
           </h2>
@@ -324,24 +393,28 @@ const ContentBoxesSection = () => {
                 <div
                   key={index}
                   ref={(el) => (boxRefs.current[index] = el)}
-                  className="p-6 rounded-xl h-56 mx-auto flex flex-col items-center justify-center transition-all duration-[280ms] ease-[cubic-bezier(0.65,0,0.35,1)]"
+                  className="p-6 rounded h-56 mx-auto flex flex-col items-center justify-center transition-all duration-500 ease-[cubic-bezier(0.25,0.46,0.45,0.94)]"
                   style={{
-                    backgroundImage: `linear-gradient(${isActive ? "rgba(240,240,240,0.65), rgba(230,230,230,0.75)" : "rgba(236,236,236,0.55), rgba(222,222,222,0.65)"}), url(${boxbg})`,
+                    backgroundImage: `linear-gradient(${
+                      isActive
+                        ? "rgba(240,240,240,0.65), rgba(230,230,230,0.75)"
+                        : "rgba(236,236,236,0.55), rgba(222,222,222,0.65)"
+                    }), url(${boxbg})`,
                     backgroundSize: "cover",
                     backgroundRepeat: "no-repeat",
                     backgroundPosition: "center",
                     border: "1px solid rgba(0,0,0,0.08)",
                     backdropFilter: "blur(6px)",
                     boxShadow: isActive
-                      ? "0 3px 15px rgba(0,0,0,0.25)"
-                      : "0 12px 30px rgba(0,0,0,0.12)",
-                    opacity: isActive ? 1 : 0.35,
+                      ? "0 8px 25px rgba(0,0,0,0.2)"
+                      : "0 4px 15px rgba(0,0,0,0.08)",
+                    opacity: isActive ? 1 : 0.45,
                     transform: isActive
                       ? "translateY(0px) scale(1)"
                       : isAbove
-                      ? "translateY(-30px) scale(0.97)"
-                      : "translateY(30px) scale(0.97)",
-                    filter: isActive ? "blur(0px)" : "blur(8px)",
+                      ? "translateY(-20px) scale(0.98)"
+                      : "translateY(20px) scale(0.98)",
+                    filter: isActive ? "blur(0px)" : "blur(4px)",
                     pointerEvents: isActive ? "auto" : "none",
                   }}
                   data-box-index={index}

@@ -1,10 +1,12 @@
-import React from "react";
 import servicesIcon from "../../assets/services_assets/services.svg";
 import executiveImg from "../../assets/services_assets/executive_img.svg";
 import rpoImg from "../../assets/services_assets/rpo_img.svg";
 import hrImg from "../../assets/services_assets/reference_img.svg";
 import servicesbackground from "../../assets/services_assets/image 4.svg";
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import Aos from "aos";
+import "aos/dist/aos.css";
 const services = [
   {
     img: executiveImg,
@@ -103,7 +105,11 @@ const ServiceCard = ({ img, title, description, index, route }) => {
     </div>
   );
 };
+
 const OurServicesSection = () => {
+  useEffect(() => {
+    Aos.init({ duration: 1500 });
+  }, []);
   return (
     <section
       className="bg-white py-16 lg:py-24"
@@ -116,19 +122,37 @@ const OurServicesSection = () => {
       <div className="max-w-7xl mx-auto px-4 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-4xl font-bold text-black mb-12">
+          <h2
+            className="text-3xl lg:text-4xl font-bold text-black mb-12"
+            data-aos="fade-up"
+            data-aos-offset="100"
+            data-aos-delay="50"
+            data-aos-once="true"
+          >
             サービス
           </h2>
 
           {/* Description and Icon */}
           <div className="flex justify-evenly mx-auto max-w-6xl items-center mb-12 ">
             <div className="text-left space-y-6 w-2xl">
-              <p className="text-black leading-relaxed text-2xl font-medium text-nowrap ">
+              <p
+                className="text-black leading-relaxed text-2xl font-medium text-nowrap "
+                data-aos="fade-up"
+                data-aos-offset="100"
+                data-aos-delay="50"
+                data-aos-once="true"
+              >
                 スタートアップをはじめとする成長企業には、スピード感と柔軟
                 <br className="hidden lg:block" />
                 性のある採用・人材活用が求められています。
               </p>
-              <p className="text-black leading-relaxed text-xl font-medium text-nowrap">
+              <p
+                className="text-black leading-relaxed text-xl font-medium text-nowrap"
+                data-aos="fade-up"
+                data-aos-offset="100"
+                data-aos-delay="50"
+                data-aos-once="true"
+              >
                 即戦力人材の確保から、採用戦略の仕組みづくりからの実行支
                 <br className="hidden lg:block" />
                 援、までを一気通貫で提供し、企業の成長ステージに応じた最適
@@ -136,7 +160,13 @@ const OurServicesSection = () => {
                 なHRソリューションを提供します。
               </p>
             </div>
-            <div className="flex justify-center">
+            <div
+              className="flex justify-center"
+              data-aos="fade-up"
+              data-aos-offset="100"
+              data-aos-delay="50"
+              data-aos-once="true"
+            >
               <img
                 src={servicesIcon}
                 alt="Services Icon"
@@ -160,7 +190,15 @@ const OurServicesSection = () => {
         {/* Service Cards */}
         <div className="space-y-0">
           {services.map((service, index) => (
-            <ServiceCard key={index} {...service} index={index} />
+            <div
+              key={index}
+              data-aos="fade-up"
+              data-aos-offset="100"
+              data-aos-delay={index * 200 + 50}
+              data-aos-once="true"
+            >
+              <ServiceCard {...service} index={index} />
+            </div>
           ))}
         </div>
       </div>

@@ -36,13 +36,25 @@ const AboutSection = () => {
           </div>
 
           {/* Description */}
-          <p className="text-black leading-relaxed mb-4 2xl:text-xl pl-6">
+          <p
+            className="text-black leading-relaxed mb-4 2xl:text-xl pl-6"
+            data-aos="fade-up"
+            data-aos-offset="100"
+            data-aos-delay="50"
+            data-aos-once="true"
+          >
             Established in 2021 and based in Shirokane, Minato-ku, Tokyo, We
             specialize in headhunting and recruitment for executive-level
             roles—including CxOs, business leaders, and tech specialists—across
             startups, growth-stage firms, and corporate spin-offs.
           </p>
-          <p className="text-black leading-relaxed mb-6 2xl:text-xl pl-6">
+          <p
+            className="text-black leading-relaxed mb-6 2xl:text-xl pl-6"
+            data-aos="fade-up"
+            data-aos-offset="100"
+            data-aos-delay="50"
+            data-aos-once="true"
+          >
             Built on a foundation of passion, reliability, integrity,
             commitment, and teamwork, our bilingual team of seasoned consultants
             provides comprehensive support—from tailored job searches to resume
@@ -50,7 +62,13 @@ const AboutSection = () => {
           </p>
 
           {/* Button */}
-          <div className="pl-6">
+          <div
+            className="pl-6"
+            data-aos="fade-up"
+            data-aos-offset="100"
+            data-aos-delay="50"
+            data-aos-once="true"
+          >
             <button className="px-13 2xl:px-14 py-3 bg-[#545555] text-white text-sm  2xl:text-lg tracking-wide shadow hover:bg-gray-800 transition rounded-md ">
               VIEW MORE
             </button>

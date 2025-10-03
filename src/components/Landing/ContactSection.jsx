@@ -1,6 +1,8 @@
 import React from "react";
 import { useState } from "react";
-
+import Aos from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";  
 function ContactSection() {
   const [formData, setFormData] = useState({
     inquiryType: "",
@@ -11,7 +13,9 @@ function ContactSection() {
     inquiryDetails: "",
     agreeToPrivacy: false,
   });
-
+  useEffect(() => {
+    Aos.init({ duration: 1500 });
+  }, []);
   const handleInputChange = (e) => {
     const { name, value, type, checked, files } = e.target;
     setFormData((prev) => ({
@@ -57,11 +61,20 @@ function ContactSection() {
   };
 
   return (
-    <div className="min-h-fit bg-white py-20 px-4">
+    <div
+      className="min-h-fit bg-white py-20 px-4"
+    >
       <div className="max-w-6xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-start mx-auto">
           {/* Left Side - Contact Information */}
-          <div className="bg-white p-8 lg:p-12">
+          <div
+            className="bg-white p-8 lg:p-12"
+            data-aos="fade-up"
+            data-aos-offset="100"
+            data-aos-delay="50"
+            data-aos-once="true"
+          >
+            {/* Title and Description */}
             <h1 className="text-4xl font-bold text-black mb-8">CONTACT US</h1>
 
             <p className="text-black text-lg 2xl:text-xl leading-relaxed mb-12">
@@ -115,13 +128,18 @@ function ContactSection() {
           </div>
 
           {/* Right Side - Contact Form */}
-          <div className="bg-[#575757] p-8 lg:p-7 lg:w-2xl rounded">
+          <div
+            className="bg-[#575757] p-8 lg:p-7 lg:w-2xl rounded"
+            data-aos="fade-up"
+            data-aos-offset="100"
+            data-aos-delay="50"
+            data-aos-once="true"
+          >
             <h2 className="text-3xl font-bold text-white mb-3">Get in Touch</h2>
             <p className="text-gray-200 mb-8 text-sm">
               Fill out our inquiry form on our website, and one of our
               consultants will get back to you shortly.
             </p>
-
             <div className="space-y-6">
               {/* Inquiry Type Selection Buttons */}
               <div className="flex gap-3 text-nowrap">

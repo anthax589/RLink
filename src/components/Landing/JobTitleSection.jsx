@@ -1,5 +1,7 @@
 import TypewriterOnScroll from "../../animation/TypeWriterOnScroll";
-
+import Aos from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 // Job Categories Component
 const JobCategories = () => {
   const managementCategories = [
@@ -31,7 +33,13 @@ const JobCategories = () => {
   ];
 
   const CategoryButton = ({ children }) => (
-    <button className="px-4 py-2 text-sm font-medium text-white bg-[#565757] hover:bg-gray-700 transition-colors duration-200">
+    <button
+      className="px-4 py-2 text-sm font-medium text-white bg-[#565757] hover:bg-gray-700 transition-colors duration-200"
+      data-aos="fade-up"
+      data-aos-offset="100"
+      data-aos-delay="20"
+      data-aos-once="true"
+    >
       {children}
     </button>
   );
@@ -50,63 +58,73 @@ const JobCategories = () => {
     );
   };
   return (
-    (
-      <div className="bg-gradient-to-b from-[#FDFDFD] to-[#F4F5F7] py-12 px-4">
-        <div className="max-w-4xl mx-auto">
-          {/* Header */}
-          <div className="text-center mb-12">
-            <h1 className="text-3xl font-bold text-black mb-8">
-              <span className="text-[#1867D1]">R</span>
-              <TypewriterOnScroll
-                text="Linkの担当職種一覧"
-                delay={80}
-                threshold={0.5}
-                className="inline-flex"
-                letterClassName="inline-block"
-              />
-            </h1>
+    <div className="bg-gradient-to-b from-[#FDFDFD] to-[#F4F5F7] py-12 px-4">
+      <div className="max-w-4xl mx-auto">
+        {/* Header */}
+        <div className="text-center mb-12">
+          <h1 className="text-3xl font-bold text-black mb-8">
+            <span className="text-[#1867D1]">R</span>
+            <TypewriterOnScroll
+              text="Linkの担当職種一覧"
+              delay={80}
+              threshold={0.5}
+              className="inline-flex"
+              letterClassName="inline-block"
+            />
+          </h1>
 
-            {/* Management & Business Leader Section */}
-            <div className="mb-8">
-              <h2 className="text-lg font-semibold text-gray-800 mb-4">
-                経営・ビジネスリーダー職
-              </h2>
-              <div className="flex flex-wrap justify-center gap-2 mb-6">
-                {managementCategories.map((category, index) => (
-                  <CategoryButton key={index}>{category}</CategoryButton>
-                ))}
-              </div>
+          {/* Management & Business Leader Section */}
+          <div className="mb-8">
+            <h2 className="text-lg font-semibold text-black mb-4">
+              経営・ビジネスリーダー職
+            </h2>
+            <div className="flex flex-wrap justify-center gap-2 mb-6">
+              {managementCategories.map((category, index) => (
+                <CategoryButton key={index}>{category}</CategoryButton>
+              ))}
             </div>
+          </div>
 
-            {/* Business & Corporate Section */}
-            <div className="mb-8">
-              <h2 className="text-lg font-semibold text-gray-800 mb-4">
-                ビジネス・コーポレート
-              </h2>
-              <div className="flex flex-wrap justify-center gap-2 mb-6">
-                {businessCategories.map((category, index) => (
-                  <CategoryButton key={index}>{category}</CategoryButton>
-                ))}
-              </div>
+          {/* Business & Corporate Section */}
+          <div className="mb-8">
+            <h2 className="text-lg font-semibold text-black mb-4">
+              ビジネス・コーポレート
+            </h2>
+            <div
+              className="flex flex-wrap justify-center gap-2 mb-6"
+              data-aos="fade-up"
+              data-aos-offset="100"
+              data-aos-delay="20"
+              data-aos-once="true"
+            >
+              {businessCategories.map((category, index) => (
+                <CategoryButton key={index}>{category}</CategoryButton>
+              ))}
             </div>
+          </div>
 
-            {/* Technology & Consulting Section */}
-            <div className="mb-8">
-              <h2 className="text-lg font-semibold text-gray-800 mb-4">
-                テクノロジー・コンサルティング
-              </h2>
-              <div className="flex flex-wrap justify-center gap-2">
-                {technologyCategories.map((category, index) => (
-                  <CategoryButton key={index}>{category}</CategoryButton>
-                ))}
-              </div>
+          {/* Technology & Consulting Section */}
+          <div className="mb-8">
+            <h2
+              className="text-lg font-semibold text-black mb-4"
+              data-aos="fade-up"
+              data-aos-offset="100"
+              data-aos-delay="20"
+              data-aos-once="true"
+            >
+              テクノロジー・コンサルティング
+            </h2>
+            <div className="flex flex-wrap justify-center gap-2">
+              {technologyCategories.map((category, index) => (
+                <CategoryButton key={index}>{category}</CategoryButton>
+              ))}
             </div>
           </div>
         </div>
-        {/* Decorative Divider */}
-        <GradientDivider />
       </div>
-    )
+      {/* Decorative Divider */}
+      <GradientDivider />
+    </div>
   );
 };
 
@@ -146,11 +164,14 @@ const CompanyStrengths = () => {
         "高い専門性を持つ各領域を担当するコンサルタントがクライアント企業の課題解決に貢献いたします。この専門力のノウハウと豊富な実績によってより確実なマッチングにより、早期決定に寄与いたします。",
     },
   ];
-
+  useEffect(() => {
+    Aos.init({ duration: 1500 });
+  }, []);
   return (
   
     (
-      <div className="bg-gradient-to-b from-[#F3F4F5] to-[#373738] py-12 px-4">
+      <div className="bg-gradient-to-b from-[#F3F4F5] to-[#373738] py-12 px-4"
+      >
         <div className="max-w-6xl mx-auto">
           {/* Strengths Section */}
           <div className="text-center mb-8">
@@ -166,7 +187,11 @@ const CompanyStrengths = () => {
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-16">
+          <div className="grid md:grid-cols-2 gap-16"
+          data-aos="fade-up"
+          data-aos-offset="100"
+          data-aos-delay="20"
+          data-aos-once="true">
             {strengths.map((strength, index) => (
               <StrengthCard
                 key={index}
