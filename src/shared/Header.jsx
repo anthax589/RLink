@@ -179,7 +179,7 @@ const Header = () => {
           <Link to="/" className="text-black flex items-center">
             <div className="flex items-center">
               <img src={RLinkLogo} alt="R-Link Logo" className="h-10" />
-              <span className="text-[#1867D1] pl-3">R</span>Link Partners
+              <span className="text-[#1867D1] pl-3 ">R</span>Link Partners
             </div>
           </Link>
         </div>

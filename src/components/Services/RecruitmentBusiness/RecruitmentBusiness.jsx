@@ -362,7 +362,7 @@ const ContentBoxesSection = () => {
       {/* Content Boxes Section */}
       <div
         ref={sectionRef}
-        className="flex justify-center items-center min-h-[120vh] w-full px-8"
+        className="flex justify-center items-center min-h-[20vh] w-full px-8"
         data-section="content-boxes"
         style={{
           backgroundImage: `url(${contentboxbg})`,
@@ -373,7 +373,8 @@ const ContentBoxesSection = () => {
       >
         <div className="w-full max-w-2xl mx-auto">
           <h2
-            className="text-2xl text-[#5B5B5B] text-center pt-10"
+            className="text-2xl text-[#5B5B5B] text-center pt-10 sticky top-0 "
+
             style={{ textShadow: "2px 5px 3px rgba(0, 0, 0, 0.2)" }}
             data-aos="fade-up"
             data-aos-offset="100"
