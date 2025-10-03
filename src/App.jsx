@@ -32,9 +32,20 @@ function App() {
             <Route path="/services" element={<ServicesPage />} />
             <Route path="/company-profile" element={<CompanyProfile />} />
             <Route path="/company-mission" element={<CompanyMission />} />
-            <Route path="/recruitment-business" element={<RecruitmentBusiness />}/>
-            <Route path="/recruitment-strategy" element={<RecruitmentStrategy />} />
-            <Route path="/hr-product-business" element={<HrProductBusiness />} />
+            <Route
+              path="/recruitment-business"
+              element={<RecruitmentBusiness />}
+            />
+            <Route
+              path="/recruitment-strategy"
+              element={<RecruitmentStrategy />}
+            />
+            <Route
+              path="/hr-product-business"
+              element={<HrProductBusiness />}
+            />
+            {/* Add catch-all route */}
+            <Route path="*" element={<LandingPage />} />
           </Routes>
         </div>
       </BrowserRouter>
