@@ -52,9 +52,8 @@ function RecruitmentStrategy() {
             className="text-xl  text-black pt-10"
             style={{ textShadow: "2px 5px 2px rgba(0, 0, 0, 0.3 )" }}
             data-aos="fade-up"
-            data-aos-offset="100"
+            data-aos-offset="200"
             data-aos-delay="50"
-            data-aos-once="true"
           >
             採用戦略アドバイザリー事業
           </h1>
@@ -63,9 +62,8 @@ function RecruitmentStrategy() {
         <div
           className="flex items-center w-1/2 mx-auto"
           data-aos="fade-up"
-          data-aos-offset="100"
-          data-aos-delay="50"
-          data-aos-once="true"
+          data-aos-offset="200"
+          data-aos-delay="100"
         >
           <div className="w-1 h-1 bg-gray-300 rotate-45"></div>
           <div className="flex-1 border-t border-gray-300"></div>
@@ -76,9 +74,8 @@ function RecruitmentStrategy() {
           <div
             className="flex flex-row items-stretch w-full max-w-5xl overflow-x-auto"
             data-aos="fade-up"
-            data-aos-offset="100"
-            data-aos-delay="50"
-            data-aos-once="true"
+            data-aos-offset="200"
+            data-aos-delay="150"
           >
             {flowData.map((step, idx) => (
               <div
@@ -156,9 +153,8 @@ function RecruitmentStrategy() {
               className="text-lg font-bold text-black"
               style={{ textShadow: "2px 5px 2px rgba(0, 0, 0, 0.3 )" }}
               data-aos="fade-up"
-              data-aos-offset="100"
+              data-aos-offset="200"
               data-aos-delay="50"
-              data-aos-once="true"
             >
               自社採用の戦略的アプローチ、および採用ポジションの決定支援
             </h2>
@@ -167,9 +163,8 @@ function RecruitmentStrategy() {
           <div
             className="flex items-center w-1/2 mx-auto"
             data-aos="fade-up"
-            data-aos-offset="100"
-            data-aos-delay="50"
-            data-aos-once="true"
+            data-aos-offset="200"
+            data-aos-delay="100"
           >
             <div className="w-1 h-1 bg-gray-300 rotate-45"></div>
             <div className="flex-1 border-t border-gray-300"></div>
@@ -186,9 +181,8 @@ function RecruitmentStrategy() {
                 backgroundRepeat: "no-repeat",
               }}
               data-aos="fade-up"
-              data-aos-offset="100"
-              data-aos-delay="50"
-              data-aos-once="true"
+              data-aos-offset="200"
+              data-aos-delay="150"
             >
               <h3 className="text-base font-bold text-black mb-6 text-center">
                 クライアント概要
@@ -278,9 +272,8 @@ function RecruitmentStrategy() {
                 backgroundRepeat: "no-repeat",
               }}
               data-aos="fade-up"
-              data-aos-offset="100"
-              data-aos-delay="50"
-              data-aos-once="true"
+              data-aos-offset="200"
+              data-aos-delay="200"
             >
               <h3 className="text-base font-bold text-black mb-6 text-center">
                 課題
