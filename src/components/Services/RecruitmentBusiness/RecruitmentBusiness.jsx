@@ -40,7 +40,7 @@ const IntroductionSection = () => {
           data-aos="fade-up"
           data-aos-offset="100"
           data-aos-delay="50"
-          data-aos-once="true"
+       
         >
           人材紹介事業
         </h1>
@@ -53,7 +53,7 @@ const IntroductionSection = () => {
           data-aos="fade-up"
           data-aos-offset="100"
           data-aos-delay="50"
-          data-aos-once="true"
+       
         >
           企業の採用ニーズに応じて、リテーナー型によるプロジェクトベースのサーチから、
           <br />
@@ -77,7 +77,7 @@ const TwoColumnSection = () => {
             data-aos="fade-up"
             data-aos-offset="100"
             data-aos-delay="50"
-            data-aos-once="true"
+       
           >
             リテーナー型
           </h1>
@@ -87,7 +87,7 @@ const TwoColumnSection = () => {
             data-aos="fade-up"
             data-aos-offset="100"
             data-aos-delay="50"
-            data-aos-once="true"
+          
           >
             <div class="w-1 h-1 bg-gray-300 rotate-45"></div>
             <div class="flex-1 border-t border-gray-300"></div>
@@ -98,7 +98,7 @@ const TwoColumnSection = () => {
             data-aos="fade-up"
             data-aos-offset="100"
             data-aos-delay="50"
-            data-aos-once="true"
+         
           >
             <p className="text-sm text-black text-nowrap  ">
               主に経営幹部クラスや高度専門職、またはコンフィデンシャル <br />
@@ -118,7 +118,7 @@ const TwoColumnSection = () => {
             data-aos="fade-up"
             data-aos-offset="100"
             data-aos-delay="50"
-            data-aos-once="true"
+       
           >
             コンティンジェンシー型
           </h1>
@@ -128,7 +128,7 @@ const TwoColumnSection = () => {
             data-aos="fade-up"
             data-aos-offset="100"
             data-aos-delay="50"
-            data-aos-once="true"
+         
           >
             <div class="w-1 h-1 bg-gray-300 rotate-45"></div>
             <div class="flex-1 border-t border-gray-300"></div>
@@ -140,7 +140,7 @@ const TwoColumnSection = () => {
             data-aos="fade-up"
             data-aos-offset="100"
             data-aos-delay="50"
-            data-aos-once="true"
+          
           >
             <p className="text-sm text-black ">
               幅広い職種やレイヤーを対象とした、完全成功報酬型の <br />
@@ -168,8 +168,7 @@ const TableSection = () => {
         }}
         data-aos="fade-up"
         data-aos-offset="100"
-        data-aos-delay="50"
-        data-aos-once="true"
+        data-aos-delay="50" 
       >
         <div className="max-w-5xl mx-auto flex flex-col  justify-center h-full">
           <h1
@@ -177,7 +176,7 @@ const TableSection = () => {
             data-aos="fade-up"
             data-aos-offset="100"
             data-aos-delay="50"
-            data-aos-once="true"
+    
           >
             リテーナープロジェクト例
           </h1>
@@ -186,7 +185,6 @@ const TableSection = () => {
             data-aos="fade-up"
             data-aos-offset="100"
             data-aos-delay="50"
-            data-aos-once="true"
           >
             <thead>
               <tr
@@ -380,7 +378,7 @@ const ContentBoxesSection = () => {
             data-aos="fade-up"
             data-aos-offset="100"
             data-aos-delay="50"
-            data-aos-once="true"
+       
           >
             紹介実績 2025
           </h2>

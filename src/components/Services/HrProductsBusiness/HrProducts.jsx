@@ -23,7 +23,6 @@ export default function SnappCheck() {
             data-aos="fade-up"
             data-aos-offset="100"
             data-aos-delay="50"
-            data-aos-once="true"
           >
             <span className="text-[#1867D1]">Snapp</span>
             <span className="text-black"> Check</span>
@@ -36,7 +35,6 @@ export default function SnappCheck() {
           data-aos="fade-up"
           data-aos-offset="100"
           data-aos-delay="50"
-          data-aos-once="true"
         >
           <div class="w-1 h-1 bg-gray-300 rotate-45"></div>
           <div class="flex-1 border-t border-gray-300"></div>
@@ -51,7 +49,6 @@ export default function SnappCheck() {
             data-aos="fade-up"
             data-aos-offset="100"
             data-aos-delay="50"
-            data-aos-once="true"
           >
             AI搭載オンライン型リファレンスチェックサービス
           </h2>
@@ -62,7 +59,6 @@ export default function SnappCheck() {
             data-aos="fade-up"
             data-aos-offset="100"
             data-aos-delay="50"
-            data-aos-once="true"
           >
             <p className="indent-8">
               人材獲得競争が激しさを増す中、早期離職やカルチャーミスマッチは企業の成長に大きな影響を及ぼします。
@@ -91,7 +87,6 @@ export default function SnappCheck() {
             data-aos="fade-up"
             data-aos-offset="100"
             data-aos-delay="50"
-            data-aos-once="true"
           >
             担当職種一覧
           </h3>
@@ -101,7 +96,6 @@ export default function SnappCheck() {
             data-aos="fade-up"
             data-aos-offset="100"
             data-aos-delay="50"
-            data-aos-once="true"
           >
             <div class="w-1 h-1 bg-gray-300 rotate-45"></div>
             <div class="flex-1 border-t border-gray-300"></div>
@@ -121,7 +115,6 @@ export default function SnappCheck() {
               data-aos="fade-up"
               data-aos-offset="100"
               data-aos-delay="50"
-              data-aos-once="true"
             >
               <div className="mb-3">
                 <h4 className="text-lg font-bold text-center text-black mb-3">
@@ -129,10 +122,7 @@ export default function SnappCheck() {
                 </h4>
                 <p
                   className="text-center text-black text-sm text-nowrap scale-90 origin-center relative right-5"
-                  data-aos="fade-up"
-                  data-aos-offset="100"
-                  data-aos-delay="50"
-                  data-aos-once="true"
+            
                 >
                   ⼀般事務、部⾨アシスタント、秘書、受付、通訳・翻訳、経理、財務、会計採⽤、労務、教育、ジェネラリスト
                 </p>
