@@ -4,4 +4,16 @@ import react from "@vitejs/plugin-react";
 
 export default defineConfig({
   plugins: [tailwindcss(), react()],
+  base: "/",
+  build: {
+    outDir: "dist",
+    rollupOptions: {
+      output: {
+        manualChunks: undefined,
+      },
+    },
+  },
+  server: {
+    historyApiFallback: true,
+  },
 });
