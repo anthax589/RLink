@@ -10,7 +10,7 @@ const HeroSection = () => {
   useEffect(() => {
     // Reset video state when component mounts
     setVideoEnded(false);
-    
+
     // Attempt to play the video when the component mounts
     const videoElement = videoRef.current;
 
@@ -59,11 +59,11 @@ const HeroSection = () => {
   }, [setVideoEnded]); // Include dependencies
 
   return (
-    <div className="h-screen flex items-center overflow-hidden">
+    <div className="h-screen flex items-center overflow-hidden relative top-10 bg-white">
       {/* Video Background */}
       <video
         ref={videoRef}
-        className="w-full h-full object-cover flex-1 justify-center items-center "
+        className="w-full h-full object-cover flex-1 justify-center items-center relative z-10"
         autoPlay
         muted
         playsInline
