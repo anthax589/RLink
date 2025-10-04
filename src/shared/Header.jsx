@@ -175,10 +175,10 @@ const Header = () => {
       `}</style>
       <div className="flex items-center text-[24px] justify-between w-full bg-white relative z-50">
         {/* Logo */}
-        <div className="font-bold tracking-wide py-4 px-8 flex">
+        <div className="font-bold tracking-wide py-4 px-8 flex text-4xl">
           <Link to="/" className="text-black flex items-center">
             <div className="flex items-center">
-              <img src={RLinkLogo} alt="R-Link Logo" className="h-10" />
+              <img src={RLinkLogo} alt="R-Link Logo" className="h-16" />
               <span className="text-[#1867D1] pl-3 ">R</span>Link Partners
             </div>
           </Link>
