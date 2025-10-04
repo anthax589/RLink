@@ -35,7 +35,7 @@ const JobCategories = () => {
 
   const CategoryButton = ({ children }) => (
     <button
-      className="px-4 py-2 text-sm font-medium text-white bg-[#161616] border border-[#1867D1] rounded hover:bg-gray-700 transition-colors duration-200"
+      className="px-4 py-2 text-sm  text-white bg-[#161616] border border-[#1867D1]/40 rounded hover:bg-gray-800 transition-colors duration-200"
       data-aos="fade-up"
       data-aos-offset="100"
       data-aos-delay="20"
@@ -61,10 +61,10 @@ const JobCategories = () => {
             />
           </h1>
           {/* Categories Section */}
-          <div className="space-y-16">
+          <div className="space-y-10">
             {/* Management & Business Leader Section */}
             <div className="">
-              <h2 className="text-lg font-semibold text-white mb-4">
+              <h2 className="text-lg font-semibold text-white pt-12 mb-2">
                 経営・ビジネスリーダー職
               </h2>
               <div className="flex flex-wrap justify-center gap-5 mb-6">
@@ -80,7 +80,7 @@ const JobCategories = () => {
                 ビジネス・コーポレート
               </h2>
               <div
-                className="flex flex-wrap justify-center gap-4 mb-6"
+                className="flex flex-wrap justify-center gap-4 mb-12"
                 data-aos="fade-up"
                 data-aos-offset="100"
                 data-aos-delay="20"
