@@ -67,7 +67,7 @@ const JobCategories = () => {
               <h2 className="text-lg font-semibold text-white pt-12 mb-2">
                 経営・ビジネスリーダー職
               </h2>
-              <div className="flex flex-wrap justify-center gap-5 mb-6">
+              <div className="flex flex-wrap justify-center gap-4 mb-6">
                 {managementCategories.map((category, index) => (
                   <CategoryButton key={index}>{category}</CategoryButton>
                 ))}
@@ -103,7 +103,7 @@ const JobCategories = () => {
               >
                 テクノロジー・コンサルティング
               </h2>
-              <div className="flex flex-wrap justify-center gap-5">
+              <div className="flex flex-wrap justify-center gap-4">
                 {technologyCategories.map((category, index) => (
                   <CategoryButton key={index}>{category}</CategoryButton>
                 ))}
