@@ -97,7 +97,7 @@ function Services() {
                     WebkitFontSmoothing: "antialiased",
                   }}
                 >
-                  <div className="flex flex-col gap-7 md:items-center md:justify-center">
+                  <div className="flex flex-row-reverse gap-7 md:items-center md:justify-center">
                     <h3
                       className="text-2xl font-bold text-black text-nowrap text-center"
                       style={{ fontFamily: "Inter_Bold" }}
