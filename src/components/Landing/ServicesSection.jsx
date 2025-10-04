@@ -74,7 +74,6 @@ function Services() {
         <Marquee
           speed={80}
           gradient={false}
-          pauseOnHover={true}
           className="py-4"
           style={{
             willChange: "transform",
@@ -83,41 +82,43 @@ function Services() {
             WebkitFontSmoothing: "subpixel-antialiased",
           }}
         >
-          <div className="flex gap-1 px-0.5 relative ">
-            {serviceCards.map((card, index) => (
-              <div
-                key={index}
-                className="relative grid grid-cols-1 bg-white 2xl:h-80 p-3 mx-auto shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:z-[60]"
-                style={{
-                  width: "450px",
-                  minWidth: "550px",
-                  willChange: "transform",
-                  backfaceVisibility: "hidden",
-                  transform: "translateZ(0)",
-                  WebkitFontSmoothing: "antialiased",
-                }}
-              >
-                <div className="flex flex-col gap-7 md:items-center md:justify-center">
-                  <h3
-                    className="text-2xl font-bold text-black text-nowrap text-center"
-                    style={{ fontFamily: "Inter_Bold" }}
-                  >
-                    {card.title}
-                  </h3>
-                  <div className="flex justify-center self-center">
-                    <img
-                      src={card.image}
-                      alt={card.alt}
-                      className="w-full h-32 object-contain"
-                    />
+          <p>
+            <div className="flex gap-1 px-0.5 relative ">
+              {serviceCards.map((card, index) => (
+                <div
+                  key={index}
+                  className="relative grid grid-cols-1 bg-white 2xl:h-80 p-3 mx-auto shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:z-[60]"
+                  style={{
+                    width: "450px",
+                    minWidth: "550px",
+                    willChange: "transform",
+                    backfaceVisibility: "hidden",
+                    transform: "translateZ(0)",
+                    WebkitFontSmoothing: "antialiased",
+                  }}
+                >
+                  <div className="flex flex-col gap-7 md:items-center md:justify-center">
+                    <h3
+                      className="text-2xl font-bold text-black text-nowrap text-center"
+                      style={{ fontFamily: "Inter_Bold" }}
+                    >
+                      {card.title}
+                    </h3>
+                    <div className="flex justify-center self-center">
+                      <img
+                        src={card.image}
+                        alt={card.alt}
+                        className="w-full h-32 object-contain"
+                      />
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
-
-            {/* Invisible spacer to prevent overlap */}
-       
-          </div>
+              ))}
+  
+              {/* Invisible spacer to prevent overlap */}
+         
+            </div>
+          </p>
         </Marquee>
       </div>
 

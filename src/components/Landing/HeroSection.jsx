@@ -1,12 +1,16 @@
 import Fallback from "../../assets/img/FallbackImg.webp";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import intro from "../../assets/video/intro2.mp4";
+import { useVideoContext } from "../../context/useVideoContext";
 
 const HeroSection = () => {
   const videoRef = useRef(null);
-  const [videoEnded, setVideoEnded] = useState(false);
+  const { setVideoEnded } = useVideoContext();
 
   useEffect(() => {
+    // Reset video state when component mounts
+    setVideoEnded(false);
+    
     // Attempt to play the video when the component mounts
     const videoElement = videoRef.current;
 
@@ -35,7 +39,7 @@ const HeroSection = () => {
               });
           }
 
-          // Add an event listener to handle when video ends
+          // Add event listener for when video ends
           videoElement.addEventListener("ended", handleVideoEnd);
         } catch (error) {
           console.error("Error playing video:", error);
@@ -52,14 +56,14 @@ const HeroSection = () => {
         }
       };
     }
-  }, []); // Only run once on mount
+  }, [setVideoEnded]); // Include dependencies
 
   return (
-    <div className="h-screen flex items-center overflow-hidden section-container hero-section">
+    <div className="mt-10 h-screen flex items-center overflow-hidden section-container hero-section">
       {/* Video Background */}
       <video
         ref={videoRef}
-        className="relative top-13 left-0 w-full h-full object-cover z-0"
+        className="w-full h-full object-cover flex-1 justify-center items-center "
         autoPlay
         muted
         playsInline

@@ -1,15 +1,21 @@
-import AboutUsBackground from "../../assets/img/AboutUsBg.webp";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
 import TypewriterOnScroll from "../../animation/TypeWriterOnScroll";
+import Threads from "../TextAnimation/Threads/Threads";
 const AboutSection = () => {
   useEffect(() => {
     Aos.init({ duration: 1500 });
   }, []);
   return (
-    <div className="bg-white h-screen flex items-center justify-center  ">
-      <div className="">
+    <div className="bg-white h-screen flex items-center justify-center relative">
+      {/* Background Threads Animation */}
+      <div className="absolute inset-0 w-full h-full z-0">
+        <Threads amplitude={1} distance={1} />
+      </div>
+      
+      {/* Content */}
+      <div className="relative z-10">
         {/* Title */}
         <div className="flex items-start py-5">
           <div className="flex items-start mb-6 relative ">
