@@ -37,7 +37,7 @@ const JobCategories = () => {
   const CategoryButton = ({ children }) => (
     <SpotlightCard
       className="custom-spotlight-card"
-      spotlightColor="rgba(0, 229, 255, 0.2)"
+      spotlightColor="rgba(24, 103, 209, 0.2)"
     >
       <button
         className="px-4 py-2 text-sm  text-white  "

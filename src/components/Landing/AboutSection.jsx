@@ -9,11 +9,11 @@ const AboutSection = () => {
   }, []);
   return (
     <div className="bg-white h-screen flex items-center justify-center relative">
-      {/* Background Threads Animation */}
-      <div className="absolute inset-0 w-full h-full z-0">
-        <Threads amplitude={1} distance={1} />
+      {/* Background Threads Animation - Positioned at Bottom */}
+      <div className="absolute bottom-0 left-0 w-full h-1/4 z-0">
+        <Threads amplitude={5} distance={0} />
       </div>
-      
+
       {/* Content */}
       <div className="relative z-10">
         {/* Title */}
