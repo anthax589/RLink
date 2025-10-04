@@ -1,10 +1,12 @@
 import React from "react";
 import { useEffect } from "react";
 import RPO from "../../assets/svg/RPO.svg";
+import Staffing from "../../assets/svg/Staffing.svg";
 import Excecutive from "../../assets/svg/Executive.svg";
 import ReferenceCheck from "../../assets/svg/ReferenceCheck.svg";
 import Marquee from "react-fast-marquee";
 import TypewriterOnScroll from "../../animation/TypeWriterOnScroll";
+import servicesBg from "../../assets/img/servicesBackGround2.png";
 import Aos from "aos";
 import "aos/dist/aos.css";
 function Services() {
@@ -25,14 +27,19 @@ function Services() {
       image: ReferenceCheck,
       alt: "HRプロダクト",
     },
+    {
+      title: "人材派遣・業務委託",
+      image: Staffing,
+      alt: "人材派遣・業務委託",
+    },
   ];
   useEffect(() => {
     Aos.init({ duration: 1500 });
   }, []);
   return (
     <div
-      className="bg-[linear-gradient(to_right,#1353AA,#051428)] h-screen py-20 flex flex-col items-center justify-center "
-      style={{ fontFamily: "'Inter', sans-serif" }}
+      className=" h-screen py-20 flex flex-col items-center justify-center "
+      style={{ fontFamily: "'Inter', sans-serif", backgroundImage: `url(${servicesBg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
     >
       {/* Header */}
       <div className="mb-16 flex flex-col items-center justify-center">
@@ -139,7 +146,7 @@ function Services() {
       </div>
 
       {/* View More Button */}
-      <button className="border-2 border-white text-white px-16 py-3 rounded text-lg hover:text-black transition-colors duration-300 shadow-lg hover:shadow-xl">
+      <button className="mt-10 border-2 border-white text-white px-16 py-3 rounded text-lg hover:text-black transition-colors duration-300 shadow-lg hover:shadow-xl">
         VIEW MORE
       </button>
     </div>

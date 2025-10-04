@@ -185,7 +185,7 @@ const Header = () => {
         </div>
         <div className="flex gap-1">
           {/* Navigation */}
-          <nav className="flex items-center space-x-6 text-lg text-black py-4 px-8 relative">
+          <nav className="flex items-center space-x-10 text-lg text-black py-4 px-8 relative">
             {navItems.map((item) => (
               <div className="relative group" key={item.key}>
                 <button className="flex items-center hover:text-blue-600 relative group">
@@ -242,7 +242,7 @@ const Header = () => {
           <div className="">
             <Link
               to="/recruitment-business"
-              className="w-36 h-[94px] flex text-xl items-center justify-center text-white shadow"
+              className="w-36 h-24 flex text-xl items-center justify-center text-white shadow"
               style={{
                 background: "linear-gradient(90deg, #1867D1 0%, #000000 100%)",
               }}
