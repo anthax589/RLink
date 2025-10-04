@@ -59,7 +59,7 @@ const HeroSection = () => {
   }, [setVideoEnded]); // Include dependencies
 
   return (
-    <div className="mt-10 h-screen flex items-center overflow-hidden section-container hero-section">
+    <div className="h-screen flex items-center overflow-hidden">
       {/* Video Background */}
       <video
         ref={videoRef}
