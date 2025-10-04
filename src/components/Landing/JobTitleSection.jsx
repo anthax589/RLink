@@ -3,6 +3,7 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 import Strength from "../../assets/img/StrenghtsBackGround.png";
 import { useEffect } from "react";
+import SpotlightCard from "../TextAnimation/SpotlightCard/SpotlightCard";
 // Job Categories Component
 const JobCategories = () => {
   const managementCategories = [
@@ -34,20 +35,31 @@ const JobCategories = () => {
   ];
 
   const CategoryButton = ({ children }) => (
-    <button
-      className="px-4 py-2 text-sm  text-white bg-[#161616] border border-[#1867D1]/40 rounded hover:bg-gray-800 transition-colors duration-200"
-      data-aos="fade-up"
-      data-aos-offset="100"
-      data-aos-delay="20"
-      data-aos-once="true"
+    <SpotlightCard
+      className="custom-spotlight-card"
+      spotlightColor="rgba(0, 229, 255, 0.2)"
     >
-      {children}
-    </button>
+      <button
+        className="px-4 py-2 text-sm  text-white  "
+        data-aos="fade-up"
+        data-aos-offset="100"
+        data-aos-delay="20"
+        data-aos-once="true"
+      >
+        {children}
+      </button>
+    </SpotlightCard>
   );
   return (
-    <div className=" h-screen flex flex-col items-center justify-center  py-12 px-4"
-    style={{ backgroundImage: `url(${Strength})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
-      <div className="max-w-6xl mx-auto">
+    <div
+      className=" h-screen flex flex-col items-center justify-center  py-12 px-4"
+      style={{
+        backgroundImage: `url(${Strength})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      <div className="max-w-[90vw] mx-auto flex flex-now-wrap flex-col items-center justify-center">
         {/* Header */}
         <div className="text-center ">
           <h1 className="text-3xl font-bold text-white ">
@@ -64,7 +76,7 @@ const JobCategories = () => {
           <div className="space-y-10">
             {/* Management & Business Leader Section */}
             <div className="">
-              <h2 className="text-lg font-semibold text-white pt-12 mb-2">
+              <h2 className="text-lg font-semibold text-white pt-12 mb-4">
                 経営・ビジネスリーダー職
               </h2>
               <div className="flex flex-wrap justify-center gap-4 mb-6">
@@ -157,42 +169,40 @@ const CompanyStrengths = () => {
     Aos.init({ duration: 1500 });
   }, []);
   return (
-  
-    (
-      <div className="bg-white min-h-screen py-12 px-4 flex items-center justify-center "
-      >
-        <div className="max-w-6xl mx-auto">
-          {/* Strengths Section */}
-          <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold text-black">
-              <span className="text-[#1867D1]">R</span>
-              <TypewriterOnScroll
+    <div className="bg-white min-h-screen py-12 px-4 flex items-center justify-center ">
+      <div className="max-w-6xl mx-auto">
+        {/* Strengths Section */}
+        <div className="text-center mb-8">
+          <h2 className="text-3xl font-bold text-black">
+            <span className="text-[#1867D1]">R</span>
+            <TypewriterOnScroll
               text="Linkの4つの強み"
               delay={80}
               threshold={0.5}
               className="inline-flex"
               letterClassName="inline-block"
-              />
-            </h2>
-          </div>
+            />
+          </h2>
+        </div>
 
-          <div className="grid md:grid-cols-2 gap-16 "
+        <div
+          className="grid md:grid-cols-2 gap-16 "
           data-aos="fade-up"
           data-aos-offset="100"
           data-aos-delay="20"
-          data-aos-once="true">
-            {strengths.map((strength, index) => (
-              <StrengthCard
-                key={index}
-                title={strength.title}
-                subtitle={strength.subtitle}
-                description={strength.description}
-              />
-            ))}
-          </div>
+          data-aos-once="true"
+        >
+          {strengths.map((strength, index) => (
+            <StrengthCard
+              key={index}
+              title={strength.title}
+              subtitle={strength.subtitle}
+              description={strength.description}
+            />
+          ))}
         </div>
       </div>
-    )
+    </div>
   );
 };
 
@@ -200,7 +210,10 @@ const CompanyStrengths = () => {
 const RLinkInterface = () => {
   return (
     <div className="min-h-screen">
-     <div className="h-screen"> <JobCategories /></div>
+      <div className="h-screen">
+        {" "}
+        <JobCategories />
+      </div>
       <CompanyStrengths />
     </div>
   );

@@ -4,4 +4,6 @@ import { createContext } from "react";
 export const VideoContext = createContext({
   activeVideo: 1,
   setActiveVideo: () => {},
+  videoEnded: false,
+  setVideoEnded: () => {},
 });

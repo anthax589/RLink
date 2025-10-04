@@ -1,9 +1,40 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import RLinkLogo from "../assets/img/RLinkLogo.png";
+import { useVideoContext } from "../context/useVideoContext";
 
 const Header = () => {
   const [openDropdown, setOpenDropdown] = useState(null);
+  const [showHeader, setShowHeader] = useState(false);
+  const { videoEnded } = useVideoContext();
+  const location = useLocation();
+
+  // Check if we're on the landing page
+  const isLandingPage = location.pathname === '/';
+
+  // Handle smooth header appearance
+  useEffect(() => {
+    if (isLandingPage) {
+      // On landing page: hide header until video ends
+      if (videoEnded) {
+        // Small delay to ensure smooth transition
+        const timer = setTimeout(() => {
+          setShowHeader(true);
+        }, 300);
+        return () => clearTimeout(timer);
+      } else {
+        setShowHeader(false);
+      }
+    } else {
+      // On other pages: always show header immediately
+      setShowHeader(true);
+    }
+  }, [videoEnded, isLandingPage]);
+
+  // Don't render header until video animation is finished (only on landing page)
+  if (isLandingPage && !videoEnded) {
+    return null;
+  }
 
   // Toggle dropdown function, can be used for mobile menu or other interactions
   const _toggleDropdown = (menu) => {
@@ -32,7 +63,7 @@ const Header = () => {
       key: "news",
       label: "ニュース",
       links: [
-        { label: "最新情報", href: "/news" }, // Changed from #
+        { label: "最新情報", href: "/news" },
         { label: "プレスリリース", href: "/press" }, // Changed from #
       ],
     },
@@ -173,7 +204,13 @@ const Header = () => {
           visibility: visible;
         }
       `}</style>
-      <div className="flex items-center text-[24px] justify-between w-full bg-white relative z-50">
+      <div
+        className={`flex items-center text-[24px] justify-between w-full bg-white relative z-50 transition-all duration-700 ease-out ${
+          showHeader
+            ? "opacity-100 transform translate-y-0"
+            : "opacity-0 transform -translate-y-4"
+        }`}
+      >
         {/* Logo */}
         <div className="font-bold tracking-wide py-4 px-8 flex text-4xl">
           <Link to="/" className="text-black flex items-center">
