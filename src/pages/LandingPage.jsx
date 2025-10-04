@@ -64,9 +64,13 @@ const LandingPage = () => {
   }, []);
 
   return (
-    <div>
+    <div className="bg-white">
       <Header />
-      <div id="hero-section" style={{ position: "relative", zIndex: "2" }}>
+      <div
+        id="hero-section"
+        className="bg-white"
+        style={{ position: "relative", zIndex: "2" }}
+      >
         <HeroSection />
       </div>
       <AboutSection />
