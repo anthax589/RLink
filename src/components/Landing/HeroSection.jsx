@@ -1,6 +1,6 @@
 import Fallback from "../../assets/img/FallbackImg.webp";
 import { useEffect, useRef, useState } from "react";
-import intro from "../../assets/video/intro.mp4";
+import intro from "../../assets/video/intro2.mp4";
 
 const HeroSection = () => {
   const videoRef = useRef(null);
