@@ -1,6 +1,7 @@
 import TypewriterOnScroll from "../../animation/TypeWriterOnScroll";
 import Aos from "aos";
 import "aos/dist/aos.css";
+import Strength from "../../assets/img/StrenghtsBackGround.png";
 import { useEffect } from "react";
 // Job Categories Component
 const JobCategories = () => {
@@ -44,11 +45,12 @@ const JobCategories = () => {
     </button>
   );
   return (
-    <div className="bg-[#1C1C1C] h-screen flex flex-col items-center justify-center  py-12 px-4">
+    <div className=" h-screen flex flex-col items-center justify-center  py-12 px-4"
+    style={{ backgroundImage: `url(${Strength})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
       <div className="max-w-6xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-12 ">
-          <h1 className="text-3xl font-bold text-white mb-8">
+        <div className="text-center ">
+          <h1 className="text-3xl font-bold text-white ">
             <span className="text-[#1867D1]">R</span>
             <TypewriterOnScroll
               text="Linkの担当職種一覧"
@@ -58,53 +60,56 @@ const JobCategories = () => {
               letterClassName="inline-block"
             />
           </h1>
-
-          {/* Management & Business Leader Section */}
-          <div className="mb-8">
-            <h2 className="text-lg font-semibold text-white mb-4">
-              経営・ビジネスリーダー職
-            </h2>
-            <div className="flex flex-wrap justify-center gap-5 mb-6">
-              {managementCategories.map((category, index) => (
-                <CategoryButton key={index}>{category}</CategoryButton>
-              ))}
+          {/* Categories Section */}
+          <div className="space-y-16">
+            {/* Management & Business Leader Section */}
+            <div className="">
+              <h2 className="text-lg font-semibold text-white mb-4">
+                経営・ビジネスリーダー職
+              </h2>
+              <div className="flex flex-wrap justify-center gap-5 mb-6">
+                {managementCategories.map((category, index) => (
+                  <CategoryButton key={index}>{category}</CategoryButton>
+                ))}
+              </div>
             </div>
-          </div>
-
-          {/* Business & Corporate Section */}
-          <div className="mb-8">
-            <h2 className="text-lg font-semibold text-white mb-4">
-              ビジネス・コーポレート
-            </h2>
-            <div
-              className="flex flex-wrap justify-center gap-4 mb-6"
-              data-aos="fade-up"
-              data-aos-offset="100"
-              data-aos-delay="20"
-              data-aos-once="true"
-            >
-              {businessCategories.map((category, index) => (
-                <CategoryButton key={index}>{category}</CategoryButton>
-              ))}
+            <hr className="text-black/20" />
+            {/* Business & Corporate Section */}
+            <div className="">
+              <h2 className="text-lg font-semibold text-white mb-4">
+                ビジネス・コーポレート
+              </h2>
+              <div
+                className="flex flex-wrap justify-center gap-4 mb-6"
+                data-aos="fade-up"
+                data-aos-offset="100"
+                data-aos-delay="20"
+                data-aos-once="true"
+              >
+                {businessCategories.map((category, index) => (
+                  <CategoryButton key={index}>{category}</CategoryButton>
+                ))}
+              </div>
             </div>
-          </div>
-
-          {/* Technology & Consulting Section */}
-          <div className="mb-8">
-            <h2
-              className="text-lg font-semibold text-white mb-4"
-              data-aos="fade-up"
-              data-aos-offset="100"
-              data-aos-delay="20"
-              data-aos-once="true"
-            >
-              テクノロジー・コンサルティング
-            </h2>
-            <div className="flex flex-wrap justify-center gap-5">
-              {technologyCategories.map((category, index) => (
-                <CategoryButton key={index}>{category}</CategoryButton>
-              ))}
+            <hr className="text-black/20" />
+            {/* Technology & Consulting Section */}
+            <div className="">
+              <h2
+                className="text-lg font-semibold text-white mb-4"
+                data-aos="fade-up"
+                data-aos-offset="100"
+                data-aos-delay="20"
+                data-aos-once="true"
+              >
+                テクノロジー・コンサルティング
+              </h2>
+              <div className="flex flex-wrap justify-center gap-5">
+                {technologyCategories.map((category, index) => (
+                  <CategoryButton key={index}>{category}</CategoryButton>
+                ))}
+              </div>
             </div>
+            <hr className="text-black/20" />
           </div>
         </div>
       </div>

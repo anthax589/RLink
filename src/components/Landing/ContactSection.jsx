@@ -61,7 +61,7 @@ function ContactSection() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#F8F8F8] to-[#000000] py-20 px-4">
+    <div className="min-h-screen bg-gradient-to-b from-[#FFFFFF] to-[#000000] py-20 px-4">
       <div className="max-w-6xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-start mx-auto">
           {/* Left Side - Contact Information */}
