@@ -34,7 +34,7 @@ const JobCategories = () => {
 
   const CategoryButton = ({ children }) => (
     <button
-      className="px-4 py-2 text-sm font-medium text-white bg-[#565757] hover:bg-gray-700 transition-colors duration-200"
+      className="px-4 py-2 text-sm font-medium text-white bg-[#161616] border border-[#1867D1] rounded hover:bg-gray-700 transition-colors duration-200"
       data-aos="fade-up"
       data-aos-offset="100"
       data-aos-delay="20"
@@ -43,26 +43,12 @@ const JobCategories = () => {
       {children}
     </button>
   );
-  const GradientDivider = () => {
-    return (
-      <div className="relative flex items-center w-6xl mx-auto top-13">
-        {/* Left circle */}
-        <div className="w-2 h-2 bg-gray-400 rounded-full"></div>
-
-        {/* Gradient line */}
-        <div className="flex-1 h-[2px] bg-gradient-to-r from-gray-300 via-gray-400 to-gray-300"></div>
-
-        {/* Right circle */}
-        <div className="w-2 h-2 bg-gray-400 rounded-full"></div>
-      </div>
-    );
-  };
   return (
-    <div className="bg-gradient-to-b from-[#FDFDFD] to-[#F4F5F7] py-12 px-4">
-      <div className="max-w-4xl mx-auto">
+    <div className="bg-[#1C1C1C] h-screen flex flex-col items-center justify-center  py-12 px-4">
+      <div className="max-w-6xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-3xl font-bold text-black mb-8">
+        <div className="text-center mb-12 ">
+          <h1 className="text-3xl font-bold text-white mb-8">
             <span className="text-[#1867D1]">R</span>
             <TypewriterOnScroll
               text="Linkの担当職種一覧"
@@ -75,10 +61,10 @@ const JobCategories = () => {
 
           {/* Management & Business Leader Section */}
           <div className="mb-8">
-            <h2 className="text-lg font-semibold text-black mb-4">
+            <h2 className="text-lg font-semibold text-white mb-4">
               経営・ビジネスリーダー職
             </h2>
-            <div className="flex flex-wrap justify-center gap-2 mb-6">
+            <div className="flex flex-wrap justify-center gap-5 mb-6">
               {managementCategories.map((category, index) => (
                 <CategoryButton key={index}>{category}</CategoryButton>
               ))}
@@ -87,11 +73,11 @@ const JobCategories = () => {
 
           {/* Business & Corporate Section */}
           <div className="mb-8">
-            <h2 className="text-lg font-semibold text-black mb-4">
+            <h2 className="text-lg font-semibold text-white mb-4">
               ビジネス・コーポレート
             </h2>
             <div
-              className="flex flex-wrap justify-center gap-2 mb-6"
+              className="flex flex-wrap justify-center gap-4 mb-6"
               data-aos="fade-up"
               data-aos-offset="100"
               data-aos-delay="20"
@@ -106,7 +92,7 @@ const JobCategories = () => {
           {/* Technology & Consulting Section */}
           <div className="mb-8">
             <h2
-              className="text-lg font-semibold text-black mb-4"
+              className="text-lg font-semibold text-white mb-4"
               data-aos="fade-up"
               data-aos-offset="100"
               data-aos-delay="20"
@@ -114,7 +100,7 @@ const JobCategories = () => {
             >
               テクノロジー・コンサルティング
             </h2>
-            <div className="flex flex-wrap justify-center gap-2">
+            <div className="flex flex-wrap justify-center gap-5">
               {technologyCategories.map((category, index) => (
                 <CategoryButton key={index}>{category}</CategoryButton>
               ))}
@@ -122,8 +108,6 @@ const JobCategories = () => {
           </div>
         </div>
       </div>
-      {/* Decorative Divider */}
-      <GradientDivider />
     </div>
   );
 };
@@ -131,7 +115,7 @@ const JobCategories = () => {
 // Strengths Component
 const CompanyStrengths = () => {
   const StrengthCard = ({ title, subtitle, description }) => (
-    <div className="bg-white p-6 shadow-lg">
+    <div className="bg-[#D8D8D8] p-6 border border-[#1867D1] rounded">
       <h3 className="text-lg font-bold text-black mb-2">{title}</h3>
       <p className="text-[#1867D1] font-medium mb-3">{subtitle}</p>
       <p className="text-black text-md leading-relaxed">{description}</p>
@@ -170,7 +154,7 @@ const CompanyStrengths = () => {
   return (
   
     (
-      <div className="bg-gradient-to-b from-[#F3F4F5] to-[#373738] py-12 px-4"
+      <div className="bg-white min-h-screen py-12 px-4 flex items-center justify-center "
       >
         <div className="max-w-6xl mx-auto">
           {/* Strengths Section */}
@@ -187,7 +171,7 @@ const CompanyStrengths = () => {
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-16"
+          <div className="grid md:grid-cols-2 gap-16 "
           data-aos="fade-up"
           data-aos-offset="100"
           data-aos-delay="20"
@@ -211,7 +195,7 @@ const CompanyStrengths = () => {
 const RLinkInterface = () => {
   return (
     <div className="min-h-screen">
-      <JobCategories />
+     <div className="h-screen"> <JobCategories /></div>
       <CompanyStrengths />
     </div>
   );

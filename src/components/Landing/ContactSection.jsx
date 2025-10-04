@@ -61,14 +61,12 @@ function ContactSection() {
   };
 
   return (
-    <div
-      className="min-h-fit bg-white py-20 px-4"
-    >
+    <div className="min-h-screen bg-gradient-to-b from-[#F8F8F8] to-[#000000] py-20 px-4">
       <div className="max-w-6xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-start mx-auto">
           {/* Left Side - Contact Information */}
           <div
-            className="bg-white p-8 lg:p-12"
+            className="p-8 lg:p-9"
             data-aos="fade-up"
             data-aos-offset="100"
             data-aos-delay="50"
@@ -78,9 +76,10 @@ function ContactSection() {
             <h1 className="text-4xl font-bold text-black mb-8">CONTACT US</h1>
 
             <p className="text-black text-lg 2xl:text-xl leading-relaxed mb-12">
-              We'd love to hear from you. Whether you're a company seeking top
-              executive talent or a professional exploring new career
-              opportunities, RLink Partners is here to guide your next step.
+              We’d love to hear from you. Whether you’re a <br /> company
+              seeking top executive talent or a <br /> professional exploring
+              new career opportunities, <br />
+              RLink Partners is here to guide your next step.
             </p>
 
             {/* Contact Details */}
@@ -89,31 +88,12 @@ function ContactSection() {
               <div className="flex flex-col items-start space-x-4">
                 <div className="flex gap-2">
                   <div className="w-6 h-6 text-red-500 mt-1">📍</div>
-                  <h3 className="text-2xl font-semibold text-black mb-2">
-                    Head Office
-                  </h3>
+                  <h3 className="text-2xl  text-black mb-2">Head Office</h3>
                 </div>
                 <div>
-                  <p className="text-black">
-                    Shirokane, Minato-ku, Tokyo, Japan
-                  </p>
+                  <p className="text-black">本社所在地: 東京都港区白金5-5-9</p>
                 </div>
               </div>
-
-              {/* Phone */}
-              <div className="flex flex-col items-start space-x-4">
-                <div className="flex gap-2">
-                  <div className="w-6 h-6 text-black">📞</div>
-                  <h3 className="text-2xl font-semibold text-black mb-2">
-                    Phone
-                  </h3>
-                </div>
-                <div></div>
-                <p className="text-black">
-                  +81 (insert company number if available)
-                </p>
-              </div>
-
               {/* Email */}
               <div className="flex flex-col items-start space-x-4">
                 <div className="flex gap-2">
@@ -122,14 +102,18 @@ function ContactSection() {
                     Email
                   </h3>
                 </div>
-                <p className="text-black text-xl">info@rlinkpartners.com</p>
+                <p className="text-black text-xl">
+                  mfujisawa@rlinkpartners.com <br />
+                  cmella@rlinkpartners.com <br />
+                  ykojima@rlinkpartners.com
+                </p>
               </div>
             </div>
           </div>
 
           {/* Right Side - Contact Form */}
           <div
-            className="bg-[#575757] p-8 lg:p-7 lg:w-2xl rounded"
+            className="bg-gradient-to-b from-[#777777] to-[#111111] p-8 lg:p-7 lg:w-2xl rounded"
             data-aos="fade-up"
             data-aos-offset="100"
             data-aos-delay="50"

@@ -1,51 +1,29 @@
 import React from "react";
 import { useEffect } from "react";
-import RPO from "../../assets/services_assets/rpo_img.svg";
-import Excecutive from "../../assets/services_assets/executive_img.svg";
-import ReferenceCheck from "../../assets/services_assets/reference_img.svg";
+import RPO from "../../assets/svg/RPO.svg";
+import Excecutive from "../../assets/svg/Executive.svg";
+import ReferenceCheck from "../../assets/svg/ReferenceCheck.svg";
 import Marquee from "react-fast-marquee";
 import TypewriterOnScroll from "../../animation/TypeWriterOnScroll";
 import Aos from "aos";
 import "aos/dist/aos.css";
 function Services() {
-  
   // Define service card content for reuse
   const serviceCards = [
     {
-      title: "RPO",
-      content: (
-        <>
-          End-to-end hiring support that <br />
-          makes recruitment faster, <br />
-          smarter, and more efficient.
-        </>
-      ),
+      title: "採用戦略アドバイザリー＆RPO",
       image: RPO,
-      alt: "RPO",
+      alt: "採用戦略アドバイザリー＆RPO",
     },
     {
-      title: "EXECUTIVE SEARCH",
-      content: (
-        <>
-          Connecting companies with top <br />
-          leaders and specialists to drive <br />
-          growth and success.
-        </>
-      ),
+      title: "人材紹介",
       image: Excecutive,
-      alt: "Executive Search",
+      alt: "人材紹介",
     },
     {
-      title: "REFERENCE CHECK AI",
-      content: (
-        <>
-          AI-powered reference checks <br />
-          that deliver fast, reliable insights <br />
-          for confident hiring decisions.
-        </>
-      ),
+      title: "HRプロダクト",
       image: ReferenceCheck,
-      alt: "Reference Check AI",
+      alt: "HRプロダクト",
     },
   ];
   useEffect(() => {
@@ -53,7 +31,7 @@ function Services() {
   }, []);
   return (
     <div
-      className="bg-[linear-gradient(to_right,#1353AA,#051428)] min-h-fit py-20 flex flex-col items-center justify-center "
+      className="bg-[linear-gradient(to_right,#1353AA,#051428)] h-screen py-20 flex flex-col items-center justify-center "
       style={{ fontFamily: "'Inter', sans-serif" }}
     >
       {/* Header */}
@@ -76,7 +54,7 @@ function Services() {
 
       {/* Services Marquee */}
       <div
-        className="w-full mb-12 overflow-hidden"
+        className="w-full mb-12 overflow-hidden "
         data-aos="fade-up"
         data-aos-once="true"
       >
@@ -92,40 +70,28 @@ function Services() {
             WebkitFontSmoothing: "subpixel-antialiased",
           }}
         >
-          <div className="flex gap-8 px-4">
+          <div className="flex gap-1 px-0.5">
             {/* Render first set of cards */}
             {serviceCards.map((card, index) => (
               <div
                 key={`card-${index}`}
-                className="grid grid-cols-1 bg-white rounded-md p-3 mx-auto shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
+                className="grid grid-cols-1 bg-white h-auto p-3 mx-auto shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
                 style={{
                   width: "450px",
-                  minWidth: "650px",
+                  minWidth: "350px",
                   willChange: "transform",
                   backfaceVisibility: "hidden",
                   transform: "translateZ(0)",
                   WebkitFontSmoothing: "antialiased",
                 }}
               >
-                <h3
-                  className="text-2xl font-bold text-black text-nowrap text-center"
-                  style={{ fontFamily: "Inter_Bold" }}
-                >
-                  {card.title}
-                </h3>
-                <div className="flex flex-col md:flex-row md:items-center md:justify-evenly ">
-                  <div className="flex items-center justify-center">
-                    <p
-                      className="text-black leading-relaxed self-center xl:text-lg 2xl:text-xl text-center md:text-left tracking-wide font-normal"
-                      style={{
-                        letterSpacing: "0.025em",
-                        lineHeight: "1.7",
-                        fontFamily: "Inter",
-                      }}
-                    >
-                      {card.content}
-                    </p>
-                  </div>
+                <div className="flex flex-col gap-2 md:items-center md:justify-center">
+                  <h3
+                    className="text-2xl font-bold text-black text-nowrap text-center"
+                    style={{ fontFamily: "Inter_Bold" }}
+                  >
+                    {card.title}
+                  </h3>
                   <div className="flex justify-center self-center">
                     <img
                       src={card.image}
@@ -141,35 +107,23 @@ function Services() {
             {serviceCards.map((card, index) => (
               <div
                 key={`card-duplicate-${index}`}
-                className="grid grid-cols-1 bg-white rounded-md p-3 mx-auto shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105  "
+                className="grid grid-cols-1 bg-white h-auto p-3 mx-auto shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
                 style={{
                   width: "450px",
-                  minWidth: "650px",
+                  minWidth: "350px",
                   willChange: "transform",
                   backfaceVisibility: "hidden",
                   transform: "translateZ(0)",
                   WebkitFontSmoothing: "antialiased",
                 }}
               >
-                <h3
-                  className="text-2xl font-bold text-black text-nowrap text-center"
-                  style={{ fontFamily: "Inter_Bold" }}
-                >
-                  {card.title}
-                </h3>
-                <div className="flex flex-col md:flex-row md:items-center md:justify-evenly">
-                  <div className="flex items-center justify-center">
-                    <p
-                      className="text-black leading-relaxed self-center xl:text-lg 2xl:text-xl text-center md:text-left tracking-wide font-normal"
-                      style={{
-                        letterSpacing: "0.025em",
-                        lineHeight: "1.7",
-                        fontFamily: "Inter",
-                      }}
-                    >
-                      {card.content}
-                    </p>
-                  </div>
+                <div className="flex flex-col gap-2 md:items-center md:justify-center">
+                  <h3
+                    className="text-2xl font-bold text-black text-nowrap text-center"
+                    style={{ fontFamily: "Inter_Bold" }}
+                  >
+                    {card.title}
+                  </h3>
                   <div className="flex justify-center self-center">
                     <img
                       src={card.image}
@@ -185,7 +139,7 @@ function Services() {
       </div>
 
       {/* View More Button */}
-      <button className="bg-white text-black px-12 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors duration-300 shadow-lg hover:shadow-xl">
+      <button className="border-2 border-white text-white px-16 py-3 rounded text-lg hover:text-black transition-colors duration-300 shadow-lg hover:shadow-xl">
         VIEW MORE
       </button>
     </div>

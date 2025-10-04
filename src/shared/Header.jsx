@@ -55,7 +55,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 w-full bg-white shadow z-50">
+    <header className="fixed top-0 left-0 w-full bg-white  z-50">
       <style jsx="true">{`
         @keyframes fadeIn {
           from {
@@ -173,7 +173,7 @@ const Header = () => {
           visibility: visible;
         }
       `}</style>
-      <div className="flex items-center text-[24px] justify-between w-full bg-white shadow relative z-50">
+      <div className="flex items-center text-[24px] justify-between w-full bg-white relative z-50">
         {/* Logo */}
         <div className="font-bold tracking-wide py-4 px-8 flex">
           <Link to="/" className="text-black flex items-center">
