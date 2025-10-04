@@ -85,14 +85,14 @@ function Services() {
                 className="grid grid-cols-1 bg-white h-auto p-3 mx-auto shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
                 style={{
                   width: "450px",
-                  minWidth: "350px",
+                  minWidth: "550px",
                   willChange: "transform",
                   backfaceVisibility: "hidden",
                   transform: "translateZ(0)",
                   WebkitFontSmoothing: "antialiased",
                 }}
               >
-                <div className="flex flex-col gap-2 md:items-center md:justify-center">
+                <div className="flex flex-col gap-7 md:items-center md:justify-center">
                   <h3
                     className="text-2xl font-bold text-black text-nowrap text-center"
                     style={{ fontFamily: "Inter_Bold" }}
@@ -114,17 +114,17 @@ function Services() {
             {serviceCards.map((card, index) => (
               <div
                 key={`card-duplicate-${index}`}
-                className="grid grid-cols-1 bg-white h-auto p-3 mx-auto shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
+                className="grid grid-cols-1 bg-white 2xl:h-80 p-3 mx-auto shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
                 style={{
                   width: "450px",
-                  minWidth: "350px",
+                  minWidth: "550px",
                   willChange: "transform",
                   backfaceVisibility: "hidden",
                   transform: "translateZ(0)",
                   WebkitFontSmoothing: "antialiased",
                 }}
               >
-                <div className="flex flex-col gap-2 md:items-center md:justify-center">
+                <div className="flex flex-col gap-7 md:items-center md:justify-center">
                   <h3
                     className="text-2xl font-bold text-black text-nowrap text-center"
                     style={{ fontFamily: "Inter_Bold" }}
