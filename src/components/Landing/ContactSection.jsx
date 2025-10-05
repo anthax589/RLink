@@ -73,7 +73,7 @@ function ContactSection() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#FFFFFF] to-[#000000] py-20 px-4">
+    <div className="min-h-screen bg-white py-20 px-4">
       <div className="max-w-6xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-start mx-auto">
           {/* Left Side - Contact Information */}
@@ -127,7 +127,7 @@ function ContactSection() {
           {currentView === "default" ? (
             // Default Contact Form
             <div
-              className="bg-gradient-to-b from-[#777777] to-[#111111] p-8 lg:p-7 lg:w-2xl rounded"
+              className="bg-[#7F7F7F] p-8 lg:p-7 lg:w-2xl rounded"
               data-aos="fade-up"
               data-aos-offset="100"
               data-aos-delay="50"
@@ -334,11 +334,8 @@ function ContactSection() {
           ) : (
             // AboutOurServices Form - Show when サービスについて(個人) is selected
             <div
-              className="bg-gradient-to-b from-[#777777] to-[#111111] p-8 lg:p-7 lg:w-2xl rounded"
-              data-aos="fade-up"
-              data-aos-offset="100"
-              data-aos-delay="50"
-              data-aos-once="true"
+              className="bg-[#7F7F7F] p-8 lg:p-7 lg:w-2xl rounded"
+            
             >
               <h2 className="text-3xl font-bold text-white mb-3">
                 Get in Touch
@@ -574,7 +571,7 @@ const AboutOurServices = () => {
     });
   };
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#FFFFFF] to-[#000000] py-20 px-4">
+    <div className="min-h-screen bg-[#7F7F7F] py-20 px-4">
       <div className="max-w-6xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-start mx-auto">
           {/* Left Side - Contact Information */}

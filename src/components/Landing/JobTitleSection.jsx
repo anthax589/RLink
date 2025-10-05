@@ -4,6 +4,8 @@ import "aos/dist/aos.css";
 import Strength from "../../assets/img/StrenghtsBackGround.png";
 import { useEffect } from "react";
 import SpotlightCard from "../TextAnimation/SpotlightCard/SpotlightCard";
+import TiltedCard from "../TextAnimation/TiltedCard/TiltedCard";
+import FirstCard from "../../assets/img/FirstCard.png";
 // Job Categories Component
 const JobCategories = () => {
   const managementCategories = [
@@ -131,13 +133,145 @@ const JobCategories = () => {
 
 // Strengths Component
 const CompanyStrengths = () => {
-  const StrengthCard = ({ title, subtitle, description }) => (
-    <div className="bg-[#D8D8D8] p-6 border border-[#1867D1] rounded">
-      <h3 className="text-lg font-bold text-black mb-2">{title}</h3>
-      <p className="text-[#1867D1] font-medium mb-3">{subtitle}</p>
-      <p className="text-black text-md leading-relaxed">{description}</p>
-    </div>
-  );
+  const StrengthCard = ({ title, subtitle, description, index }) => {
+    // Apply TiltedCard without image, only display content
+    if (index === 0) {
+      return (
+        <div className="w-full h-full min-h-[200px]">
+          <TiltedCard
+            imageSrc="" // Empty image source
+            altText="First Strength Card"
+            containerHeight="100%"
+            containerWidth="100%"
+            imageHeight="100%"
+            imageWidth="100%"
+            scaleOnHover={1.02}
+            rotateAmplitude={5}
+            showTooltip={false}
+            showMobileWarning={false}
+            displayOverlayContent={true}
+            overlayContent={
+              <div className="bg-[#D8D8D8] p-6 border border-[#1867D1] rounded w-full h-full flex flex-col justify-center">
+                <h3 className="text-lg font-bold text-black mb-2">{title}</h3>
+                <p className="text-[#1867D1] font-medium mb-3">{subtitle}</p>
+                <p className="text-black text-md leading-relaxed">
+                  {description}
+                </p>
+              </div>
+            }
+          />
+        </div>
+      );
+    }
+
+    // Regular card for other cards with unique hover effects
+    const getCardClasses = () => {
+      const baseClasses =
+        "bg-[#D8D8D8] p-6 border border-[#1867D1] rounded min-h-[200px] flex flex-col justify-center cursor-pointer overflow-hidden relative group";
+
+      switch (index) {
+        case 1: // Strength 02 - Smooth slide and glow effect
+          return `${baseClasses} transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] hover:transform hover:translate-y-[-12px] hover:shadow-2xl hover:shadow-[#1867D1]/40 hover:border-[#1867D1] hover:bg-gradient-to-br hover:from-[#E8E8E8] hover:to-[#D8D8D8] hover:border-2`;
+        case 2: // Strength 03 - Smooth scale and rotate effect
+          return `${baseClasses} transition-all duration-600 ease-[cubic-bezier(0.34,1.56,0.64,1)] hover:scale-[1.08] hover:rotate-2 hover:shadow-xl hover:shadow-[#1867D1]/25 hover:bg-[#E0E0E0] hover:border-2 hover:border-[#1867D1]`;
+        case 3: // Strength 04 - Professional elevation and depth effect
+          return `${baseClasses} transition-all duration-600 ease-[cubic-bezier(0.25,0.1,0.25,1)] hover:bg-gradient-to-br hover:from-[#F5F5F5] hover:via-[#EEEEEE] hover:to-[#E8E8E8] hover:shadow-2xl hover:shadow-[#1867D1]/20 hover:border-2 hover:border-[#1867D1] hover:transform hover:translate-y-[-6px] hover:scale-[1.02]`;
+        default:
+          return baseClasses;
+      }
+    };
+
+    const getTextEffects = () => {
+      switch (index) {
+        case 1: // Strength 02 - Smooth text slide effect
+          return {
+            title:
+              "group-hover:transform group-hover:translate-x-3 transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]",
+            subtitle:
+              "group-hover:text-[#0f4fa8] group-hover:transform group-hover:translate-x-1 transition-all duration-400 delay-100 ease-out",
+            description:
+              "group-hover:text-gray-700 group-hover:transform group-hover:translate-x-2 transition-all duration-600 delay-200 ease-out",
+          };
+        case 2: // Strength 03 - Smooth text glow effect
+          return {
+            title:
+              "group-hover:text-[#1867D1] group-hover:drop-shadow-lg group-hover:transform group-hover:scale-105 transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)]",
+            subtitle:
+              "group-hover:text-[#0f4fa8] group-hover:font-semibold group-hover:transform group-hover:translate-y-[-2px] transition-all duration-400 delay-150 ease-out",
+            description:
+              "group-hover:text-gray-800 group-hover:transform group-hover:translate-y-1 transition-all duration-500 delay-250 ease-out",
+          };
+        case 3: // Strength 04 - Professional text enhancement
+          return {
+            title:
+              "group-hover:transform group-hover:translate-y-[-2px] group-hover:text-[#1867D1] group-hover:font-semibold transition-all duration-400 ease-[cubic-bezier(0.25,0.1,0.25,1)]",
+            subtitle:
+              "group-hover:text-[#0f4fa8] group-hover:font-semibold group-hover:tracking-wide transition-all duration-350 delay-75 ease-out",
+            description:
+              "group-hover:text-gray-700 group-hover:leading-relaxed transition-all duration-500 delay-150 ease-out",
+          };
+        default:
+          return {
+            title: "",
+            subtitle: "",
+            description: "",
+          };
+      }
+    };
+
+    const textEffects = getTextEffects();
+
+    return (
+      <div className={getCardClasses()}>
+        {/* Enhanced animated background elements */}
+        {index === 1 && (
+          <>
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#1867D1]/8 to-transparent transform translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 ease-[cubic-bezier(0.4,0,0.2,1)]"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-transparent to-[#1867D1]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-out"></div>
+          </>
+        )}
+        {index === 2 && (
+          <>
+            <div className="absolute top-0 right-0 w-0 h-0 border-l-[60px] border-l-transparent border-b-[60px] border-b-[#1867D1]/15 transform rotate-45 opacity-0 group-hover:opacity-100 transition-all duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)]"></div>
+            <div className="absolute inset-0 bg-radial-gradient from-[#1867D1]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-600 ease-out"></div>
+            <div className="absolute top-2 left-2 w-2 h-2 bg-[#1867D1]/30 rounded-full transform scale-0 group-hover:scale-100 transition-transform duration-500 delay-300 ease-out"></div>
+          </>
+        )}
+        {index === 3 && (
+          <>
+            {/* Professional elevation indicator */}
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#1867D1] to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out"></div>
+
+            {/* Subtle depth background */}
+            <div className="absolute inset-0 bg-gradient-to-br from-[#1867D1]/5 via-transparent to-[#1867D1]/3 opacity-0 group-hover:opacity-100 transition-opacity duration-400 ease-out"></div>
+
+            {/* Professional corner accents */}
+            <div className="absolute top-2 right-2 w-3 h-3 border-t-2 border-r-2 border-[#1867D1] opacity-0 group-hover:opacity-100 transition-all duration-300 delay-100 ease-out"></div>
+            <div className="absolute bottom-2 left-2 w-3 h-3 border-b-2 border-l-2 border-[#1867D1] opacity-0 group-hover:opacity-100 transition-all duration-300 delay-200 ease-out"></div>
+
+            {/* Clean content highlight */}
+            <div className="absolute inset-x-4 bottom-0 h-0.5 bg-gradient-to-r from-[#1867D1] to-[#0f4fa8] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-600 delay-100 ease-out"></div>
+          </>
+        )}
+
+        <h3
+          className={`text-lg font-bold text-black mb-2 relative z-10 ${textEffects.title}`}
+        >
+          {title}
+        </h3>
+        <p
+          className={`text-[#1867D1] font-medium mb-3 relative z-10 ${textEffects.subtitle}`}
+        >
+          {subtitle}
+        </p>
+        <p
+          className={`text-black text-md leading-relaxed relative z-10 ${textEffects.description}`}
+        >
+          {description}
+        </p>
+      </div>
+    );
+  };
 
   const strengths = [
     {
@@ -195,6 +329,7 @@ const CompanyStrengths = () => {
           {strengths.map((strength, index) => (
             <StrengthCard
               key={index}
+              index={index}
               title={strength.title}
               subtitle={strength.subtitle}
               description={strength.description}
