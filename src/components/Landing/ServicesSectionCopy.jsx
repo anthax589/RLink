@@ -70,8 +70,8 @@ function Services() {
         <div className="w-1/2 flex justify-center items-center relative z-10">
           <div className="relative" style={{ width: "600px", height: "400px" }}>
             <CardSwap
-              width={600}
-              height={400}
+              width={500}
+              height={300}
               cardDistance={60}
               verticalDistance={70}
               delay={5000}
@@ -81,11 +81,11 @@ function Services() {
               {serviceCards.map((card, index) => (
                 <Card
                   key={index}
-                  className="w-[600px] h-[400px] bg-white shadow-2xl transition-all duration-500 rounded-xl border-2 border-[#1867D1]"
+                  className="w-[600px] h-[400px] bg-white shadow-lg transition-all duration-500 rounded-xl border-2 border-[#1867D1]"
                   style={{
                     background:
                       "linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%)",
-                    boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.5)",
+                    boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 2)",
                   }}
                 >
                   <div className="w-full h-full flex items-center justify-center p-12 relative">
