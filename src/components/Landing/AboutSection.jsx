@@ -10,7 +10,7 @@ const AboutSection = () => {
   return (
     <div className="bg-white h-screen flex items-center justify-center relative">
       <div className="absolute bottom-0 left-0 w-full h-1/4 z-0">
-        <Threads amplitude={4} distance={1} />
+        <Threads amplitude={5} distance={1} />
       </div>
 
       {/* Content */}

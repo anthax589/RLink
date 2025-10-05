@@ -3,6 +3,7 @@ import Header from "../shared/Header";
 import HeroSection from "../components/Landing/HeroSection";
 import AboutSection from "../components/Landing/AboutSection";
 import Services from "../components/Landing/ServicesSection";
+import Services1 from "../components/Landing/ServicesSectionCopy";
 import JobTitleSection from "../components/Landing/JobTitleSection";
 import ContactSection from "../components/Landing/ContactSection";
 import Footer from "../shared/Footer";
@@ -75,6 +76,7 @@ const LandingPage = () => {
       </div>
       <AboutSection />
       <Services />
+      <Services1 />
       <JobTitleSection />
       <ContactSection />
       <Footer />

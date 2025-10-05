@@ -1,6 +1,6 @@
 import Fallback from "../../assets/img/FallbackImg.webp";
 import { useEffect, useRef } from "react";
-import intro from "../../assets/video/intro2.mp4";
+import intro from "../../assets/video/intro.mp4";
 import { useVideoContext } from "../../context/useVideoContext";
 
 const HeroSection = () => {
@@ -59,7 +59,7 @@ const HeroSection = () => {
   }, [setVideoEnded]); // Include dependencies
 
   return (
-    <div className="h-screen flex items-center overflow-hidden relative top-10 bg-white">
+    <div className="h-screen flex items-center overflow-hidden relative">
       {/* Video Background */}
       <video
         ref={videoRef}
