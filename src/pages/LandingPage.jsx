@@ -1,14 +1,18 @@
 import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import { useVideoContext } from "../context/useVideoContext";
 import Header from "../shared/Header";
 import HeroSection from "../components/Landing/HeroSection";
 import AboutSection from "../components/Landing/AboutSection";
 import Services from "../components/Landing/ServicesSection";
-import Services1 from "../components/Landing/ServicesSectionCopy";
 import JobTitleSection from "../components/Landing/JobTitleSection";
 import ContactSection from "../components/Landing/ContactSection";
 import Footer from "../shared/Footer";
 
 const LandingPage = () => {
+  const { videoEnded } = useVideoContext();
+  const location = useLocation();
+  const isLandingPage = location.pathname === "/";
   useEffect(() => {
     // Prevent browser scroll restoration
     if ("scrollRestoration" in history) {
@@ -65,20 +69,21 @@ const LandingPage = () => {
   }, []);
 
   return (
-    <div className="bg-white">
+    <div>
       <Header />
-      <div
-        id="hero-section"
-        className="bg-white"
-        style={{ position: "relative", zIndex: "2" }}
-      >
-        <HeroSection />
+      <div className={`${isLandingPage && videoEnded ? "" : ""}`}>
+        <div
+          id="hero-section"
+          className="bg-white"
+          style={{ position: "relative", zIndex: "2" }}
+        >
+          <HeroSection />
+        </div>
+        <AboutSection />
+        <Services />
+        <JobTitleSection />
+        <ContactSection />
       </div>
-      <AboutSection />
-      <Services />
-      <Services1 />
-      <JobTitleSection />
-      <ContactSection />
       <Footer />
     </div>
   );

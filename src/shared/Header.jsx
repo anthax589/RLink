@@ -10,7 +10,7 @@ const Header = () => {
   const location = useLocation();
 
   // Check if we're on the landing page
-  const isLandingPage = location.pathname === '/';
+  const isLandingPage = location.pathname === "/";
 
   // Handle smooth header appearance
   useEffect(() => {
@@ -86,7 +86,11 @@ const Header = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 w-full bg-white  z-50">
+    <header
+      className={`${
+        isLandingPage ? "fixed top-0 left-0" : "relative"
+      } w-full bg-white z-50`}
+    >
       <style jsx="true">{`
         @keyframes fadeIn {
           from {

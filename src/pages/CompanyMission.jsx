@@ -7,7 +7,6 @@ function CompanyMission() {
   return (
     <div>
         <Header />
-        <HeroSection />
         <CompanyMissionContent />
         <Footer/>
     </div>

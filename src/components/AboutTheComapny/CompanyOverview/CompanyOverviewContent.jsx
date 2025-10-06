@@ -1,5 +1,7 @@
 import React from "react";
-import companyProfile from "../../../assets/img/CompanyProfileBackGround.png";
+import AboutTheCompany from "../../../assets/img/AboutTheCompanyBackGround.png";
+import RLinkLogo from "../../../assets/img/RLinkLogo.png";
+
 export default function CompanyOverview() {
   const companyData = [
     {
@@ -38,30 +40,28 @@ export default function CompanyOverview() {
   ];
 
   return (
-    <div className="max-w-full mx-auto p-8 bg-gradient-to-b from-gray-200 to-white min-h-screen">
-      <div
-        className="max-w-5xl mx-auto p-8"
-        style={{
-          backgroundImage: `url(${companyProfile})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
+    <div
+      className="max-w-full mx-auto p-8 2xl:py-20 flex items-center"
+      style={{
+        backgroundImage: `url(${AboutTheCompany})`,
+        backgroundSize: "cover",
+      }}
+    >
+      <div className="max-w-5xl mx-auto py-4 px-20 pb-20 border-2 border-[#B3B3B3] rounded">
         {/* Title */}
-        <h1 className="text-2xl 2xl:text-4xl font-bold text-center mb-8 text-black">
-          会社概要
-        </h1>
-
-        {/* Decorative line */}
-        <div
-          className="w-[90px]  mt-5 mx-auto mb-10"
-          style={{
-            height: "2px",
-            backgroundImage:
-              "linear-gradient(275deg,rgba(24, 103, 209, 1) 0%, rgba(0, 0, 0, 1) 89%)",
-          }}
-        />
-
+        <div className="relative ">
+          <div className="absolute top-0 -right-13 ">
+            <img
+              src={RLinkLogo}
+              alt="RLink Logo"
+              className="w-16 h-auto 2xl:w-16"
+            />
+          </div>
+          <h1 className="text-2xl 2xl:text-5xl  text-center text-black pt-16 tracking-widest">
+            会社概要
+          </h1>
+        </div>
+        <p className="text-black text-center font-extralight mt-2 mb-6 text-[16px] ">Company Profile</p> 
         {/* Company information table */}
         <div className="space-y-0">
           {companyData.map((item, index) => (
@@ -75,7 +75,7 @@ export default function CompanyOverview() {
             >
               <div className="grid grid-cols-1 md:grid-cols-4 py-4">
                 {/* Label column */}
-                <div className="md:col-span-1  px-10 py-3">
+                <div className="md:col-span-1 px-10 py-3">
                   <span className="text-sm 2xl:text-xl font-bold text-[#5B5B5B]">
                     {item.label}
                   </span>

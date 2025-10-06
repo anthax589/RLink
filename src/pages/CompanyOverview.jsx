@@ -7,7 +7,6 @@ function CompanyProfile() {
   return (
     <div>
         <Header />
-        <HeroSection />
         <CompanyOverview />
         <Footer/>
     </div>

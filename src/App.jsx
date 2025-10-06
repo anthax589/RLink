@@ -17,7 +17,6 @@ function App() {
       <BrowserRouter>
         <ScrollToTop />
         <div className="w-full">
-          {/* Add global style to prevent border issues */}
           <Routes>
             <Route path="/" element={<LandingPage />} />
             <Route path="/services" element={<ServicesPage />} />
