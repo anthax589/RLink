@@ -47,7 +47,7 @@ export default function CompanyOverview() {
         backgroundSize: "cover",
       }}
     >
-      <div className="max-w-5xl mx-auto py-4 px-20 pb-20 border-2 border-[#B3B3B3] rounded">
+      <div className="bg-[#F2F2F2]/40 max-w-5xl mx-auto py-4 px-20 pb-20 border-2 border-[#B3B3B3] rounded">
         {/* Title */}
         <div className="relative ">
           <div className="absolute top-0 -right-13 ">
@@ -61,7 +61,9 @@ export default function CompanyOverview() {
             会社概要
           </h1>
         </div>
-        <p className="text-black text-center font-extralight mt-2 mb-6 text-[16px] ">Company Profile</p> 
+        <p className="text-black text-center font-extralight mt-2 mb-6 text-[16px] ">
+          Company Profile
+        </p>
         {/* Company information table */}
         <div className="space-y-0">
           {companyData.map((item, index) => (
@@ -73,7 +75,7 @@ export default function CompanyOverview() {
                   "linear-gradient(275deg, rgba(24, 103, 209, 1) 0%, rgba(0, 0, 0, 1) 89%) 1",
               }}
             >
-              <div className="grid grid-cols-1 md:grid-cols-4 py-4">
+              <div className="grid grid-cols-1 md:grid-cols-4 py-2">
                 {/* Label column */}
                 <div className="md:col-span-1 px-10 py-3">
                   <span className="text-sm 2xl:text-xl font-bold text-[#5B5B5B]">

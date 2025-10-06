@@ -1,209 +1,192 @@
-import servicesIcon from "../../assets/services_assets/services.svg";
-import executiveImg from "../../assets/services_assets/executive_img.svg";
-import rpoImg from "../../assets/services_assets/rpo_img.svg";
-import hrImg from "../../assets/services_assets/reference_img.svg";
-import servicesbackground from "../../assets/services_assets/image 4.svg";
-import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
-import Aos from "aos";
-import "aos/dist/aos.css";
-const services = [
-  {
-    img: executiveImg,
-    title: "人材紹介事業",
-    description: (
-      <>
-        企業の採用ニーズに応じて、リテーナー型によるプロジェクトベースのサーチから、
-        <br />
-        一般的なコンティンジェンシー型（完全成功報酬型）まで職種や要件に合わせて柔軟に対応します。
-        <br />
-        コアとなるCxOや経営幹部クラスから、即戦力となるスタッフレベルまで、最適な人材をご紹介します。
-      </>
-    ),
-    route: "/recruitment-business",
-  },
-  {
-    img: rpoImg,
-    title: "採用戦略アドバイザリー事業",
-    description: (
-      <>
-        般的なRPOの業務領域を超えた、採用の仕組みづくりから伴奏型で企業の採用課題を支援します
-      </>
-    ),
-    route: "/recruitment-strategy",
-  },
-  {
-    img: hrImg,
-    title: "HRプロダクト事業",
-    description: (
-      <>
-        「候補者の実績や人柄」をAIとデータで可視化し、採用の精度を高め、ミスマッチを防ぐ
-      </>
-    ),
-    route: "/hr-product-business",
-  },
-];
-
-const ServiceCard = ({ img, title, description, index, route }) => {
-  const navigate = useNavigate();
+import React from "react";
+import RPO from "../../assets/img/RPO.png";
+import HR from "../../assets/img/HR.png";
+import Executive from "../../assets/img/Executive.png";
+import ourservices from "../../assets/img/OurServicesBackGround.png";
+import Contact from "../../assets/img/ContactUs.png";
+import Staffing from "../../assets/img/Staffing.png";
+export default function RobotServicesLayout() {
   return (
-    <div className="w-full max-w-6xl mx-auto mb-16 px-4 lg:px-8">
-      <div className="flex  gap-5  items-center">
-        {/* Image - Always on the left */}
-        <div className="flex justify-center lg:justify-start">
-          <div className="w-68 h-68 flex items-center justify-center">
-            <img
-              src={img}
-              alt={title}
-              className="w-full h-full object-contain"
-            />
-          </div>
-        </div>
-
-        {/* Content - Always on the right */}
-        <div className="space-y-6">
-          <h3 className="text-2xl lg:text-3xl font-bold text-black leading-tight">
-            {title}
-          </h3>
-          <p
-            className="text-black leading-relaxed text-base lg:text-md text-nowrap"
-            style={{ fontFamily: "Lato-Regular" }}
-          >
-            {description}
-          </p>
-          <div
-            className={`flex justify-end mt-20 ${
-              index === 1
-                ? "relative left-16"
-                : index === 2
-                ? "relative left-29"
-                : "ml-10"
-            }`}
-          >
-            <button
-              className="inline-flex  items-center gap-2 px-16 py-2 border border-black bg-transparent text-black rounded font-medium transition-all duration-300 hover:bg-black hover:text-white hover:scale-105"
-              onClick={() => navigate(route)}
-            >
-              VIEW MORE →
-            </button>
-          </div>
-        </div>
-      </div>
-
-      {/* Gradient line separator */}
-      {index < services.length - 1 && (
-        <div
-          className="mt-16 mx-auto"
-          style={{
-            width: "100%",
-            height: "2px",
-            background:
-              "linear-gradient(275deg, rgba(24,103,209,1) 0%, rgba(0,0,0,1) 89%)",
-          }}
-        />
-      )}
-    </div>
-  );
-};
-
-const OurServicesSection = () => {
-  useEffect(() => {
-    Aos.init({ duration: 1500 });
-  }, []);
-  return (
-    <section
-      className="bg-white py-16 lg:py-24"
+    <div
+      className="min-h-screen bg-gray-100 py-20"
       style={{
-        backgroundImage: `url(${servicesbackground})`,
+        backgroundImage: `url(${ourservices})`,
         backgroundSize: "cover",
-        backgroundPosition: "center",
       }}
     >
-      <div className="max-w-7xl mx-auto px-4 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <h2
-            className="text-3xl lg:text-4xl font-bold text-black mb-12"
-            data-aos="fade-up"
-            data-aos-offset="100"
-            data-aos-delay="50"
-            data-aos-once="true"
-          >
-            サービス
-          </h2>
-
-          {/* Description and Icon */}
-          <div className="flex justify-evenly mx-auto max-w-6xl items-center mb-12 ">
-            <div className="text-left space-y-6 w-2xl">
-              <p
-                className="text-black leading-relaxed text-2xl font-medium text-nowrap "
-                data-aos="fade-up"
-                data-aos-offset="100"
-                data-aos-delay="50"
-                data-aos-once="true"
-              >
-                スタートアップをはじめとする成長企業には、スピード感と柔軟
-                <br className="hidden lg:block" />
-                性のある採用・人材活用が求められています。
-              </p>
-              <p
-                className="text-black leading-relaxed text-xl font-medium text-nowrap"
-                data-aos="fade-up"
-                data-aos-offset="100"
-                data-aos-delay="50"
-                data-aos-once="true"
-              >
-                即戦力人材の確保から、採用戦略の仕組みづくりからの実行支
-                <br className="hidden lg:block" />
-                援、までを一気通貫で提供し、企業の成長ステージに応じた最適
-                <br className="hidden lg:block" />
-                なHRソリューションを提供します。
-              </p>
-            </div>
-            <div
-              className="flex justify-center"
-              data-aos="fade-up"
-              data-aos-offset="100"
-              data-aos-delay="50"
-              data-aos-once="true"
-            >
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+        {/* Top Left - AI Introduction Service */}
+        <div className="bg-white rounded-md  p-8 md:col-span-2 border border-[#1867D1]/50">
+          <div className="flex items-start gap-6">
+            <div className="flex-shrink-0 w-64  flex items-center justify-center">
               <img
-                src={servicesIcon}
-                alt="Services Icon"
-                className="w-auto h-68 object-contain"
+                src={Executive}
+                alt="Executive"
+                className="w-auto h-auto object-contain self-center"
+              />
+            </div>
+            <div className="flex-1">
+              <h2 className="text-2xl font-bold mb-4 text-black">
+                人材紹介事業
+              </h2>
+              <p className="text-black mb-4 leading-relaxed text-nowrap ">
+                企業の採用ニーズに応じて、リテーナー型によるプロジェクトベースのサーチから、
+                <br />
+                一般的なコンティンジェンシー型（完全成功報酬型）まで職種や要件に合わせて柔軟に対応します。
+                <br />
+                コアとなるCxOや経営幹部クラスから、即戦力となるスタッフレベルまで、最適な人材をご紹介します。
+              </p>
+              <div className="flex justify-end pr-10">
+                <button className="text-black border border-gray-400 px-6 py-2 rounded hover:bg-gray-50 transition flex items-center gap-2">
+                  VIEW MORE
+                  <svg
+                    width="12"
+                    height="12"
+                    viewBox="0 0 12 12"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M9.66406 8.12695V1.99219H3.5293V0.628906H11.0273V8.12695H9.66406ZM6.25586 11.5352V5.40039H0.121094V4.03711H7.61914V11.5352H6.25586Z"
+                      fill="black"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Middle Left - Recruitment Strategy Advisory */}
+        <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg p-6 border border-[#1867D1]/50 ">
+          <h2 className="text-2xl font-bold mb-4 text-black">
+            採用戦略アドバイザリー事業
+          </h2>
+          <p className="text-black mb-8 text-md leading-relaxed">
+            般的なRPOの業務領域を超えた、採用の仕組みづくりから伴
+            <br />
+            奏型で企業の採用課題を支援します
+          </p>
+          <div className="flex  gap-6 items-end relative top-13">
+            <div className="flex justify-center">
+              <div className="w-64 flex items-center justify-center relative bottom-10">
+                <img
+                  src={RPO}
+                  alt="RPO"
+                  className="w-auto h-auto object-contain"
+                />
+              </div>
+            </div>
+            <div className="flex-1 flex justify-end ">
+              <button className="text-black border border-black px-16 py-3 rounded hover:bg-white transition flex items-center justify-center gap-2 text-sm font-medium w-full text-nowrap">
+                VIEW MORE
+                <svg
+                  width="12"
+                  height="12"
+                  viewBox="0 0 12 12"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M9.66406 8.12695V1.99219H3.5293V0.628906H11.0273V8.12695H9.66406ZM6.25586 11.5352V5.40039H0.121094V4.03711H7.61914V11.5352H6.25586Z"
+                    fill="black"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Middle Right - HR Product Service */}
+        <div className="bg-gradient-to-b from-[#1867D1] to-[#0C356B] rounded-lg shadow-md p-8 text-white">
+          <h2 className="text-xl font-bold mb-2">HRプロダクト事業</h2>
+          <p className="mb-2 text-md leading-relaxed">
+            「候補者の実績や人柄」をAIとデータで可視化 <br />
+            し、採用の精度を高め、ミスマッチを防ぐ
+          </p>
+          <div className="flex justify-center ">
+            <div className="w-auto h-auto flex items-center justify-center">
+              <img
+                src={HR}
+                alt="HR"
+                className="w-auto h-auto object-contain self-end"
               />
             </div>
           </div>
-
-          {/* Header gradient line */}
-          <div
-            className="mx-auto my-28"
-            style={{
-              width: "100px",
-              height: "2px",
-              background:
-                "linear-gradient(275deg, rgba(24,103,209,1) 0%, rgba(0,0,0,1) 89%)",
-            }}
-          />
+          <button className="w-1/2 mx-auto bg-black text-white px-6 py-2 rounded  border border-white flex items-center justify-center gap-2">
+            VIEW MORE →
+          </button>
         </div>
 
-        {/* Service Cards */}
-        <div className="space-y-0">
-          {services.map((service, index) => (
-            <div
-              key={index}
-              data-aos="fade-up"
-              data-aos-offset="100"
-              data-aos-delay={index * 200 + 50}
-              data-aos-once="true"
-            >
-              <ServiceCard {...service} index={index} />
+        <div className="bg-gradient-to-b from-[#1867D1] to-[#0C356B] rounded-lg shadow-md p-8 text-white relative overflow-visible ">
+          <h2 className="text-3xl font-bold mb-3">Get in Touch</h2>
+          <p className="mb-8 text-md  max-w-xl text-nowrap ">
+            We’d love to hear from you. Whether you’re a company seeking <br />
+            top executive talent or a professional exploring new career <br />
+            opportunities, RLink Partners is here to guide your next step.
+          </p>
+
+          <div className="flex items-end gap-6 relative">
+            {/* Robot Image - Positioned to overflow outside */}
+            <div className="absolute -left-30 -bottom-20 w-64">
+              <img
+                src={Contact}
+                alt="Contact"
+                className="w-full h-auto object-contain"
+              />
             </div>
-          ))}
+
+            {/* Buttons - Right Side with left margin to avoid robot */}
+            <div className="w-ful  space-y-7 flex flex-col justify-end ml-auto">
+              <button className="w-52 bg-black text-white px-6 py-3 rounded-md hover:bg-gray-800 transition font-normal text-sm border border-white">
+                サービスについて(法人)
+              </button>
+              <button className="w-52 bg-black text-white px-6 py-3 rounded-md hover:bg-gray-800 transition font-normal text-sm border border-white">
+                サービスについて(法人)
+              </button>
+              <button className="w-52 bg-black text-white px-6 py-3 rounded-md hover:bg-gray-800 transition font-normal text-sm border border-white">
+                サービスについて(法人)
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        {/* Bottom Right - Material Search */}
+        <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg shadow-sm p-8 border border-[#1867D1]/50">
+          <h2 className="text-2xl font-bold mb-4 text-black">
+            人材派遣/契約・業務委託事業
+          </h2>
+          <p className="text-black mb-8 text-sm leading-relaxed">
+            バイリンガル人材を含む幅広い職種・レイヤーの即戦力人
+            <br />
+            材を、スピード感をもってご紹介します。
+          </p>
+          <div className="flex justify-end ">
+            <div className="w-64">
+              <img
+                src={Staffing}
+                alt="Staffing"
+                className="w-full h-auto object-contain"
+              />
+            </div>
+          </div>
+          <button className="text-black border border-black px-20 py-3 rounded hover:bg-white transition flex items-center justify-center gap-2 text-sm font-medium w-auto">
+            VIEW MORE
+            <svg
+              width="12"
+              height="12"
+              viewBox="0 0 12 12"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M9.66406 8.12695V1.99219H3.5293V0.628906H11.0273V8.12695H9.66406ZM6.25586 11.5352V5.40039H0.121094V4.03711H7.61914V11.5352H6.25586Z"
+                fill="black"
+              />
+            </svg>
+          </button>
         </div>
       </div>
-    </section>
+    </div>
   );
-};
-
-export default OurServicesSection;
+}
