@@ -16,7 +16,7 @@ export default function RobotServicesLayout() {
     >
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Top Left - AI Introduction Service */}
-        <div className="bg-white rounded-md  p-8 md:col-span-2 border border-[#1867D1]/50">
+        <div className="bg-transparent rounded-md  p-8 md:col-span-2 border border-[#1867D1]/50">
           <div className="flex items-start gap-6">
             <div className="flex-shrink-0 w-64  flex items-center justify-center">
               <img
