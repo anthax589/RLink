@@ -11,17 +11,14 @@ export default function CompanyMission() {
         backgroundSize: "cover",
       }}
     >
-      <div
-        className="w-full max-w-6xl xl:max-w-7xl 2xl:max-w-7xl mx-auto border-2 border-[#B3B3B3] rounded py-4"
-      
-      >
+      <div className="bg-[#F2F2F2]/40 w-full max-w-6xl xl:max-w-7xl 2xl:max-w-7xl mx-auto border-2 border-[#B3B3B3] rounded py-4">
         {/* Header Section */}
         <div className="pt-8 px-6 relative">
           <div className="absolute top-0 right-6">
             <img
               src={RLinkLogo}
               alt="RLink Logo"
-              className="w-16 h-auto 2xl:w-20"
+              className="w-16 h-auto 2xl:w-16"
             />
           </div>
           <h1 className="text-2xl 2xl:text-5xl text-center text-black tracking-widest mb-2 pt-16">
