@@ -5,7 +5,14 @@ import Executive from "../../assets/img/Executive.png";
 import ourservices from "../../assets/img/OurServicesBackGround.png";
 import Contact from "../../assets/img/ContactUs.png";
 import Staffing from "../../assets/img/Staffing.png";
+import { useNavigate } from "react-router-dom";
+
 export default function RobotServicesLayout() {
+  const navigate = useNavigate();
+
+  const handleViewMore = (path) => {
+    navigate(path);
+  };
   return (
     <div
       className="min-h-screen bg-gray-100 py-20"
@@ -37,7 +44,10 @@ export default function RobotServicesLayout() {
                 コアとなるCxOや経営幹部クラスから、即戦力となるスタッフレベルまで、最適な人材をご紹介します。
               </p>
               <div className="flex justify-end pr-10">
-                <button className="text-black border border-gray-400 px-6 py-2 rounded hover:bg-gray-50 transition flex items-center gap-2">
+                <button
+                  onClick={() => handleViewMore("/recruitment-business")}
+                  className="text-black border border-gray-400 px-6 py-2 rounded hover:bg-gray-50 transition flex items-center gap-2"
+                >
                   VIEW MORE
                   <svg
                     width="12"
@@ -162,7 +172,6 @@ export default function RobotServicesLayout() {
 
               {/* Buttons - Right Side with left margin to avoid robot */}
               <div className="w-full space-y-10 flex flex-col justify-end-safe relative left-60">
-             
                 <button className="w-48 bg-black text-white px-4 py-4 rounded hover:bg-white hover:text-blue-600 transition font-normal text-xs border border-white">
                   サービスについて(法人)
                 </button>
