@@ -1,92 +1,107 @@
-import { useEffect } from "react";
+import React, { useEffect, lazy, Suspense, useMemo, useCallback } from "react";
 import { useLocation } from "react-router-dom";
 import { useVideoContext } from "../context/useVideoContext";
 import Header from "../shared/Header";
 import HeroSection from "../components/Landing/HeroSection";
-import AboutSection from "../components/Landing/AboutSection";
-import Services from "../components/Landing/ServicesSection";
-import JobTitleSection from "../components/Landing/JobTitleSection";
-import ContactSection from "../components/Landing/ContactSection";
-import Footer from "../shared/Footer";
+import PerformanceMonitor from "../components/PerformanceMonitor";
+
+// Lazy load heavy components with preload hints
+const AboutSection = lazy(() =>
+  import(/* webpackChunkName: "about" */ "../components/Landing/AboutSection")
+);
+const Services = lazy(() =>
+  import(
+    /* webpackChunkName: "services" */ "../components/Landing/ServicesSection"
+  )
+);
+const JobTitleSection = lazy(() =>
+  import(
+    /* webpackChunkName: "jobtitle" */ "../components/Landing/JobTitleSection"
+  )
+);
+const ContactSection = lazy(() =>
+  import(
+    /* webpackChunkName: "contact" */ "../components/Landing/ContactSection"
+  )
+);
+const Footer = lazy(() =>
+  import(/* webpackChunkName: "footer" */ "../shared/Footer")
+);
+
+// Optimized loading component
+const LoadingSpinner = React.memo(() => (
+  <div className="h-16 flex items-center justify-center">
+    <div className="animate-pulse text-gray-400">Loading...</div>
+  </div>
+));
 
 const LandingPage = () => {
   const { videoEnded } = useVideoContext();
   const location = useLocation();
-  const isLandingPage = location.pathname === "/";
+
+  // Memoize computed values
+  const isLandingPage = useMemo(
+    () => location.pathname === "/",
+    [location.pathname]
+  );
+
+  // Optimize scroll handling with useCallback
+  const handleScrollToTop = useCallback(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   useEffect(() => {
-    // Prevent browser scroll restoration
+    // Simple scroll to top optimization
     if ("scrollRestoration" in history) {
       history.scrollRestoration = "manual";
     }
 
-    // Disable smooth scrolling temporarily
-    const originalScrollBehavior =
-      document.documentElement.style.scrollBehavior;
-    document.documentElement.style.scrollBehavior = "auto";
-
-    // Force scroll to top immediately and prevent any auto-scrolling
-    const scrollToTop = () => {
-      window.scrollTo(0, 0);
-      document.documentElement.scrollTop = 0;
-      document.body.scrollTop = 0;
-    };
-
-    // Immediate scroll to top
-    scrollToTop();
-
-    // Additional safety measures with multiple delays to override browser behavior
-    const timer1 = setTimeout(scrollToTop, 0);
-    const timer2 = setTimeout(scrollToTop, 50);
-    const timer3 = setTimeout(scrollToTop, 100);
-    const timer4 = setTimeout(() => {
-      scrollToTop();
-      // Restore original scroll behavior
-      document.documentElement.style.scrollBehavior = originalScrollBehavior;
-    }, 200);
-
-    // Handle page visibility change (when user comes back to tab)
-    const handleVisibilityChange = () => {
-      if (!document.hidden) {
-        scrollToTop();
-      }
-    };
-
-    document.addEventListener("visibilitychange", handleVisibilityChange);
+    // Use requestAnimationFrame for smoother scroll
+    requestAnimationFrame(handleScrollToTop);
 
     return () => {
-      clearTimeout(timer1);
-      clearTimeout(timer2);
-      clearTimeout(timer3);
-      clearTimeout(timer4);
-      document.removeEventListener("visibilitychange", handleVisibilityChange);
-      document.documentElement.style.scrollBehavior = originalScrollBehavior;
-
-      // Restore scroll restoration when component unmounts
       if ("scrollRestoration" in history) {
         history.scrollRestoration = "auto";
       }
     };
-  }, []);
+  }, [handleScrollToTop]);
+
+  // Memoize the class string
+  const containerClass = useMemo(
+    () => `${isLandingPage && videoEnded ? "" : ""}`,
+    [isLandingPage, videoEnded]
+  );
 
   return (
     <div>
+      {import.meta.env.DEV && <PerformanceMonitor />}
       <Header />
-      <div className={`${isLandingPage && videoEnded ? "" : ""}`}>
+      <div className={containerClass}>
         <div
           id="hero-section"
           className="bg-white"
-          style={{ position: "relative", zIndex: "2" }}
+          style={{ position: "relative", zIndex: 2, willChange: "transform" }}
         >
           <HeroSection />
         </div>
-        <AboutSection />
-        <Services />
-        <JobTitleSection />
-        <ContactSection />
+        <Suspense fallback={<LoadingSpinner />}>
+          <AboutSection />
+        </Suspense>
+        <Suspense fallback={<LoadingSpinner />}>
+          <Services />
+        </Suspense>
+        <Suspense fallback={<LoadingSpinner />}>
+          <JobTitleSection />
+        </Suspense>
+        <Suspense fallback={<LoadingSpinner />}>
+          <ContactSection />
+        </Suspense>
       </div>
-      <Footer />
+      <Suspense fallback={<LoadingSpinner />}>
+        <Footer />
+      </Suspense>
     </div>
   );
 };
 
-export default LandingPage;
+export default React.memo(LandingPage);
