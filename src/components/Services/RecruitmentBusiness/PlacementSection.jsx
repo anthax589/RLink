@@ -1,13 +1,21 @@
-import React from "react";
+import React, { memo } from "react";
 import Noise from "../../../assets/img/Noise.png";
-function PlacementSection() {
+
+const PlacementSection = memo(() => {
+  const cardStyle = {
+    backgroundImage: `url(${Noise})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+  };
+
   return (
     <section className="bg-white px-6 md:px-12 py-16">
       <div className="max-w-6xl mx-auto">
         {/* Heading */}
         <h2
-          className="text-2xl md:text-4xl  text-center mb-12 text-[#5B5B5B]"
-          style={{ textShadow: "2px 7px 2px rgba(0, 0, 0, 0.2 )" }}
+          className="text-2xl md:text-4xl text-center mb-12 text-[#5B5B5B]"
+          style={{ textShadow: "2px 7px 2px rgba(0, 0, 0, 0.2)" }}
           data-aos="fade-up"
         >
           紹介実績 2025
@@ -24,14 +32,8 @@ function PlacementSection() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {/* Card 1 */}
             <div
-              className=" p-6 h-[23vh] flex items-center justify-center border border-[#5B5B5B] rounded"
-              style={{
-                backgroundImage: `url(${Noise})`,
-                backgroundSize: "fill",
-                backgroundPosition: "center",
-                backgroundRepeat: "no-repeat",
-                backgroundwidth: "100%",
-              }}
+              className="p-6 h-[23vh] flex items-center justify-center border border-[#5B5B5B] rounded"
+              style={cardStyle}
             >
               <div className="text-center text-black">
                 <p className="text-md leading-relaxed">
@@ -200,6 +202,6 @@ function PlacementSection() {
       </div>
     </section>
   );
-}
+});
 
 export default PlacementSection;

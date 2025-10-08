@@ -149,7 +149,7 @@ const Threads = ({
           value: new Color(
             gl.canvas.width,
             gl.canvas.height,
-            gl.canvas.width / gl.canvas.height,
+            gl.canvas.width / gl.canvas.height
           ),
         },
         uColor: { value: new Color(...color) },
@@ -173,22 +173,42 @@ const Threads = ({
 
     let currentMouse = [0.5, 0.5];
     let targetMouse = [0.5, 0.5];
+    let lastMouseUpdate = 0;
 
+    // Throttled mouse move handler for better performance
     function handleMouseMove(e) {
+      const now = performance.now();
+      if (now - lastMouseUpdate < 16) return; // Limit to 60fps
+      lastMouseUpdate = now;
+
       const rect = container.getBoundingClientRect();
       const x = (e.clientX - rect.left) / rect.width;
       const y = 1.0 - (e.clientY - rect.top) / rect.height;
       targetMouse = [x, y];
     }
+
     function handleMouseLeave() {
       targetMouse = [0.5, 0.5];
     }
+
     if (enableMouseInteraction) {
-      container.addEventListener("mousemove", handleMouseMove);
-      container.addEventListener("mouseleave", handleMouseLeave);
+      container.addEventListener("mousemove", handleMouseMove, {
+        passive: true,
+      });
+      container.addEventListener("mouseleave", handleMouseLeave, {
+        passive: true,
+      });
     }
 
+    let lastFrameTime = 0;
     function update(t) {
+      // Limit to 60fps for better performance
+      if (t - lastFrameTime < 16) {
+        animationFrameId.current = requestAnimationFrame(update);
+        return;
+      }
+      lastFrameTime = t;
+
       if (enableMouseInteraction) {
         const smoothing = 0.05;
         currentMouse[0] += smoothing * (targetMouse[0] - currentMouse[0]);
