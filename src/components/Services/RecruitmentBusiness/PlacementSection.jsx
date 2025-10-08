@@ -1,5 +1,5 @@
 import React, { memo } from "react";
-import Noise from "../../../assets/img/Noise.png";
+import Noise from "../../../assets/img/Noise2.png";
 
 const PlacementSection = memo(() => {
   const cardStyle = {
@@ -53,7 +53,7 @@ const PlacementSection = memo(() => {
               className="p-6 h-[23vh] flex items-center justify-center border border-[#5B5B5B] rounded"
               style={{
                 backgroundImage: `url(${Noise})`,
-                backgroundSize: "fill",
+                backgroundSize: "cover",
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
                 backgroundwidth: "100%",
@@ -76,7 +76,7 @@ const PlacementSection = memo(() => {
               className="p-6 h-[23vh] flex items-center justify-center border border-[#5B5B5B] rounded"
               style={{
                 backgroundImage: `url(${Noise})`,
-                backgroundSize: "fill",
+                backgroundSize: "cover",
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
                 backgroundwidth: "100%",
@@ -99,7 +99,7 @@ const PlacementSection = memo(() => {
               className="p-6 h-[23vh] flex items-center justify-center border border-[#5B5B5B] rounded"
               style={{
                 backgroundImage: `url(${Noise})`,
-                backgroundSize: "fill",
+                backgroundSize: "cover",
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
                 backgroundwidth: "100%",
@@ -121,7 +121,7 @@ const PlacementSection = memo(() => {
               className="p-6 h-[23vh] flex items-center justify-center border border-[#5B5B5B] rounded"
               style={{
                 backgroundImage: `url(${Noise})`,
-                backgroundSize: "fill",
+                backgroundSize: "cover",
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
                 backgroundwidth: "100%",
@@ -142,7 +142,7 @@ const PlacementSection = memo(() => {
               className="p-6 h-[23vh] flex items-center justify-center border border-[#5B5B5B] rounded"
               style={{
                 backgroundImage: `url(${Noise})`,
-                backgroundSize: "fill",
+                backgroundSize: "cover",
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
                 backgroundwidth: "100%",
@@ -165,7 +165,7 @@ const PlacementSection = memo(() => {
               className="p-6 h-[23vh] flex items-center justify-center border border-[#5B5B5B] rounded w-[19vw]"
               style={{
                 backgroundImage: `url(${Noise})`,
-                backgroundSize: "fill",
+                backgroundSize: "cover",
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
                 backgroundwidth: "100%",

@@ -26,7 +26,7 @@ const HeroSection = () => {
             <br />
             コアとなるCxOや経営幹部クラスから、即戦力となるスタッフレベルまで、最適な人材をご紹介します。
           </p>
-          <button className="bg-black text-white px-16 py-4 rounded flex items-center gap-2">
+          <button className="bg-black text-white px-20 py-4 rounded flex items-center gap-2">
             {/* {Phone Icon} */}
             <svg
               width="25"

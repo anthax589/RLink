@@ -46,7 +46,7 @@ export default function RobotServicesLayout() {
               <div className="flex justify-end pr-10">
                 <button
                   onClick={() => handleViewMore("/recruitment-business")}
-                  className="text-black border border-gray-400 px-6 py-2 rounded hover:bg-gray-50 transition flex items-center gap-2"
+                  className="btn bg-white text-black border border-black shadow-none px-24 py-6 f rounded hover:bg-gray-50 transition font-medium flex items-center gap-2"
                 >
                   VIEW MORE
                   <svg
@@ -81,7 +81,7 @@ export default function RobotServicesLayout() {
               <br />
               奏型で企業の採用課題を支援します
             </p>
-            <div className="flex  gap-6 items-end relative top-13">
+            <div className="flex  gap-6 items-end relative top-9">
               <div className="flex justify-center">
                 <div className="w-64 flex items-center justify-center relative bottom-10">
                   <img
@@ -92,7 +92,10 @@ export default function RobotServicesLayout() {
                 </div>
               </div>
               <div className="flex-1 flex justify-end ">
-                <button className="text-black border border-black px-16 py-3 rounded hover:bg-white transition flex items-center justify-center gap-2 text-sm font-medium w-full text-nowrap">
+                <button
+                  onClick={() => handleViewMore("/recruitment-strategy")}
+                  className="btn text-black border shadow-none border-black px-24 py-6 rounded hover:bg-white transition flex items-center justify-center gap-2 text-sm w-full font-medium text-nowrap bg-white"
+                >
                   VIEW MORE
                   <svg
                     width="12"
@@ -113,11 +116,11 @@ export default function RobotServicesLayout() {
 
           {/* Middle Right - HR Product Service */}
           <div
-            className="bg-gradient-to-b from-[#1867D1] to-[#0C356B] rounded-lg shadow-md p-8 text-white"
+            className="bg-gradient-to-b from-[#1867D1] to-[#0C356B] rounded-lg shadow-md p-6   text-white"
             style={{ flexBasis: "45%" }}
           >
-            <h2 className="text-xl font-bold mb-2">HRプロダクト事業</h2>
-            <p className="mb-2 text-lg leading-relaxed text-nowrap">
+            <h2 className="text-2xl font-bold mb-2">HRプロダクト事業</h2>
+            <p className=" text-lg leading-relaxed text-nowrap">
               「候補者の実績や人柄」をAIとデータで可視化 <br />
               し、採用の精度を高め、ミスマッチを防ぐ
             </p>
@@ -130,7 +133,10 @@ export default function RobotServicesLayout() {
                 />
               </div>
             </div>
-            <button className="w-1/2 mx-auto bg-black text-white px-6 py-2 rounded  border border-white flex items-center justify-center gap-2">
+            <button
+              onClick={() => handleViewMore("/hr-product-business")}
+              className=" btn w-2lg mx-auto bg-black shadow-none text-white px-24 py-6 rounded  border border-white flex items-center font-medium justify-center gap-2"
+            >
               VIEW MORE
               <svg
                 width="12"
@@ -207,7 +213,9 @@ export default function RobotServicesLayout() {
                 />
               </div>
             </div>
-            <button className="text-black border border-black px-20 py-3 rounded hover:bg-white transition flex items-center justify-center gap-2 text-sm font-medium w-auto">
+            <button 
+            onClick={() => handleViewMore("/staffing")}
+            className="btn text-black shadow-none border border-black px-24 py-6 bg-white rounded hover:bg-white transition flex items-center justify-center gap-2 text-sm font-medium w-auto">
               VIEW MORE
               <svg
                 width="12"
