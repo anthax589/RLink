@@ -1,18 +1,10 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import RLinkLogo from "../../../assets/img/RLinkLogo.png";
-
+import ServicesNav from "../../../shared/ServicesNav";
 function IntroductionSection() {
-  const [activeTab, setActiveTab] = useState(0);
-
-  const tabs = [
-    "人材紹介事業",
-    "採用戦略アドバイザリー事業",
-    "HRプロダクト事業",
-    "人材派遣/契約・業務委託事業",
-  ];
 
   useEffect(() => {
     Aos.init({ duration: 1000 });
@@ -24,34 +16,11 @@ function IntroductionSection() {
       <div
         className="w-full h-full"
         style={{
-          background: "linear-gradient(90deg, #000000 0%, #1e3a8a 100%)",
+          background: "linear-gradient(90deg, #000000 0%, #1867D1 100%)",
         }}
       >
         {/* Tab Navigation - Positioned to overflow above background */}
-        <div className="relative -top-7 w-full flex justify-center z-20">
-          <div className="flex justify-center items-end gap-8">
-            {tabs.map((tab, index) => (
-              <button
-                data-aos="fade-up"
-                data-aos-offset="100"
-                data-aos-delay="150"
-                key={index}
-                onClick={() => setActiveTab(index)}
-                className={`px-4 sm:px-6 lg:px-8 py-2 sm:py-4 lg:w-68 font-semibold text-xs sm:text-sm lg:text-base text-nowrap border border-[#5B5B5B]/40 rounded shadow-[6px_0px_2px_rgba(0,0,0,0.15)] ${
-                  activeTab === index
-                    ? "bg-white text-black"
-                    : "bg-white text-black "
-                }`}
-                style={{
-                  marginLeft: index > 0 ? "-1px" : "0",
-                  position: "relative",
-                }}
-              >
-                {tab}
-              </button>
-            ))}
-          </div>
-        </div>
+        <ServicesNav />
 
         {/* Content Section - Centered in remaining space */}
         <div className="flex items-center justify-center px-4 sm:px-8 lg:px-16 h-full pb-36 relative">
