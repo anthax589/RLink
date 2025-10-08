@@ -28,7 +28,7 @@ function IntroductionSection() {
         }}
       >
         {/* Tab Navigation - Positioned to overflow above background */}
-        <div className="relative -top-6 w-full flex justify-center z-20">
+        <div className="relative -top-7 w-full flex justify-center z-20">
           <div className="flex justify-center items-end gap-8">
             {tabs.map((tab, index) => (
               <button

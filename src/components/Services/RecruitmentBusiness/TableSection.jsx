@@ -1,14 +1,9 @@
 import React from "react";
-import tablebg from "../../../assets/img/OurServicesBackGround.png";
 function TableSection() {
   return (
     <main
-      className="h-fit bg-white py-10"
-      style={{
-        backgroundImage: `url(${tablebg})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
+      className="h-fit bg-transparent "
+   
     >
       {/* Table Section */}
       <section
@@ -112,145 +107,6 @@ function TableSection() {
           </table>
         </div>
       </section>
-
-  
-      {/* <section className="bg-transparent  px-8 h-screen">
-        <div className="max-w-6xl mx-auto">
-          <h2
-            className="text-3xl font-bold text-center py-10 text-black"
-            data-aos="fade-up"
-            data-aos-offset="100"
-            data-aos-delay="50"
-          >
-            RLinkの担当職種一覧
-          </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-         
-            <div
-              className="space-y-4"
-              data-aos="fade-up"
-              data-aos-offset="100"
-              data-aos-delay="100"
-            >
-              <div className="bg-blue-600 text-white px-6 py-4 rounded-lg flex items-center gap-3">
-                <div className="bg-white text-blue-600 w-8 h-8 rounded-full flex items-center justify-center font-bold text-lg">
-                  01
-                </div>
-                <h3 className="font-bold text-lg">経営・ビジネスリーダー職</h3>
-              </div>
-
-              <div className="space-y-3">
-                <div className="bg-white border border-gray-300 px-4 py-3 rounded shadow-sm">
-                  <p className="text-gray-700 font-medium">
-                    カントリーマネージャー
-                  </p>
-                </div>
-                <div className="bg-white border border-gray-300 px-4 py-3 rounded shadow-sm">
-                  <p className="text-gray-700 font-medium">
-                    CTO / COO / CFO / CAO
-                  </p>
-                </div>
-                <div className="bg-white border border-gray-300 px-4 py-3 rounded shadow-sm">
-                  <p className="text-gray-700 font-medium">経営企画</p>
-                </div>
-                <div className="bg-white border border-gray-300 px-4 py-3 rounded shadow-sm">
-                  <p className="text-gray-700 font-medium">事業企画</p>
-                </div>
-                <div className="bg-white border border-gray-300 px-4 py-3 rounded shadow-sm">
-                  <p className="text-gray-700 font-medium">
-                    専務コンサルタント
-                  </p>
-                </div>
-              </div>
-            </div>
-
-     
-            <div
-              className="space-y-4"
-              data-aos="fade-up"
-              data-aos-offset="100"
-              data-aos-delay="200"
-            >
-              <div className="bg-blue-500 text-white px-6 py-4 rounded-lg flex items-center gap-3">
-                <div className="bg-white text-blue-500 w-8 h-8 rounded-full flex items-center justify-center font-bold text-lg">
-                  02
-                </div>
-                <h3 className="font-bold text-lg">ビジネス・コーポレート</h3>
-              </div>
-
-              <div className="space-y-3">
-                <div className="bg-white border border-gray-300 px-4 py-3 rounded shadow-sm">
-                  <p className="text-gray-700 font-medium">セールス</p>
-                </div>
-                <div className="bg-white border border-gray-300 px-4 py-3 rounded shadow-sm">
-                  <p className="text-gray-700 font-medium">マーケティング</p>
-                </div>
-                <div className="bg-white border border-gray-300 px-4 py-3 rounded shadow-sm">
-                  <p className="text-gray-700 font-medium">
-                    カスタマーサクセス
-                  </p>
-                </div>
-                <div className="bg-white border border-gray-300 px-4 py-3 rounded shadow-sm">
-                  <p className="text-gray-700 font-medium">経営・財務</p>
-                </div>
-                <div className="bg-white border border-gray-300 px-4 py-3 rounded shadow-sm">
-                  <p className="text-gray-700 font-medium">オペレーション</p>
-                </div>
-                <div className="bg-white border border-gray-300 px-4 py-3 rounded shadow-sm">
-                  <p className="text-gray-700 font-medium">人事・総務</p>
-                </div>
-                <div className="bg-white border border-gray-300 px-4 py-3 rounded shadow-sm">
-                  <p className="text-gray-700 font-medium">法務</p>
-                </div>
-              </div>
-            </div>
-
-      
-            <div
-              className="space-y-4"
-              data-aos="fade-up"
-              data-aos-offset="100"
-              data-aos-delay="300"
-            >
-              <div className="bg-gray-800 text-white px-6 py-4 rounded-lg flex items-center gap-3">
-                <div className="bg-white text-gray-800 w-8 h-8 rounded-full flex items-center justify-center font-bold text-lg">
-                  03
-                </div>
-                <h3 className="font-bold text-lg">
-                  テクノロジー・コンサルティング
-                </h3>
-              </div>
-
-              <div className="space-y-3">
-                <div className="bg-white border border-gray-300 px-4 py-3 rounded shadow-sm">
-                  <p className="text-gray-700 font-medium">エンジニア</p>
-                </div>
-                <div className="bg-white border border-gray-300 px-4 py-3 rounded shadow-sm">
-                  <p className="text-gray-700 font-medium">バックエンド</p>
-                </div>
-                <div className="bg-white border border-gray-300 px-4 py-3 rounded shadow-sm">
-                  <p className="text-gray-700 font-medium">フロントエンド</p>
-                </div>
-                <div className="bg-white border border-gray-300 px-4 py-3 rounded shadow-sm">
-                  <p className="text-gray-700 font-medium">SRE</p>
-                </div>
-                <div className="bg-white border border-gray-300 px-4 py-3 rounded shadow-sm">
-                  <p className="text-gray-700 font-medium">PM・PMO</p>
-                </div>
-                <div className="bg-white border border-gray-300 px-4 py-3 rounded shadow-sm">
-                  <p className="text-gray-700 font-medium">
-                    システムエンジニア
-                  </p>
-                </div>
-                <div className="bg-white border border-gray-300 px-4 py-3 rounded shadow-sm">
-                  <p className="text-gray-700 font-medium">ITコンサルタント</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
     </main>
   );
 }
