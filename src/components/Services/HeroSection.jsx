@@ -1,4 +1,4 @@
-import Robot from "../../assets/img/Robot.png";
+import Growth from "../../assets/svg/Growth.svg";
 import Servicesbg from "../../assets/img/ServicesHeroSectionBg.png";
 export default function HeroSection() {
   return (
@@ -13,20 +13,20 @@ export default function HeroSection() {
         <div className="flex items-center gap-20">
           {/* Left side - Title with robot image */}
           <div className="flex-shrink-0">
-            <div className="relative bg-[#F2F2F2] border border-[#B3B3B3] rounded-lg p-12 w-96">
-              <h2 className="text-5xl font-bold text-black mb-4">サービス</h2>
+            <div className="relative bg-[#F2F2F2] border border-[#B3B3B3] rounded-lg p-10 w-96">
+              <h2 className="text-5xl font-bold text-black mb-2">サービス</h2>
               <p
-                className="text-6xl text-black"
+                className="text-5xl text-black"
                 style={{ fontFamily: "Lato-Thin" }}
               >
                 Services
               </p>
 
               {/* Robot image placeholder */}
-              <div className="absolute -right-23 top-1/2 -translate-y-1/3">
-                <div className="w-44   flex items-center justify-center ">
+              <div className="absolute -right-37 top-35 -translate-y-1/3">
+                <div className="w-96   flex items-center justify-center ">
                   <img
-                    src={Robot}
+                    src={Growth}
                     alt="Robot"
                     className="w-auto h-auto object-contain"
                   />
@@ -36,8 +36,8 @@ export default function HeroSection() {
           </div>
 
           {/* Right side - Description text */}
-          <div className="flex-1 space-y-4 text-black leading-relaxed ml-10 text-nowrap">
-            <p className="text-base 2xl:text-3xl">
+          <div className="flex-1 space-y-9 text-black leading-relaxed ml-10 text-nowrap">
+            <p className="text-base 2xl:text-3xl ">
               スタートアップをはじめとする成長企業には、スピード感と柔軟 <br />
               性のある採用・人材活用が求められています。
             </p>
