@@ -1,7 +1,7 @@
 import React from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
-import { useEffect} from "react";
+import { useEffect } from "react";
 import RLinkLogo from "../../../assets/img/RLinkLogo.png";
 import ServicesNav from "../../../shared/ServicesNav";
 const flowData = [
@@ -106,7 +106,11 @@ function RecruitmentAdvisory() {
                   }}
                 >
                   <div
-                    className="p-4 text-white text-base text-center whitespace-nowrap h-20 flex justify-center items-center"
+                    className={`p-4 text-base text-center whitespace-nowrap h-24 flex justify-center items-center ${
+                      step.title === "オペレーション"
+                        ? "text-black"
+                        : "text-white"
+                    }`}
                     style={{ textShadow: "2px 5px 2px rgba(0, 0, 0, 0.3)" }}
                   >
                     {step.title}
@@ -114,27 +118,24 @@ function RecruitmentAdvisory() {
                 </div>
                 <div className="mt-1">
                   <ul
-                    className={`flex-1 px-4 pb-4 pt-1 text-xs w-60 h-20 ${
+                    className={`flex-1 px-4 py-4 text-xs w-60 h-24 items-center ${
                       idx === 2
-                        ? "bg-[#1867D1]/75 text-black"
+                        ? "bg-[#1867D1]/75 text-white"
                         : "bg-[#D9D9D9] text-[#1867D1]"
                     }`}
                   >
                     {step.items.map((item) => (
                       <li key={item} className="flex items-center gap-2">
                         <svg
-                          width="7"
-                          height="7"
-                          viewBox="0 0 12 12"
+                          width="8"
+                          height="8"
+                          viewBox="0 0 8 8"
                           fill="none"
                           xmlns="http://www.w3.org/2000/svg"
                         >
-                          <rect
-                            x="5.65723"
-                            width="8"
-                            height="8"
-                            transform="rotate(45 5.65723 0)"
-                            fill={idx === 2 ? "#1867D1" : "black"}
+                          <polygon
+                            points="4,1 7,4 4,7 1,4"
+                            fill={idx === 2 ? "white" : "#1867D1"}
                           />
                         </svg>
                         {item}
