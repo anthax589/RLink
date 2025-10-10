@@ -3,7 +3,7 @@ import Servicesbg from "../../assets/img/ServicesHeroSectionBg.png";
 export default function HeroSection() {
   return (
     <div
-      className="py-12 px-0 h-[50vh] flex items-center justify-center w-full"
+      className="py-14 px-5 h-[50vh] flex items-center justify-center w-full"
       style={{
         backgroundImage: `url(${Servicesbg})`,
         backgroundSize: "cover",
@@ -12,8 +12,9 @@ export default function HeroSection() {
       <div className="max-w-full ">
         <div className="flex items-center gap-20">
           {/* Left side - Title with robot image */}
-          <div className="flex-shrink-0">
-            <div className="relative bg-[#F2F2F2] border border-[#B3B3B3] rounded-lg p-10 w-96">
+          <div className="flex items-center -mr-36">
+            {/* Title Card */}
+            <div className="bg-[#F2F2F2] border border-[#B3B3B3] rounded-lg p-10 w-96 flex-shrink-0 z-10 relative left-28">
               <h2 className="text-5xl font-bold text-black mb-2">サービス</h2>
               <p
                 className="text-5xl text-black"
@@ -21,17 +22,15 @@ export default function HeroSection() {
               >
                 Services
               </p>
+            </div>
 
-              {/* Robot image placeholder */}
-              <div className="absolute -right-37 top-35 -translate-y-1/3">
-                <div className="w-96   flex items-center justify-center ">
-                  <img
-                    src={Growth}
-                    alt="Robot"
-                    className="w-auto h-auto object-contain"
-                  />
-                </div>
-              </div>
+            {/* Robot image placeholder */}
+            <div className="w-96 flex items-center justify-center -ml-30 -mb-48 z-30">
+              <img
+                src={Growth}
+                alt="Robot"
+                className="w-auto h-auto object-contain"
+              />
             </div>
           </div>
 
