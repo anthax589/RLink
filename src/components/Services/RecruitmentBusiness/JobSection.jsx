@@ -55,8 +55,8 @@ const JobCategories = () => {
                   key={i}
                   className={` rounded-md px-4 py-5 text-center ${
                     [0, 2, 4, 6].includes(i)
-                      ? "shadow-[5px_4px_4px_rgba(0,0,0,0.10)]"
-                      : "shadow-[-5px_4px_4px_rgba(0,0,0,0.10)]"
+                      ? "shadow-[5px_4px_4px_rgba(0,0,0,0.10)] bg-gradient-to-r from-[#F5F5F5]/0 to-[#FFFFFF]"
+                      : "shadow-[-5px_4px_4px_rgba(0,0,0,0.10)] bg-gradient-to-l from-[#F5F5F5]/0 to-[#FFFFFF]"
                   }`}
                 >
                   <p
@@ -103,8 +103,8 @@ const JobCategories = () => {
                   key={i}
                   className={`bg-transparent  rounded-md px-4 py-5 text-center ${
                     [0, 2, 4, 6].includes(i)
-                      ? "shadow-[5px_4px_4px_rgba(0,0,0,0.10)]"
-                      : "shadow-[-5px_4px_4px_rgba(0,0,0,0.10)]"
+                      ? "shadow-[5px_4px_4px_rgba(0,0,0,0.10)]  bg-gradient-to-r from-[#F5F5F5]/0 to-[#FFFFFF]"
+                      : "shadow-[-5px_4px_4px_rgba(0,0,0,0.10)]  bg-gradient-to-l from-[#F5F5F5]/0 to-[#FFFFFF]"
                   }`}
                 >
                   <p className="text-black font-medium text-[15px]">{item}</p>
@@ -146,8 +146,8 @@ const JobCategories = () => {
                   key={i}
                   className={`bg-transparent  rounded-md px-4 py-5 text-center ${
                     [0, 2, 4, 6].includes(i)
-                      ? "shadow-[5px_4px_4px_rgba(0,0,0,0.10)]"
-                      : "shadow-[-5px_4px_4px_rgba(0,0,0,0.10)]"
+                      ? "shadow-[5px_4px_4px_rgba(0,0,0,0.10)]  bg-gradient-to-r from-[#F5F5F5]/0 to-[#FFFFFF]"
+                      : "shadow-[-5px_4px_4px_rgba(0,0,0,0.10)]  bg-gradient-to-l from-[#F5F5F5]/0 to-[#FFFFFF]"
                   }`}
                 >
                   <p className="text-black font-medium text-[15px]">{item}</p>
