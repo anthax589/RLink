@@ -1,6 +1,7 @@
 import servicesbg from "../../../assets/img/ServicesHeroSectionBg.png";
 import Aos from "aos";
 import "aos/dist/aos.css";
+import HR from "../../../assets/svg/SnappCheck.svg"
 import { useEffect } from "react";
 
 const HeroSection = () => {
@@ -56,15 +57,12 @@ const HeroSection = () => {
           </button>
         </div>
         <div>
-          <div className="w-xl h-68 flex items-center justify-center  bg-[#D9D9D9]">
-            {/* <img
-              src={Executive}
+          <div className="w-xl h-68 flex items-center justify-center ">
+            <img
+              src={HR}
               alt="Executive Search"
               className="w-full h-full"
-            /> */}
-            <span className="flex justify-center items-center mx-auto text-black text-5xl">
-              IMAGE.JPG
-            </span>
+            />
           </div>
         </div>
       </div>

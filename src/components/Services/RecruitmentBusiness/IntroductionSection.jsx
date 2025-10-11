@@ -2,10 +2,9 @@ import React from "react";
 import { useEffect } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
-import RLinkLogo from "../../../assets/img/RLinkLogo.png";
+import RLink from "../../../assets/svg/RLink.svg";
 import ServicesNav from "../../../shared/ServicesNav";
 function IntroductionSection() {
-
   useEffect(() => {
     Aos.init({ duration: 1000 });
   }, []);
@@ -25,11 +24,17 @@ function IntroductionSection() {
         {/* Content Section - Centered in remaining space */}
         <div className="flex items-center justify-center px-4 sm:px-8 lg:px-16 h-full pb-36 relative">
           {/* Background Logo */}
-          <div className="absolute bottom-10 inset-0 flex items-center justify-center opacity-20 z-0">
+          <div
+            className="absolute bottom-10 inset-0 flex items-center justify-center z-0"
+            style={{ opacity: 0.2 }}
+          >
             <img
-              src={RLinkLogo}
+              src={RLink}
               alt="RLink Logo"
-              className="w-96 lg:w-[500px] xl:w-[450px] h-auto object-contain"
+              className="w-96 lg:w-[500px] xl:w-[550px] h-auto"
+              style={{
+                objectFit: "contain",
+              }}
             />
           </div>
 
@@ -45,7 +50,7 @@ function IntroductionSection() {
               <h3 className="text-2xl lg:text-3xl font-bold text-white mb-6 lg:mb-8 text-center">
                 リテーナー型
               </h3>
-              <div className="bg-[#FFFFFF]/20 backdrop-blur-sm rounded p-6 lg:p-8 min-h-[250px] lg:min-h-[250px] flex items-start">
+              <div className="bg-[#FFFFFF]/20 rounded p-6 lg:p-8 min-h-[250px] lg:min-h-[250px] flex items-start">
                 <p className="text-white  leading-relaxed text-base lg:text-lg xl:text-xl">
                   主に経営幹部クラスや高度専門職、またはコンフィデンシャル案件を対象とした採用手法です。プロジェクト型で採用活動を行い、業界リサーチを基にターゲットリストを作成し、ダイレクトアプローチ（ヘッドハンティング）によって最適な人材を探索・確保します。
                 </p>
@@ -62,7 +67,7 @@ function IntroductionSection() {
               <h3 className="text-2xl lg:text-3xl font-bold text-white mb-6 lg:mb-8 text-center">
                 コンティンジェンシー型
               </h3>
-              <div className="bg-[#FFFFFF]/20 backdrop-blur-sm rounded px-6 lg:p-8 min-h-[250px] lg:min-h-[250px] flex items-start">
+              <div className="bg-[#FFFFFF]/20 rounded px-6 lg:p-8 min-h-[250px] lg:min-h-[250px] flex items-start">
                 <p className="text-white  leading-relaxed text-base lg:text-lg xl:text-xl">
                   幅広い職種やレイヤーを対象とした、完全成功報酬型の人材紹介手法です。採用決定まで費用が発生しないため、複数ポジションを同時に進めやすく、短期的な人材獲得に適しています。
                 </p>

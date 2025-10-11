@@ -2,7 +2,7 @@ import React from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
-import RLinkLogo from "../../../assets/img/RLinkLogo.png";
+import RLink from "../../../assets/svg/RLink.svg";
 import ServicesNav from "../../../shared/ServicesNav";
 const flowData = [
   {
@@ -71,11 +71,14 @@ function RecruitmentAdvisory() {
             </h1>
           </div>
           {/* Background Logo */}
-          <div className="absolute top-70 inset-0 flex items-center justify-center opacity-20 z-0">
+          <div
+            className="absolute top-80 inset-0 flex items-center justify-center z-0"
+            style={{ opacity: 0.2 }}
+          >
             <img
-              src={RLinkLogo}
+              src={RLink}
               alt="RLink Logo"
-              className="w-96 lg:w-[500px] xl:w-[450px] h-auto object-contain"
+              className="w-96 lg:w-[500px] xl:w-[550px] h-auto object-contain"
             />
           </div>
           {/* Flowchart Container */}

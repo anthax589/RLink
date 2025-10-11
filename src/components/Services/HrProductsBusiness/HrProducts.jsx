@@ -1,13 +1,11 @@
 import Rectanglebg from "../../../assets/img/Rectangle 60.png";
 import Aos from "aos";
 import "aos/dist/aos.css";
-import { useEffect} from "react";
-import RLinkLogo from "../../../assets/img/RLinkLogo.png";
+import { useEffect } from "react";
+import RLink from "../../../assets/svg/RLink.svg";
 import ServicesNav from "../../../shared/ServicesNav";
 
-
 export default function SnappCheck() {
-
   useEffect(() => {
     Aos.init({ duration: 1500 });
   }, []);
@@ -27,11 +25,14 @@ export default function SnappCheck() {
         {/* Content Section - Centered in remaining space */}
         <div className="flex items-center justify-center px-4 sm:px-8 lg:px-16 h-full pb-20 relative">
           {/* Background Logo */}
-          <div className="absolute inset-0 flex items-center justify-center opacity-20 z-0">
+          <div
+            className="absolute inset-0 flex items-center justify-center z-0 bottom-16"
+            style={{ opacity: 0.2 }}
+          >
             <img
-              src={RLinkLogo}
+              src={RLink}
               alt="RLink Logo"
-              className="w-96 lg:w-[500px] xl:w-[450px] h-auto object-contain"
+              className="w-96 lg:w-[500px] xl:w-[550px] h-auto object-contain"
             />
           </div>
 

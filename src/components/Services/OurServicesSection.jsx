@@ -1,10 +1,10 @@
 import React from "react";
-import RPO from "../../assets/svg/RPOv2.svg";
-import HR from "../../assets/svg/Hr.svg";
-import Executive from "../../assets/svg/Jobs.svg";
+import RPO from "../../assets/svg/RPOv3.svg";
+import HR from "../../assets/svg/SnappCheck.svg";
+import Executive from "../../assets/svg/Executive1.svg";
 import ourservices from "../../assets/img/OurServicesBackGround.png";
-import Contact from "../../assets/svg/ContactUs.svg";
-import Staffing from "../../assets/svg/Career.svg";
+import Contact from "../../assets/svg/Contact.svg";
+import Staffing from "../../assets/svg/Staffing1.svg";
 import { useNavigate } from "react-router-dom";
 
 export default function RobotServicesLayout() {
@@ -23,17 +23,17 @@ export default function RobotServicesLayout() {
     >
       <div className="max-w-6xl mx-auto flex flex-col gap-6">
         {/* Top Left - AI Introduction Service */}
-        <div className="bg-gradient-to-tb from-[#E4E5E5] to-[#F0F0F0] rounded-md  pt-20 pb-10  px-4 border border-[#1867D1]/30">
+        <div className="bg-gradient-to-tb from-[#E4E5E5] to-[#F0F0F0] rounded-md   py-10  px-4 border border-[#1867D1]/30">
           <div className="flex items-start gap-6">
-            <div className="flex-shrink-0 w-72  flex items-center justify-center">
+            <div className="flex-shrink-0 w-60  flex items-center justify-center ml-16">
               <img
                 src={Executive}
                 alt="Executive"
                 className="w-auto h-auto object-contain self-center"
               />
             </div>
-            <div className="flex-1">
-              <h2 className="text-2xl font-bold pt-8 mb-2 text-black">
+            <div className="flex-1 ">
+              <h2 className="text-2xl font-bold pt-16 mb-2 text-black">
                 人材紹介事業
               </h2>
               <p className="text-black mb-4 leading-relaxed text-nowrap tracking-wide ">
@@ -83,11 +83,11 @@ export default function RobotServicesLayout() {
             </p>
             <div className="flex  gap-6 items-end relative top-4">
               <div className="flex justify-end">
-                <div className="w-72 flex items-center justify-end ">
+                <div className="flex items-center justify-end ">
                   <img
                     src={RPO}
                     alt="RPO"
-                    className="w-auto h-auto object-contain"
+                    className="w-96 lg:w-[500px] xl:w-[550px] h-auto object-contain"
                   />
                 </div>
               </div>
@@ -129,7 +129,7 @@ export default function RobotServicesLayout() {
                 <img
                   src={HR}
                   alt="HR"
-                  className="w-32 h-auto object-contain self-end"
+                  className="w-72 h-auto object-contain self-end"
                 />
               </div>
             </div>
@@ -159,35 +159,46 @@ export default function RobotServicesLayout() {
             className="bg-gradient-to-b from-[#1867D1] to-[#0C356B] rounded-lg shadow-md p-6 text-white relative overflow-visible"
             style={{ flexBasis: "45%" }}
           >
-            <h2 className="text-2xl font-bold mb-3">Get in Touch</h2>
+            <h2 className="text-2xl font-bold pb-3">Get in Touch</h2>
             <p className="mb-6 text-sm leading-relaxed">
               We'd love to hear from you. Whether you're a company seeking top
               executive talent or a professional exploring new career
               opportunities, RLink Partners is here to guide your next step.
             </p>
 
-            <div className="flex items-end gap-4 relative">
+            <div className="flex items-end gap-4 relative top-12 h-64 overflow-visible">
               {/* Robot Image - Positioned to overflow outside */}
-              <div className="absolute -left-22 -bottom-10 w-64">
+              <div className="absolute -left-22 -bottom-13 w-64">
                 <img
                   src={Contact}
                   alt="Contact"
                   className="w-full h-auto object-contain"
                 />
               </div>
-
-              {/* Buttons - Right Side with left margin to avoid robot */}
-              <div className="w-full space-y-10 flex flex-col justify-end-safe relative left-50">
-                <button className="w-64 bg-black text-white px-4 py-4 rounded hover:bg-white hover:text-blue-600 transition font-normal text-lg border border-white">
-                  サービスについて(法人)
-                </button>
-                <button className="w-64 bg-black text-white px-4 py-4 rounded hover:bg-white hover:text-blue-600 transition font-normal text-lg border border-white">
-                  サービスについて(法人)
-                </button>
-                <button className="w-64 bg-black text-white px-4 py-4 rounded hover:bg-white hover:text-blue-600 transition font-normal text-lg border border-white">
-                  サービスについて(法人)
-                </button>
-              </div>
+            </div>
+            {/* Buttons - Right Side with left margin to avoid robot */}
+            <div className="w-full  flex flex-col justify-end-safe relative left-45 bottom-20 self-end">
+              <button className="w-68 bg-black text-white  py-3 rounded  font-normal text-lg border border-white flex justify-center items-center gap-2 cursor-pointer">
+                <svg
+                  width="40"
+                  height="40"
+                  viewBox="0 0 40 40"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M30.0003 10H10.0003C8.15938 10 6.66699 11.4924 6.66699 13.3333V26.6667C6.66699 28.5076 8.15938 30 10.0003 30H30.0003C31.8413 30 33.3337 28.5076 33.3337 26.6667V13.3333C33.3337 11.4924 31.8413 10 30.0003 10Z"
+                    stroke="white"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M6.66699 15L18.5103 20.9217C18.973 21.1529 19.4831 21.2732 20.0003 21.2732C20.5175 21.2732 21.0277 21.1529 21.4903 20.9217L33.3337 15"
+                    stroke="white"
+                    stroke-width="2"
+                  />
+                </svg>
+                お問い合わせ
+              </button>
             </div>
           </div>
 
@@ -199,14 +210,14 @@ export default function RobotServicesLayout() {
             <h2 className="text-3xl font-bold mb-4 text-black">
               人材派遣/契約・業務委託事業
             </h2>
-            <p className="text-black mb-19 leading-relaxed text-xl">
+            <p className="text-black mb-10 leading-relaxed text-xl">
               バイリンガル人材を含む幅広い職種・レイヤーの即戦力人
               <br />
               材を、スピード感をもってご紹介します。
             </p>
-            <div className="flex  gap-3 items-end flex-row-reverse flex-1 relative top-4">
+            <div className="flex  gap-13 items-end flex-row-reverse flex-1 relative top-4">
               <div className="flex justify-end ">
-                <div className="w-80">
+                <div className="w-72 flex items-center justify-end ">
                   <img
                     src={Staffing}
                     alt="Staffing"
@@ -216,7 +227,7 @@ export default function RobotServicesLayout() {
               </div>
               <button
                 onClick={() => handleViewMore("/staffing")}
-                className="btn text-black text-lg shadow-none border bg-[#F4F2F2] border-black px-14 py-7  rounded hover:bg-white transition flex items-center justify-center   font-normal w-auto mb-6"
+                className="btn text-black text-lg shadow-none border bg-[#F4F2F2] border-black px-14 py-7  rounded hover:bg-white transition flex items-center justify-center   font-normal w-auto "
               >
                 VIEW MORE
                 <svg
