@@ -4,6 +4,7 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 import RLink from "../../../assets/svg/RLink.svg";
 import ServicesNav from "../../../shared/ServicesNav";
+import Radial from "../../../assets/img/RadialBackGround.png";
 function IntroductionSection() {
   useEffect(() => {
     Aos.init({ duration: 1000 });
@@ -15,7 +16,9 @@ function IntroductionSection() {
       <div
         className="w-full h-full"
         style={{
-          background: "linear-gradient(90deg, #000000 0%, #1867D1 100%)",
+          backgroundImage: `url(${Radial})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
         }}
       >
         {/* Tab Navigation - Positioned to overflow above background */}
@@ -26,7 +29,7 @@ function IntroductionSection() {
           {/* Background Logo */}
           <div
             className="absolute bottom-10 inset-0 flex items-center justify-center z-0"
-            style={{ opacity: 0.2 }}
+            style={{ opacity: 0.4 }}
           >
             <img
               src={RLink}

@@ -6,7 +6,6 @@ import ourservices from "../../assets/img/OurServicesBackGround.png";
 import Contact from "../../assets/svg/Contact.svg";
 import Staffing from "../../assets/svg/Staffing1.svg";
 import { useNavigate } from "react-router-dom";
-
 export default function RobotServicesLayout() {
   const navigate = useNavigate();
 
@@ -76,7 +75,7 @@ export default function RobotServicesLayout() {
             <h2 className="text-2xl font-bold mb-4 text-black">
               採用戦略アドバイザリー事業
             </h2>
-            <p className="text-black mb-8 text-md leading-relaxed text-xl">
+            <p className="text-black mb-3 text-md leading-relaxed text-xl">
               般的なRPOの業務領域を超えた、採用の仕組みづくりから伴
               <br />
               奏型で企業の採用課題を支援します
