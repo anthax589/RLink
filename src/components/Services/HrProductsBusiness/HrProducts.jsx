@@ -4,7 +4,7 @@ import "aos/dist/aos.css";
 import { useEffect } from "react";
 import RLink from "../../../assets/svg/RLink.svg";
 import ServicesNav from "../../../shared/ServicesNav";
-
+import Radial from "../../../assets/img/RadialBackGround.png";
 export default function SnappCheck() {
   useEffect(() => {
     Aos.init({ duration: 1500 });
@@ -16,7 +16,9 @@ export default function SnappCheck() {
       <div
         className="w-full h-screen"
         style={{
-          background: "linear-gradient(90deg, #000000 0%, #1867D1 100%)",
+          backgroundImage: `url(${Radial})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
         }}
       >
         {/* Tab Navigation - Positioned to overflow above background */}
@@ -27,7 +29,7 @@ export default function SnappCheck() {
           {/* Background Logo */}
           <div
             className="absolute inset-0 flex items-center justify-center z-0 bottom-16"
-            style={{ opacity: 0.2 }}
+            style={{ opacity: 0.4 }}
           >
             <img
               src={RLink}

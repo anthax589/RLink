@@ -4,6 +4,7 @@ import "aos/dist/aos.css";
 import { useEffect } from "react";
 import RLink from "../../../assets/svg/RLink.svg";
 import ServicesNav from "../../../shared/ServicesNav";
+import Radial from "../../../assets/img/RadialBackGround.png";
 const flowData = [
   {
     title: "採用戦略構築・設計",
@@ -51,7 +52,9 @@ function RecruitmentAdvisory() {
       <div
         className="w-full h-screen"
         style={{
-          background: "linear-gradient(90deg, #000000 0%, #1867D1 100%)",
+          backgroundImage: `url(${Radial})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
         }}
       >
         {/* Tab Navigation - Positioned to overflow above background */}
@@ -59,9 +62,9 @@ function RecruitmentAdvisory() {
 
         {/* Process Flow (new flowchart) */}
         <div className="w-full h-1/2 flex flex-col justify-center items-center ">
-          <div className="text-center mb-8 flex justify-center items-center">
+          <div className="text-center mb-8 flex justify-center items-center z-10">
             <h1
-              className="text-3xl text-white pt-56"
+              className="text-3xl text-white pt-56 "
               style={{ textShadow: "2px 5px 2px rgba(0, 0, 0, 0.3)" }}
               data-aos="fade-up"
               data-aos-offset="200"
@@ -72,8 +75,8 @@ function RecruitmentAdvisory() {
           </div>
           {/* Background Logo */}
           <div
-            className="absolute top-80 inset-0 flex items-center justify-center z-0"
-            style={{ opacity: 0.2 }}
+            className="absolute top-80 inset-0 flex items-center justify-center "
+            style={{ opacity: 0.4 }}
           >
             <img
               src={RLink}

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { href, Link, useLocation } from "react-router-dom";
 import RLinkLogo from "../assets/img/RLinkLogo.png";
 import { useVideoContext } from "../context/useVideoContext";
 
@@ -54,33 +54,32 @@ const Header = () => {
     {
       key: "services",
       label: "サービス",
-      links: [
-        { label: "開発", href: "/services" },
-        { label: "デザイン", href: "/services#design" }, // Changed from #services
-      ],
+      href: "/services",
+      noDropdown: true,
     },
+
     {
       key: "news",
       label: "ニュース",
       links: [
         { label: "最新情報", href: "/news" },
-        { label: "プレスリリース", href: "/press" }, // Changed from #
+        { label: "プレスリリース", href: "/press" },
       ],
     },
     {
       key: "blog",
       label: "ブログ",
       links: [
-        { label: "記事一覧", href: "/blog" }, // Changed from #
-        { label: "カテゴリ", href: "/blog/categories" }, // Changed from #
+        { label: "記事一覧", href: "/blog" },
+        { label: "カテゴリ", href: "/blog/categories" },
       ],
     },
     {
       key: "contact",
       label: "お問い合わせ",
       links: [
-        { label: "サポート", href: "/contact/support" }, // Changed from #
-        { label: "営業窓口", href: "/contact/sales" }, // Changed from #
+        { label: "サポート", href: "/contact/support" },
+        { label: "営業窓口", href: "/contact/sales" },
       ],
     },
   ];
@@ -229,52 +228,65 @@ const Header = () => {
           <nav className="flex items-center space-x-10 text-lg text-black py-4 px-8 relative">
             {navItems.map((item) => (
               <div className="relative group" key={item.key}>
-                <button className="flex items-center hover:text-blue-600 relative group">
-                  {item.label}
-                  <span className="ml-1">
-                    <svg
-                      width="10"
-                      height="10"
-                      viewBox="0 0 10 10"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                      className={`transition-transform duration-300 ease-in-out group-hover:rotate-2 ${
-                        openDropdown === item.key ? "rotate-2" : ""
-                      }`}
-                    >
-                      <path
-                        d="M8.75003 2.08329L1.25003 2.08329C1.17409 2.08353 1.09966 2.10447 1.03474 2.14386C0.969827 2.18326 0.916884 2.23961 0.881611 2.30685C0.846339 2.3741 0.830074 2.44969 0.834567 2.52549C0.839059 2.60129 0.86414 2.67443 0.90711 2.73704L4.65711 8.15371C4.81253 8.37829 5.18669 8.37829 5.34253 8.15371L9.09253 2.73704C9.13593 2.67456 9.16139 2.60139 9.16612 2.52546C9.17086 2.44953 9.1547 2.37376 9.1194 2.30637C9.08409 2.23898 9.03099 2.18256 8.96587 2.14323C8.90075 2.1039 8.8261 2.08317 8.75003 2.08329Z"
-                        fill="black"
-                      />
-                    </svg>
-                  </span>
-                  <div className="nav-item-gap-filler"></div>
-                </button>
-                <div
-                  className={
-                    "absolute left-1/2 transform -translate-x-1/2 mt-2 w-auto min-w-[175px] h-42 rounded-lg overflow-hidden shadow-lg opacity-0 invisible z-60 group-hover:visible hover:visible text-center text-nowrap dropdown-1"
-                  }
-                >
-                  <div className="px-4 py-5">
-                    <div className="flex flex-col justify-center gap-6">
-                      {item.links.map((link, idx) => (
-                        <Link
-                          key={idx}
-                          to={link.href}
-                          className="block py-2 px-3 text-black hover:text-blue-800 transition-all"
-                          style={{
-                            animation: `fadeIn 0.5s ease-out ${
-                              idx * 0.1 + 0.2
-                            }s both`,
-                            opacity: 0,
-                          }}
+                {item.noDropdown ? (
+                  // Direct link for items without dropdown (like Services)
+                  <Link
+                    to={item.href}
+                    className="flex items-center hover:text-blue-600"
+                  >
+                    {item.label}
+                  </Link>
+                ) : (
+                  // Dropdown menu for other items
+                  <>
+                    <button className="flex items-center hover:text-blue-600 relative group">
+                      {item.label}
+                      <span className="ml-1">
+                        <svg
+                          width="10"
+                          height="10"
+                          viewBox="0 0 10 10"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                          className={`transition-transform duration-300 ease-in-out group-hover:rotate-2 ${
+                            openDropdown === item.key ? "rotate-2" : ""
+                          }`}
                         >
-                          {link.label}
-                        </Link>
-                      ))}
+                          <path
+                            d="M8.75003 2.08329L1.25003 2.08329C1.17409 2.08353 1.09966 2.10447 1.03474 2.14386C0.969827 2.18326 0.916884 2.23961 0.881611 2.30685C0.846339 2.3741 0.830074 2.44969 0.834567 2.52549C0.839059 2.60129 0.86414 2.67443 0.90711 2.73704L4.65711 8.15371C4.81253 8.37829 5.18669 8.37829 5.34253 8.15371L9.09253 2.73704C9.13593 2.67456 9.16139 2.60139 9.16612 2.52546C9.17086 2.44953 9.1547 2.37376 9.1194 2.30637C9.08409 2.23898 9.03099 2.18256 8.96587 2.14323C8.90075 2.1039 8.8261 2.08317 8.75003 2.08329Z"
+                            fill="black"
+                          />
+                        </svg>
+                      </span>
+                      <div className="nav-item-gap-filler"></div>
+                    </button>
+                    <div
+                      className={
+                        "absolute left-1/2 transform -translate-x-1/2 mt-2 w-auto min-w-[175px] h-42 rounded-lg overflow-hidden shadow-lg opacity-0 invisible z-60 group-hover:visible hover:visible text-center text-nowrap dropdown-1"
+                      }
+                    >
+                      <div className="px-4 py-5">
+                        <div className="flex flex-col justify-center gap-6">
+                          {item.links.map((link, idx) => (
+                            <Link
+                              key={idx}
+                              to={link.href}
+                              className="block py-2 px-3 text-black hover:text-blue-800 transition-all"
+                              style={{
+                                animation: `fadeIn 0.5s ease-out ${
+                                  idx * 0.1 + 0.2
+                                }s both`,
+                                opacity: 0,
+                              }}
+                            >
+                              {link.label}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </div>
+                  </>
+                )}
               </div>
             ))}
           </nav>
