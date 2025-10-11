@@ -26,11 +26,11 @@ export default function HeroSection() {
 
             {/* Robot image placeholder */}
             <div className="w-96 flex items-center justify-center -ml-30 -mb-48 z-30">
-              <img
+              {/* <img
                 src={Growth}
                 alt="Robot"
                 className="w-auto h-auto object-contain"
-              />
+              /> */}
             </div>
           </div>
 

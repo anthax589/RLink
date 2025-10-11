@@ -2,7 +2,7 @@ import servicesbg from "../../../assets/img/ServicesHeroSectionBg.png";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
-import Staffing from "../../../assets/svg/Career.svg";
+import Staffing from "../../../assets/svg/Staffing1.svg";
 const HeroSection = () => {
   useEffect(() => {
     Aos.init({ duration: 1500 });
