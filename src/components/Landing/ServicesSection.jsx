@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import RPO from "../../assets/svg/RPO.svg";
 import Staffing from "../../assets/svg/Staffing.svg";
 import Excecutive from "../../assets/svg/Executive.svg";
@@ -9,6 +9,8 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 
 function Services() {
+  const [isFlipped, setIsFlipped] = useState(false);
+
   const serviceCards = [
     {
       title: "人材紹介",
@@ -90,51 +92,67 @@ function Services() {
               return (
                 <div
                   key={index}
-                  className={`bg-white p-6 shadow-lg hover:shadow-2xl transition-all duration-700 ease-out transform flex items-center justify-center relative group ${getHoverAnimation(
-                    index
-                  )}`}
+                  className="relative group"
                   style={{
                     minHeight: "120px",
                     perspective: "1000px",
-                    transformStyle: "preserve-3d",
                   }}
+                  onMouseEnter={() => setIsFlipped(true)}
+                  onMouseLeave={() => setIsFlipped(false)}
                 >
-                  {/* Front Face */}
                   <div
-                    className="absolute inset-0 w-full h-full flex items-center justify-center gap-4 p-6 bg-white transition-transform duration-700 group-hover:[transform:rotateY(180deg)]"
+                    className="relative w-full h-full"
                     style={{
-                      backfaceVisibility: "hidden",
-                      transform: "rotateY(0deg)",
+                      minHeight: "120px",
+                      transformStyle: "preserve-3d",
+                      transition:
+                        "transform 0.8s cubic-bezier(0.4, 0.0, 0.2, 1)",
+                      transform: isFlipped
+                        ? "rotateY(180deg)"
+                        : "rotateY(0deg)",
                     }}
                   >
-                    <div className="flex-shrink-0">
-                      <img
-                        src={card.image}
-                        alt={card.alt}
-                        className="w-full h-20 object-contain"
-                      />
-                    </div>
-                    <h3
-                      className="text-lg font-bold text-black text-center"
-                      style={{ fontFamily: "Inter_Bold" }}
+                    {/* Front Face */}
+                    <div
+                      className="absolute inset-0 w-full h-full flex items-center justify-center gap-4 p-6 bg-white shadow-lg"
+                      style={{
+                        backfaceVisibility: "hidden",
+                        WebkitBackfaceVisibility: "hidden",
+                        transform: "rotateY(0deg)",
+                        minHeight: "120px",
+                      }}
                     >
-                      {card.title}
-                    </h3>
-                  </div>
+                      <div className="flex-shrink-0">
+                        <img
+                          src={card.image}
+                          alt={card.alt}
+                          className="w-full h-20 object-contain"
+                        />
+                      </div>
+                      <h3
+                        className="text-lg font-bold text-black text-center"
+                        style={{ fontFamily: "Inter_Bold" }}
+                      >
+                        {card.title}
+                      </h3>
+                    </div>
 
-                  {/* Back Face */}
-                  <div
-                    className="absolute inset-0 w-full h-full bg-[#575757] flex items-center justify-center transition-transform duration-700 group-hover:[transform:rotateY(0deg)]"
-                    style={{
-                      backfaceVisibility: "hidden",
-                      transform: "rotateY(180deg)",
-                    }}
-                  >
-                    <div className="text-center">
-                      <p className="text-white text-lg font-semibold mb-2 tracking-wide">
-                        This is only a placeholder
-                      </p>
-                      <div className="w-16 h-0.5 bg-white mx-auto"></div>
+                    {/* Back Face */}
+                    <div
+                      className="absolute inset-0 w-full h-full bg-[#575757] flex items-center justify-center shadow-lg"
+                      style={{
+                        backfaceVisibility: "hidden",
+                        WebkitBackfaceVisibility: "hidden",
+                        transform: "rotateY(180deg)",
+                        minHeight: "120px",
+                      }}
+                    >
+                      <div className="text-center">
+                        <p className="text-white text-lg font-semibold mb-2 tracking-wide">
+                          This is only a placeholder
+                        </p>
+                        <div className="w-16 h-0.5 bg-white mx-auto"></div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -172,7 +190,6 @@ function Services() {
                       <p className="text-white text-lg font-semibold mb-2 tracking-wide">
                         This is only a placeholder
                       </p>
-                    
                     </div>
                   </div>
                 </div>

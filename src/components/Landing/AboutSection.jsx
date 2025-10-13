@@ -8,9 +8,9 @@ const AboutSection = () => {
     Aos.init({ duration: 1500 });
   }, []);
   return (
-    <div className="bg-white h-screen flex items-center justify-center relative">
+    <div className="bg-white h-screen flex items-center justify-center relative overflow-hidden">
       <div className="absolute bottom-0 left-0 w-full h-1/4 z-0">
-        <Threads amplitude={5} distance={1} />
+        <Threads amplitude={3} distance={2} />
       </div>
 
       {/* Content */}
