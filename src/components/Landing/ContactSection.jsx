@@ -3,13 +3,9 @@ import { useState } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
-import Navbar from "../../shared/Header";
-import Footer from "../../shared/Footer";
 function ContactSection() {
   const [currentView, setCurrentView] = useState("default"); // Track which form to show
-  const location = useLocation();
-  const isLandingPage = location.pathname === "/"; // Check if we're on the landing page
+
   const [formData, setFormData] = useState({
     inquiryType: "",
     name: "",
@@ -78,8 +74,8 @@ function ContactSection() {
   };
 
   return (
-    <div className="min-h-screen bg-white ">
-      {!isLandingPage && <Navbar />}
+    <div className="min-h-screen bg-white py-20 " id="contact">
+   
       <div className="max-w-6xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-start justify-center py-10">
           {/* Left Side - Contact Information */}
@@ -513,7 +509,6 @@ function ContactSection() {
           )}
         </div>
       </div>
-      <Footer />
     </div>
   );
 }

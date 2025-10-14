@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { href, Link, useLocation } from "react-router-dom";
+import { href, Link, useLocation, useNavigate } from "react-router-dom";
 import RLinkLogo from "../assets/img/RLinkLogo.png";
 import { useVideoContext } from "../context/useVideoContext";
 
@@ -8,9 +8,28 @@ const Header = () => {
   const [showHeader, setShowHeader] = useState(false);
   const { videoEnded } = useVideoContext();
   const location = useLocation();
+  const navigate = useNavigate();
 
   // Check if we're on the landing page
   const isLandingPage = location.pathname === "/";
+
+  // Handle contact navigation
+  const handleContactClick = (e) => {
+    e.preventDefault();
+    if (isLandingPage) {
+      // Scroll to contact section on landing page
+      const contactSection = document.getElementById("contact");
+      if (contactSection) {
+        contactSection.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+    } else {
+      // Navigate to contact page on other pages
+      navigate("/contact");
+    }
+  };
 
   // Handle smooth header appearance
   useEffect(() => {
@@ -227,13 +246,23 @@ const Header = () => {
             {navItems.map((item) => (
               <div className="relative group" key={item.key}>
                 {item.noDropdown ? (
-                  // Direct link for items without dropdown (like Services)
-                  <Link
-                    to={item.href}
-                    className="flex items-center hover:text-blue-600"
-                  >
-                    {item.label}
-                  </Link>
+                  // Special handling for contact item
+                  item.key === "contact" ? (
+                    <button
+                      onClick={handleContactClick}
+                      className="flex items-center hover:text-blue-600"
+                    >
+                      {item.label}
+                    </button>
+                  ) : (
+                    // Direct link for other items without dropdown (like Services)
+                    <Link
+                      to={item.href}
+                      className="flex items-center hover:text-blue-600"
+                    >
+                      {item.label}
+                    </Link>
+                  )
                 ) : (
                   // Dropdown menu for other items
                   <>
