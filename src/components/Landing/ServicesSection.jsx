@@ -84,11 +84,28 @@ function Services() {
                 onClick={() => navigate(card.path)}
                 onKeyDown={(e) => e.key === "Enter" && navigate(card.path)}
                 className="bg-white p-6 shadow-lg hover:shadow-2xl transition-all duration-600 ease-out transform flex items-center justify-center relative group overflow-hidden hover:scale-105 hover:-translate-y-1 cursor-pointer rounded-lg"
-                style={{ minHeight: "180px" }}
+                style={{
+                  minHeight: "180px",
+                  backfaceVisibility: "hidden",
+                  WebkitBackfaceVisibility: "hidden",
+                  willChange: "transform",
+                }}
               >
                 {/* Original Content with elegant fade */}
-                <div className="flex flex-col items-center justify-center gap-4 w-full transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-95">
-                  <div className="flex-shrink-0 transition-transform duration-500 group-hover:rotate-6">
+                <div
+                  className="flex flex-col items-center justify-center gap-4 w-full transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-95"
+                  style={{
+                    backfaceVisibility: "hidden",
+                    WebkitBackfaceVisibility: "hidden",
+                  }}
+                >
+                  <div
+                    className="flex-shrink-0 transition-transform duration-500 group-hover:rotate-6"
+                    style={{
+                      backfaceVisibility: "hidden",
+                      WebkitBackfaceVisibility: "hidden",
+                    }}
+                  >
                     <img
                       src={card.image}
                       alt={card.alt}
