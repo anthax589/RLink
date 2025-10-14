@@ -63,7 +63,7 @@ const HeroSection = () => {
       {/* Video Background */}
       <video
         ref={videoRef}
-        className="w-full h-screen  object-cover flex-1 justify-center items-center relative z-10"
+        className="w-screen h-screen  object-contain flex-1 justify-center items-center relative z-10"
         autoPlay
         muted
         playsInline
