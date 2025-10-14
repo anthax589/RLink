@@ -2,16 +2,14 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
 import TypewriterOnScroll from "../../animation/TypeWriterOnScroll";
-import Threads from "../TextAnimation/Threads/Threads";
+
 const AboutSection = () => {
   useEffect(() => {
     Aos.init({ duration: 1500 });
   }, []);
   return (
     <div className="bg-white h-screen flex items-center justify-center relative overflow-hidden">
-      <div className="absolute bottom-0 left-0 w-full h-60 z-0 ">
-        <Threads amplitude={2.5} distance={1}  />
-      </div>
+     
 
       {/* Content */}
       <div className="relative z-10">
