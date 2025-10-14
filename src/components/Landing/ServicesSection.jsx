@@ -46,12 +46,12 @@ function Services() {
   const navigate = useNavigate();
 
   return (
-    <div className="h-screen  flex flex-col items-center justify-evenly bg-[#1867D1]">
+    <div className="h-screen  flex flex-col items-center justify-center gap-16 bg-[#1867D1]">
       <div className="absolute bottom-0 left-0 w-full h-60 z-0 ">
         <Threads amplitude={2.5} distance={1} color={[255, 255, 255]} />
       </div>
       {/* Header */}
-      <div className="mb-16 flex flex-col items-center justify-center">
+      <div className=" flex flex-col items-center justify-center">
         <TypewriterOnScroll
           text="- サービス -"
           delay={20}
@@ -70,7 +70,7 @@ function Services() {
 
       {/* Services Grid */}
       <div
-        className="w-full max-w-7xl mb-8"
+        className="w-full max-w-7xl "
         data-aos="fade-up"
         data-aos-once="true"
       >

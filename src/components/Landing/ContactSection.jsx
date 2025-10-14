@@ -74,13 +74,12 @@ function ContactSection() {
   };
 
   return (
-    <div className="min-h-screen bg-white py-20 " id="contact">
-   
-      <div className="max-w-6xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-12 items-start justify-center py-10">
+    <div className="min-h-screen bg-white py-20 px-4" id="contact">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid lg:grid-cols-2  items-start justify-center">
           {/* Left Side - Contact Information */}
           <div
-            className="p-8 lg:p-9"
+            className="p-8 lg:py-9 lg:px-0"
             data-aos="fade-up"
             data-aos-offset="100"
             data-aos-delay="50"
@@ -129,7 +128,7 @@ function ContactSection() {
           {currentView === "default" ? (
             // Default Contact Form
             <div
-              className="bg-[#7F7F7F] p-8 lg:p-7 lg:w-2xl rounded"
+              className="bg-[#7F7F7F] p-8 lg:p-7 lg:w-fit lg:relative right-8"
               data-aos="fade-up"
               data-aos-offset="100"
               data-aos-delay="50"
@@ -184,8 +183,8 @@ function ContactSection() {
                 </div>
 
                 {/* Name Field */}
-                <div className="flex items-center justify-center gap-10">
-                  <label className="block text-white text-sm mb-2 w-40">
+                <div className="flex items-center gap-4">
+                  <label className="text-white text-sm min-w-[120px] flex-shrink-0">
                     お名前*
                   </label>
                   <input
@@ -193,13 +192,13 @@ function ContactSection() {
                     name="name"
                     value={formData.name}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-2 text-black bg-white outline-none rounded"
+                    className="flex-1 px-4 py-2 text-black bg-white outline-none rounded"
                   />
                 </div>
 
                 {/* Phone Number Field */}
-                <div className="flex items-center justify-center gap-10">
-                  <label className="block text-white text-sm mb-2 w-40">
+                <div className="flex items-center gap-4">
+                  <label className="text-white text-sm min-w-[120px] flex-shrink-0">
                     電話番号*
                   </label>
                   <input
@@ -207,13 +206,13 @@ function ContactSection() {
                     name="phoneNumber"
                     value={formData.phoneNumber}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-2 text-black bg-white outline-none rounded"
+                    className="flex-1 px-4 py-2 text-black bg-white outline-none rounded"
                   />
                 </div>
 
                 {/* Email Field */}
-                <div className="flex items-center justify-center gap-10">
-                  <label className="block text-white text-sm mb-2 w-40">
+                <div className="flex items-center gap-4">
+                  <label className="text-white text-sm min-w-[120px] flex-shrink-0">
                     メールアドレス*
                   </label>
                   <input
@@ -221,13 +220,13 @@ function ContactSection() {
                     name="email"
                     value={formData.email}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-2 text-black bg-white outline-none rounded"
+                    className="flex-1 px-4 py-2 text-black bg-white outline-none rounded"
                   />
                 </div>
 
                 {/* Position Field */}
-                <div className="flex items-center justify-center gap-10">
-                  <label className="block text-white text-sm mb-2 w-40">
+                <div className="flex items-center gap-4">
+                  <label className="text-white text-sm min-w-[120px] flex-shrink-0">
                     役職*
                   </label>
                   <input
@@ -235,13 +234,13 @@ function ContactSection() {
                     name="position"
                     value={formData.position}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-2 text-black bg-white outline-none rounded"
+                    className="flex-1 px-4 py-2 text-black bg-white outline-none rounded"
                   />
                 </div>
 
                 {/* Company Name Field */}
-                <div className="flex items-center justify-center gap-10">
-                  <label className="block text-white text-sm mb-2 w-40">
+                <div className="flex items-center gap-4">
+                  <label className="text-white text-sm min-w-[120px] flex-shrink-0">
                     企業名*
                   </label>
                   <input
@@ -249,41 +248,48 @@ function ContactSection() {
                     name="companyName"
                     value={formData.companyName}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-2 text-black bg-white outline-none rounded"
+                    className="flex-1 px-4 py-2 text-black bg-white outline-none rounded"
                   />
                 </div>
 
                 {/* File Upload */}
-                <div className="">
-                  <div className="flex gap-2">
-                    <label className="block text-white text-sm mb-2 w-37">
+                <div className="space-y-2">
+                  <div className="flex items-center gap-4">
+                    <label className="text-white text-sm min-w-[120px] flex-shrink-0">
                       添付ファイル
                     </label>
-                    <label className="px-5 py-2 bg-white text-black text-sm cursor-pointer hover:bg-gray-100 inline-block rounded">
-                      Choose File
-                      <input
-                        type="file"
-                        name="file"
-                        onChange={handleInputChange}
-                        className="hidden rounded"
-                      />
-                    </label>
-                    <div className="flex-1 px-4 py-2 bg-[#3a3a3a] text-gray-300 text-sm flex items-center rounded border border-white ">
-                      {formData.file ? formData.file.name : "Sample.docx"}
+                    <div className="flex flex-1 gap-2">
+                      <label className="px-5 py-2 bg-white text-black text-sm cursor-pointer hover:bg-gray-100 rounded flex-shrink-0">
+                        Choose File
+                        <input
+                          type="file"
+                          name="file"
+                          onChange={handleInputChange}
+                          className="hidden rounded"
+                        />
+                      </label>
+                      <div className="flex-1 px-4 py-2 bg-[#3a3a3a] text-gray-300 text-sm flex items-center rounded border border-white min-w-0">
+                        <span className="truncate">
+                          {formData.file ? formData.file.name : "Sample.docx"}
+                        </span>
+                      </div>
                     </div>
                   </div>
-                  <p className="text-[9px] text-gray-300 mt-2 leading-relaxed flex justify-end ml-auto">
-                    *添付ファイルがある場合、添加してください。
-                    <br />
-                    *許容されるファイル形式：
-                    <br />
-                    *PDF・Word・Excel・PowerPoint、画像ファイルは10MBまで対応しております。
-                  </p>
+                  <div className="flex">
+                    <div className="min-w-[120px] flex-shrink-0"></div>
+                    <p className="text-[9px] text-gray-300 leading-relaxed ml-4">
+                      *添付ファイルがある場合、添加してください。
+                      <br />
+                      *許容されるファイル形式：
+                      <br />
+                      *PDF・Word・Excel・PowerPoint、画像ファイルは10MBまで対応しております。
+                    </p>
+                  </div>
                 </div>
 
                 {/* Inquiry Details Textarea */}
-                <div className="flex items-center justify-center gap-10">
-                  <label className="block text-white text-sm mb-2 w-40 self-start">
+                <div className="flex gap-4">
+                  <label className="text-white text-sm min-w-[120px] flex-shrink-0 pt-2">
                     お問い合わせ内容
                   </label>
                   <textarea
@@ -291,7 +297,7 @@ function ContactSection() {
                     value={formData.inquiryDetails}
                     onChange={handleInputChange}
                     rows={2}
-                    className="w-full px-4 py-3 text-black bg-white outline-none resize-none rounded"
+                    className="flex-1 px-4 py-3 text-black bg-white outline-none resize-none rounded"
                   />
                 </div>
 
