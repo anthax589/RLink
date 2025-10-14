@@ -8,54 +8,73 @@ const HeroSection = () => {
   const { setVideoEnded } = useVideoContext();
 
   useEffect(() => {
+    // Reset video state when component mounts
     setVideoEnded(false);
+
+    // Attempt to play the video when the component mounts
     const videoElement = videoRef.current;
 
     if (videoElement) {
-      const handleVideoEnd = () => setVideoEnded(true);
+      const handleVideoEnd = () => {
+        console.log("Video playback ended");
+        setVideoEnded(true);
+      };
 
       const playVideo = async () => {
         try {
+          // Reset video to beginning on refresh
           videoElement.currentTime = 0;
+
           const playPromise = videoElement.play();
+
           if (playPromise !== undefined) {
-            playPromise.catch(() => setVideoEnded(true));
+            playPromise
+              .then(() => {
+                console.log("Video playing successfully");
+              })
+              .catch((error) => {
+                console.error("Error playing video:", error);
+                // Auto-play was prevented, handle accordingly
+                setVideoEnded(true); // Show fallback content if video can't play
+              });
           }
+
+          // Add event listener for when video ends
           videoElement.addEventListener("ended", handleVideoEnd);
-        } catch {
+        } catch (error) {
+          console.error("Error playing video:", error);
           setVideoEnded(true);
         }
       };
 
       playVideo();
-      return () => videoElement.removeEventListener("ended", handleVideoEnd);
+
+      // Cleanup function to remove event listeners when component unmounts
+      return () => {
+        if (videoElement) {
+          videoElement.removeEventListener("ended", handleVideoEnd);
+        }
+      };
     }
-  }, [setVideoEnded]);
+  }, [setVideoEnded]); // Include dependencies
 
   return (
-    <section className="w-full h-screen min-h-[100dvh] overflow-hidden flex items-center justify-center">
+    <div className=" flex items-center overflow-hidden relative">
       {/* Video Background */}
       <video
         ref={videoRef}
-        className="absolute inset-0 w-full h-full  object-cover object-center z-10"
+        className="w-full h-full  object-cover flex-1 justify-center items-center relative z-10"
         autoPlay
         muted
         playsInline
         preload="auto"
         poster={Fallback}
-        style={{
-          width: "100%",
-          height: "100%",
-          minWidth: "100vw",
-          minHeight: "100vh",
-          objectFit: "cover",
-          objectPosition: "center center",
-        }}
       >
         <source src={intro} type="video/mp4" />
+        {/* Fallback message if video cannot be played */}
         Your browser does not support the video tag.
       </video>
-    </section>
+    </div>
   );
 };
 
