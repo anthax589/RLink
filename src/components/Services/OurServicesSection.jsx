@@ -6,12 +6,18 @@ import ourservices from "../../assets/img/OurServicesBackGround.png";
 import Contact from "../../assets/svg/Contact.svg";
 import Staffing from "../../assets/svg/Staffing1.svg";
 import { useNavigate } from "react-router-dom";
+import Aos from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 export default function RobotServicesLayout() {
   const navigate = useNavigate();
 
   const handleViewMore = (path) => {
     navigate(path);
   };
+  useEffect(() => {
+    Aos.init({ duration: 1500 });
+  }, []);
   return (
     <div
       className="min-h-screen bg-gray-100 py-20"
@@ -20,7 +26,13 @@ export default function RobotServicesLayout() {
         backgroundSize: "cover",
       }}
     >
-      <div className="max-w-6xl mx-auto flex flex-col gap-6">
+      <div
+        className="max-w-6xl mx-auto flex flex-col gap-6"
+        data-aos="fade-up"
+        data-aos-offset="100"
+        data-aos-delay="50"
+        data-aos-once="true"
+      >
         {/* Top Left - AI Introduction Service */}
         <div className="bg-gradient-to-tb from-[#E4E5E5] to-[#F0F0F0] rounded-md   py-10  px-4 border border-[#1867D1]/30">
           <div className="flex items-start gap-6">
