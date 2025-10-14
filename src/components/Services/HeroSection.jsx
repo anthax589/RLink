@@ -11,7 +11,7 @@ export default function HeroSection() {
       }}
     >
       <div className="max-w-full">
-        <div className="flex items-center gap-8 md:gap-20">
+        <div className="flex items-center gap-8 md:gap-24">
           {/* Left side - Title with robot image */}
           <div className="flex flex-col">
             {/* Title Card */}
