@@ -26,16 +26,17 @@ export default function HeroSection() {
             {/* Right side - Description text */}
             <div className="flex-1 space-y-9 text-white leading-relaxed  text-nowrap">
               <p className="text-base 2xl:text-3xl ">
-                スタートアップをはじめとする成長企業には、スピード感と柔軟{" "}
-                <br />
-                性のある採用・人材活用が求められています。
+                スタートアップをはじめとする成長企業には、スピード感と柔軟
+                性のあ <br />
+                る採用・人材活用が求められています。
               </p>
 
               <p className="text-base 2xl:text-3xl">
-                即戦力人材の確保から、採用戦略の仕組みづくりからの実行支 <br />
-                援、までを一気通貫で提供し、企業の成長ステージに応じた最適{" "}
+                即戦力人材の確保から、採用戦略の仕組みづくりからの実行支
+                援、まで <br />
+                を一気通貫で提供し、企業の成長ステー ジに応じた最適 なHRソリュー{" "}
                 <br />
-                なHRソリューションを提供します。
+                ションを提供します。
               </p>
             </div>
           </div>
