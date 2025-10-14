@@ -59,16 +59,24 @@ const HeroSection = () => {
   }, [setVideoEnded]); // Include dependencies
 
   return (
-    <div className="h-screen flex items-center overflow-hidden relative">
+    <div className="h-screen w-full flex items-center overflow-hidden relative">
       {/* Video Background */}
       <video
         ref={videoRef}
-        className="w-full h-full object-cover absolute inset-0 z-10"
+        className="absolute inset-0 w-full h-full object-cover z-10"
         autoPlay
         muted
         playsInline
         preload="auto"
         poster={Fallback}
+        style={{
+          objectFit: "cover",
+          objectPosition: "center center",
+          width: "100vw",
+          height: "100vh",
+          minWidth: "100%",
+          minHeight: "100%",
+        }}
       >
         <source src={intro} type="video/mp4" />
         {/* Fallback message if video cannot be played */}
