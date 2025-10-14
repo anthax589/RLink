@@ -1,6 +1,6 @@
 import Fallback from "../../assets/img/FallbackImg.webp";
 import { useEffect, useRef } from "react";
-import intro from "../../assets/video/RLinkIntro.mp4";
+import intro from "../../assets/video/RlinkIntro.mp4";
 import { useVideoContext } from "../../context/useVideoContext";
 
 const HeroSection = () => {
@@ -63,7 +63,7 @@ const HeroSection = () => {
       {/* Video Background */}
       <video
         ref={videoRef}
-        className="w-screen h-screen  object-contain flex-1 justify-center items-center relative z-10"
+        className="w-full h-full  object-contain  flex-1 justify-center items-center relative z-10"
         autoPlay
         muted
         playsInline
