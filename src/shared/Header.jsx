@@ -16,14 +16,29 @@ const Header = () => {
   // Handle contact navigation
   const handleContactClick = (e) => {
     e.preventDefault();
+    console.log("Contact clicked, isLandingPage:", isLandingPage); // Debug log
+
     if (isLandingPage) {
       // Scroll to contact section on landing page
       const contactSection = document.getElementById("contact");
+      console.log("Contact section found:", contactSection); // Debug log
+
       if (contactSection) {
-        contactSection.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
+        // Add a small delay to ensure page is ready
+        setTimeout(() => {
+          // Calculate header height for offset
+          const headerHeight = 100; // Approximate header height
+          const elementPosition = contactSection.getBoundingClientRect().top;
+          const offsetPosition =
+            elementPosition + window.pageYOffset - headerHeight;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth",
+          });
+        }, 100);
+      } else {
+        console.error('Contact section with id="contact" not found');
       }
     } else {
       // Navigate to contact page on other pages
