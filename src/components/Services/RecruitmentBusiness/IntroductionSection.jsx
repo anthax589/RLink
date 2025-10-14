@@ -34,7 +34,7 @@ function IntroductionSection() {
             <img
               src={RLink}
               alt="RLink Logo"
-              className="w-96 lg:w-[500px] xl:w-[550px] h-auto"
+              className="w-96 lg:w-[500px] xl:w-96 2xl:w-xl h-auto"
               style={{
                 objectFit: "contain",
               }}

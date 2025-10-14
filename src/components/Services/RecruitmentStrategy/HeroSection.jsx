@@ -53,7 +53,7 @@ const HeroSection = () => {
           </button>
         </div>
         <div>
-          <div className="w-xl h-72 flex items-center justify-center ">
+          <div className="w-auto h-72 flex items-center justify-center ">
             <img src={RPO} alt="Executive Search" className="w-full h-full" />
           </div>
         </div>
