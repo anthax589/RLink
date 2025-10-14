@@ -84,11 +84,28 @@ function Services() {
                 onClick={() => navigate(card.path)}
                 onKeyDown={(e) => e.key === "Enter" && navigate(card.path)}
                 className="bg-white p-6 shadow-lg hover:shadow-2xl transition-all duration-600 ease-out transform flex items-center justify-center relative group overflow-hidden hover:scale-105 hover:-translate-y-1 cursor-pointer rounded-lg"
-                style={{ minHeight: "180px" }}
+                style={{
+                  minHeight: "180px",
+                  backfaceVisibility: "hidden",
+                  WebkitBackfaceVisibility: "hidden",
+                  willChange: "transform",
+                }}
               >
                 {/* Original Content with elegant fade */}
-                <div className="flex flex-col items-center justify-center gap-4 w-full transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-95">
-                  <div className="flex-shrink-0 transition-transform duration-500 group-hover:rotate-6">
+                <div
+                  className="flex flex-col items-center justify-center gap-4 w-full transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-95"
+                  style={{
+                    backfaceVisibility: "hidden",
+                    WebkitBackfaceVisibility: "hidden",
+                  }}
+                >
+                  <div
+                    className="flex-shrink-0 transition-transform duration-500 group-hover:rotate-6"
+                    style={{
+                      backfaceVisibility: "hidden",
+                      WebkitBackfaceVisibility: "hidden",
+                    }}
+                  >
                     <img
                       src={card.image}
                       alt={card.alt}
@@ -104,12 +121,24 @@ function Services() {
                 </div>
 
                 {/* Professional overlay with sophisticated animation */}
-                <div className="absolute inset-0 bg-[#575757] flex items-center justify-center opacity-0 group-hover:opacity-95 transition-all duration-500 ease-out rounded-lg">
-                  <div className="text-center transform translate-y-6 group-hover:translate-y-0 transition-transform duration-600 ease-out delay-100">
-                    <p className="text-white text-lg font-semibold mb-3 tracking-wide transform scale-75 group-hover:scale-100 transition-transform duration-400 delay-200">
-                      This is only a placeholder
+                <div className="absolute inset-0 bg-white flex items-center justify-center opacity-0 group-hover:opacity-95 transition-all duration-500 ease-out rounded-lg">
+                  <div className="text-center transform translate-y-6 group-hover:translate-y-0 transition-transform duration-600 ease-out delay-100 mx-auto flex flex-col items-center justify-center gap-5 ">
+                    <svg
+                      width="48"
+                      height="43"
+                      viewBox="0 0 48 43"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M0 43V37.625H48V43H0ZM0 32.25V10.75H48V32.25H0ZM0 5.375V0H48V5.375H0Z"
+                        fill="black"
+                      />
+                    </svg>
+
+                    <p className="text-black text-lg font-semibold mb-3 tracking-wide transform scale-75 group-hover:scale-100 transition-transform duration-400 delay-200">
+                      View More
                     </p>
-                    <div className="w-16 h-0.5 bg-white mx-auto transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 delay-400 origin-center"></div>
                   </div>
                 </div>
               </div>

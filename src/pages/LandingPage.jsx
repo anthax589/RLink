@@ -93,9 +93,9 @@ const LandingPage = () => {
         <Suspense fallback={<LoadingSpinner />}>
           <JobTitleSection />
         </Suspense>
-        <Suspense fallback={<LoadingSpinner />}>
+        {/* <Suspense fallback={<LoadingSpinner />}>
           <ContactSection />
-        </Suspense>
+        </Suspense> */}
       </div>
       <Suspense fallback={<LoadingSpinner />}>
         <Footer />

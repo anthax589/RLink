@@ -259,10 +259,6 @@ const CompanyStrengths = () => {
 const RLinkInterface = () => {
   return (
     <div className="min-h-screen">
-      <div className="h-screen">
-        {" "}
-        <JobCategories />
-      </div>
       <CompanyStrengths />
     </div>
   );

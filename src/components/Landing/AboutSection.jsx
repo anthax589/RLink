@@ -8,7 +8,7 @@ const AboutSection = () => {
     Aos.init({ duration: 1500 });
   }, []);
   return (
-    <div className="bg-white h-screen flex items-center justify-center relative overflow-hidden">
+    <div className="bg-white h-fit pt-10 pb-20 flex items-center justify-center relative overflow-hidden">
      
 
       {/* Content */}
@@ -59,18 +59,6 @@ const AboutSection = () => {
           <br />
           が、個人は自らの可能性を発揮できる場が求められています。
         </p>
-
-        {/* Button */}
-        <div
-          data-aos="fade-up"
-          data-aos-offset="100"
-          data-aos-delay="50"
-          data-aos-once="true"
-        >
-          <button className="px-13 2xl:px-14 py-3 bg-[#545555] text-white text-sm  2xl:text-lg tracking-wide shadow hover:bg-gray-800 transition rounded ">
-            VIEW MORE
-          </button>
-        </div>
       </div>
     </div>
   );
