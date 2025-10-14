@@ -81,7 +81,7 @@ function RecruitmentAdvisory() {
             <img
               src={RLink}
               alt="RLink Logo"
-              className="w-96 lg:w-[500px] xl:w-[550px] h-auto object-contain"
+              className="w-96 lg:w-[500px] xl:w-96 2xl:w-xl h-auto object-contain"
             />
           </div>
           {/* Flowchart Container */}

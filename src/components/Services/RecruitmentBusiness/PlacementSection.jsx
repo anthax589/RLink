@@ -162,7 +162,7 @@ const PlacementSection = memo(() => {
           {/* Third Row - 1 Centered Card */}
           <div className="flex justify-center">
             <div
-              className="p-6 h-[23vh] flex items-center justify-center border border-[#5B5B5B] rounded w-[19vw]"
+              className="p-6 h-[23vh] flex items-center justify-center border border-[#5B5B5B] rounded w-[24vw] "
               style={{
                 backgroundImage: `url(${Noise})`,
                 backgroundSize: "cover",
