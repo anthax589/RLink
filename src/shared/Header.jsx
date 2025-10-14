@@ -120,7 +120,7 @@ const Header = () => {
     <header
       className={`${
         isLandingPage ? "fixed top-0 left-0" : "relative"
-      } w-full bg-white z-50`}
+      } w-full bg-white z-30`}
     >
       <style jsx="true">{`
         @keyframes fadeIn {
@@ -172,12 +172,7 @@ const Header = () => {
           }
         }
 
-        /* Button colors - hover removed */
-        .button-1,
-        .button-2,
-        .button-3 {
-          background-color: #000000;
-        }
+    
 
         /* Dropdown animations */
         @keyframes slideDown {
