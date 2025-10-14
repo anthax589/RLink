@@ -9,6 +9,7 @@ import RecruitmentStrategy from "./pages/RecruitmentStrategy";
 import HrProductBusiness from "./pages/HrProductBusiness";
 import Staffing from "./pages/Staffing";
 import ScrollToTop from "./components/ScrollToTop";
+import ContactForm from "./components/Landing/ContactSection";
 import { VideoProvider } from "./context/VideoProvider";
 import "./App.css";
 
@@ -21,6 +22,7 @@ function App() {
           <Routes>
             <Route path="/" element={<LandingPage />} />
             <Route path="/services" element={<ServicesPage />} />
+            <Route path="/contact" element={<ContactForm />} />
             <Route path="/company-profile" element={<CompanyProfile />} />
             <Route path="/company-mission" element={<CompanyMission />} />
             <Route
@@ -35,9 +37,7 @@ function App() {
               path="/hr-product-business"
               element={<HrProductBusiness />}
             />
-            <Route 
-            path="/staffing" 
-            element={<Staffing />} />
+            <Route path="/staffing" element={<Staffing />} />
 
             {/* Add catch-all route */}
             <Route path="*" element={<LandingPage />} />
