@@ -1,6 +1,6 @@
 import Fallback from "../../assets/img/FallbackImg.webp";
 import { useEffect, useRef } from "react";
-import intro from "../../assets/video/RlinkIntro.mp4";
+import intro from "../../assets/video/RLinkIntro.mp4";
 import { useVideoContext } from "../../context/useVideoContext";
 
 const HeroSection = () => {
