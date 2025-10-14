@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { href, Link, useLocation } from "react-router-dom";
 import RLinkLogo from "../assets/img/RLinkLogo.png";
 import { useVideoContext } from "../context/useVideoContext";
 
@@ -77,10 +77,8 @@ const Header = () => {
     {
       key: "contact",
       label: "お問い合わせ",
-      links: [
-        { label: "サポート", href: "/contact/support" },
-        { label: "営業窓口", href: "/contact/sales" },
-      ],
+      href: "/contact",
+      noDropdown: true,
     },
   ];
 

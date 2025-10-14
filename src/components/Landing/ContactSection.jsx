@@ -3,8 +3,13 @@ import { useState } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import Navbar from "../../shared/Header";
+import Footer from "../../shared/Footer";
 function ContactSection() {
   const [currentView, setCurrentView] = useState("default"); // Track which form to show
+  const location = useLocation();
+  const isLandingPage = location.pathname === "/"; // Check if we're on the landing page
   const [formData, setFormData] = useState({
     inquiryType: "",
     name: "",
@@ -73,9 +78,10 @@ function ContactSection() {
   };
 
   return (
-    <div className="min-h-screen bg-white py-20 px-4">
+    <div className="min-h-screen bg-white ">
+      {!isLandingPage && <Navbar />}
       <div className="max-w-6xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-12 items-start mx-auto">
+        <div className="grid lg:grid-cols-2 gap-12 items-start justify-center py-10">
           {/* Left Side - Contact Information */}
           <div
             className="p-8 lg:p-9"
@@ -333,10 +339,7 @@ function ContactSection() {
             </div>
           ) : (
             // AboutOurServices Form - Show when サービスについて(個人) is selected
-            <div
-              className="bg-[#7F7F7F] p-8 lg:p-7 lg:w-2xl rounded"
-            
-            >
+            <div className="bg-[#7F7F7F] p-8 lg:p-7 lg:w-2xl rounded">
               <h2 className="text-3xl font-bold text-white mb-3">
                 Get in Touch
               </h2>
@@ -510,6 +513,7 @@ function ContactSection() {
           )}
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
