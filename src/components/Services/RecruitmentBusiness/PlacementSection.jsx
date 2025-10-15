@@ -160,9 +160,11 @@ const PlacementSection = memo(() => {
           </div>
 
           {/* Third Row - 1 Centered Card */}
-          <div className="flex justify-center">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div className="invisible"></div>{" "}
+            {/* Invisible placeholder for spacing */}
             <div
-              className="p-6 h-[23vh] flex items-center justify-center border border-[#5B5B5B] rounded w-[24vw] "
+              className="p-6 h-[23vh] flex items-center justify-center border border-[#5B5B5B] rounded"
               style={{
                 backgroundImage: `url(${Noise})`,
                 backgroundSize: "cover",
@@ -178,6 +180,8 @@ const PlacementSection = memo(() => {
                 </p>
               </div>
             </div>
+            <div className="invisible"></div>{" "}
+            {/* Invisible placeholder for spacing */}
           </div>
         </div>
 
