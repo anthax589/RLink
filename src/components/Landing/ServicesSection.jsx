@@ -109,7 +109,7 @@ function Services() {
                     <img
                       src={card.image}
                       alt={card.alt}
-                      className="w-28 h-28 object-contain"
+                      className="w-36 h-28 object-contain"
                     />
                   </div>
                   <h3
