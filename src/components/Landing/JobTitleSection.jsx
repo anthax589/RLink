@@ -217,7 +217,7 @@ const CompanyStrengths = () => {
             return (
               <div
                 key={index}
-                className={`flex flex-col md:flex-row items-start gap-12 ${
+                className={`flex flex-col md:flex-row items-start gap-24 ${
                   isImageLeft ? "" : "md:flex-row-reverse"
                 }`}
                 data-aos="fade-up"
