@@ -46,7 +46,7 @@ function Services() {
   const navigate = useNavigate();
 
   return (
-    <div className="h-screen  flex flex-col items-center justify-center gap-20 bg-[#1867D1]">
+    <div className="h-screen  flex flex-col items-center justify-center gap-28 bg-[#1867D1]">
       <div className="absolute bottom-0 left-0 w-full h-60 z-0 ">
         <Threads amplitude={2.5} distance={1} color={[255, 255, 255]} />
       </div>
