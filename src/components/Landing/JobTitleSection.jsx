@@ -236,13 +236,13 @@ const CompanyStrengths = () => {
 
                 {/* Text Section */}
                 <div className="w-full md:w-1/2 flex flex-col justify-start">
-                  <h3 className="text-2xl font-bold text-black mb-20">
+                  <h3 className="text-3xl font-bold text-black mb-20">
                     {strength.title}
                   </h3>
-                  <h4 className="text-xl text-[#1867D1] font-semibold mb-16 leading-relaxed">
+                  <h4 className="text-2xl text-[#1867D1] font-semibold mb-16 leading-relaxed">
                     {strength.subtitle}
                   </h4>
-                  <p className="text-black text-base leading-relaxed text-nowrap">
+                  <p className="text-black text-lg leading-relaxed text-nowrap">
                     {strength.description}
                   </p>
                 </div>
