@@ -1,7 +1,7 @@
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
-import TypewriterOnScroll from "../../animation/TypeWriterOnScroll";
+
 
 const AboutSection = () => {
   useEffect(() => {
@@ -9,20 +9,20 @@ const AboutSection = () => {
   }, []);
   return (
     <div className="bg-white h-fit pt-10 pb-20 flex items-center justify-center relative overflow-hidden">
-     
-
       {/* Content */}
       <div className="relative z-10">
         {/* Title */}
         <div className="flex items-start py-5">
           <div className="flex items-start mb-6 relative ">
-            <TypewriterOnScroll
-              text="About Us"
-              delay={20}
-              threshold={0.5}
-              className="ml-2"
-              letterClassName="text-xl font-bold text-black xl:text-2xl 2xl:text-3xl relative"
-            />
+            <p
+              data-aos="fade-up"
+              data-aos-offset="100"
+              data-aos-delay="50"
+              data-aos-once="true"
+              className="text-xl font-bold text-black xl:text-2xl 2xl:text-3xl relative"
+            >
+              About Us
+            </p>
           </div>
         </div>
 
