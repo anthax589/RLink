@@ -1,31 +1,39 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import RLinkLogo from "../assets/img/RLinkFooterLogo.png";
 const Footer = () => {
   const footerData = {
     about: {
       title: "会社について",
-      links: ["会社概要", "会社沿革"],
+      links: [
+        { label: "会社概要", path: "/company-profile" },
+        { label: "会社沿革", path: "/company-mission" },
+      ],
     },
     services: {
       title: "サービス",
       links: [
-        "人材紹介",
-        "採用戦略アドバイザリー＆RPO",
-        "HRプロダクト",
-        "人材派遣・業務委託",
+        { label: "人材紹介", path: "/recruitment-business" },
+        { label: "採用戦略アドバイザリー＆RPO", path: "/recruitment-strategy" },
+        { label: "HRプロダクト", path: "/hr-product-business" },
+        { label: "人材派遣・業務委託", path: "/staffing" },
       ],
     },
     news: {
       title: "ニュース",
-      links: ["お知らせ", "プレスリリース", "メディア掲載"],
+      links: [
+        { label: "お知らせ", path: "/news" },
+        { label: "プレスリリース", path: "/press-release" },
+        { label: "メディア掲載", path: "/media" },
+      ],
     },
     recruit: {
       title: "ブログ",
-      links: [],
+      links: [{ label: "ブログ", path: "/blog" }],
     },
     support: {
       title: "お問い合わせ",
-      links: [],
+      links: [{ label: "お問い合わせ", path: "/contact" }],
     },
   };
 
@@ -33,7 +41,7 @@ const Footer = () => {
     <footer className="bg-black text-white">
       <div className="max-w-7xl mx-auto  py-12">
         {/* Logo */}
-        <div className="mb-8 pl-27">
+        <div className="mb-8 pl-52">
           <a href="/" className="text-white flex items-center ">
             <div className="flex items-center text-2xl font-bold">
               <img src={RLinkLogo} alt="R-Link Logo" className="h-16" />
@@ -41,7 +49,7 @@ const Footer = () => {
             </div>
           </a>
         </div>
-        <div className="mb-8 pl-27 flex space-x-6">
+        <div className="mb-8 pl-52 flex space-x-6">
           <a href="">
             <svg
               width="30"
@@ -82,12 +90,12 @@ const Footer = () => {
             <ul className="space-y-2">
               {footerData.about.links.map((link, index) => (
                 <li key={index}>
-                  <a
-                    href="#"
+                  <Link
+                    to={link.path}
                     className="text-sm text-blue-100 hover:text-white transition-colors"
                   >
-                    {link}
-                  </a>
+                    {link.label}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -99,50 +107,52 @@ const Footer = () => {
             <ul className="space-y-2 w-48 text-nowrap">
               {footerData.services.links.map((link, index) => (
                 <li key={index}>
-                  <a
-                    href="#"
+                  <Link
+                    to={link.path}
                     className="text-sm text-blue-100 hover:text-white transition-colors"
                   >
-                    {link}
-                  </a>
+                    {link.label}
+                  </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* ニュース */}
+          {/* ニュース (commented out)
           <div>
             <h3 className="font-semibold mb-4">{footerData.news.title}</h3>
             <ul className="space-y-2">
               {footerData.news.links.map((link, index) => (
                 <li key={index}>
-                  <a
-                    href="#"
+                  <Link
+                    to={link.path}
                     className="text-sm text-blue-100 hover:text-white transition-colors"
                   >
-                    {link}
-                  </a>
+                    {link.label}
+                  </Link>
                 </li>
               ))}
             </ul>
           </div>
+          */}
 
-          {/* 採用情報 */}
+          {/* 採用情報 (commented out)
           <div>
             <h3 className="font-semibold mb-4">{footerData.recruit.title}</h3>
             <ul className="space-y-2">
               {footerData.recruit.links.map((link, index) => (
                 <li key={index}>
-                  <a
-                    href="#"
+                  <Link
+                    to={link.path}
                     className="text-sm text-blue-100 hover:text-white transition-colors"
                   >
-                    {link}
-                  </a>
+                    {link.label}
+                  </Link>
                 </li>
               ))}
             </ul>
           </div>
+          */}
 
           {/* 採用情報 (Second column) */}
           <div>
@@ -150,12 +160,12 @@ const Footer = () => {
             <ul className="space-y-2">
               {footerData.support.links.map((link, index) => (
                 <li key={index}>
-                  <a
-                    href="#"
+                  <Link
+                    to={link.path}
                     className="text-sm text-blue-100 hover:text-white transition-colors"
                   >
-                    {link}
-                  </a>
+                    {link.label}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -165,7 +175,7 @@ const Footer = () => {
       {/* Copyright */}
       <div className="border-t border-white  w-full">
         <p className="text-center text-sm text-blue-100 py-10">
-          Copyright © 2025 RLink All Rights Reserved
+          Copyright © 2021 RLink All Rights Reserved
         </p>
       </div>
     </footer>
