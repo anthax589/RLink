@@ -1,4 +1,4 @@
-import Servicesbg from "../../assets/img/HerSectionServicesBackGround.png";
+import Servicesbg from "../../assets/img/Services Header.png";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
@@ -15,7 +15,7 @@ export default function HeroSection() {
       style={{
         backgroundImage: `url(${Servicesbg})`,
         backgroundSize: "cover",
-        backgroundPosition: "80% center",
+        backgroundPosition: "center",
       }}
     >
       <div className="max-w-full">
