@@ -92,22 +92,22 @@ const Header = () => {
       noDropdown: true,
     },
 
-    {
-      key: "news",
-      label: "ニュース",
-      links: [
-        { label: "最新情報", href: "/news" },
-        { label: "プレスリリース", href: "/press" },
-      ],
-    },
-    {
-      key: "blog",
-      label: "ブログ",
-      links: [
-        { label: "記事一覧", href: "/blog" },
-        { label: "カテゴリ", href: "/blog/categories" },
-      ],
-    },
+    // {
+    //   key: "news",
+    //   label: "ニュース",
+    //   links: [
+    //     { label: "最新情報", href: "/news" },
+    //     { label: "プレスリリース", href: "/press" },
+    //   ],
+    // },
+    // {
+    //   key: "blog",
+    //   label: "ブログ",
+    //   links: [
+    //     { label: "記事一覧", href: "/blog" },
+    //     { label: "カテゴリ", href: "/blog/categories" },
+    //   ],
+    // },
     {
       key: "contact",
       label: "お問い合わせ",
@@ -246,13 +246,13 @@ const Header = () => {
           <Link to="/" className="text-black flex items-center">
             <div className="flex items-center">
               <img src={RLinkLogo} alt="R-Link Logo" className="h-16" />
-              <span className="text-[#1867D1] pl-3 ">R</span>Link Partners
+             
             </div>
           </Link>
         </div>
         <div className="flex gap-1">
           {/* Navigation */}
-          <nav className="flex items-center space-x-10 text-lg text-black py-4 px-8 relative">
+          <nav className="flex items-center space-x-20 text-lg text-black py-4 px-8 relative">
             {navItems.map((item) => (
               <div className="relative group" key={item.key}>
                 {item.noDropdown ? (

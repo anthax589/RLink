@@ -2,6 +2,7 @@ import Servicesbg from "../../assets/img/HerSectionServicesBackGround.png";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+
 export default function HeroSection() {
   useEffect(() => {
     Aos.init({ duration: 1500 });
@@ -10,11 +11,11 @@ export default function HeroSection() {
   return (
     <div
       data-aos="fade-in"
-      className="py-8 md:py-14 px-6 md:pl-24 h-[40vh] md:h-[55vh] flex items-center justify-start w-full"
+      className="py-8 md:py-14 px-6 md:pl-24 h-[40vh] md:h-[100vh] flex items-center justify-start w-full"
       style={{
         backgroundImage: `url(${Servicesbg})`,
         backgroundSize: "cover",
-        backgroundPosition: "center",
+        backgroundPosition: "80% center",
       }}
     >
       <div className="max-w-full">
