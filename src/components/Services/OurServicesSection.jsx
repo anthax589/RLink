@@ -6,9 +6,7 @@ import ourservices from "../../assets/img/OurServicesBackGround.png";
 import Contact from "../../assets/svg/Contact.svg";
 import Staffing from "../../assets/svg/Staffing1.svg";
 import { useNavigate } from "react-router-dom";
-import Aos from "aos";
-import "aos/dist/aos.css";
-import { useEffect } from "react";
+import { motion } from "framer-motion";
 
 export default function RobotServicesLayout() {
   const navigate = useNavigate();
@@ -16,12 +14,6 @@ export default function RobotServicesLayout() {
   const handleViewMore = (path) => {
     navigate(path);
   };
-
-  useEffect(() => {
-    Aos.init({
-      duration: 1500,
-    });
-  }, []);
 
   return (
     <div
@@ -33,11 +25,11 @@ export default function RobotServicesLayout() {
     >
       <div className="max-w-6xl mx-auto flex flex-col gap-6">
         {/* Top Left - AI Introduction Service */}
-        <div
-          data-aos="fade-up"
-          data-aos-offset="100"
-          data-aos-once="true"
-          data-aos-delay="50"
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
           className="bg-gradient-to-tb from-[#E4E5E5] to-[#F0F0F0] rounded-md py-10 px-4 border border-[#1867D1]/30"
         >
           <div className="flex items-start gap-6">
@@ -81,15 +73,17 @@ export default function RobotServicesLayout() {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Middle Section - Individual card animations */}
-        <div className="flex gap-5">
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="flex gap-5"
+        >
           <div
-            data-aos="fade-up"
-            data-aos-offset="100"
-            data-aos-once="true"
-            data-aos-delay="50"
             className="bg-gradient-to-tb from-[#E4E5E5] to-[#F0F0F0] rounded-lg p-6 border border-[#1867D1]/30"
             style={{ flexBasis: "55%" }}
           >
@@ -136,10 +130,6 @@ export default function RobotServicesLayout() {
 
           {/* Middle Right - HR Product Service */}
           <div
-            data-aos="fade-up"
-            data-aos-offset="100"
-            data-aos-once="true"
-            data-aos-delay="50"
             className="bg-gradient-to-b from-[#1867D1] to-[#0C356B] rounded-lg shadow-md p-6 text-white"
             style={{ flexBasis: "45%" }}
           >
@@ -176,15 +166,17 @@ export default function RobotServicesLayout() {
               </svg>
             </button>
           </div>
-        </div>
+        </motion.div>
 
         {/* Bottom Section - Fast animation trigger */}
-        <div className="flex gap-5">
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="flex gap-5"
+        >
           <div
-            data-aos="fade-up"
-            data-aos-offset="-500"
-            data-aos-once="true"
-            data-aos-delay="0"
             className="bg-gradient-to-b from-[#1867D1] to-[#0C356B] rounded-lg shadow-md p-6 text-white relative overflow-visible"
             style={{ flexBasis: "45%" }}
           >
@@ -233,10 +225,6 @@ export default function RobotServicesLayout() {
 
           {/* Bottom Right - Material Search */}
           <div
-            data-aos="fade-up"
-            data-aos-offset="-500"
-            data-aos-once="true"
-            data-aos-delay="0"
             className="bg-gradient-to-tb from-[#E4E5E5] to-[#F0F0F0] rounded-lg shadow-sm p-8 border border-[#1867D1]/30"
             style={{ flexBasis: "55%" }}
           >
@@ -278,7 +266,7 @@ export default function RobotServicesLayout() {
               </button>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
