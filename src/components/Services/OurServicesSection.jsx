@@ -20,7 +20,6 @@ export default function RobotServicesLayout() {
   useEffect(() => {
     Aos.init({
       duration: 1500,
-      startEvent: "load",
     });
   }, []);
 
@@ -38,7 +37,7 @@ export default function RobotServicesLayout() {
           data-aos="fade-up"
           data-aos-offset="100"
           data-aos-once="true"
-          data-aos-delay="0"
+          data-aos-delay="50"
           className="bg-gradient-to-tb from-[#E4E5E5] to-[#F0F0F0] rounded-md py-10 px-4 border border-[#1867D1]/30"
         >
           <div className="flex items-start gap-6">
@@ -90,7 +89,7 @@ export default function RobotServicesLayout() {
             data-aos="fade-up"
             data-aos-offset="100"
             data-aos-once="true"
-            data-aos-delay="200"
+            data-aos-delay="50"
             className="bg-gradient-to-tb from-[#E4E5E5] to-[#F0F0F0] rounded-lg p-6 border border-[#1867D1]/30"
             style={{ flexBasis: "55%" }}
           >
@@ -140,7 +139,7 @@ export default function RobotServicesLayout() {
             data-aos="fade-up"
             data-aos-offset="100"
             data-aos-once="true"
-            data-aos-delay="200"
+            data-aos-delay="50"
             className="bg-gradient-to-b from-[#1867D1] to-[#0C356B] rounded-lg shadow-md p-6 text-white"
             style={{ flexBasis: "45%" }}
           >
@@ -183,7 +182,7 @@ export default function RobotServicesLayout() {
         <div className="flex gap-5">
           <div
             data-aos="fade-up"
-            data-aos-offset="200"
+            data-aos-offset="-500"
             data-aos-once="true"
             data-aos-delay="0"
             className="bg-gradient-to-b from-[#1867D1] to-[#0C356B] rounded-lg shadow-md p-6 text-white relative overflow-visible"
@@ -235,7 +234,7 @@ export default function RobotServicesLayout() {
           {/* Bottom Right - Material Search */}
           <div
             data-aos="fade-up"
-            data-aos-offset="200"
+            data-aos-offset="-500"
             data-aos-once="true"
             data-aos-delay="0"
             className="bg-gradient-to-tb from-[#E4E5E5] to-[#F0F0F0] rounded-lg shadow-sm p-8 border border-[#1867D1]/30"
