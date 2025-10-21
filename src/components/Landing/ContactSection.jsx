@@ -337,7 +337,7 @@ function ContactSection() {
             </div>
           ) : (
             // AboutOurServices Form - Show when サービスについて(個人) is selected
-            <div className="bg-[#7F7F7F] p-8 lg:p-7 lg:w-2xl rounded lg:relative right-8">
+            <div className="bg-[#7F7F7F] p-8 lg:p-7 lg:w-fit rounded lg:relative right-8">
               <h2 className="text-3xl font-bold text-white mb-3">
                 Get in Touch
               </h2>
