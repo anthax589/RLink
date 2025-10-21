@@ -41,8 +41,8 @@ const Header = () => {
         console.error('Contact section with id="contact" not found');
       }
     } else {
-      // Navigate to contact page on other pages
-      navigate("/contact");
+      // Navigate to landing page and request a scroll to contact after navigation
+      navigate("/", { state: { scrollToContact: true } });
     }
   };
 
@@ -172,8 +172,6 @@ const Header = () => {
           }
         }
 
-    
-
         /* Dropdown animations */
         @keyframes slideDown {
           0% {
@@ -246,7 +244,6 @@ const Header = () => {
           <Link to="/" className="text-black flex items-center">
             <div className="flex items-center">
               <img src={RLinkLogo} alt="R-Link Logo" className="h-16" />
-             
             </div>
           </Link>
         </div>

@@ -11,7 +11,7 @@ export default function HeroSection() {
   return (
     <div
       data-aos="fade-in"
-      className="py-8 md:py-14 px-6 md:pl-24 h-[40vh] md:h-[100vh] flex items-center justify-start w-full"
+      className="py-8 md:py-14 px-6 md:pl-24 h-[40vh] md:h-[60vh] flex items-center justify-start w-full"
       style={{
         backgroundImage: `url(${Servicesbg})`,
         backgroundSize: "cover",
