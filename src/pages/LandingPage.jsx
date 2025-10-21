@@ -39,6 +39,36 @@ const LandingPage = () => {
   const { videoEnded } = useVideoContext();
   const location = useLocation();
 
+  // If navigated here with state.scrollToContact, scroll to contact after mount
+  useEffect(() => {
+    if (location.state && location.state.scrollToContact) {
+      // Clear the state so it doesn't trigger again
+      try {
+        window.history.replaceState({}, "", location.pathname);
+      } catch (e) {
+        /* ignore */
+      }
+
+      const tryScroll = (attempt = 0) => {
+        const contact = document.getElementById("contact");
+        if (contact) {
+          const headerHeight = 100;
+          const top =
+            contact.getBoundingClientRect().top +
+            window.pageYOffset -
+            headerHeight;
+          window.scrollTo({ top, behavior: "smooth" });
+        } else if (attempt < 10) {
+          // retry after delay (up to ~2s)
+          setTimeout(() => tryScroll(attempt + 1), 200);
+        }
+      };
+
+      // Start retry loop
+      setTimeout(() => tryScroll(0), 300);
+    }
+  }, [location]);
+
   // Memoize computed values
   const isLandingPage = useMemo(
     () => location.pathname === "/",
