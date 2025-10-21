@@ -352,7 +352,7 @@ function ContactSection() {
                     onClick={() =>
                       handleInquiryTypeSelect("サービスについて(法人)")
                     }
-                    className={`px-4 py-2 text-sm rounded transition-colors ${
+                    className={`w-full py-2 text-sm rounded transition-colors ${
                       formData.inquiryType === "サービスについて(法人)"
                         ? "bg-white text-black"
                         : "bg-transparent text-white border border-white hover:bg-white hover:text-black"
@@ -364,25 +364,13 @@ function ContactSection() {
                     onClick={() =>
                       handleInquiryTypeSelect("サービスについて(個人)")
                     }
-                    className={`px-4 py-2 text-sm rounded transition-colors ${
+                    className={`w-full py-2 text-sm rounded transition-colors ${
                       formData.inquiryType === "サービスについて(個人)"
                         ? "bg-white text-black"
                         : "bg-transparent text-white border border-white hover:bg-white hover:text-black"
                     }`}
                   >
                     ● サービスについて(個人)
-                  </button>
-                  <button
-                    onClick={() =>
-                      handleInquiryTypeSelect("コンサルタントについて(法人)")
-                    }
-                    className={`px-4 py-2 text-sm rounded transition-colors ${
-                      formData.inquiryType === "コンサルタントについて(法人)"
-                        ? "bg-white text-black"
-                        : "bg-transparent text-white border border-white hover:bg-white hover:text-black"
-                    }`}
-                  >
-                    ●サービスについて(法人)
                   </button>
                 </div>
 
