@@ -4,7 +4,7 @@ import { useVideoContext } from "../context/useVideoContext";
 import Header from "../shared/Header";
 import HeroSection from "../components/Landing/HeroSection";
 import PerformanceMonitor from "../components/PerformanceMonitor";
-
+import Bg from "../assets/svg/BackGroundStrenght&Contact.svg";
 // Lazy load heavy components with preload hints
 const AboutSection = lazy(() =>
   import(/* webpackChunkName: "about" */ "../components/Landing/AboutSection")
@@ -120,12 +120,18 @@ const LandingPage = () => {
         <Suspense fallback={<LoadingSpinner />}>
           <Services />
         </Suspense>
-        <Suspense fallback={<LoadingSpinner />}>
-          <JobTitleSection />
-        </Suspense>
-        <Suspense fallback={<LoadingSpinner />}>
-          <ContactSection />
-        </Suspense>
+        <div   style={{
+                backgroundImage: `url(${Bg})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}>
+          <Suspense fallback={<LoadingSpinner />}>
+            <JobTitleSection />
+          </Suspense>
+          <Suspense fallback={<LoadingSpinner />}>
+            <ContactSection />
+          </Suspense>
+        </div>
       </div>
       <Suspense fallback={<LoadingSpinner />}>
         <Footer />

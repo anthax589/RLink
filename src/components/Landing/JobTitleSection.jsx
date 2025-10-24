@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
-
+import Strength1 from "../../assets/svg/Strength1.svg";
+import Strenght2 from "../../assets/svg/Strength2.svg";
+import Strength3 from "../../assets/svg/Strength3.svg";
+import Strength4 from "../../assets/svg/Strength4.svg";
 const TypewriterOnScroll = ({
   text,
   delay = 80,
@@ -106,7 +109,7 @@ const CompanyStrengths = () => {
   // ];
 
   return (
-    <div className="bg-white min-h-screen py-16 px-4">
+    <div className="bg-transparent min-h-screen py-16 px-4">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
@@ -127,10 +130,8 @@ const CompanyStrengths = () => {
           {/* Strength 01 */}
           <div className="flex flex-col md:flex-row w-full items-start md:items-start mb-0 md:mb-0 gap-16">
             <div className="w-full md:w-1/2 flex flex-col gap-0 px-8 md:px-0 pt-2 md:pt-0">
-              <div className="bg-[#CCCCCC] aspect-[5/3] flex items-center justify-center mb-0 md:mb-0">
-                <span className="text-black text-lg font-medium">
-                  Image.jpg
-                </span>
+              <div className="h-fit flex items-center justify-center mb-0 md:mb-0">
+                <img src={Strength1} alt="" />
               </div>
             </div>
             <div className="w-full md:w-1/2 flex flex-col gap-0 px-8 md:px-0 pt-2 md:pt-0">
@@ -169,20 +170,24 @@ const CompanyStrengths = () => {
               </p>
             </div>
             <div className="w-full md:w-1/2 flex flex-col gap-0 px-8 md:px-0 pt-2 md:pt-0">
-              <div className="bg-[#CCCCCC] aspect-[5/3] flex items-center justify-center mb-0 md:mb-0">
-                <span className="text-black text-lg font-medium">
-                  Image.jpg
-                </span>
+              <div className=" h-fit flex items-center justify-center mb-0 md:mb-0">
+                <img
+                  src={Strenght2}
+                  alt=""
+                  className=""
+                />
               </div>
             </div>
           </div>
           {/* Strength 03 */}
           <div className="flex flex-col md:flex-row w-full items-start md:items-start mt-8 md:mt-8 gap-16">
             <div className="w-full md:w-1/2 flex flex-col gap-0 px-8 md:px-0 pt-2 md:pt-0">
-              <div className="bg-[#CCCCCC] aspect-[5/3] flex items-center justify-center mb-0 md:mb-0">
-                <span className="text-black text-lg font-medium">
-                  Image.jpg
-                </span>
+              <div className="h-fit flex items-center justify-center mb-0 md:mb-0">
+                <img
+                  src={Strength3}
+                  alt=""
+                  className=""
+                />
               </div>
             </div>
             <div className="w-full md:w-1/2 flex flex-col gap-0 px-8 md:px-0 pt-2 md:pt-0">
@@ -207,7 +212,7 @@ const CompanyStrengths = () => {
               <h3 className="text-3xl font-bold text-black mb-20 mt-2 md:mt-0">
                 Strength 04
               </h3>
-              <h4 className="text-xl text-[#1867D1] font-semibold mb-16">
+              <h4 className="text-xl text-[#1867D1] font-semibold mb-13">
                 高い内定者年次決率
               </h4>
               <p className="text-black text-md leading-relaxed">
@@ -221,10 +226,11 @@ const CompanyStrengths = () => {
               </p>
             </div>
             <div className="w-full md:w-1/2 flex flex-col gap-0 px-8 md:px-0 pt-2 md:pt-0">
-              <div className="bg-[#CCCCCC] aspect-[5/3] flex items-center justify-center mb-0 md:mb-0">
-                <span className="text-black text-lg font-medium">
-                  Image.jpg
-                </span>
+              <div className="has-focus-within: flex items-center justify-center mb-0 md:mb-0">
+                <img
+                  src={Strength4}
+                  alt=""
+                />
               </div>
             </div>
           </div>
