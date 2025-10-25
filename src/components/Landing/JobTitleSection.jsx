@@ -171,23 +171,15 @@ const CompanyStrengths = () => {
             </div>
             <div className="w-full md:w-1/2 flex flex-col gap-0 px-8 md:px-0 pt-2 md:pt-0">
               <div className=" h-fit flex items-center justify-center mb-0 md:mb-0">
-                <img
-                  src={Strenght2}
-                  alt=""
-                  className=""
-                />
+                <img src={Strenght2} alt="" className="" />
               </div>
             </div>
           </div>
           {/* Strength 03 */}
           <div className="flex flex-col md:flex-row w-full items-start md:items-start mt-8 md:mt-8 gap-16">
             <div className="w-full md:w-1/2 flex flex-col gap-0 px-8 md:px-0 pt-2 md:pt-0">
-              <div className="h-fit flex items-center justify-center mb-0 md:mb-0">
-                <img
-                  src={Strength3}
-                  alt=""
-                  className=""
-                />
+              <div className="h-fit flex items-center justify-center mb-0 md:mb-0 ">
+                <img src={Strength3} alt="" className="rounded-lg" />
               </div>
             </div>
             <div className="w-full md:w-1/2 flex flex-col gap-0 px-8 md:px-0 pt-2 md:pt-0">
@@ -227,10 +219,7 @@ const CompanyStrengths = () => {
             </div>
             <div className="w-full md:w-1/2 flex flex-col gap-0 px-8 md:px-0 pt-2 md:pt-0">
               <div className="has-focus-within: flex items-center justify-center mb-0 md:mb-0">
-                <img
-                  src={Strength4}
-                  alt=""
-                />
+                <img src={Strength4} alt="" className="rounded-lg" />
               </div>
             </div>
           </div>

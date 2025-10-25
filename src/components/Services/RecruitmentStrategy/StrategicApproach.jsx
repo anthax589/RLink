@@ -3,9 +3,9 @@ import Rectanglebg from "../../../assets/img/Rectangle 60.png";
 import tablebg from "../../../assets/img/OurServicesBackGround.png"
 function StrategicApproach() {
   return (
-    <div className="max-w-full mx-auto">
+    <div className="max-w-full mx-auto ">
       <div
-        className="h-screen flex flex-col justify-center items-center bg-white/90"
+        className="h-screen flex flex-col justify-center items-center bg-white/90  "
         style={{
           backgroundImage: `url(${tablebg})`,
           backgroundSize: "cover",
@@ -15,7 +15,7 @@ function StrategicApproach() {
       >
         <div className="text-center ">
           <h2
-            className="text-3xl font-bold text-black"
+            className="text-3xl font-bold text-black py-10"
             style={{ textShadow: "2px 5px 2px rgba(0, 0, 0, 0.3 )" }}
             data-aos="fade-up"
             data-aos-offset="200"
@@ -25,7 +25,7 @@ function StrategicApproach() {
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-1 gap-16 w-1/2 mx-auto py-16">
+        <div className="grid md:grid-cols-1 gap-16 w-1/2 mx-auto py-5">
           {/* Client Card */}
           <div
             className=" p-7 rounded  flex flex-col"
