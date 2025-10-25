@@ -14,7 +14,7 @@ const PlacementSection = memo(() => {
       <div className="max-w-6xl mx-auto">
         {/* Heading */}
         <h2
-          className="text-2xl md:text-4xl text-center py-20 text-[#5B5B5B]"
+          className="text-2xl md:text-4xl text-center py-28 text-[#5B5B5B]"
           style={{ textShadow: "2px 7px 2px rgba(0, 0, 0, 0.2)" }}
           data-aos="fade-up"
         >

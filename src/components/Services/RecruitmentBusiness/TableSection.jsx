@@ -14,7 +14,7 @@ function TableSection() {
       >
         <div className="max-w-7xl mx-auto flex flex-col  justify">
           <h1
-            className="text-center py-20 text-black font-bold xl:text-2xl 2xl:text-3xl"
+            className="text-center py-28 text-black font-bold xl:text-2xl 2xl:text-3xl"
             data-aos="fade-up"
             data-aos-offset="100"
             data-aos-delay="50"
