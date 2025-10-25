@@ -7,7 +7,7 @@ const JobCategories = () => {
       <div className="max-w-6xl mx-auto">
         {/* Heading */}
         <h2
-          className="text-2xl md:text-3xl font-bold text-center  text-black py-20"
+          className="text-2xl md:text-3xl font-bold text-center  text-black py-28"
           data-aos="fade-up"
         >
           <span className="text-[#1867D1]">R</span>
