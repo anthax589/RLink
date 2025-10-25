@@ -10,11 +10,11 @@ const PlacementSection = memo(() => {
   };
 
   return (
-    <section className="bg-white px-6 md:px-12 py-16">
+    <section className="bg-white px-6 md:px-12 ">
       <div className="max-w-6xl mx-auto">
         {/* Heading */}
         <h2
-          className="text-2xl md:text-4xl text-center mb-12 text-[#5B5B5B]"
+          className="text-2xl md:text-4xl text-center py-20 text-[#5B5B5B]"
           style={{ textShadow: "2px 7px 2px rgba(0, 0, 0, 0.2)" }}
           data-aos="fade-up"
         >
@@ -187,7 +187,7 @@ const PlacementSection = memo(() => {
 
         {/* Footer Text */}
         <div
-          className="text-center mt-8 flex justify-center gap-28"
+          className="text-center py-20 flex justify-center gap-28"
           data-aos="fade-up"
         >
           <p

@@ -3,11 +3,11 @@ import userIcon from "../../../assets/svg/User.svg";
 
 const JobCategories = () => {
   return (
-    <section className="bg-transparent px-6 md:px-12 py-16">
+    <section className="bg-transparent px-6 md:px-12 pb-28">
       <div className="max-w-6xl mx-auto">
         {/* Heading */}
         <h2
-          className="text-2xl md:text-3xl font-bold text-center mb-12 text-black"
+          className="text-2xl md:text-3xl font-bold text-center  text-black py-20"
           data-aos="fade-up"
         >
           <span className="text-[#1867D1]">R</span>
