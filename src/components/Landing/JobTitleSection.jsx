@@ -3,6 +3,7 @@ import Strength1 from "../../assets/svg/Strength1.svg";
 import Strenght2 from "../../assets/svg/Strength2.svg";
 import Strength3 from "../../assets/svg/Strength3.svg";
 import Strength4 from "../../assets/svg/Strength4.svg";
+
 const TypewriterOnScroll = ({
   text,
   delay = 80,
@@ -52,68 +53,12 @@ const TypewriterOnScroll = ({
 };
 
 const CompanyStrengths = () => {
-  // const strengths = [
-  //   {
-  //     title: "Strength 01",
-  //     subtitle: "エグゼクティブ・ハイクラス専門の転職支援",
-  //     description: (
-  //       <>
-  //         独自のルートによる、企業の経営層との強いパイプライン <br />
-  //         経験豊富なコンサルタントが、独自の方法で企業の経営層やCxOと強いパイプを持ち{" "}
-  //         <br />
-  //         日々情報をアップデートすることで、企業風土や事業戦略など、 <br />
-  //         価値の高いリアルな情報を提供いたします。
-  //       </>
-  //     ),
-  //     imagePosition: "left",
-  //   },
-  //   {
-  //     title: "Strength 02",
-  //     subtitle: "有望スタートアップ・グロース企業のエクスクルーシブ求人",
-  //     description: (
-  //       <>
-  //         非公開求人の割合は弊社全体求人の34.6％ <br />
-  //         弊社独自のルートによる、カントリーマネージャー、CxO、事業部責任者などの、{" "}
-  //         <br />
-  //         他社にはないエクスクルーシブ求人が数多くございます。
-  //       </>
-  //     ),
-  //     imagePosition: "right",
-  //   },
-  //   {
-  //     title: "Strength 03",
-  //     subtitle: "バイリンガル人材への豊富なサポート実績",
-  //     description: (
-  //       <>
-  //         バイリンガル求人の割合は全体の32.4％ <br />
-  //         バイリンガル人材の転職支援において豊富な実績を誇ります。 <br />
-  //         英語面接の対策や英文レジュメの作成など手厚いサポートがございます。
-  //       </>
-  //     ),
-  //     imagePosition: "left",
-  //   },
-  //   {
-  //     title: "Strength 04",
-  //     subtitle: "高い内定条件交渉率",
-  //     description: (
-  //       <>
-  //         高い内定条件交渉率 年収またはタイトルアップ率94.2% <br />
-  //         ※2024年2月時点 <br />
-  //         ご紹介企業のマネジメント層との強いリレーションによって
-  //         <br />
-  //         ご希望に応じた給与条件や職位の獲得に貢献します。
-  //       </>
-  //     ),
-  //     imagePosition: "right",
-  //   },
-  // ];
-
   return (
-    <div className="bg-transparent min-h-screen py-16 px-4">
+    <div className="bg-transparent min-h-screen py-8 md:py-12 lg:py-16 px-4">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-black">
+        <div className="text-center mb-8 md:mb-10 lg:mb-12">
+          <h2 className="text-2xl md:text-3xl font-bold text-black">
             <span className="text-[#1867D1]">R</span>
             <TypewriterOnScroll
               text="Linkの4つの強み"
@@ -125,23 +70,29 @@ const CompanyStrengths = () => {
           </h2>
         </div>
 
-        {/* Alternating Layout - Add vertical gap between sections */}
-        <div className="flex flex-col gap-y-16 w-full">
-          {/* Strength 01 */}
-          <div className="flex flex-col md:flex-row w-full items-start md:items-start mb-0 md:mb-0 gap-16">
-            <div className="w-full md:w-1/2 flex flex-col gap-0 px-8 md:px-0 pt-2 md:pt-0">
-              <div className="h-fit flex items-center justify-center mb-0 md:mb-0">
-                <img src={Strength1} alt="" />
+        {/* Alternating Layout */}
+        <div className="flex flex-col gap-y-12 md:gap-y-16 w-full">
+          {/* Strength 01 - Image on left (desktop), top (mobile) */}
+          <div className="flex flex-col md:flex-row w-full items-start gap-8 md:gap-16">
+            {/* Image - Shows first on mobile, left on desktop */}
+            <div className="w-full md:w-1/2 flex flex-col gap-0 px-4 md:px-0">
+              <div className="h-fit flex items-center justify-center">
+                <img
+                  src={Strength1}
+                  alt="Strength 01"
+                  className="w-full h-auto"
+                />
               </div>
             </div>
-            <div className="w-full md:w-1/2 flex flex-col gap-0 px-8 md:px-0 pt-2 md:pt-0">
-              <h3 className="text-3xl font-bold text-black mb-20 mt-2 md:mt-0">
+            {/* Text Content */}
+            <div className="w-full md:w-1/2 flex flex-col gap-0 px-4 md:px-0">
+              <h3 className="text-2xl md:text-3xl font-bold text-black mb-8 md:mb-12 lg:mb-20">
                 Strength 01
               </h3>
-              <h4 className="text-2xl text-[#1867D1] font-semibold mb-16">
+              <h4 className="text-lg md:text-xl lg:text-2xl text-[#1867D1] font-semibold mb-6 md:mb-10 lg:mb-16">
                 エグゼクティブ・ハイクラス専門の転職支援
               </h4>
-              <p className="text-md leading-relaxed text-black ">
+              <p className="text-sm md:text-base leading-relaxed text-black">
                 独自のルートによる、企業の経営層との強いパイプライン
                 <br />
                 経験豊富なコンサルタントが、独自の方法で企業の経営層やCxOと強いパイプを持ち
@@ -152,16 +103,28 @@ const CompanyStrengths = () => {
               </p>
             </div>
           </div>
-          {/* Strength 02 */}
-          <div className="flex flex-col md:flex-row w-full items-start md:items-start mt-8 md:mt-8 gap-16">
-            <div className="w-full md:w-1/2 flex flex-col gap-0 px-8 md:px-0 pt-2 md:pt-0">
-              <h3 className="text-3xl font-bold text-black mb-20 mt-2 md:mt-0">
+
+          {/* Strength 02 - Text on left, Image on right (desktop), Image top (mobile) */}
+          <div className="flex flex-col md:flex-row w-full items-start gap-8 md:gap-16">
+            {/* Image - Shows first on mobile with order-first */}
+            <div className="w-full md:w-1/2 flex flex-col gap-0 px-4 md:px-0 order-first md:order-last">
+              <div className="h-fit flex items-center justify-center">
+                <img
+                  src={Strenght2}
+                  alt="Strength 02"
+                  className="w-full h-auto"
+                />
+              </div>
+            </div>
+            {/* Text Content */}
+            <div className="w-full md:w-1/2 flex flex-col gap-0 px-4 md:px-0">
+              <h3 className="text-2xl md:text-3xl font-bold text-black mb-8 md:mb-12 lg:mb-20">
                 Strength 02
               </h3>
-              <h4 className="text-xl text-[#1867D1] font-semibold mb-16">
+              <h4 className="text-lg md:text-xl text-[#1867D1] font-semibold mb-6 md:mb-10 lg:mb-16">
                 有望スタートアップ・グロース企業のエクスクルーシブ求人
               </h4>
-              <p className="text-black text-md leading-relaxed ">
+              <p className="text-black text-sm md:text-base leading-relaxed">
                 非公開求人の紹介比率は業界最大級の63.4%
                 <br />
                 特別な取扱いによる上記、カントリーマネージャー、CxO、事業責任者案件などの、
@@ -169,27 +132,29 @@ const CompanyStrengths = () => {
                 他社にはないエクスクルーシブ求人が多数そろっております。
               </p>
             </div>
-            <div className="w-full md:w-1/2 flex flex-col gap-0 px-8 md:px-0 pt-2 md:pt-0">
-              <div className=" h-fit flex items-center justify-center mb-0 md:mb-0">
-                <img src={Strenght2} alt="" className="" />
-              </div>
-            </div>
           </div>
-          {/* Strength 03 */}
-          <div className="flex flex-col md:flex-row w-full items-start md:items-start mt-8 md:mt-8 gap-16">
-            <div className="w-full md:w-1/2 flex flex-col gap-0 px-8 md:px-0 pt-2 md:pt-0">
-              <div className="h-fit flex items-center justify-center mb-0 md:mb-0 ">
-                <img src={Strength3} alt="" className="rounded-lg" />
+
+          {/* Strength 03 - Image on left (desktop), top (mobile) */}
+          <div className="flex flex-col md:flex-row w-full items-start gap-8 md:gap-16">
+            {/* Image - Shows first on mobile, left on desktop */}
+            <div className="w-full md:w-1/2 flex flex-col gap-0 px-4 md:px-0">
+              <div className="h-fit flex items-center justify-center">
+                <img
+                  src={Strength3}
+                  alt="Strength 03"
+                  className="rounded-lg w-full h-auto"
+                />
               </div>
             </div>
-            <div className="w-full md:w-1/2 flex flex-col gap-0 px-8 md:px-0 pt-2 md:pt-0">
-              <h3 className="text-3xl font-bold text-black mb-20 mt-2 md:mt-0">
+            {/* Text Content */}
+            <div className="w-full md:w-1/2 flex flex-col gap-0 px-4 md:px-0">
+              <h3 className="text-2xl md:text-3xl font-bold text-black mb-8 md:mb-12 lg:mb-20">
                 Strength 03
               </h3>
-              <h4 className="text-xl text-[#1867D1] font-semibold mb-16">
+              <h4 className="text-lg md:text-xl text-[#1867D1] font-semibold mb-6 md:mb-10 lg:mb-16">
                 バイリンガル人材への徹底なサポート実績
               </h4>
-              <p className="text-md text-black  leading-relaxed">
+              <p className="text-sm md:text-base text-black leading-relaxed">
                 バイリンガル人材の紹介比率は業界最大級の33.4%
                 <br />
                 バイリンガル人材の転職支援において徹底した支援体制を誇ります。
@@ -198,16 +163,28 @@ const CompanyStrengths = () => {
               </p>
             </div>
           </div>
-          {/* Strength 04 */}
-          <div className="flex flex-col md:flex-row w-full items-start md:items-start mt-8 md:mt-8 gap-16">
-            <div className="w-full md:w-1/2 flex flex-col gap-0 px-8 md:px-0 pt-2 md:pt-0">
-              <h3 className="text-3xl font-bold text-black mb-20 mt-2 md:mt-0">
+
+          {/* Strength 04 - Text on left, Image on right (desktop), Image top (mobile) */}
+          <div className="flex flex-col md:flex-row w-full items-start gap-8 md:gap-16">
+            {/* Image - Shows first on mobile with order-first */}
+            <div className="w-full md:w-1/2 flex flex-col gap-0 px-4 md:px-0 order-first md:order-last">
+              <div className="h-fit flex items-center justify-center">
+                <img
+                  src={Strength4}
+                  alt="Strength 04"
+                  className="rounded-lg w-full h-auto"
+                />
+              </div>
+            </div>
+            {/* Text Content */}
+            <div className="w-full md:w-1/2 flex flex-col gap-0 px-4 md:px-0">
+              <h3 className="text-2xl md:text-3xl font-bold text-black mb-8 md:mb-12 lg:mb-20">
                 Strength 04
               </h3>
-              <h4 className="text-xl text-[#1867D1] font-semibold mb-13">
+              <h4 className="text-lg md:text-xl text-[#1867D1] font-semibold mb-6 md:mb-10 lg:mb-13">
                 高い内定者年次決率
               </h4>
-              <p className="text-black text-md leading-relaxed">
+              <p className="text-black text-sm md:text-base leading-relaxed">
                 高い内定条件交渉率 年収またはタイトルアップ率94.2%
                 <br />
                 ※2024年2月時点
@@ -216,11 +193,6 @@ const CompanyStrengths = () => {
                 <br />
                 ご希望に応じた給与条件や職位の獲得に貢献します。
               </p>
-            </div>
-            <div className="w-full md:w-1/2 flex flex-col gap-0 px-8 md:px-0 pt-2 md:pt-0">
-              <div className="has-focus-within: flex items-center justify-center mb-0 md:mb-0">
-                <img src={Strength4} alt="" className="rounded-lg" />
-              </div>
             </div>
           </div>
         </div>
