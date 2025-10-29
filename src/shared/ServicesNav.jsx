@@ -29,7 +29,7 @@ function ServicesNav() {
   const getActiveTab = () => {
     const currentPath = location.pathname;
     const activeIndex = tabs.findIndex((tab) => tab.path === currentPath);
-    return activeIndex !== -1 ? activeIndex : 0; // Default to first tab if no match
+    return activeIndex !== -1 ? activeIndex : 0;
   };
 
   const [activeTab, setActiveTab] = useState(getActiveTab());
@@ -42,8 +42,26 @@ function ServicesNav() {
 
   return (
     <>
-      <div className="relative -top-7 w-full flex justify-center z-20">
-        <div className="flex justify-center items-end gap-8">
+      <div className="relative -top-4 md:-top-6 lg:-top-7 w-full flex justify-center z-20 px-4 md:px-6 lg:px-8">
+        {/* Mobile: Dropdown/Stack */}
+        <div className="flex lg:hidden flex-col w-full max-w-md gap-3">
+          {tabs.map((tab, index) => (
+            <button
+              key={index}
+              onClick={() => handleTabClick(index)}
+              className={`w-full px-4 py-3 font-semibold text-xs sm:text-sm border border-[#5B5B5B]/40 rounded shadow-md cursor-pointer transition-all duration-300 ease-out hover:shadow-lg hover:border-[#1867D1]/60 ${
+                activeTab === index
+                  ? "bg-white text-black shadow-lg border-[#1867D1]/80"
+                  : "bg-white text-black hover:text-[#1867D1]"
+              }`}
+            >
+              {tab.name}
+            </button>
+          ))}
+        </div>
+
+        {/* Desktop: Horizontal Tabs */}
+        <div className="hidden lg:flex justify-center items-end gap-8">
           {tabs.map((tab, index) => (
             <button
               key={index}
