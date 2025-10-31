@@ -16,7 +16,7 @@ const HeroSection = () => {
     >
       {/* Content */}
       <div
-        className="max-w-8xl flex flex-col lg:flex-row items-center justify-center pt-8 md:pt-10 px-4 md:px-6 lg:px-8 h-full text-left gap-4 md:gap-6 lg:gap-2"
+        className="max-w-8xl flex flex-col lg:flex-row items-center justify-center pb-8 md:pt-10 px-4 md:px-6 lg:px-8 h-full text-left gap-4 md:gap-6 lg:gap-2"
         style={{
           backgroundImage: `url(${servicesbg})`,
           backgroundSize: "cover",
@@ -35,40 +35,42 @@ const HeroSection = () => {
         </div>
 
         {/* Text Content */}
-        <div className="space-y-6 md:space-y-8 lg:space-y-12 text-black">
+        <div className="space-y-3 md:space-y-8 lg:space-y-12 text-black">
           <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold">
             人材紹介事業
           </h1>
-          <p className="text-sm md:text-base lg:text-lg mt-4 mb-6 md:mb-8 text-black font-semibold">
+          <p className="text-sm md:text-base lg:text-lg mt-4 mb-4 md:mb-8 text-black font-semibold">
             企業の採用ニーズに応じて、リテーナー型によるプロジェクトベースのサーチから、
             <br className="hidden lg:block" />
             一般的なコンティンジェンシー型（完全成功報酬型）まで職種や要件に合わせて柔軟に対応します。
             <br className="hidden lg:block" />
             コアとなるCxOや経営幹部クラスから、即戦力となるスタッフレベルまで、最適な人材をご紹介します。
           </p>
-          <button className="bg-black text-white px-12 md:px-16 lg:px-20 py-2 md:py-3 rounded flex items-center gap-2 text-sm md:text-base">
-            {/* Phone Icon */}
-            <svg
-              width="32"
-              height="32"
-              viewBox="0 0 40 40"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              className="w-6 h-6 md:w-8 md:h-8 lg:w-10 lg:h-10"
-            >
-              <path
-                d="M30.0003 10H10.0003C8.15938 10 6.66699 11.4924 6.66699 13.3333V26.6667C6.66699 28.5076 8.15938 30 10.0003 30H30.0003C31.8413 30 33.3337 28.5076 33.3337 26.6667V13.3333C33.3337 11.4924 31.8413 10 30.0003 10Z"
-                stroke="white"
-                strokeWidth="3.33333"
-              />
-              <path
-                d="M6.66699 15L18.5103 20.9217C18.973 21.1529 19.4831 21.2732 20.0003 21.2732C20.5175 21.2732 21.0277 21.1529 21.4903 20.9217L33.3337 15"
-                stroke="white"
-                strokeWidth="3.33333"
-              />
-            </svg>
-            お問い合わせ
-          </button>
+         <div className="flex justify-center mx-auto lg:justify-start">
+            <button className="bg-black text-white px-12 md:px-16 lg:px-20 py-2 md:py-3 rounded flex items-center gap-2 text-sm md:text-base">
+              {/* Phone Icon */}
+              <svg
+                width="32"
+                height="32"
+                viewBox="0 0 40 40"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-6 h-6 md:w-8 md:h-8 lg:w-10 lg:h-10"
+              >
+                <path
+                  d="M30.0003 10H10.0003C8.15938 10 6.66699 11.4924 6.66699 13.3333V26.6667C6.66699 28.5076 8.15938 30 10.0003 30H30.0003C31.8413 30 33.3337 28.5076 33.3337 26.6667V13.3333C33.3337 11.4924 31.8413 10 30.0003 10Z"
+                  stroke="white"
+                  strokeWidth="3.33333"
+                />
+                <path
+                  d="M6.66699 15L18.5103 20.9217C18.973 21.1529 19.4831 21.2732 20.0003 21.2732C20.5175 21.2732 21.0277 21.1529 21.4903 20.9217L33.3337 15"
+                  stroke="white"
+                  strokeWidth="3.33333"
+                />
+              </svg>
+              お問い合わせ
+            </button>
+         </div>
         </div>
       </div>
     </section>
