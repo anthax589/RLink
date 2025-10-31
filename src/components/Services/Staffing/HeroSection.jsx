@@ -25,7 +25,7 @@ const HeroSection = () => {
       >
         {/* Text Content */}
         <div className="space-y-6 sm:space-y-8 md:space-y-10 lg:space-y-12 text-black w-full lg:w-auto order-2 lg:order-1">
-          <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold">
+          <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl">
             人材派遣/契約・業務委託事業
           </h1>
           <p className="text-sm sm:text-base md:text-lg mt-4 mb-8 text-black font-semibold break-words">

@@ -13,7 +13,7 @@ const HeroSection = () => {
     <section className="relative bg-cover min-h-[70vh]" data-aos="fade-in">
       {/* Content */}
       <div
-        className="max-w-8xl flex flex-col-reverse lg:flex-row items-center justify-center px-4 sm:px-6 md:px-8 lg:px-12 py-8 sm:py-10 md:py-12 lg:pt-10 min-h-[50vh] md:min-h-[60vh] lg:h-[70vh] text-left gap-6 md:gap-8 lg:gap-12"
+        className="max-w-8xl flex flex-col-reverse lg:flex-row items-center justify-center px-4 sm:px-6 md:px-8 lg:px-12 py-8 sm:py-10 md:py-12 lg:pt-10 min-h-[50vh] md:min-h-[60vh] lg:h-[70vh] text-left gap-6 md:gap-8 "
         style={{
           backgroundImage: `url(${servicesbg})`,
           backgroundSize: "cover",

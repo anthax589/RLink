@@ -16,7 +16,7 @@ const HeroSection = () => {
     >
       {/* Content */}
       <div
-        className="max-w-8xl flex flex-col lg:flex-row items-center justify-center pb-8 md:pt-10 px-4 md:px-6 lg:px-8 h-full text-left gap-4 md:gap-6 lg:gap-2"
+        className="max-w-8xl flex flex-col lg:flex-row items-center justify-center pb-8 md:pt-10 px-4 md:px-6 lg:px-8 h-full text-left gap-4 md:gap-6 lg:gap-56"
         style={{
           backgroundImage: `url(${servicesbg})`,
           backgroundSize: "cover",
@@ -36,7 +36,7 @@ const HeroSection = () => {
 
         {/* Text Content */}
         <div className="space-y-3 md:space-y-8 lg:space-y-12 text-black">
-          <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold">
+          <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl">
             人材紹介事業
           </h1>
           <p className="text-sm md:text-base lg:text-lg mt-4 mb-4 md:mb-8 text-black font-semibold">
