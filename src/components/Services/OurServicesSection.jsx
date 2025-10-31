@@ -31,7 +31,7 @@ export default function RobotServicesLayout() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="bg-gradient-to-tb from-[#E4E5E5] to-[#F0F0F0] rounded-md py-6 md:py-8 lg:py-10 px-4 md:px-6 border border-[#1867D1]/30"
+          className="bg-gradient-to-tb from-[#E4E5E5] to-[#F0F0F0] rounded-md p-6 md:py-8 lg:py-10 px-4 md:px-6 border border-[#1867D1]/30"
         >
           <div className="flex flex-col lg:flex-row items-start gap-4 md:gap-6">
             <div className="flex-shrink-0 w-full lg:w-60 flex items-center justify-center lg:ml-16 order-first">
@@ -55,7 +55,7 @@ export default function RobotServicesLayout() {
               <div className="flex justify-end lg:pr-10">
                 <button
                   onClick={() => handleViewMore("/recruitment-business")}
-                  className="btn bg-[#F4F2F2] text-black text-sm md:text-base lg:text-lg border border-black shadow-none px-8 md:px-12 lg:px-14 py-4 md:py-6 lg:py-7 rounded hover:bg-gray-50 transition font-normal flex items-center gap-2"
+                  className="btn w-full lg:w-68 bg-[#F4F2F2] text-black text-sm md:text-base lg:text-lg border border-black shadow-none px-8 md:px-12 lg:px-14 py-4 md:py-6 lg:py-7 rounded hover:bg-gray-50 transition font-normal flex items-center gap-2"
                 >
                   VIEW MORE
                   <svg
@@ -105,7 +105,7 @@ export default function RobotServicesLayout() {
               <div className="flex-1 flex justify-center lg:justify-end">
                 <button
                   onClick={() => handleViewMore("/recruitment-strategy")}
-                  className="btn text-black border text-sm md:text-base lg:text-lg shadow-none border-black px-8 md:px-12 lg:px-14 py-4 md:py-6 lg:py-7 rounded hover:bg-white transition flex items-center justify-center gap-2 font-normal bg-[#F4F2F2]"
+                  className="btn  text-black border text-sm md:text-base lg:text-lg shadow-none border-black px-20 md:px-12 lg:px-14 py-4 md:py-6 lg:py-7 rounded hover:bg-white transition flex items-center justify-center gap-2 font-normal bg-[#F4F2F2]"
                 >
                   VIEW MORE
                   <svg
@@ -136,7 +136,7 @@ export default function RobotServicesLayout() {
               し、採用の精度を高め、ミスマッチを防ぐ
             </p>
             <div className="flex justify-center">
-              <div className="w-auto h-auto flex items-center justify-center py-4">
+              <div className="w-auto h-auto flex items-center justify-center py-4 lg:py-8">
                 <img
                   src={HR}
                   alt="HR"
@@ -146,7 +146,7 @@ export default function RobotServicesLayout() {
             </div>
             <button
               onClick={() => handleViewMore("/hr-product-business")}
-              className="btn mx-auto bg-black text-sm md:text-base lg:text-lg shadow-none text-white px-8 md:px-12 lg:px-14 py-4 md:py-6 lg:py-7 rounded border border-white flex items-center font-normal justify-center gap-2"
+              className="btn w-full lg:w-68 mx-auto bg-black text-sm md:text-base lg:text-lg shadow-none text-white px-4 md:px-12 lg:px-14 py-6 md:py-6 lg:py-7 rounded border border-white flex items-center font-normal justify-center gap-2"
             >
               VIEW MORE
               <svg
