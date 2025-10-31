@@ -5,6 +5,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 function ServicesNav() {
   const navigate = useNavigate();
   const location = useLocation();
+  const [isOpen, setIsOpen] = useState(false);
 
   const tabs = [
     {
@@ -38,26 +39,60 @@ function ServicesNav() {
   const handleTabClick = (index) => {
     setActiveTab(index);
     navigate(tabs[index].path);
+    setIsOpen(false); // Close menu after selection on mobile
   };
 
   return (
     <>
       <div className="relative -top-4 md:-top-6 lg:-top-7 w-full flex justify-center z-20 px-4 md:px-6 lg:px-8">
-        {/* Mobile: Dropdown/Stack */}
-        <div className="flex lg:hidden flex-col w-full max-w-md gap-3">
-          {tabs.map((tab, index) => (
-            <button
-              key={index}
-              onClick={() => handleTabClick(index)}
-              className={`w-full px-4 py-3 font-semibold text-xs sm:text-sm border border-[#5B5B5B]/40 rounded shadow-md cursor-pointer transition-all duration-300 ease-out hover:shadow-lg hover:border-[#1867D1]/60 ${
-                activeTab === index
-                  ? "bg-white text-black shadow-lg border-[#1867D1]/80"
-                  : "bg-white text-black hover:text-[#1867D1]"
+        {/* Mobile: Floating Toggle Button */}
+        <div className="lg:hidden w-full max-w-md">
+          {/* Active Tab Button - Always Visible */}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="w-full px-4 py-3 font-semibold text-xs sm:text-sm border border-[#1867D1]/80 rounded shadow-lg bg-white text-black flex items-center justify-between"
+          >
+            <span>{tabs[activeTab].name}</span>
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className={`transition-transform duration-300 ${
+                isOpen ? "rotate-180" : ""
               }`}
             >
-              {tab.name}
-            </button>
-          ))}
+              <path
+                d="M14 4.66669L8 10.6667L2 4.66669"
+                stroke="black"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </button>
+
+          {/* Dropdown Menu - Toggleable */}
+          {isOpen && (
+            <div className="absolute left-4 right-4 mt-2 bg-white border border-[#5B5B5B]/40 rounded shadow-xl overflow-hidden z-30 max-w-md mx-auto">
+              <div className="flex flex-col">
+                {tabs.map((tab, index) => (
+                  <button
+                    key={index}
+                    onClick={() => handleTabClick(index)}
+                    className={`w-full px-4 py-3 font-semibold text-xs sm:text-sm text-left border-b border-[#5B5B5B]/20 last:border-b-0 cursor-pointer transition-all duration-200 ${
+                      activeTab === index
+                        ? "bg-[#1867D1]/10 text-[#1867D1]"
+                        : "bg-white text-black hover:bg-gray-50 hover:text-[#1867D1]"
+                    }`}
+                  >
+                    {tab.name}
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
 
         {/* Desktop: Horizontal Tabs */}
