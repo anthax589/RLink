@@ -8,14 +8,14 @@ const AboutSection = () => {
   }, []);
 
   return (
-    <div className="bg-white h-fit pt-8 md:pt-10 pb-12 md:pb-16 lg:pb-20 flex items-center justify-center relative overflow-hidden px-4 md:px-6 lg:px-8">
+    <div className="bg-white h-fit  flex items-center justify-center relative overflow-hidden px-4 md:px-6 lg:px-8">
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto">
+      <div className="relative z-10 max-w-8xl">
         {/* Title */}
         <div className="flex items-start py-3 md:py-5">
           <div className="flex items-start mb-4 md:mb-6 relative">
             <p
-              data-aos="fade-up"
+       justify-start        data-aos="fade-up"
               data-aos-offset="100"
               data-aos-delay="50"
               data-aos-once="true"
@@ -59,6 +59,9 @@ const AboutSection = () => {
           <br className="hidden lg:block" />
           が、個人は自らの可能性を発揮できる場が求められています。
         </p>
+
+        {/* Horizontal Rule */}
+        <hr className="border-t-2 border-[#CFCFCF] w-full" />
       </div>
     </div>
   );

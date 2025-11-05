@@ -2,38 +2,41 @@ import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import RPO from "../../assets/svg/RPO.svg";
 import Staffing from "../../assets/svg/Staffing.svg";
-import Excecutive from "../../assets/svg/ServicesExecutive.svg";
+import Excecutive from "../../assets/svg/ServicesExecutives.svg";
 import ReferenceCheck from "../../assets/svg/ServicesHr.svg";
 import TypewriterOnScroll from "../../animation/TypeWriterOnScroll";
-import Threads from "../TextAnimation/Threads/Threads";
 import Aos from "aos";
 import "aos/dist/aos.css";
 
 function Services() {
   const serviceCards = [
     {
-      title: "人材紹介",
+      title: "人材紹介事業",
       image: Excecutive,
-      alt: "人材紹介",
+      alt: "人材紹介事業",
       path: "/recruitment-business",
+      color: "bg-[#3C8FFF]",
     },
     {
       title: "採用戦略アドバイザリー＆RPO",
       image: RPO,
       alt: "採用戦略アドバイザリー＆RPO",
       path: "/recruitment-strategy",
+      color: "bg-[#1867D1]",
     },
     {
       title: "HRプロダクト",
       image: ReferenceCheck,
       alt: "HRプロダクト",
       path: "/hr-product-business",
+      color: "bg-[#165CBA]",
     },
     {
-      title: "人材派遣・業務委託",
+      title: "Y社連携・業務委託",
       image: Staffing,
-      alt: "人材派遣・業務委託",
+      alt: "Y社連携・業務委託",
       path: "/staffing",
+      color: "bg-[#083571]",
     },
   ];
 
@@ -44,22 +47,18 @@ function Services() {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center gap-12 md:gap-16 lg:gap-20 xl:gap-28 bg-[#1867D1] py-12 md:py-16 lg:py-20">
-      <div className="absolute bottom-0 left-0 w-full h-40 md:h-48 lg:h-60 z-0">
-        <Threads amplitude={2.5} distance={1} color={[255, 255, 255]} />
-      </div>
-
+    <div className="min-h-screen flex flex-col items-center justify-center gap-12 md:gap-16 lg:gap-20 bg-white py-12 md:py-12 lg:py-14">
       {/* Header */}
-      <div className="flex flex-col items-center justify-center px-4 z-10">
+      <div className="flex flex-col items-center justify-center px-4">
         <TypewriterOnScroll
           text="- サービス -"
           delay={20}
           threshold={0.5}
           className="ml-2"
-          letterClassName="text-white text-base md:text-lg 2xl:text-2xl font-bold tracking-widest mb-4 text-center"
+          letterClassName="text-black text-base  md:text-3xl 2xl:text-4xl font-bold tracking-widest mb-6 text-center"
         />
         <h1
-          className="text-white text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold leading-tight text-center px-4 max-w-5xl"
+          className="text-black text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold leading-tight text-center px-4 max-w-8xl"
           data-aos="fade-up"
           data-aos-once="true"
         >
@@ -67,78 +66,41 @@ function Services() {
         </h1>
       </div>
 
-      {/* Services Grid */}
-      <div
-        className="w-full max-w-7xl px-4 sm:px-6 z-10"
-        data-aos="fade-up"
-        data-aos-once="true"
-      >
-        <div className="w-full flex justify-center">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 lg:gap-3 w-full">
-            {serviceCards.map((card, index) => (
-              <div
-                key={index}
-                role="button"
-                tabIndex={0}
-                onClick={() => navigate(card.path)}
-                onKeyDown={(e) => e.key === "Enter" && navigate(card.path)}
-                className="group bg-[#1867D1] rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 ease-out transform hover:scale-105 hover:-translate-y-1 cursor-pointer flex flex-col relative"
-                style={{
-                  minHeight: "180px",
-                }}
-              >
-                {/* Icon Section - Takes most of the space */}
-                <div className="flex-1 flex items-center justify-center bg-white py-6 md:py-8">
-                  <img
-                    src={card.image}
-                    alt={card.alt}
-                    className="w-28 h-20 md:w-32 lg:w-36 md:h-22 lg:h-24 object-contain transition-transform duration-300 hover:scale-110"
-                  />
-                </div>
-
-                {/* Title Section - Blue background */}
-                <div className="bg-[radial-gradient(circle_at_top_center,_#1867D1_0%,_#001D44_100%)] py-5 md:py-6 px-4">
-                  <h3
-                    className="text-xs sm:text-sm font-semibold text-white text-center"
-                    style={{ fontFamily: "Inter_Bold" }}
-                  >
-                    {card.title}
-                  </h3>
-                </div>
-
-                {/* Professional overlay with sophisticated animation */}
-                <div className="absolute inset-0 bg-white flex items-center justify-center opacity-0 group-hover:opacity-95 transition-all duration-500 ease-out rounded-lg">
-                  <div className="text-center transform translate-y-6 group-hover:translate-y-0 transition-transform duration-600 ease-out delay-100 mx-auto flex flex-col items-center justify-center gap-4 md:gap-5">
-                    <svg
-                      width="40"
-                      height="36"
-                      viewBox="0 0 48 43"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="w-10 h-9 md:w-12 md:h-11"
-                    >
-                      <path
-                        d="M0 43V37.625H48V43H0ZM0 32.25V10.75H48V32.25H0ZM0 5.375V0H48V5.375H0Z"
-                        fill="black"
-                      />
-                    </svg>
-
-                    <p className="text-black text-base md:text-lg font-semibold mb-2 md:mb-3 tracking-wide transform scale-75 group-hover:scale-100 transition-transform duration-400 delay-200">
-                      View More
-                    </p>
-                  </div>
-                </div>
+      {/* Services Grid - 2x2 */}
+      <div className="w-full" data-aos="fade-up" data-aos-once="true">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
+          {serviceCards.map((card, index) => (
+            <div
+              key={index}
+              role="button"
+              tabIndex={0}
+              onClick={() => navigate(card.path)}
+              onKeyDown={(e) => e.key === "Enter" && navigate(card.path)}
+              className={`${card.color} p-16 md:p-20 lg:p-24 xl:p-28 flex flex-col items-center justify-center cursor-pointer transition-all duration-300 group relative overflow-hidden min-h-[300px] md:min-h-[350px] lg:min-h-[400px]`}
+            >
+              {/* Icon */}
+              <div className="mb-6 md:mb-8 relative z-10">
+                <img
+                  src={card.image}
+                  alt={card.alt}
+                  className="w-20 h-20 md:w-24 md:h-24 lg:w-32 lg:h-32 2xl:w-40 2xl:h-40 object-contain"
+                />
               </div>
-            ))}
-          </div>
+
+              {/* Title */}
+              <h3 className="text-white text-sm md:text-base lg:text-lg font-bold text-center relative z-10">
+                {card.title}
+              </h3>
+            </div>
+          ))}
         </div>
       </div>
 
       {/* View More Button */}
-      <div className="w-full flex justify-center px-4 z-10">
+      <div className="w-full flex justify-center px-4">
         <button
           onClick={() => navigate("/services")}
-          className="btn flex gap-2 border-2 border-white text-black px-12 sm:px-16 md:px-20 py-4 md:py-5 rounded text-xs sm:text-sm font-normal shadow-lg hover:shadow-xl hover:bg-white bg-white transition-all duration-300"
+          className="btn  border-none  bg-[#1867D1]  text-white font-normal px-12 sm:px-16 md:px-16 py-3 md:py-6 rounded  flex items-center gap-2 text-xs sm:text-sm md:text-base lg:mb-12"
         >
           VIEW MORE
           <svg
@@ -147,11 +109,10 @@ function Services() {
             viewBox="0 0 17 17"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            className="w-4 h-4 md:w-[17px] md:h-[17px]"
           >
             <path
-              d="M11.6641 11.127V4.99219H5.5293V3.62891H13.0273V11.127H11.6641ZM8.25586 14.5352V8.40039H2.12109V7.03711H9.61914V14.5352H8.25586Z"
-              fill="black"
+              d="M11.5879 10.9062V4.77148H5.45312V3.4082H12.9512V10.9062H11.5879ZM8.17969 14.3145V8.17969H2.04492V6.81641H9.54297V14.3145H8.17969Z"
+              fill="white"
             />
           </svg>
         </button>
