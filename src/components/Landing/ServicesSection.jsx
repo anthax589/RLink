@@ -7,12 +7,17 @@ import ReferenceCheck from "../../assets/svg/ServicesHr.svg";
 import TypewriterOnScroll from "../../animation/TypeWriterOnScroll";
 import Aos from "aos";
 import "aos/dist/aos.css";
+import RpoAnimation from "../../assets/gif/2.gif";
+import StaffingAnimation from "../../assets/gif/4.gif";
+import ExecutiveAnimation from "../../assets/gif/1.gif";
+import HrProductAnimation from "../../assets/gif/3.gif";
 
 function Services() {
   const serviceCards = [
     {
       title: "人材紹介事業",
       image: Excecutive,
+      animation: ExecutiveAnimation,
       alt: "人材紹介事業",
       path: "/recruitment-business",
       color: "bg-[#3C8FFF]",
@@ -20,6 +25,7 @@ function Services() {
     {
       title: "採用戦略アドバイザリー＆RPO",
       image: RPO,
+      animation: RpoAnimation,
       alt: "採用戦略アドバイザリー＆RPO",
       path: "/recruitment-strategy",
       color: "bg-[#1867D1]",
@@ -27,6 +33,7 @@ function Services() {
     {
       title: "HRプロダクト",
       image: ReferenceCheck,
+      animation: HrProductAnimation,
       alt: "HRプロダクト",
       path: "/hr-product-business",
       color: "bg-[#165CBA]",
@@ -34,6 +41,7 @@ function Services() {
     {
       title: "Y社連携・業務委託",
       image: Staffing,
+      animation: StaffingAnimation,
       alt: "Y社連携・業務委託",
       path: "/staffing",
       color: "bg-[#083571]",
@@ -78,19 +86,35 @@ function Services() {
               onKeyDown={(e) => e.key === "Enter" && navigate(card.path)}
               className={`${card.color} p-16 md:p-20 lg:p-24 xl:p-28 flex flex-col items-center justify-center cursor-pointer transition-all duration-300 group relative overflow-hidden min-h-[300px] md:min-h-[350px] lg:min-h-[400px]`}
             >
-              {/* Icon */}
-              <div className="mb-6 md:mb-8 relative z-10">
+              {/* Icon container - both icons in same position */}
+              <div className="relative mb-6 md:mb-8 z-10 w-24 h-24 md:w-28 md:h-28 lg:w-40 lg:h-40 2xl:w-48 2xl:h-48">
+                {/* Static Icon - visible by default, hidden on hover */}
                 <img
                   src={card.image}
                   alt={card.alt}
-                  className="w-20 h-20 md:w-24 md:h-24 lg:w-32 lg:h-32 2xl:w-40 2xl:h-40 object-contain"
+                  className="absolute inset-0 w-full h-full object-contain group-hover:opacity-0 transition-opacity duration-300"
+                />
+
+                {/* Animated GIF - hidden by default, visible on hover */}
+                <img
+                  src={card.animation}
+                  alt={`${card.alt} animation`}
+                  className="absolute inset-0 w-full h-full object-contain opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                 />
               </div>
 
-              {/* Title */}
-              <h3 className="text-white text-sm md:text-base lg:text-lg font-bold text-center relative z-10">
+              {/* Title - hidden on hover */}
+              <h3 className="text-white text-sm md:text-base lg:text-lg font-bold text-center relative z-10 group-hover:opacity-0 transition-opacity duration-300">
                 {card.title}
               </h3>
+
+              {/* "See more" text - visible on hover, positioned where title was */}
+              <div className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 pointer-events-none">
+                <div className="w-20 h-20 md:w-24 md:h-24 lg:w-40 lg:h-40 2xl:w-48 2xl:h-48 mb-6 md:mb-8"></div>
+                <p className="text-white text-sm md:text-base lg:text-lg font-semibold">
+                  See more
+                </p>
+              </div>
             </div>
           ))}
         </div>
