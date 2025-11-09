@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import RPO from "../../assets/svg/RPO.svg";
 import Staffing from "../../assets/svg/Staffing.svg";
-import Excecutive from "../../assets/svg/ServicesExecutives.svg";
+import Excecutive from "../../assets/svg/ServicesExecutive.svg";
 import ReferenceCheck from "../../assets/svg/ServicesHr.svg";
 import TypewriterOnScroll from "../../animation/TypeWriterOnScroll";
 import Aos from "aos";
@@ -18,6 +18,7 @@ function Services() {
       title: "人材紹介事業",
       image: Excecutive,
       animation: ExecutiveAnimation,
+      animationSize: "140%", // Adjust this value to scale the animation (e.g., "100%", "110%", "130%")
       alt: "人材紹介事業",
       path: "/recruitment-business",
       color: "bg-[#3C8FFF]",
@@ -26,6 +27,7 @@ function Services() {
       title: "採用戦略アドバイザリー＆RPO",
       image: RPO,
       animation: RpoAnimation,
+      animationSize: "100%", // Adjust this value to scale the animation
       alt: "採用戦略アドバイザリー＆RPO",
       path: "/recruitment-strategy",
       color: "bg-[#1867D1]",
@@ -34,6 +36,7 @@ function Services() {
       title: "HRプロダクト",
       image: ReferenceCheck,
       animation: HrProductAnimation,
+      animationSize: "130%", // Adjust this value to scale the animation
       alt: "HRプロダクト",
       path: "/hr-product-business",
       color: "bg-[#165CBA]",
@@ -42,6 +45,7 @@ function Services() {
       title: "Y社連携・業務委託",
       image: Staffing,
       animation: StaffingAnimation,
+      animationSize: "110%", // Adjust this value to scale the animation
       alt: "Y社連携・業務委託",
       path: "/staffing",
       color: "bg-[#083571]",
@@ -87,7 +91,7 @@ function Services() {
               className={`${card.color} p-16 md:p-20 lg:p-24 xl:p-28 flex flex-col items-center justify-center cursor-pointer transition-all duration-300 group relative overflow-hidden min-h-[300px] md:min-h-[350px] lg:min-h-[400px]`}
             >
               {/* Icon container - both icons in same position */}
-              <div className="relative mb-6 md:mb-8 z-10 w-24 h-24 md:w-28 md:h-28 lg:w-40 lg:h-40 2xl:w-48 2xl:h-48">
+              <div className="relative mb-6 md:mb-8 z-10 w-24 h-24 md:w-28 md:h-28 lg:w-36 lg:h-36 2xl:w-48 2xl:h-48">
                 {/* Static Icon - visible by default, hidden on hover */}
                 <img
                   src={card.image}
@@ -95,12 +99,19 @@ function Services() {
                   className="absolute inset-0 w-full h-full object-contain group-hover:opacity-0 transition-opacity duration-300"
                 />
 
-                {/* Animated GIF - hidden by default, visible on hover */}
-                <img
-                  src={card.animation}
-                  alt={`${card.alt} animation`}
-                  className="absolute inset-0 w-full h-full object-contain opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                />
+                {/* Animated GIF - hidden by default, visible on hover - individually scalable */}
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <img
+                    src={card.animation}
+                    alt={`${card.alt} animation`}
+                    className="object-contain w-full h-full"
+                    style={{
+                      transform: `scale(${
+                        parseFloat(card.animationSize) / 100
+                      })`,
+                    }}
+                  />
+                </div>
               </div>
 
               {/* Title - hidden on hover */}
