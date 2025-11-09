@@ -132,26 +132,7 @@ function Services() {
       </div>
 
       {/* View More Button */}
-      <div className="w-full flex justify-center px-4">
-        <button
-          onClick={() => navigate("/services")}
-          className="btn  border-none  bg-[#1867D1]  text-white font-normal px-12 sm:px-16 md:px-16 py-3 md:py-6 rounded  flex items-center gap-2 text-xs sm:text-sm md:text-base lg:mb-12"
-        >
-          VIEW MORE
-          <svg
-            width="17"
-            height="17"
-            viewBox="0 0 17 17"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M11.5879 10.9062V4.77148H5.45312V3.4082H12.9512V10.9062H11.5879ZM8.17969 14.3145V8.17969H2.04492V6.81641H9.54297V14.3145H8.17969Z"
-              fill="white"
-            />
-          </svg>
-        </button>
-      </div>
+
     </div>
   );
 }
