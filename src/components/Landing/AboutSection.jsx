@@ -8,7 +8,7 @@ const AboutSection = () => {
   }, []);
 
   return (
-    <div className="bg-white h-fit  flex items-center justify-center relative overflow-hidden px-4 md:px-6 lg:px-8 lg:pt-16">
+    <div className="bg-white h-fit  flex items-center justify-center relative overflow-hidden px-4 md:px-6 lg:px-8 lg:py-16">
       {/* Content */}
       <div className="relative z-10 max-w-8xl">
         {/* Title */}
@@ -50,7 +50,7 @@ const AboutSection = () => {
           日本法人設立・拡大支援など、挑戦と成長を続ける新興成長企業を中心にサービスを提供してきました
         </p>
         <p
-          className="text-black text-sm md:text-base lg:text-base leading-relaxed mb-12 md:mb-16 lg:mb-20 2xl:text-xl tracking-widest"
+          className="text-black text-sm md:text-base lg:text-base leading-relaxed mb-12 md:mb-16 lg:mb-10 2xl:text-xl tracking-widest"
           data-aos="fade-up"
           data-aos-offset="100"
           data-aos-delay="50"
