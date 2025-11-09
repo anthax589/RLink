@@ -59,7 +59,7 @@ function Services() {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center gap-12 md:gap-16 lg:gap-20 bg-white py-12 md:py-12 lg:py-14">
+    <div className="min-h-screen flex flex-col items-center justify-center gap-12 md:gap-16 lg:gap-20 bg-white pt-12 md:pt-12 lg:pt-14">
       {/* Header */}
       <div className="flex flex-col items-center justify-center px-4">
         <TypewriterOnScroll
