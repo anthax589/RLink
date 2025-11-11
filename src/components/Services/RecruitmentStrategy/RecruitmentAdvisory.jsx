@@ -47,10 +47,10 @@ function RecruitmentAdvisory() {
     });
   }, []);
   return (
-    <div className="w-full  h-screen">
+    <div className="w-full min-h-screen">
       {/* Header */}
       <div
-        className="w-full h-screen"
+        className="w-full min-h-screen relative"
         style={{
           backgroundImage: `url(${Radial})`,
           backgroundSize: "cover",
@@ -58,13 +58,15 @@ function RecruitmentAdvisory() {
         }}
       >
         {/* Tab Navigation - Positioned to overflow above background */}
-        <ServicesNav />
+        <div className="absolute top-0 left-0 right-0 z-30">
+          <ServicesNav />
+        </div>
 
         {/* Process Flow (new flowchart) */}
-        <div className="w-full h-1/2 flex flex-col justify-center items-center ">
-          <div className="text-center mb-8 flex justify-center items-center z-10">
+        <div className="w-full min-h-screen flex flex-col justify-center items-center px-4 md:px-6 lg:px-8 py-8 md:py-12 lg:py-16">
+          <div className="text-center mb-6 md:mb-8 lg:mb-12 flex justify-center items-center z-10">
             <h1
-              className="text-3xl text-white pt-56 "
+              className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl text-white px-4 py-10"
               style={{ textShadow: "2px 5px 2px rgba(0, 0, 0, 0.3)" }}
               data-aos="fade-up"
               data-aos-offset="200"
@@ -75,18 +77,18 @@ function RecruitmentAdvisory() {
           </div>
           {/* Background Logo */}
           <div
-            className="absolute top-80 inset-0 flex items-center justify-center "
+            className="absolute top-30 md:top-72 lg:top-10 inset-0 flex items-center justify-center"
             style={{ opacity: 0.4 }}
           >
             <img
               src={RLink}
               alt="RLink Logo"
-              className="w-96 lg:w-[500px] xl:w-96 2xl:w-xl h-auto object-contain"
+              className="w-48 sm:w-64 md:w-80 lg:w-96 xl:w-[500px] 2xl:w-xl h-auto object-contain"
             />
           </div>
           {/* Flowchart Container */}
           <div
-            className="flex flex-row items-stretch w-full max-w-5xl justify-center"
+            className="flex flex-col md:flex-row items-stretch w-full max-w-5xl justify-center gap-4 md:gap-0 mb-8 md:mb-0"
             data-aos="fade-up"
             data-aos-offset="200"
             data-aos-delay="150"
@@ -94,8 +96,8 @@ function RecruitmentAdvisory() {
             {flowData.map((step, idx) => (
               <div
                 key={step.title}
-                className={`relative flex-1 min-w-[220px] max-w-xs flex flex-col ${
-                  idx > 0 ? "-ml-13" : ""
+                className={`relative flex-1 min-w-[220px] max-w-full md:max-w-xs flex flex-col ${
+                  idx > 0 ? "md:-ml-13" : ""
                 }`}
               >
                 {/* Arrow shape */}
@@ -112,7 +114,7 @@ function RecruitmentAdvisory() {
                   }}
                 >
                   <div
-                    className={`p-4 text-base text-center whitespace-nowrap h-24 flex justify-center items-center ${
+                    className={`p-3 md:p-4 text-sm md:text-base text-center whitespace-nowrap h-20 md:h-24 flex justify-center items-center ${
                       step.title === "オペレーション"
                         ? "text-black"
                         : "text-white"
@@ -124,7 +126,7 @@ function RecruitmentAdvisory() {
                 </div>
                 <div className="mt-1">
                   <ul
-                    className={`flex-1 px-4 py-4 text-xs w-60 h-24 items-center ${
+                    className={`flex-1 px-3 md:px-4 py-3 md:py-4 text-xs sm:text-xs md:text-xs w-full md:w-60 h-auto md:h-24 items-center ${
                       idx === 2
                         ? "bg-[#1867D1]/75 text-white"
                         : "bg-[#D9D9D9] text-[#1867D1]"

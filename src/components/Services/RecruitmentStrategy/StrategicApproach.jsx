@@ -1,11 +1,12 @@
-import React from 'react'
+import React from "react";
 import Rectanglebg from "../../../assets/img/Rectangle 60.png";
-import tablebg from "../../../assets/img/OurServicesBackGround.png"
+import tablebg from "../../../assets/img/OurServicesBackGround.png";
+
 function StrategicApproach() {
   return (
-    <div className="max-w-full mx-auto ">
+    <div className="max-w-full mx-auto">
       <div
-        className="h-screen flex flex-col justify-center items-center bg-white/90  "
+        className="min-h-screen flex flex-col justify-center items-center bg-white/90 py-12 md:py-16 lg:py-20"
         style={{
           backgroundImage: `url(${tablebg})`,
           backgroundSize: "cover",
@@ -13,9 +14,9 @@ function StrategicApproach() {
           backgroundRepeat: "no-repeat",
         }}
       >
-        <div className="text-center ">
+        <div className="text-center px-4">
           <h2
-            className="text-3xl font-bold text-black py-10"
+            className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-black py-6 md:py-10"
             style={{ textShadow: "2px 5px 2px rgba(0, 0, 0, 0.3 )" }}
             data-aos="fade-up"
             data-aos-offset="200"
@@ -25,13 +26,13 @@ function StrategicApproach() {
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-1 gap-16 w-1/2 mx-auto py-5">
+        <div className="grid grid-cols-1 gap-8 md:gap-12 lg:gap-16 w-full px-4 sm:px-8 md:w-3/4 lg:w-1/2 mx-auto py-6 md:py-8">
           {/* Client Card */}
           <div
-            className=" p-7 rounded  flex flex-col"
+            className="px-6  sm:p-7 md:p-8 lg:p-10 rounded flex flex-col justify-center min-h-[200px] sm:min-h-[200px] md:min-h-[320px]"
             style={{
               backgroundImage: `url(${Rectanglebg})`,
-              backgroundSize: "contain",
+              backgroundSize: "100% 80%",
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
             }}
@@ -39,10 +40,10 @@ function StrategicApproach() {
             data-aos-offset="200"
             data-aos-delay="150"
           >
-            <h3 className="text-base font-bold text-black mb-6 text-center">
+            <h3 className="text-sm sm:text-base md:text-lg font-bold text-black mt-2 mb-2 md:mb-6 text-center">
               クライアント概要
             </h3>
-            <ul className="space-y-2 text-sm text-black flex flex-col justify-center mx-auto">
+            <ul className="space-y-2 text-xs sm:text-sm md:text-base text-black flex flex-col justify-center mx-auto">
               <li className="flex items-center gap-2">
                 <svg
                   width="8"
@@ -50,6 +51,7 @@ function StrategicApproach() {
                   viewBox="0 0 8 8"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
+                  className="flex-shrink-0"
                 >
                   <polygon points="4,1 7,4 4,7 1,4" fill="black" />
                 </svg>
@@ -62,6 +64,7 @@ function StrategicApproach() {
                   viewBox="0 0 8 8"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
+                  className="flex-shrink-0"
                 >
                   <polygon points="4,1 7,4 4,7 1,4" fill="black" />
                 </svg>
@@ -74,18 +77,20 @@ function StrategicApproach() {
                   viewBox="0 0 8 8"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
+                  className="flex-shrink-0"
                 >
                   <polygon points="4,1 7,4 4,7 1,4" fill="black" />
                 </svg>
                 人事部構成：採用担当1名、採用事務1名
               </li>
-              <li className="flex items-center gap-2">
+              <li className="flex items-center gap-2 mb-2">
                 <svg
                   width="8"
                   height="8"
                   viewBox="0 0 8 8"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
+                  className="flex-shrink-0"
                 >
                   <polygon points="4,1 7,4 4,7 1,4" fill="black" />
                 </svg>
@@ -93,12 +98,13 @@ function StrategicApproach() {
               </li>
             </ul>
           </div>
+
           {/* Challenge Card */}
           <div
-            className=" p-8 rounded flex flex-col"
+            className="px-6  sm:p-7 md:p-8 lg:p-10 rounded flex flex-col justify-center min-h-[200px] sm:min-h-[200px] md:min-h-[320px]"
             style={{
               backgroundImage: `url(${Rectanglebg})`,
-              backgroundSize: "contain",
+              backgroundSize: "100% 80%",
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
             }}
@@ -106,12 +112,12 @@ function StrategicApproach() {
             data-aos-offset="200"
             data-aos-delay="200"
           >
-            <h3 className="text-base font-bold text-black mb-6 text-center">
+            <h3 className="text-sm sm:text-base md:text-lg font-bold text-black mt-2 mb-2 md:mb-6 text-center">
               課題
             </h3>
-            <ul className="space-y-2 text-sm text-black flex flex-col justify-center mx-auto">
+            <ul className="space-y-2 text-xs sm:text-sm md:text-base text-black flex flex-col justify-center mx-auto">
               <li className="flex items-start gap-2">
-                <div className="flex items-center pt-2">
+                <div className="flex items-center pt-1 flex-shrink-0">
                   <svg
                     width="8"
                     height="8"
@@ -122,33 +128,39 @@ function StrategicApproach() {
                     <polygon points="4,1 7,4 4,7 1,4" fill="black" />
                   </svg>
                 </div>
-                複数の採用媒体を併用した結果、効果が分散し、
-                <br />
-                候補者の母集団形成ができていない
+                <span>
+                  複数の採用媒体を併用した結果、効果が分散し、
+                  <br className="hidden md:block" />
+                  候補者の母集団形成ができていない
+                </span>
               </li>
-              <li className="flex items-center gap-2">
-                <svg
-                  width="8"
-                  height="8"
-                  viewBox="0 0 8 8"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <polygon points="4,1 7,4 4,7 1,4" fill="black" />
-                </svg>
-                目標採用数に対し、担当人員が不足している
+              <li className="flex items-start gap-2">
+                <div className="flex items-center pt-1 flex-shrink-0">
+                  <svg
+                    width="8"
+                    height="8"
+                    viewBox="0 0 8 8"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <polygon points="4,1 7,4 4,7 1,4" fill="black" />
+                  </svg>
+                </div>
+                <span>目標採用数に対し、担当人員が不足している</span>
               </li>
-              <li className="flex items-center gap-2">
-                <svg
-                  width="8"
-                  height="8"
-                  viewBox="0 0 8 8"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <polygon points="4,1 7,4 4,7 1,4" fill="black" />
-                </svg>
-                採用難易度の高いポジションに対する理解不足
+              <li className="flex items-start gap-2">
+                <div className="flex items-center pt-1 flex-shrink-0">
+                  <svg
+                    width="8"
+                    height="8"
+                    viewBox="0 0 8 8"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <polygon points="4,1 7,4 4,7 1,4" fill="black" />
+                  </svg>
+                </div>
+                <span>採用難易度の高いポジションに対する理解不足</span>
               </li>
             </ul>
           </div>
@@ -158,4 +170,4 @@ function StrategicApproach() {
   );
 }
 
-export default StrategicApproach
+export default StrategicApproach;
