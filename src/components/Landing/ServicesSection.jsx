@@ -11,7 +11,7 @@ import RpoAnimation from "../../assets/gif/2.gif";
 import StaffingAnimation from "../../assets/gif/4.gif";
 import ExecutiveAnimation from "../../assets/gif/1.gif";
 import HrProductAnimation from "../../assets/gif/3.gif";
-
+import Servicesbg from "../../assets/img/ServicesBg.jpg";
 function Services() {
   const serviceCards = [
     {
@@ -88,8 +88,18 @@ function Services() {
               tabIndex={0}
               onClick={() => navigate(card.path)}
               onKeyDown={(e) => e.key === "Enter" && navigate(card.path)}
-              className={`${card.color} p-16 md:p-20 lg:p-24 xl:p-28 flex flex-col items-center justify-center cursor-pointer transition-all duration-300 group relative overflow-hidden min-h-[300px] md:min-h-[350px] lg:min-h-[400px]`}
+              className={`p-16 md:p-20 lg:p-24 xl:p-28 flex flex-col items-center justify-center cursor-pointer transition-all duration-300 group relative overflow-hidden min-h-[300px] md:min-h-[350px] lg:min-h-[400px]`}
+              style={{
+                backgroundImage: `url(${Servicesbg})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+              }}
             >
+              {/* Color Overlay */}
+              <div
+                className={`absolute inset-0 ${card.color} opacity-65 z-0`}
+              ></div>
               {/* Icon container - both icons in same position */}
               <div className="relative mb-6 md:mb-8 z-10 w-24 h-24 md:w-28 md:h-28 lg:w-36 lg:h-36 2xl:w-48 2xl:h-48">
                 {/* Static Icon - visible by default, hidden on hover */}
@@ -132,7 +142,6 @@ function Services() {
       </div>
 
       {/* View More Button */}
-
     </div>
   );
 }
