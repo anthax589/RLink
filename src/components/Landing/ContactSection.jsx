@@ -95,6 +95,7 @@ function ContactSection() {
     <div
       className="min-h-screen bg-transparent py-12 md:py-16 lg:py-20 px-4"
       id="contact"
+      style={{ scrollMarginTop: "400px" }}
     >
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-0 items-start justify-center">
@@ -142,7 +143,7 @@ function ContactSection() {
           {currentView === "default" ? (
             // Default Contact Form
             <div
-              className="bg-[#7F7F7F] p-6 md:p-8 lg:p-7 lg:w-fit  rounded"
+              className="bg-[#7F7F7F] p-6 md:p-8 lg:p-7 rounded"
               {...(!hasAnimated && {
                 "data-aos": "fade-up",
                 "data-aos-offset": "100",
@@ -344,7 +345,7 @@ function ContactSection() {
             </div>
           ) : (
             // AboutOurServices Form
-            <div className="bg-[#7F7F7F] p-6 md:p-8 lg:p-7 lg:w-fit rounded lg:relative">
+            <div className="bg-[#7F7F7F] p-6 md:p-8 lg:p-7 rounded">
               <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">
                 Get in Touch
               </h2>

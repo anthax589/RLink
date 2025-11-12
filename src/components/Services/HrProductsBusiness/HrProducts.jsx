@@ -12,10 +12,10 @@ export default function SnappCheck() {
   }, []);
 
   return (
-    <div className="w-full h-screen relative">
+    <div className="w-full min-h-screen relative">
       {/* Background container */}
       <div
-        className="w-full h-screen"
+        className="w-full min-h-screen"
         style={{
           backgroundImage: `url(${Radial})`,
           backgroundSize: "cover",
@@ -27,17 +27,17 @@ export default function SnappCheck() {
         <ServicesNav />
 
         {/* Content Section - Centered in remaining space */}
-        <div className="flex items-center justify-center px-4 sm:px-8 lg:px-16 h-full pb-20 relative">
+        <div className="flex items-center justify-center px-4 sm:px-6 md:px-8 lg:px-16 min-h-screen py-20 md:py-24 lg:pb-20 relative">
           {/* Background Logo */}
 
           <div
-            className="absolute inset-0 flex items-center justify-center z-0 bottom-16"
+            className="absolute inset-0 flex items-center justify-center z-0 bottom-8 md:bottom-16"
             style={{ opacity: 0.4 }}
           >
             <img
               src={RLink}
               alt="RLink Logo"
-              className="w-96 lg:w-[500px] xl:w-96  2xl:w-xl h-auto"
+              className="w-48 sm:w-64 md:w-80 lg:w-96 xl:w-[500px] 2xl:w-xl h-auto"
             />
           </div>
 
@@ -45,14 +45,14 @@ export default function SnappCheck() {
           <div className="max-w-7xl mx-auto relative z-10 text-center">
             {/* Header */}
             <div
-              className="mb-8"
+              className="mb-6 md:mb-8"
               style={{
                 textShadow: "2px 5px 2px rgba(0, 0, 0, 0.3)",
                 fontFamily: "Lato-Bold",
               }}
             >
               <h1
-                className="text-5xl mb-4 text-white"
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-3 md:mb-4 text-white"
                 data-aos="fade-up"
                 data-aos-offset="100"
                 data-aos-delay="50"
@@ -66,21 +66,21 @@ export default function SnappCheck() {
               data-aos="fade-up"
               data-aos-offset="100"
               data-aos-delay="50"
-              className="w-xl h-36 flex items-center justify-center mx-auto  bg-[#D9D9D9]"
+              className="w-full max-w-3xl h-24 sm:h-28 md:h-32 lg:h-36 flex items-center justify-center mx-auto bg-[#D9D9D9] mb-6 md:mb-8"
             >
               {/* <img
               src={Executive}
               alt="Executive Search"
               className="w-full h-full"
             /> */}
-              <span className="flex justify-center items-center mx-auto text-black text-5xl">
+              <span className="flex justify-center items-center mx-auto text-black text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
                 IMAGE.JPG
               </span>
             </div>
 
             {/* Subtitle */}
             <h2
-              className="text-3xl text-white py-8"
+              className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-white py-4 md:py-6 lg:py-8 px-4"
               style={{ fontFamily: "Lato-Regular" }}
               data-aos="fade-up"
               data-aos-offset="100"
@@ -91,38 +91,31 @@ export default function SnappCheck() {
 
             {/* Description - Two columns side by side */}
             <div
-              className="flex gap-8 text-white text-sm leading-relaxed max-w-6xl mx-auto mb-12"
+              className="flex flex-col md:flex-row gap-4 md:gap-6 lg:gap-8 text-white text-xs sm:text-sm md:text-base leading-relaxed max-w-6xl mx-auto mb-8 md:mb-12"
               data-aos="fade-up"
               data-aos-offset="100"
               data-aos-delay="150"
             >
               {/* Left text box */}
-              <div className="flex-1 bg-[#FFFFFF]/20 backdrop-blur-sm rounded p-6 ">
-                <p className="text-justify text-lg">
-                  人材獲得競争が激しさを増す中、早期離職やカルチャーミス <br />
+              <div className="flex-1 bg-[#FFFFFF]/20 backdrop-blur-sm rounded p-4 md:p-5 lg:p-6">
+                <p className="text-justify text-sm md:text-base lg:text-lg">
+                  人材獲得競争が激しさを増す中、早期離職やカルチャーミス
                   マッチは企業の成長に大きな影響を及ぼします。
-                  <br />
-                  候補者の実績や働き方を過去の上司や同僚から確認するリ <br />
-                  ファレンスチェックは、こうしたリスクを未然に防ぐ有効な <br />
+                  候補者の実績や働き方を過去の上司や同僚から確認するリ
+                  ファレンスチェックは、こうしたリスクを未然に防ぐ有効な
                   手段です。また、採用プロセスの透明性を確保することで、
-                  <br />
                   投資家やステークホルダーへの説明責任も果たせます。
                 </p>
               </div>
 
               {/* Right text box */}
-              <div className="flex-1 bg-[#FFFFFF]/20 backdrop-blur-sm rounded p-6 ">
-                <p className="text-justify text-lg text-nowrap">
-                  従来のリファレンスチェックは、主に電話やアンケートを通じ{" "}
-                  <br />
+              <div className="flex-1 bg-[#FFFFFF]/20 backdrop-blur-sm rounded p-4 md:p-5 lg:p-6">
+                <p className="text-justify text-sm md:text-base lg:text-lg">
+                  従来のリファレンスチェックは、主に電話やアンケートを通じ
                   て第三者の評価を収集するもので、時間や手間がかるうえ、
-                  <br />
-                  得られる情報の質や一貫性にばらつきがありました。一方、
-                  <br />
-                  Snapp CheckはAIを活用し、候補者データの検証やインサイ
-                  <br />
-                  ト抽出を自動化。短期間で客観性の高い情報を提供し、スキル{" "}
-                  <br />
+                  得られる情報の質や一貫性にばらつきがありました。一方、 Snapp
+                  CheckはAIを活用し、候補者データの検証やインサイ
+                  ト抽出を自動化。短期間で客観性の高い情報を提供し、スキル
                   適性やカルチャーフィットをより正確に判断できます。
                 </p>
               </div>
