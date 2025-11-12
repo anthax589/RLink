@@ -52,20 +52,19 @@ const LandingPage = () => {
       const tryScroll = (attempt = 0) => {
         const contact = document.getElementById("contact");
         if (contact) {
-          const headerHeight = 100;
-          const top =
-            contact.getBoundingClientRect().top +
-            window.pageYOffset -
-            headerHeight;
-          window.scrollTo({ top, behavior: "smooth" });
+          // Simple scroll - scroll-margin-top CSS will handle the offset
+          contact.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
         } else if (attempt < 10) {
           // retry after delay (up to ~2s)
           setTimeout(() => tryScroll(attempt + 1), 200);
         }
       };
 
-      // Start retry loop
-      setTimeout(() => tryScroll(0), 300);
+      // Start retry loop with longer initial delay for page load
+      setTimeout(() => tryScroll(0), 1200);
     }
   }, [location]);
 
@@ -120,11 +119,13 @@ const LandingPage = () => {
         <Suspense fallback={<LoadingSpinner />}>
           <Services />
         </Suspense>
-        <div   style={{
-                backgroundImage: `url(${Bg})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }}>
+        <div
+          style={{
+            backgroundImage: `url(${Bg})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        >
           <Suspense fallback={<LoadingSpinner />}>
             <JobTitleSection />
           </Suspense>
