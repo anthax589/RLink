@@ -10,6 +10,7 @@ import HrProductBusiness from "./pages/HrProductBusiness";
 import Staffing from "./pages/Staffing";
 import ScrollToTop from "./components/ScrollToTop";
 import ContactForm from "./components/Landing/ContactSection";
+import UnderConstruction from "./pages/UnderContruction";
 import { VideoProvider } from "./context/VideoProvider";
 import "./App.css";
 
@@ -20,7 +21,8 @@ function App() {
         <ScrollToTop />
         <div className="w-full">
           <Routes>
-            <Route path="/" element={<LandingPage />} />
+            <Route path="/" element={<UnderConstruction />} />
+            {/* <Route path="/" element={<LandingPage />} /> */}
             <Route path="/services" element={<ServicesPage />} />
             <Route path="/contact" element={<ContactForm />} />
             <Route path="/company-profile" element={<CompanyProfile />} />
