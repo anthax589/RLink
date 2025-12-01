@@ -2,8 +2,11 @@ import React, { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import RLinkLogo from "../assets/img/RLinkLogo.png";
 import { useVideoContext } from "../context/useVideoContext";
+import { useTranslations } from "../hooks/useTranslations";
+import LanguageToggleButton from "../components/LanguageToggleButton";
 
 const Header = () => {
+  const { t } = useTranslations();
   const [openDropdown, setOpenDropdown] = useState(null);
   const [showHeader, setShowHeader] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -85,21 +88,21 @@ const Header = () => {
   const navItems = [
     {
       key: "about",
-      label: "会社について",
+      label: t("about"),
       links: [
-        { label: "会社概要", href: "/company-profile" },
-        { label: "ミッション", href: "/company-mission" },
+        { label: t("company_profile"), href: "/company-profile" },
+        { label: t("company_mission"), href: "/company-mission" },
       ],
     },
     {
       key: "services",
-      label: "サービス",
+      label: t("services"),
       href: "/services",
       noDropdown: true,
     },
     {
       key: "contact",
-      label: "お問い合わせ",
+      label: t("contact"),
       href: "/contact",
       noDropdown: true,
     },
@@ -341,16 +344,21 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* Right Side - Recruitment Button */}
+          {/* Language Toggle - Always Visible */}
+          {/* <div className="px-2 sm:px-3 md:px-4 flex items-center">
+            <LanguageToggleButton />
+          </div> */}
+
+          {/* Recruitment Business Button */}
           <div>
             <Link
               to="/recruitment-business"
-              className="w-24 xl:w-32 2xl:w-36 h-20 xl:h-24 2xl:h-24 flex text-base xl:text-lg 2xl:text-xl items-center justify-center text-white shadow whitespace-nowrap"
+              className="w-24 xl:w-44 xl:px-3 2xl:w-64 h-20 xl:h-24 2xl:h-24 flex text-base xl:text-lg 2xl:text-xl items-center justify-center text-white shadow whitespace-nowrap"
               style={{
                 background: "linear-gradient(90deg, #1867D1 0%, #000000 100%)",
               }}
             >
-              採用情報
+              {t("recruitment_info")}
             </Link>
           </div>
         </div>
@@ -437,16 +445,22 @@ const Header = () => {
             ))}
 
             {/* Mobile Recruitment Button */}
-            <Link
-              to="/recruitment-business"
-              className="mt-6 py-4 px-6 text-lg text-center text-white rounded-lg shadow-lg transition-transform hover:scale-105"
-              style={{
-                background: "linear-gradient(90deg, #1867D1 0%, #000000 100%)",
-              }}
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              採用情報
-            </Link>
+            <div className="flex justify-center items-center flex-row-reverse">
+              {/* <div className="px-2 sm:px-3 md:px-4 flex items-center">
+                <LanguageToggleButton />
+              </div> */}
+              <Link
+                to="/recruitment-business"
+                className=" py-4 px-6 text-lg text-center text-white rounded-lg shadow-lg transition-transform hover:scale-105"
+                style={{
+                  background:
+                    "linear-gradient(90deg, #1867D1 0%, #000000 100%)",
+                }}
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                {t("recruitment_info")}
+              </Link>
+            </div>
           </nav>
         </div>
       )}

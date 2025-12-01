@@ -7,8 +7,10 @@ import Contact from "../../assets/svg/Contact.svg";
 import Staffing from "../../assets/svg/Staffing1.svg";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import { useTranslations } from "../../hooks/useTranslations";
 
 export default function RobotServicesLayout() {
+  const { t } = useTranslations();
   const navigate = useNavigate();
 
   const handleViewMore = (path) => {
@@ -43,21 +45,24 @@ export default function RobotServicesLayout() {
             </div>
             <div className="flex-1">
               <h2 className="text-xl md:text-2xl font-bold lg:pt-16 mb-2 text-black">
-                人材紹介事業
+                {t("service_recruitment_title")}
               </h2>
               <p className="text-black text-sm md:text-base mb-4 leading-relaxed tracking-wide">
-                企業の採用ニーズに応じて、リテーナー型によるプロジェクトベースのサーチから、
-                <br className="hidden lg:block" />
-                一般的なコンティンジェンシー型(完全成功報酬型)まで職種や要件に合わせて柔軟に対応します。
-                <br className="hidden lg:block" />
-                コアとなるCxOや経営幹部クラスから、即戦力となるスタッフレベルまで、最適な人材をご紹介します。
+                {t("service_recruitment_desc")
+                  .split("\n")
+                  .map((line, i, arr) => (
+                    <span key={i}>
+                      {line}
+                      {i < arr.length - 1 && <br className="hidden lg:block" />}
+                    </span>
+                  ))}
               </p>
               <div className="flex justify-end lg:pr-10">
                 <button
                   onClick={() => handleViewMore("/recruitment-business")}
                   className="btn w-full lg:w-68 bg-[#F4F2F2] text-black text-sm md:text-base lg:text-lg border border-black shadow-none px-8 md:px-12 lg:px-14 py-4 md:py-6 lg:py-7 rounded hover:bg-gray-50 transition font-normal flex items-center gap-2"
                 >
-                  VIEW MORE
+                  {t("view_more")}
                   <svg
                     width="12"
                     height="12"
@@ -87,12 +92,17 @@ export default function RobotServicesLayout() {
           {/* Recruitment Strategy */}
           <div className="bg-gradient-to-tb from-[#E4E5E5] to-[#F0F0F0] rounded-lg p-4 md:p-6 border border-[#1867D1]/30 lg:flex-[55%]">
             <h2 className="text-lg md:text-2xl font-bold mb-3 md:mb-4 text-black">
-              採用戦略アドバイザリー事業
+              {t("service_strategy_title")}
             </h2>
             <p className="text-black text-sm md:text-base lg:text-xl mb-3 leading-relaxed">
-              般的なRPOの業務領域を超えた、採用の仕組みづくりから伴
-              <br className="hidden lg:block" />
-              奏型で企業の採用課題を支援します
+              {t("service_strategy_desc")
+                .split("\n")
+                .map((line, i, arr) => (
+                  <span key={i}>
+                    {line}
+                    {i < arr.length - 1 && <br className="hidden lg:block" />}
+                  </span>
+                ))}
             </p>
             <div className="flex flex-col lg:flex-row gap-4 lg:gap-6 items-center lg:items-end lg:relative lg:top-4">
               <div className="flex justify-center lg:justify-end order-first lg:order-none">
@@ -107,7 +117,7 @@ export default function RobotServicesLayout() {
                   onClick={() => handleViewMore("/recruitment-strategy")}
                   className="btn  text-black border text-sm md:text-base lg:text-lg shadow-none border-black px-20 md:px-12 lg:px-14 py-4 md:py-6 lg:py-7 rounded hover:bg-white transition flex items-center justify-center gap-2 font-normal bg-[#F4F2F2]"
                 >
-                  VIEW MORE
+                  {t("view_more")}
                   <svg
                     width="12"
                     height="12"
@@ -128,12 +138,17 @@ export default function RobotServicesLayout() {
           {/* HR Product Service */}
           <div className="bg-gradient-to-b from-[#1867D1] to-[#0C356B] rounded-lg shadow-md p-4 md:p-6 text-white lg:flex-[45%]">
             <h2 className="text-lg md:text-2xl font-bold mb-2">
-              HRプロダクト事業
+              {t("service_hr_product_title")}
             </h2>
             <p className="text-sm md:text-base lg:text-lg leading-relaxed">
-              「候補者の実績や人柄」をAIとデータで可視化{" "}
-              <br className="hidden lg:block" />
-              し、採用の精度を高め、ミスマッチを防ぐ
+              {t("service_hr_product_desc")
+                .split("\n")
+                .map((line, i, arr) => (
+                  <span key={i}>
+                    {line}
+                    {i < arr.length - 1 && <br className="hidden lg:block" />}
+                  </span>
+                ))}
             </p>
             <div className="flex justify-center">
               <div className="w-auto h-auto flex items-center justify-center py-4 lg:py-8">
@@ -148,7 +163,7 @@ export default function RobotServicesLayout() {
               onClick={() => handleViewMore("/hr-product-business")}
               className="btn w-full lg:w-68 mx-auto bg-black text-sm md:text-base lg:text-lg shadow-none text-white px-4 md:px-12 lg:px-14 py-6 md:py-6 lg:py-7 rounded border border-white flex items-center font-normal justify-center gap-2"
             >
-              VIEW MORE
+              {t("view_more")}
               <svg
                 width="12"
                 height="12"
@@ -175,11 +190,11 @@ export default function RobotServicesLayout() {
         >
           {/* Get in Touch */}
           <div className="bg-gradient-to-b from-[#1867D1] to-[#0C356B] rounded-lg shadow-md p-4 md:p-6 text-white relative overflow-visible lg:flex-[45%]">
-            <h2 className="text-xl md:text-2xl font-bold pb-3">Get in Touch</h2>
+            <h2 className="text-xl md:text-2xl font-bold pb-3">
+              {t("service_contact_title")}
+            </h2>
             <p className="mb-4 md:mb-6 text-xs md:text-sm leading-relaxed">
-              We'd love to hear from you. Whether you're a company seeking top
-              executive talent or a professional exploring new career
-              opportunities, RLink Partners is here to guide your next step.
+              {t("service_contact_desc")}
             </p>
 
             <div className="flex flex-col lg:flex-row items-center lg:items-end gap-4 lg:relative lg:top-12 lg:h-64 overflow-visible">
@@ -214,7 +229,7 @@ export default function RobotServicesLayout() {
                       strokeWidth="2"
                     />
                   </svg>
-                  お問い合わせ
+                  {t("service_contact_button")}
                 </button>
               </div>
             </div>
@@ -223,12 +238,17 @@ export default function RobotServicesLayout() {
           {/* Staffing Service */}
           <div className="bg-gradient-to-tb from-[#E4E5E5] to-[#F0F0F0] rounded-lg shadow-sm p-4 md:p-6 lg:p-8 border border-[#1867D1]/30 lg:flex-[55%]">
             <h2 className="text-lg md:text-2xl lg:text-3xl font-bold mb-3 md:mb-4 text-black">
-              人材派遣/契約・業務委託事業
+              {t("service_staffing_title")}
             </h2>
             <p className="text-black text-sm md:text-base lg:text-xl mb-6 md:mb-8 lg:mb-10 leading-relaxed">
-              バイリンガル人材を含む幅広い職種・レイヤーの即戦力人
-              <br className="hidden lg:block" />
-              材を、スピード感をもってご紹介します。
+              {t("service_staffing_desc")
+                .split("\n")
+                .map((line, i, arr) => (
+                  <span key={i}>
+                    {line}
+                    {i < arr.length - 1 && <br className="hidden lg:block" />}
+                  </span>
+                ))}
             </p>
             <div className="flex flex-col lg:flex-row gap-4 lg:gap-13 items-center lg:items-end lg:relative lg:top-4">
               <div className="flex justify-center lg:justify-end order-first lg:order-last">
@@ -244,7 +264,7 @@ export default function RobotServicesLayout() {
                 onClick={() => handleViewMore("/staffing")}
                 className="btn text-black text-sm md:text-base lg:text-lg shadow-none border bg-[#F4F2F2] border-black px-8 md:px-12 lg:px-14 py-4 md:py-6 lg:py-7 rounded hover:bg-white transition flex items-center justify-center font-normal w-full lg:w-auto"
               >
-                VIEW MORE
+                {t("view_more")}
                 <svg
                   width="12"
                   height="12"

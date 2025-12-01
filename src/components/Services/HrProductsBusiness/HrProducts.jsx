@@ -5,8 +5,11 @@ import { useEffect } from "react";
 import RLink from "../../../assets/svg/RLink.svg";
 import ServicesNav from "../../../shared/ServicesNav";
 import Radial from "../../../assets/img/RadialBackGround.png";
+import { useTranslations } from "../../../hooks/useTranslations";
 
 export default function SnappCheck() {
+  const { t } = useTranslations();
+
   useEffect(() => {
     Aos.init({ duration: 1500 });
   }, []);
@@ -86,7 +89,7 @@ export default function SnappCheck() {
               data-aos-offset="100"
               data-aos-delay="100"
             >
-              AI搭載オンライン型リファレンスチェックサービス
+              {t("snapp_check_subtitle")}
             </h2>
 
             {/* Description - Two columns side by side */}
@@ -99,24 +102,14 @@ export default function SnappCheck() {
               {/* Left text box */}
               <div className="flex-1 bg-[#FFFFFF]/20 backdrop-blur-sm rounded p-4 md:p-5 lg:p-6">
                 <p className="text-justify text-sm md:text-base lg:text-lg">
-                  人材獲得競争が激しさを増す中、早期離職やカルチャーミス
-                  マッチは企業の成長に大きな影響を及ぼします。
-                  候補者の実績や働き方を過去の上司や同僚から確認するリ
-                  ファレンスチェックは、こうしたリスクを未然に防ぐ有効な
-                  手段です。また、採用プロセスの透明性を確保することで、
-                  投資家やステークホルダーへの説明責任も果たせます。
+                  {t("snapp_check_desc_1")}
                 </p>
               </div>
 
               {/* Right text box */}
               <div className="flex-1 bg-[#FFFFFF]/20 backdrop-blur-sm rounded p-4 md:p-5 lg:p-6">
                 <p className="text-justify text-sm md:text-base lg:text-lg">
-                  従来のリファレンスチェックは、主に電話やアンケートを通じ
-                  て第三者の評価を収集するもので、時間や手間がかるうえ、
-                  得られる情報の質や一貫性にばらつきがありました。一方、 Snapp
-                  CheckはAIを活用し、候補者データの検証やインサイ
-                  ト抽出を自動化。短期間で客観性の高い情報を提供し、スキル
-                  適性やカルチャーフィットをより正確に判断できます。
+                  {t("snapp_check_desc_2")}
                 </p>
               </div>
             </div>

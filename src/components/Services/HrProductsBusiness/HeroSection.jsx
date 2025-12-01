@@ -3,8 +3,11 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 import HR from "../../../assets/svg/SnappCheck.svg";
 import { useEffect } from "react";
+import { useTranslations } from "../../../hooks/useTranslations";
 
 const HeroSection = () => {
+  const { t } = useTranslations();
+
   useEffect(() => {
     Aos.init({ duration: 1500 });
   }, []);
@@ -30,12 +33,17 @@ const HeroSection = () => {
         {/* Text Content */}
         <div className="space-y-6 sm:space-y-8 md:space-y-10 lg:space-y-12 text-black w-full lg:w-auto order-2 lg:order-1">
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl ">
-            HRプロダクト事業
+            {t("hr_product_hero_title")}
           </h1>
           <p className="text-sm sm:text-base md:text-lg mt-4 mb-8 text-black font-semibold break-words">
-            「候補者の実績や人柄」をAIとデータで可視化し、
-            <br className="hidden sm:block" />
-            採用の精度を高め、ミスマッチを防ぐ
+            {t("hr_product_hero_desc")
+              .split("\n")
+              .map((line, i, arr) => (
+                <span key={i}>
+                  {line}
+                  {i < arr.length - 1 && <br className="hidden sm:block" />}
+                </span>
+              ))}
           </p>
           <div className="flex justify-center lg:justify-start">
             <button
@@ -62,7 +70,7 @@ const HeroSection = () => {
                   strokeWidth="3.33333"
                 />
               </svg>
-              お問い合わせ
+              {t("service_contact_button")}
             </button>
           </div>
         </div>

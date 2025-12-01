@@ -14,11 +14,13 @@
     "aos": "^2.3.4",
     "daisyui": "^5.0.54",
     "gsap": "^3.13.0",
+    "i18next": "^25.6.3",
     "motion": "^12.23.22",
     "ogl": "^1.0.11",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-fast-marquee": "^1.6.5",
+    "react-i18next": "^16.3.5",
     "react-router-dom": "^7.9.3",
     "web-vitals": "^5.1.0"
   },

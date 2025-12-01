@@ -1,8 +1,11 @@
 import React from "react";
 import AboutTheCompany from "../../../assets/img/AboutTheCompanyBackGround.png";
 import RLinkLogo from "../../../assets/img/RLinkLogo.png";
+import { useTranslations } from "../../../hooks/useTranslations";
 
 export default function CompanyMission() {
+  const { t } = useTranslations();
+
   return (
     <div
       className="max-w-full mx-auto p-4 md:p-6 lg:p-8 2xl:py-20 flex items-center min-h-screen"
@@ -23,19 +26,19 @@ export default function CompanyMission() {
             />
           </div>
           <h1 className="text-xl md:text-2xl lg:text-3xl 2xl:text-5xl text-center text-black tracking-widest mb-2 pt-12 md:pt-16">
-            企業理念
+            {t("mission_title")}
           </h1>
           <p className="text-black text-center text-[10px] md:text-xs 2xl:text-sm">
-            Company Mission
+            {t("mission_subtitle")}
           </p>
         </div>
 
         {/* Content Section */}
-        <div className="px-4 md:px-6 py-6 md:py-8 2xl:px-12 2xl:py-12 flex flex-col justify-center items-center">
+        <div className="px-4 md:px-6 py-6 md:py-8 xl:px-48 2xl:px-16 2xl:py-12 flex flex-col justify-center items-center">
           {/* Mission Statement */}
           <div className="mb-6 md:mb-8 2xl:mb-12">
             <h2 className="text-sm md:text-base lg:text-lg 2xl:text-3xl font-bold text-black text-center px-2">
-              "挑戦する企業と人の成長を支える、新しいHRインフラを"
+              {t("mission_statement")}
             </h2>
           </div>
 
@@ -46,33 +49,55 @@ export default function CompanyMission() {
           >
             <p>
               <span className="text-[#1867D1]">R</span>Link
-              Partnersは、「人と企業の可能性を最大化する」ことを使命とするHRソリューションカンパニーです。
+              {t("mission_desc_1")}
             </p>
 
             <p>
-              2021年3月の設立以来、私たちは未上場のスタートアップ企業、IPO後も成長を志す企業、そして外資系企業の{" "}
-              <br className="hidden lg:block" />
-              日本法人設立・拡大支援など、挑戦と成長を続ける新興成長企業を中心にサービスを提供してきました。
+              {t("mission_desc_2")
+                .split("\n")
+                .map((line, i, arr) => (
+                  <React.Fragment key={i}>
+                    {line}
+                    {i < arr.length - 1 && <br className="hidden lg:block" />}
+                    {i < arr.length - 1 && " "}
+                  </React.Fragment>
+                ))}
             </p>
 
             <p>
-              現在、日本は少子高齢化・働き方の多様化という大きな転換期を迎えており、企業は優秀な人材を惹きつける力{" "}
-              <br className="hidden lg:block" />
-              が、個人は自らの可能性を発揮できる場が求められています。
+              {t("mission_desc_3")
+                .split("\n")
+                .map((line, i, arr) => (
+                  <React.Fragment key={i}>
+                    {line}
+                    {i < arr.length - 1 && <br className="hidden lg:block" />}
+                    {i < arr.length - 1 && " "}
+                  </React.Fragment>
+                ))}
             </p>
 
             <p>
-              私たちはその変化に応えるため、人材紹介・派遣事業を通じて「最適なマッチング」を実現し、採用コンサルテ{" "}
-              <br className="hidden lg:block" />
-              ィング事業を通じて「企業の採用力そのもの」を高め、HRプロダクト事業を通じて「採用と人材活用の仕組み」
-              <br className="hidden lg:block" />
-              を提供していきます。
+              {t("mission_desc_4")
+                .split("\n")
+                .map((line, i, arr) => (
+                  <React.Fragment key={i}>
+                    {line}
+                    {i < arr.length - 1 && <br className="hidden lg:block" />}
+                    {i < arr.length - 1 && " "}
+                  </React.Fragment>
+                ))}
             </p>
 
             <p>
-              目指すのは、企業と人が互いに選び合い、ともに成長できる新しい時代のHRインフラを築くこと。
-              <br className="hidden lg:block" />
-              人材サービスの枠を超え、挑戦する企業と個人の成長を支える"新しい当たり前"を創造していきます。
+              {t("mission_desc_5")
+                .split("\n")
+                .map((line, i, arr) => (
+                  <React.Fragment key={i}>
+                    {line}
+                    {i < arr.length - 1 && <br className="hidden lg:block" />}
+                    {i < arr.length - 1 && " "}
+                  </React.Fragment>
+                ))}
             </p>
           </div>
         </div>

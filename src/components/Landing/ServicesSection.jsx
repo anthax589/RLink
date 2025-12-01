@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { useTranslations } from "../../hooks/useTranslations";
 import RPO from "../../assets/svg/RPO.svg";
 import Staffing from "../../assets/svg/Staffing.svg";
 import Excecutive from "../../assets/svg/ServicesExecutive.svg";
@@ -12,40 +13,42 @@ import StaffingAnimation from "../../assets/gif/4.gif";
 import ExecutiveAnimation from "../../assets/gif/1.gif";
 import HrProductAnimation from "../../assets/gif/3.gif";
 function Services() {
+  const { t } = useTranslations();
+
   const serviceCards = [
     {
-      title: "人材紹介事業",
+      title: t("recruitment_business"),
       image: Excecutive,
       animation: ExecutiveAnimation,
       animationSize: "140%", // Adjust this value to scale the animation (e.g., "100%", "110%", "130%")
-      alt: "人材紹介事業",
+      alt: t("recruitment_business"),
       path: "/recruitment-business",
       color: "bg-[#3C8FFF]",
     },
     {
-      title: "採用戦略アドバイザリー＆RPO",
+      title: t("recruitment_strategy"),
       image: RPO,
       animation: RpoAnimation,
       animationSize: "100%", // Adjust this value to scale the animation
-      alt: "採用戦略アドバイザリー＆RPO",
+      alt: t("recruitment_strategy"),
       path: "/recruitment-strategy",
       color: "bg-[#1867D1]",
     },
     {
-      title: "HRプロダクト",
+      title: t("hr_product"),
       image: ReferenceCheck,
       animation: HrProductAnimation,
       animationSize: "130%", // Adjust this value to scale the animation
-      alt: "HRプロダクト",
+      alt: t("hr_product"),
       path: "/hr-product-business",
       color: "bg-[#165CBA]",
     },
     {
-      title: "Y社連携・業務委託",
+      title: t("staffing"),
       image: Staffing,
       animation: StaffingAnimation,
       animationSize: "110%", // Adjust this value to scale the animation
-      alt: "Y社連携・業務委託",
+      alt: t("staffing"),
       path: "/staffing",
       color: "bg-[#083571]",
     },
