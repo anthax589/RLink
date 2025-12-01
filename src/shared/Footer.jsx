@@ -1,8 +1,10 @@
 import React from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import RLinkLogo from "../assets/img/RLinkFooterLogo.png";
+import { useTranslations } from "../hooks/useTranslations";
 
 const Footer = () => {
+  const { t } = useTranslations();
   const location = useLocation();
   const navigate = useNavigate();
   const isLandingPage = location.pathname === "/";
@@ -32,36 +34,39 @@ const Footer = () => {
   };
   const footerData = {
     about: {
-      title: "会社について",
+      title: t("footer_about"),
       links: [
-        { label: "会社概要", path: "/company-profile" },
-        { label: "会社沿革", path: "/company-mission" },
+        { label: t("footer_company_profile"), path: "/company-profile" },
+        { label: t("footer_company_history"), path: "/company-mission" },
       ],
     },
     services: {
-      title: "サービス",
+      title: t("footer_services"),
       links: [
-        { label: "人材紹介", path: "/recruitment-business" },
-        { label: "採用戦略アドバイザリー＆RPO", path: "/recruitment-strategy" },
-        { label: "HRプロダクト", path: "/hr-product-business" },
-        { label: "人材派遣・業務委託", path: "/staffing" },
+        { label: t("footer_recruitment"), path: "/recruitment-business" },
+        {
+          label: t("footer_recruitment_strategy"),
+          path: "/recruitment-strategy",
+        },
+        { label: t("footer_hr_product"), path: "/hr-product-business" },
+        { label: t("footer_staffing"), path: "/staffing" },
       ],
     },
     news: {
-      title: "ニュース",
+      title: t("footer_news"),
       links: [
-        { label: "お知らせ", path: "/news" },
-        { label: "プレスリリース", path: "/press-release" },
-        { label: "メディア掲載", path: "/media" },
+        { label: t("footer_announcements"), path: "/news" },
+        { label: t("footer_press_release"), path: "/press-release" },
+        { label: t("footer_media"), path: "/media" },
       ],
     },
     recruit: {
-      title: "ブログ",
-      links: [{ label: "ブログ", path: "/blog" }],
+      title: t("footer_blog"),
+      links: [{ label: t("footer_blog"), path: "/blog" }],
     },
     support: {
-      title: "お問い合わせ",
-      links: [{ label: "お問い合わせ", path: "/contact" }],
+      title: t("footer_contact"),
+      links: [{ label: t("footer_contact"), path: "/contact" }],
     },
   };
 

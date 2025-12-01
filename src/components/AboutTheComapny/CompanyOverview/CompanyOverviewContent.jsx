@@ -1,41 +1,43 @@
 import React from "react";
 import AboutTheCompany from "../../../assets/img/AboutTheCompanyBackGround.png";
 import RLinkLogo from "../../../assets/img/RLinkLogo.png";
+import { useTranslations } from "../../../hooks/useTranslations";
 
 export default function CompanyOverview() {
+  const { t } = useTranslations();
+
   const companyData = [
     {
-      label: "会社名",
-      value: "RLink Partners合同会社",
+      label: t("overview_company_name"),
+      value: t("overview_company_name_value"),
     },
     {
-      label: "本社所在地",
-      value: "東京都港区白金5丁目5-9",
+      label: t("overview_head_office_location"),
+      value: t("overview_head_office_location_value"),
     },
     {
-      label: "代表者",
-      value: "代表取締役 藤澤 尚範",
+      label: t("overview_representative"),
+      value: t("overview_representative_value"),
     },
     {
-      label: "資本金本社",
-      value: "2,000万円",
+      label: t("overview_capital"),
+      value: t("overview_capital_value"),
     },
     {
-      label: "従業員数",
-      value: "10名(業務委託含む)",
+      label: t("overview_employees"),
+      value: t("overview_employees_value"),
     },
     {
-      label: "設立日",
-      value: "2021年3月",
+      label: t("overview_established"),
+      value: t("overview_established_value"),
     },
     {
-      label: "事業内容",
-      value: "人材紹介・派遣事業、採用アドバイザリー事業、SaaSプロフダクト事業",
+      label: t("overview_business_content"),
+      value: t("overview_business_content_value"),
     },
     {
-      label: "許認可",
-      value:
-        "有料職業紹介事業許可番号 13-ュ-313254\n一般労働者派遣事業許可番号 派13-315644",
+      label: t("overview_licenses"),
+      value: t("overview_licenses_value"),
     },
   ];
 
@@ -59,11 +61,11 @@ export default function CompanyOverview() {
             />
           </div>
           <h1 className="text-xl md:text-2xl lg:text-3xl 2xl:text-5xl text-center text-black pt-12 md:pt-16 tracking-widest">
-            会社概要
+            {t("overview_title")}
           </h1>
         </div>
         <p className="text-black text-center font-extralight mt-2 mb-4 md:mb-6 text-xs md:text-sm lg:text-[16px]">
-          Company Profile
+          {t("overview_subtitle")}
         </p>
 
         {/* Company information table */}

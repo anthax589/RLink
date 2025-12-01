@@ -3,6 +3,7 @@ import Strength1 from "../../assets/svg/Strength1.svg";
 import Strenght2 from "../../assets/svg/Strength2.svg";
 import Strength3 from "../../assets/svg/Strength3.svg";
 import Strength4 from "../../assets/svg/Strength4.svg";
+import { useTranslations } from "../../hooks/useTranslations";
 
 const TypewriterOnScroll = ({
   text,
@@ -12,6 +13,12 @@ const TypewriterOnScroll = ({
 }) => {
   const [displayedText, setDisplayedText] = useState("");
   const [hasStarted, setHasStarted] = useState(false);
+
+  useEffect(() => {
+    // Reset when text changes (language change)
+    setDisplayedText("");
+    setHasStarted(false);
+  }, [text]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -53,19 +60,21 @@ const TypewriterOnScroll = ({
 };
 
 const CompanyStrengths = () => {
+  const { t } = useTranslations();
+
   return (
     <div className="bg-transparent min-h-screen py-8 md:py-12 lg:py-16 px-4">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-8 md:mb-10 lg:mb-12">
           <h2 className="text-2xl md:text-3xl font-bold text-black">
-            <span className="text-[#1867D1]">R</span>
+            <span className="text-[#1867D1]">R </span>
             <TypewriterOnScroll
-              text="Linkの4つの強み"
+              text={t("four_strengths")}
               delay={80}
               threshold={0.5}
-              className="inline-flex"
-              letterClassName="inline-block"
+              className="inline"
+              letterClassName="inline"
             />
           </h2>
         </div>
@@ -87,19 +96,22 @@ const CompanyStrengths = () => {
             {/* Text Content */}
             <div className="w-full md:w-1/2 flex flex-col gap-0 px-4 md:px-0">
               <h3 className="text-2xl md:text-3xl font-bold text-black mb-8 md:mb-12 lg:mb-20">
-                Strength 01
+                {t("strength_01")}
               </h3>
-              <h4 className="text-lg md:text-xl lg:text-2xl text-[#1867D1] font-semibold mb-6 md:mb-10 lg:mb-16">
-                エグゼクティブ・ハイクラス専門の転職支援
+              <h4 className="text-lg md:text-xl lg:text-2xl text-[#1867D1] font-semibold mb-6 md:mb-10 lg:mb-10">
+                {t("strength_01_title")}
               </h4>
               <p className="text-sm md:text-base leading-relaxed text-black">
-                独自のルートによる、企業の経営層との強いパイプライン
-                <br />
-                経験豊富なコンサルタントが、独自の方法で企業の経営層やCxOと強いパイプを持ち
-                <br />
-                日々情報をアップデートすることで、企業風土や事業戦略など、
-                <br />
-                価値の高いリアルな情報を提供いたします。
+                {t("strength_01_desc")
+                  .split("\n")
+                  .map((line, i) => (
+                    <span key={i}>
+                      {line}
+                      {i < t("strength_01_desc").split("\n").length - 1 && (
+                        <br />
+                      )}
+                    </span>
+                  ))}
               </p>
             </div>
           </div>
@@ -118,18 +130,23 @@ const CompanyStrengths = () => {
             </div>
             {/* Text Content */}
             <div className="w-full md:w-1/2 flex flex-col gap-0 px-4 md:px-0">
-              <h3 className="text-2xl md:text-3xl font-bold text-black mb-8 md:mb-12 lg:mb-20">
-                Strength 02
+              <h3 className="text-2xl md:text-3xl font-bold text-black mb-8 md:mb-12 lg:mb-16">
+                {t("strength_02")}
               </h3>
-              <h4 className="text-lg md:text-xl text-[#1867D1] font-semibold mb-6 md:mb-10 lg:mb-16">
-                有望スタートアップ・グロース企業のエクスクルーシブ求人
+              <h4 className="text-lg md:text-xl text-[#1867D1] font-semibold mb-6 md:mb-10 lg:mb-10">
+                {t("strength_02_title")}
               </h4>
               <p className="text-black text-sm md:text-base leading-relaxed">
-                非公開求人の紹介比率は業界最大級の63.4%
-                <br />
-                特別な取扱いによる上記、カントリーマネージャー、CxO、事業責任者案件などの、
-                <br />
-                他社にはないエクスクルーシブ求人が多数そろっております。
+                {t("strength_02_desc")
+                  .split("\n")
+                  .map((line, i) => (
+                    <span key={i}>
+                      {line}
+                      {i < t("strength_02_desc").split("\n").length - 1 && (
+                        <br />
+                      )}
+                    </span>
+                  ))}
               </p>
             </div>
           </div>
@@ -149,17 +166,22 @@ const CompanyStrengths = () => {
             {/* Text Content */}
             <div className="w-full md:w-1/2 flex flex-col gap-0 px-4 md:px-0">
               <h3 className="text-2xl md:text-3xl font-bold text-black mb-8 md:mb-12 lg:mb-20">
-                Strength 03
+                {t("strength_03")}
               </h3>
-              <h4 className="text-lg md:text-xl text-[#1867D1] font-semibold mb-6 md:mb-10 lg:mb-16">
-                バイリンガル人材への徹底なサポート実績
+              <h4 className="text-lg md:text-xl text-[#1867D1] font-semibold mb-6 md:mb-10 lg:mb-10">
+                {t("strength_03_title")}
               </h4>
               <p className="text-sm md:text-base text-black leading-relaxed">
-                バイリンガル人材の紹介比率は業界最大級の33.4%
-                <br />
-                バイリンガル人材の転職支援において徹底した支援体制を誇ります。
-                <br />
-                英語面接の対策や英文レジュメの作成など専門サポートがございます。
+                {t("strength_03_desc")
+                  .split("\n")
+                  .map((line, i) => (
+                    <span key={i}>
+                      {line}
+                      {i < t("strength_03_desc").split("\n").length - 1 && (
+                        <br />
+                      )}
+                    </span>
+                  ))}
               </p>
             </div>
           </div>
@@ -179,19 +201,22 @@ const CompanyStrengths = () => {
             {/* Text Content */}
             <div className="w-full md:w-1/2 flex flex-col gap-0 px-4 md:px-0">
               <h3 className="text-2xl md:text-3xl font-bold text-black mb-8 md:mb-12 lg:mb-20">
-                Strength 04
+                {t("strength_04")}
               </h3>
-              <h4 className="text-lg md:text-xl text-[#1867D1] font-semibold mb-6 md:mb-10 lg:mb-13">
-                高い内定者年次決率
+              <h4 className="text-lg md:text-xl text-[#1867D1] font-semibold mb-6 md:mb-10 lg:mb-10">
+                {t("strength_04_title")}
               </h4>
               <p className="text-black text-sm md:text-base leading-relaxed">
-                高い内定条件交渉率 年収またはタイトルアップ率94.2%
-                <br />
-                ※2024年2月時点
-                <br />
-                ご紹介企業のマネジメント層との強いリレーションによって、
-                <br />
-                ご希望に応じた給与条件や職位の獲得に貢献します。
+                {t("strength_04_desc")
+                  .split("\n")
+                  .map((line, i) => (
+                    <span key={i}>
+                      {line}
+                      {i < t("strength_04_desc").split("\n").length - 1 && (
+                        <br />
+                      )}
+                    </span>
+                  ))}
               </p>
             </div>
           </div>

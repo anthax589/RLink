@@ -1,10 +1,12 @@
-import React from "react";
+﻿import React from "react";
 import { useState } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import { useTranslations } from "../../hooks/useTranslations";
 
 function ContactSection() {
+  const { t } = useTranslations();
   const [currentView, setCurrentView] = useState("default");
   const [hasAnimated, setHasAnimated] = useState(false);
 
@@ -69,14 +71,12 @@ function ContactSection() {
       !formData.email ||
       !formData.agreeToPrivacy
     ) {
-      alert("必須項目をすべて入力し、プライバシーポリシーに同意してください。");
+      alert(t("alert_required"));
       return;
     }
 
     console.log("Form submitted:", formData);
-    alert(
-      "お問い合わせありがとうございます！担当者より折り返しご連絡いたします。"
-    );
+    alert(t("alert_success"));
 
     setFormData({
       inquiryType: "",
@@ -111,13 +111,11 @@ function ContactSection() {
           >
             {/* Title and Description */}
             <h1 className="text-3xl md:text-4xl font-bold text-black mb-6 md:mb-8">
-              CONTACT US
+              {t("contact_us")}
             </h1>
 
             <p className="text-black text-base md:text-lg 2xl:text-xl leading-relaxed mb-8 md:mb-12">
-              We'd love to hear from you. Whether you're a company seeking top
-              executive talent or a professional exploring new career
-              opportunities, RLink Partners is here to guide your next step.
+              {t("contact_description")}
             </p>
 
             {/* Contact Details */}
@@ -127,12 +125,12 @@ function ContactSection() {
                 <div className="flex gap-2">
                   <div className="w-6 h-6 text-red-500 mt-1">📍</div>
                   <h3 className="text-xl md:text-2xl text-black mb-2">
-                    Head Office
+                    {t("head_office")}
                   </h3>
                 </div>
                 <div>
                   <p className="text-black text-sm md:text-base">
-                    本社所在地: 東京都港区白金5-5-9
+                    {t("head_office_address")}
                   </p>
                 </div>
               </div>
@@ -151,11 +149,10 @@ function ContactSection() {
               })}
             >
               <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">
-                Get in Touch
+                {t("get_in_touch")}
               </h2>
               <p className="text-gray-200 mb-6 md:mb-8 text-xs md:text-sm">
-                Fill out our inquiry form on our website, and one of our
-                consultants will get back to you shortly.
+                {t("get_in_touch_desc")}
               </p>
               <div className="space-y-4 md:space-y-6">
                 {/* Inquiry Type Selection Buttons */}
@@ -170,7 +167,7 @@ function ContactSection() {
                         : "bg-transparent text-white border border-white hover:bg-white hover:text-black"
                     }`}
                   >
-                    ● サービスについて(法人)
+                    {t("service_corporate")}
                   </button>
                   <button
                     onClick={() =>
@@ -182,14 +179,14 @@ function ContactSection() {
                         : "bg-transparent text-white border border-white hover:bg-white hover:text-black"
                     }`}
                   >
-                    ● サービスについて(個人)
+                    {t("service_individual")}
                   </button>
                 </div>
 
                 {/* Name Field */}
                 <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
                   <label className="text-white text-xs md:text-sm sm:min-w-[120px] flex-shrink-0">
-                    お名前*
+                    {t("name")}
                   </label>
                   <input
                     type="text"
@@ -203,7 +200,7 @@ function ContactSection() {
                 {/* Phone Number Field */}
                 <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
                   <label className="text-white text-xs md:text-sm sm:min-w-[120px] flex-shrink-0">
-                    電話番号*
+                    {t("phone_number")}
                   </label>
                   <input
                     type="tel"
@@ -217,7 +214,7 @@ function ContactSection() {
                 {/* Email Field */}
                 <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
                   <label className="text-white text-xs md:text-sm sm:min-w-[120px] flex-shrink-0">
-                    メールアドレス*
+                    {t("email_address")}
                   </label>
                   <input
                     type="email"
@@ -231,7 +228,7 @@ function ContactSection() {
                 {/* Position Field */}
                 <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
                   <label className="text-white text-xs md:text-sm sm:min-w-[120px] flex-shrink-0">
-                    役職*
+                    {t("position")}
                   </label>
                   <input
                     type="text"
@@ -245,7 +242,7 @@ function ContactSection() {
                 {/* Company Name Field */}
                 <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
                   <label className="text-white text-xs md:text-sm sm:min-w-[120px] flex-shrink-0">
-                    企業名*
+                    {t("company_name")}
                   </label>
                   <input
                     type="text"
@@ -260,11 +257,11 @@ function ContactSection() {
                 <div className="space-y-2">
                   <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
                     <label className="text-white text-xs md:text-sm sm:min-w-[120px] flex-shrink-0">
-                      添付ファイル
+                      {t("attachment")}
                     </label>
                     <div className="flex flex-1 gap-2">
                       <label className="px-3 md:px-5 py-2 bg-white text-black text-xs md:text-sm cursor-pointer hover:bg-gray-100 rounded flex-shrink-0">
-                        Choose File
+                        {t("choose_file")}
                         <input
                           type="file"
                           name="file"
@@ -274,7 +271,9 @@ function ContactSection() {
                       </label>
                       <div className="flex-1 px-4 py-2 bg-[#3a3a3a] text-gray-300 text-xs md:text-sm flex items-center rounded border border-white min-w-0">
                         <span className="truncate">
-                          {formData.file ? formData.file.name : "Sample.docx"}
+                          {formData.file
+                            ? formData.file.name
+                            : t("sample_file")}
                         </span>
                       </div>
                     </div>
@@ -282,11 +281,11 @@ function ContactSection() {
                   <div className="flex">
                     <div className="hidden sm:block sm:min-w-[120px] flex-shrink-0"></div>
                     <p className="text-[8px] md:text-[9px] text-gray-300 leading-relaxed sm:ml-4">
-                      *添付ファイルがある場合、添加してください。
+                      {t("file_note_1")}
                       <br />
-                      *許容されるファイル形式：
+                      {t("file_note_2")}
                       <br />
-                      *PDF・Word・Excel・PowerPoint、画像ファイルは10MBまで対応しております。
+                      {t("file_note_3")}
                     </p>
                   </div>
                 </div>
@@ -294,7 +293,7 @@ function ContactSection() {
                 {/* Inquiry Details Textarea */}
                 <div className="flex flex-col sm:flex-row gap-2 sm:gap-4">
                   <label className="text-white text-xs md:text-sm sm:min-w-[120px] flex-shrink-0 sm:pt-2">
-                    お問い合わせ内容
+                    {t("inquiry_details")}
                   </label>
                   <textarea
                     name="inquiryDetails"
@@ -308,14 +307,19 @@ function ContactSection() {
                 {/* Privacy Policy Box */}
                 <div className="border border-white px-4 md:px-10 py-2 rounded">
                   <h3 className="text-white font-bold text-xs md:text-sm mb-3">
-                    個人情報の取扱いについて
+                    {t("privacy_title")}
                   </h3>
                   <p className="text-[10px] md:text-xs text-gray-200 leading-relaxed">
-                    ご記入いただいた個人情報は、お問い合わせへの対応のみに使用します。お問い合わせへの対応、お送りいただいた資料の確認を行います。
-                    <br />
-                    当社は保有する個人情報を適切に管理し、いかなる第三者にも提供いたしません。
-                    <br />
-                    ※詳細については「プライバシーポリシー」をご確認ください。
+                    {t("privacy_text")
+                      .split("\n")
+                      .map((line, i) => (
+                        <span key={i}>
+                          {line}
+                          {i < t("privacy_text").split("\n").length - 1 && (
+                            <br />
+                          )}
+                        </span>
+                      ))}
                   </p>
                 </div>
                 <div className="flex justify-center mt-2">
@@ -328,7 +332,7 @@ function ContactSection() {
                       className="w-4 h-4 mt-0.5"
                     />
                     <span className="text-[10px] md:text-xs">
-                      個人情報の取扱方針について同意する*
+                      {t("privacy_agree")}
                     </span>
                   </label>
                 </div>
@@ -338,7 +342,7 @@ function ContactSection() {
                     onClick={handleSubmit}
                     className="btn border-none w-40 md:w-48 bg-white text-black font-bold py-2 px-6 hover:bg-gray-100 transition-colors text-sm md:text-base"
                   >
-                    SEND
+                    {t("send")}
                   </button>
                 </div>
               </div>
@@ -347,11 +351,10 @@ function ContactSection() {
             // AboutOurServices Form
             <div className="bg-[#7F7F7F] p-6 md:p-8 lg:p-7 rounded">
               <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">
-                Get in Touch
+                {t("get_in_touch")}
               </h2>
               <p className="text-gray-200 mb-6 md:mb-8 text-xs md:text-sm">
-                Fill out our inquiry form on our website, and one of our
-                consultants will get back to you shortly.
+                {t("get_in_touch_desc")}
               </p>
               <div className="space-y-4 md:space-y-6">
                 {/* Inquiry Type Selection Buttons */}
@@ -366,7 +369,7 @@ function ContactSection() {
                         : "bg-transparent text-white border border-white hover:bg-white hover:text-black"
                     }`}
                   >
-                    ● サービスについて(法人)
+                    {t("service_corporate")}
                   </button>
                   <button
                     onClick={() =>
@@ -378,14 +381,14 @@ function ContactSection() {
                         : "bg-transparent text-white border border-white hover:bg-white hover:text-black"
                     }`}
                   >
-                    ● サービスについて(個人)
+                    {t("service_individual")}
                   </button>
                 </div>
 
                 {/* Name Field */}
                 <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
                   <label className="text-white text-xs md:text-sm sm:min-w-[120px] flex-shrink-0">
-                    お名前*
+                    {t("name")}
                   </label>
                   <input
                     type="text"
@@ -399,7 +402,7 @@ function ContactSection() {
                 {/* Phone Number Field */}
                 <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
                   <label className="text-white text-xs md:text-sm sm:min-w-[120px] flex-shrink-0">
-                    電話番号*
+                    {t("phone_number")}
                   </label>
                   <input
                     type="tel"
@@ -413,7 +416,7 @@ function ContactSection() {
                 {/* Email Field */}
                 <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
                   <label className="text-white text-xs md:text-sm sm:min-w-[120px] flex-shrink-0">
-                    メールアドレス*
+                    {t("email_address")}
                   </label>
                   <input
                     type="email"
@@ -428,11 +431,11 @@ function ContactSection() {
                 <div className="space-y-2">
                   <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
                     <label className="text-white text-xs md:text-sm sm:min-w-[120px] flex-shrink-0">
-                      添付ファイル
+                      {t("attachment")}
                     </label>
                     <div className="flex flex-1 gap-2">
                       <label className="px-3 md:px-5 py-2 bg-white text-black text-xs md:text-sm cursor-pointer hover:bg-gray-100 rounded flex-shrink-0">
-                        Choose File
+                        {t("choose_file")}
                         <input
                           type="file"
                           name="file"
@@ -442,7 +445,9 @@ function ContactSection() {
                       </label>
                       <div className="flex-1 px-4 py-2 bg-[#3a3a3a] text-gray-300 text-xs md:text-sm flex items-center rounded border border-white min-w-0">
                         <span className="truncate">
-                          {formData.file ? formData.file.name : "Sample.docx"}
+                          {formData.file
+                            ? formData.file.name
+                            : t("sample_file")}
                         </span>
                       </div>
                     </div>
@@ -450,11 +455,11 @@ function ContactSection() {
                   <div className="flex">
                     <div className="hidden sm:block sm:min-w-[120px] flex-shrink-0"></div>
                     <p className="text-[8px] md:text-[9px] text-gray-300 leading-relaxed sm:ml-4">
-                      *添付ファイルがある場合、添加してください。
+                      {t("file_note_1")}
                       <br />
-                      *許容されるファイル形式：
+                      {t("file_note_2")}
                       <br />
-                      *PDF・Word・Excel・PowerPoint、画像ファイルは10MBまで対応しております。
+                      {t("file_note_3")}
                     </p>
                   </div>
                 </div>
@@ -462,7 +467,7 @@ function ContactSection() {
                 {/* Inquiry Details Textarea */}
                 <div className="flex flex-col sm:flex-row gap-2 sm:gap-4">
                   <label className="text-white text-xs md:text-sm sm:min-w-[120px] flex-shrink-0 sm:pt-2">
-                    お問い合わせ内容
+                    {t("inquiry_details")}
                   </label>
                   <textarea
                     name="inquiryDetails"
@@ -476,14 +481,19 @@ function ContactSection() {
                 {/* Privacy Policy Box */}
                 <div className="border border-white px-4 md:px-10 py-2 rounded">
                   <h3 className="text-white font-bold text-xs md:text-sm mb-3">
-                    個人情報の取扱いについて
+                    {t("privacy_title")}
                   </h3>
                   <p className="text-[10px] md:text-xs text-gray-200 leading-relaxed">
-                    ご記入いただいた個人情報は、お問い合わせへの対応のみに使用します。お問い合わせへの対応、お送りいただいた資料の確認を行います。
-                    <br />
-                    当社は保有する個人情報を適切に管理し、いかなる第三者にも提供いたしません。
-                    <br />
-                    ※詳細については「プライバシーポリシー」をご確認ください。
+                    {t("privacy_text")
+                      .split("\n")
+                      .map((line, i) => (
+                        <span key={i}>
+                          {line}
+                          {i < t("privacy_text").split("\n").length - 1 && (
+                            <br />
+                          )}
+                        </span>
+                      ))}
                   </p>
                 </div>
                 <div className="flex justify-center mt-2">
@@ -496,7 +506,7 @@ function ContactSection() {
                       className="w-4 h-4 mt-0.5"
                     />
                     <span className="text-[10px] md:text-xs">
-                      個人情報の取扱方針について同意する*
+                      {t("privacy_agree")}
                     </span>
                   </label>
                 </div>
@@ -506,7 +516,7 @@ function ContactSection() {
                     onClick={handleSubmit}
                     className="btn border-none w-40 md:w-48 bg-white text-black font-bold py-2 px-6 hover:bg-gray-100 transition-colors text-sm md:text-base"
                   >
-                    SEND
+                    {t("send")}
                   </button>
                 </div>
               </div>

@@ -1,5 +1,6 @@
 // App.jsx
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./i18n";
 import LandingPage from "./pages/LandingPage";
 import ServicesPage from "./pages/ServicesPage";
 import CompanyProfile from "./pages/CompanyOverview";
@@ -21,8 +22,8 @@ function App() {
         <ScrollToTop />
         <div className="w-full">
           <Routes>
-            <Route path="/" element={<UnderConstruction />} />
-            {/* <Route path="/" element={<LandingPage />} /> */}
+            {/* <Route path="/" element={<UnderConstruction />} /> */}
+            <Route path="/" element={<LandingPage />} />
             <Route path="/services" element={<ServicesPage />} />
             <Route path="/contact" element={<ContactForm />} />
             <Route path="/company-profile" element={<CompanyProfile />} />

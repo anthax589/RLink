@@ -3,8 +3,11 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
 import Executive from "../../../assets/svg/Executive1.svg";
+import { useTranslations } from "../../../hooks/useTranslations";
 
 const HeroSection = () => {
+  const { t } = useTranslations();
+
   useEffect(() => {
     Aos.init({ duration: 1500 });
   }, []);
@@ -37,16 +40,19 @@ const HeroSection = () => {
         {/* Text Content */}
         <div className="space-y-3 md:space-y-8 lg:space-y-12 text-black">
           <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl">
-            人材紹介事業
+            {t("recruitment_hero_title")}
           </h1>
           <p className="text-sm md:text-base lg:text-lg mt-4 mb-4 md:mb-8 text-black font-semibold">
-            企業の採用ニーズに応じて、リテーナー型によるプロジェクトベースのサーチから、
-            <br className="hidden lg:block" />
-            一般的なコンティンジェンシー型（完全成功報酬型）まで職種や要件に合わせて柔軟に対応します。
-            <br className="hidden lg:block" />
-            コアとなるCxOや経営幹部クラスから、即戦力となるスタッフレベルまで、最適な人材をご紹介します。
+            {t("recruitment_hero_desc")
+              .split("\n")
+              .map((line, i, arr) => (
+                <span key={i}>
+                  {line}
+                  {i < arr.length - 1 && <br className="hidden lg:block" />}
+                </span>
+              ))}
           </p>
-         <div className="flex justify-center mx-auto lg:justify-start">
+          <div className="flex justify-center mx-auto lg:justify-start">
             <button className="bg-black text-white px-12 md:px-16 lg:px-20 py-2 md:py-3 rounded flex items-center gap-2 text-sm md:text-base">
               {/* Phone Icon */}
               <svg
@@ -68,9 +74,9 @@ const HeroSection = () => {
                   strokeWidth="3.33333"
                 />
               </svg>
-              お問い合わせ
+              {t("service_contact_button")}
             </button>
-         </div>
+          </div>
         </div>
       </div>
     </section>
