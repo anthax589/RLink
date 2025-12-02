@@ -43,7 +43,7 @@ function App() {
             <Route path="/staffing" element={<Staffing />} />
 
             {/* Add catch-all route */}
-            <Route path="*" element={<LandingPage />} />
+            {/* <Route path="*" element={<LandingPage />} /> */}
           </Routes>
         </div>
       </BrowserRouter>

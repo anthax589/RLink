@@ -5,8 +5,11 @@ import "aos/dist/aos.css";
 import RLink from "../../../assets/svg/RLink.svg";
 import ServicesNav from "../../../shared/ServicesNav";
 import Radial from "../../../assets/img/RadialBackGround.png";
+import { useTranslations } from "../../../hooks/useTranslations";
 
 function Staffing() {
+  const { t } = useTranslations();
+
   useEffect(() => {
     Aos.init({ duration: 1000 });
   }, []);
@@ -58,7 +61,7 @@ function Staffing() {
               data-aos-offset="100"
               data-aos-delay="50"
             >
-              担当職種一覧
+              {t("staffing_job_categories_title")}
             </h1>
           </div>
 
@@ -77,10 +80,10 @@ function Staffing() {
                   fontFamily: "Lato-Bold",
                 }}
               >
-                バックオフィス
+                {t("staffing_back_office")}
               </h3>
               <p className="text-white text-xs sm:text-sm md:text-base leading-relaxed break-words">
-                ⼀般事務、部⾨アシスタント、秘書、受付、通訳・翻訳、経理、財務、会計採⽤、労務、教育、ジェネラリスト
+                {t("staffing_back_office_desc")}
               </p>
             </div>
 
@@ -95,10 +98,10 @@ function Staffing() {
                   fontFamily: "Lato-Bold",
                 }}
               >
-                IT
+                {t("staffing_it")}
               </h3>
               <p className="text-white text-xs sm:text-sm md:text-base leading-relaxed break-words">
-                PM、PMO、SE、テスト、評価運用管理、ヘルプデスク
+                {t("staffing_it_desc")}
               </p>
             </div>
           </div>

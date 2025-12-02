@@ -9,7 +9,7 @@ const HeroSection = () => {
       }}
     >
       {/* Content */}
-      <div className="max-w-5xl flex flex-col justify-end h-full  text-left">
+      <div className="max-w-5xl flex flex-col justify-end h-full  text-left ">
         <h1
           className="text-5xl leading-10  text-white "
           style={{ fontFamily: "Poppins, sans-serif" }}

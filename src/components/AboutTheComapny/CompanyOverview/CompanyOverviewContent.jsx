@@ -60,7 +60,7 @@ export default function CompanyOverview() {
               className="w-12 md:w-14 lg:w-16 h-auto 2xl:w-16"
             />
           </div>
-          <h1 className="text-xl md:text-2xl lg:text-3xl 2xl:text-5xl text-center text-black pt-12 md:pt-16 tracking-widest">
+          <h1 className="text-xl md:text-2xl lg:text-3xl 2xl:text-5xl text-center text-black pt-20 md:pt-16 tracking-widest">
             {t("overview_title")}
           </h1>
         </div>

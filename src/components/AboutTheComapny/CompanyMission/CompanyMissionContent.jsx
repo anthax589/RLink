@@ -25,7 +25,7 @@ export default function CompanyMission() {
               className="w-12 md:w-14 lg:w-16 h-auto 2xl:w-16"
             />
           </div>
-          <h1 className="text-xl md:text-2xl lg:text-3xl 2xl:text-5xl text-center text-black tracking-widest mb-2 pt-12 md:pt-16">
+          <h1 className="text-xl text-nowrap md:text-2xl lg:text-3xl 2xl:text-5xl text-center text-black tracking-widest mb-2 pt-12 md:pt-16">
             {t("mission_title")}
           </h1>
           <p className="text-black text-center text-[10px] md:text-xs 2xl:text-sm">

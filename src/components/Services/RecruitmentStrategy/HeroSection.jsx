@@ -1,10 +1,12 @@
 import servicesbg from "../../../assets/img/ServicesHeroSectionBg.png";
 import Aos from "aos";
 import "aos/dist/aos.css";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import RPO from "../../../assets/svg/RPOv3.svg";
+import { useTranslations } from "../../../hooks/useTranslations";
 
 const HeroSection = () => {
+  const { t } = useTranslations();
   useEffect(() => {
     Aos.init({ duration: 1500 });
   }, []);
@@ -22,16 +24,17 @@ const HeroSection = () => {
       >
         <div className="space-y-3 lg:space-y-12 text-black w-full lg:w-auto">
           <h1 className="text-xl sm:text-4xl lg:text-5xl">
-            採用戦略アドバイザリー事業
+            {t("strategy_hero_title")}
           </h1>
           <p className="text-sm sm:text-base lg:text-lg mt-4 mb-4 text-black font-semibold">
-            般的なRPOの業務領域を超えた、採用の仕組みづくりから伴奏型で企業の採用課題を支援します
-            <br className="hidden lg:block" />
-            従来のRPOが採用プロセス管理や選考業務代行といった実務支援によるコスト削減を目的としていたのに
-            <br className="hidden lg:block" />
-            対し、私たちは採用戦略の立案から伴走し、候補者への訴求力を高める採用組織の育成と、最適な業務プ
-            <br className="hidden lg:block" />
-            ロセスの設計を目指します。
+            {t("strategy_hero_desc")
+              .split("\n")
+              .map((line, idx, arr) => (
+                <React.Fragment key={idx}>
+                  {line}
+                  {idx < arr.length - 1 && <br className="hidden lg:block" />}
+                </React.Fragment>
+              ))}
           </p>
           <div className="flex justify-center lg:justify-start">
             <button className="bg-black text-white px-8 sm:px-12 lg:px-20 py-3 rounded flex items-center gap-2 text-sm sm:text-base">
@@ -55,7 +58,7 @@ const HeroSection = () => {
                   strokeWidth="3.33333"
                 />
               </svg>
-              お問い合わせ
+              {t("service_contact_button")}
             </button>
           </div>
         </div>

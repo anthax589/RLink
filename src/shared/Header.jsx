@@ -305,7 +305,7 @@ const Header = () => {
                           viewBox="0 0 10 10"
                           fill="none"
                           xmlns="http://www.w3.org/2000/svg"
-                          className={`transition-transform duration-300 ease-in-out group-hover:rotate-180 ${
+                          className={`transition-transform duration-300  ${
                             openDropdown === item.key ? "rotate-180" : ""
                           }`}
                         >
@@ -345,9 +345,9 @@ const Header = () => {
           </nav>
 
           {/* Language Toggle - Always Visible */}
-          {/* <div className="px-2 sm:px-3 md:px-4 flex items-center">
+          <div className="px-2 sm:px-3 md:px-4 flex items-center">
             <LanguageToggleButton />
-          </div> */}
+          </div>
 
           {/* Recruitment Business Button */}
           <div>
@@ -446,9 +446,9 @@ const Header = () => {
 
             {/* Mobile Recruitment Button */}
             <div className="flex justify-center items-center flex-row-reverse">
-              {/* <div className="px-2 sm:px-3 md:px-4 flex items-center">
+              <div className="px-2 sm:px-3 md:px-4 flex items-center">
                 <LanguageToggleButton />
-              </div> */}
+              </div>
               <Link
                 to="/recruitment-business"
                 className=" py-4 px-6 text-lg text-center text-white rounded-lg shadow-lg transition-transform hover:scale-105"
