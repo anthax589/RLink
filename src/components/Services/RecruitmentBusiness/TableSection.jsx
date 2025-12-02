@@ -1,6 +1,8 @@
 import React from "react";
+import { useTranslations } from "../../../hooks/useTranslations";
 
 function TableSection() {
+  const { t } = useTranslations();
   return (
     <main className="h-fit bg-transparent">
       {/* Table Section */}
@@ -21,50 +23,59 @@ function TableSection() {
               textShadow: "2px 5px 2px rgba(0, 0, 0, 0.2 )",
             }}
           >
-            リテーナープロジェクト例
+            {t("table_heading")}
           </h1>
 
           {/* Mobile/Tablet View - Stacked Cards */}
           <div className="block lg:hidden space-y-6">
             {[
               {
-                week: "Week 1",
+                week: t("week_1"),
                 items: [
-                  { day: "Day 1", text: "プロジェクト契約" },
-                  { day: "Day 2", text: "採用責任者とのミーティング" },
-                  { day: "Day 3 to 5", text: "キックオフサーチ" },
+                  { day: t("day_1"), text: t("item_project_contract") },
+                  { day: t("day_2"), text: t("item_meeting_hiring_manager") },
+                  { day: t("day_3_5"), text: t("item_kickoff_search") },
                 ],
               },
               {
-                week: "Week 2",
+                week: t("week_2"),
                 items: [
-                  { day: "Day 6 to 10", text: "候補者との面談" },
-                  { day: "", text: "サーチを継続" },
-                  { day: "", text: "Week 2 レビュー" },
+                  {
+                    day: t("day_6_10"),
+                    text: t("item_interviews_with_candidates"),
+                  },
+                  { day: "", text: t("item_continue_search") },
+                  { day: "", text: t("item_week2_review") },
                 ],
               },
               {
-                week: "Week 3",
+                week: t("week_3"),
                 items: [
-                  { day: "Day 11 to 12", text: "プロジェクト契約" },
-                  { day: "Day 13 to 15", text: "1次面接設定" },
-                  { day: "", text: "サーチを継続" },
+                  { day: t("day_11_12"), text: t("item_project_contract") },
+                  {
+                    day: t("day_13_15"),
+                    text: t("item_first_interview_setup"),
+                  },
+                  { day: "", text: t("item_continue_search") },
                 ],
               },
               {
-                week: "Week 4",
+                week: t("week_4"),
                 items: [
-                  { day: "Day 16 to 20", text: "1～2次面接実施" },
-                  { day: "", text: "サーチを継続" },
-                  { day: "", text: "サーチを継続" },
+                  {
+                    day: t("day_16_20"),
+                    text: t("item_conduct_1_2_interviews"),
+                  },
+                  { day: "", text: t("item_continue_search") },
+                  { day: "", text: t("item_continue_search") },
                 ],
               },
               {
-                week: "Week 5",
+                week: t("week_5"),
                 items: [
-                  { day: "Day 21 to 25", text: "2次面接～最終面接実施" },
-                  { day: "", text: "リファレンスチェック" },
-                  { day: "", text: "オファー/オファー面談実施" },
+                  { day: t("day_21_25"), text: t("item_second_to_final") },
+                  { day: "", text: t("item_reference_check") },
+                  { day: "", text: t("item_offer_and_offer_meeting") },
                 ],
               },
             ].map((week, index) => (
@@ -110,81 +121,87 @@ function TableSection() {
                   className="bg-[#1867D1] text-white"
                   style={{ fontFamily: "Lato-Bold" }}
                 >
-                  <th className="p-3 text-center">Week 1</th>
-                  <th className="p-3 text-center">Week 2</th>
-                  <th className="p-3 text-center">Week 3</th>
-                  <th className="p-3 text-center">Week 4</th>
-                  <th className="p-3 text-center">Week 5</th>
+                  <th className="p-3 text-center">{t("week_1")}</th>
+                  <th className="p-3 text-center">{t("week_2")}</th>
+                  <th className="p-3 text-center">{t("week_3")}</th>
+                  <th className="p-3 text-center">{t("week_4")}</th>
+                  <th className="p-3 text-center">{t("week_5")}</th>
                 </tr>
               </thead>
               <tbody className="text-black">
                 <tr className="bg-transparent">
                   <td className="border-l border-[#BEBDBD]/80 p-4 xl:p-6">
-                    <span className="font-semibold block mb-1">Day 1</span>
-                    プロジェクト契約
+                    <span className="font-semibold block mb-1">
+                      {t("day_1")}
+                    </span>
+                    {t("item_project_contract")}
                   </td>
                   <td className="border-r border-l border-[#BEBDBD]/80 p-4 xl:p-6">
                     <span className="font-semibold block mb-1">
-                      Day 6 to 10
+                      {t("day_6_10")}
                     </span>
-                    候補者との面談
+                    {t("item_interviews_with_candidates")}
                   </td>
                   <td className="border-r border-l border-[#BEBDBD]/80 p-4 xl:p-6">
                     <span className="font-semibold block mb-1">
-                      Day 11 to 12
+                      {t("day_11_12")}
                     </span>
-                    プロジェクト契約
+                    {t("item_project_contract")}
                   </td>
                   <td className="border-r border-[#BEBDBD]/80 p-4 xl:p-6">
                     <span className="font-semibold block mb-1">
-                      Day 16 to 20
+                      {t("day_16_20")}
                     </span>
-                    1～2次面接実施
+                    {t("item_conduct_1_2_interviews")}
                   </td>
                   <td className="border-r border-l border-[#BEBDBD]/80 p-4 xl:p-6">
                     <span className="font-semibold block mb-1">
-                      Day 21 to 25
+                      {t("day_21_25")}
                     </span>
-                    2次面接～最終面接実施
+                    {t("item_second_to_final")}
                   </td>
                 </tr>
                 <tr className="bg-transparent">
                   <td className="border-l border-[#BEBDBD]/80 p-4 xl:p-6">
-                    <span className="font-semibold block mb-1">Day 2</span>
-                    採用責任者とのミーティング
+                    <span className="font-semibold block mb-1">
+                      {t("day_2")}
+                    </span>
+                    {t("item_meeting_hiring_manager")}
                   </td>
                   <td className="border-r border-l border-[#BEBDBD]/80 p-4 xl:p-6">
-                    サーチを継続
+                    {t("item_continue_search")}
                   </td>
                   <td className="border-l border-[#BEBDBD]/80 p-4 xl:p-6">
                     <span className="font-semibold block mb-1">
-                      Day 13 to 15
+                      {t("day_13_15")}
                     </span>
-                    1次面接設定
+                    {t("item_first_interview_setup")}
                   </td>
                   <td className="border-l border-[#BEBDBD]/80 p-4 xl:p-6">
-                    サーチを継続
+                    {t("item_continue_search")}
                   </td>
                   <td className="border-l border-r border-[#BEBDBD]/80 p-4 xl:p-6">
-                    リファレンスチェック
+                    {t("item_reference_check")}
                   </td>
                 </tr>
                 <tr className="bg-transparent">
                   <td className="border-r border-l border-b border-[#BEBDBD]/80 p-4 xl:p-6">
-                    <span className="font-semibold block mb-1">Day 3 to 5</span>
-                    キックオフサーチ
+                    <span className="font-semibold block mb-1">
+                      {t("day_3_5")}
+                    </span>
+                    {t("item_kickoff_search")}
                   </td>
                   <td className="border-r border-l border-b border-[#BEBDBD]/80 p-4 xl:p-6">
-                    Week 2 レビュー
+                    {t("item_week2_review")}
                   </td>
                   <td className="border-r border-l border-b border-[#BEBDBD]/80 p-4 xl:p-6">
-                    サーチを継続
+                    {t("item_continue_search")}
                   </td>
                   <td className="border-r border-l border-b border-[#BEBDBD]/80 p-4 xl:p-6">
-                    サーチを継続
+                    {t("item_continue_search")}
                   </td>
                   <td className="border-r border-l border-b border-[#BEBDBD]/80 p-4 xl:p-6">
-                    オファー/オファー面談実施
+                    {t("item_offer_and_offer_meeting")}
                   </td>
                 </tr>
               </tbody>

@@ -5,8 +5,10 @@ import "aos/dist/aos.css";
 import RLink from "../../../assets/svg/RLink.svg";
 import ServicesNav from "../../../shared/ServicesNav";
 import Radial from "../../../assets/img/RadialBackGround.png";
+import { useTranslations } from "../../../hooks/useTranslations";
 
 function IntroductionSection() {
+  const { t } = useTranslations();
   useEffect(() => {
     Aos.init({ duration: 1000 });
   }, []);
@@ -56,21 +58,18 @@ function IntroductionSection() {
               data-aos-delay="150"
             >
               <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-white mb-4 md:mb-6 lg:mb-8 text-center">
-                リテーナー型
+                {t("intro_retainer_title")}
               </h3>
               <div className="bg-[#FFFFFF]/20 backdrop-blur-xs rounded p-3 sm:p-6 md:p-7 lg:p-8 xl:p-10 min-h-[200px] md:min-h-[260px] lg:min-h-[300px] flex items-center justify-center  lg:w-xl">
-                <p className="text-white leading-relaxed text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl break-words w-full flex justify-center">
-                  主に経営幹部クラスや高度専門職、またはコン
-                  <br className="hidden lg:block" />
-                  フィデンシャル案件を対象とした採用手法で
-                  <br className="hidden lg:block" />
-                  す。プロジェクト型で採用活動を行い、業界リ
-                  <br className="hidden lg:block" />
-                  サーチを基にターゲットリストを作成し、ダイ
-                  <br className="hidden lg:block" />
-                  レクトアプローチ（ヘッドハンティング）に
-                  <br className="hidden lg:block" />
-                  よって最適な人材を探索・確保します。
+                <p className="text-white leading-relaxed text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl break-words w-full flex justify-center ">
+                  {t("intro_retainer_desc")
+                    .split("\n")
+                    .map((line, idx, arr) => (
+                      <React.Fragment key={idx}>
+                        {line}
+                        {idx < arr.length - 1 && <br />}
+                      </React.Fragment>
+                    ))}
                 </p>
               </div>
             </div>
@@ -83,19 +82,18 @@ function IntroductionSection() {
               data-aos-delay="150"
             >
               <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-white mb-4 md:mb-6 lg:mb-8 text-center">
-                コンティンジェンシー型
+                {t("intro_contingency_title")}
               </h3>
               <div className="bg-[#FFFFFF]/20 backdrop-blur-xs rounded p-3 sm:p-6 md:p-7 lg:p-8 xl:p-10 min-h-[200px] md:min-h-[260px] lg:min-h-[300px] flex items-center justify-center  lg:w-xl">
                 <p className="text-white leading-relaxed text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl break-words w-full flex justify-center">
-                  幅広い職種やレイヤーを対象とした、完全
-                  <br className="hidden lg:block" />
-                  成功報酬型の人材紹介手法です。採用決定
-                  <br className="hidden lg:block" />
-                  まで費用が発生しないため、複数ポジショ
-                  <br className="hidden lg:block" />
-                  ンを同時に進めやすく、短期的な人材獲得
-                  <br className="hidden lg:block" />
-                  に適しています。
+                  {t("intro_contingency_desc")
+                    .split("\n")
+                    .map((line, idx, arr) => (
+                      <React.Fragment key={idx}>
+                        {line}
+                        {idx < arr.length - 1 && <br />}
+                      </React.Fragment>
+                    ))}
                 </p>
               </div>
             </div>

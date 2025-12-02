@@ -42,7 +42,7 @@ const HeroSection = () => {
           <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl">
             {t("recruitment_hero_title")}
           </h1>
-          <p className="text-sm md:text-base lg:text-lg mt-4 mb-4 md:mb-8 text-black font-semibold">
+          <p className="text-sm md:text-base lg:text-lg mt-4 mb-4 md:mb-8 text-black font-semibold lg:text-nowrap">
             {t("recruitment_hero_desc")
               .split("\n")
               .map((line, i, arr) => (

@@ -67,7 +67,7 @@ const LanguageToggleButton = () => {
 
       {/* Dropdown */}
       {isOpen && (
-        <div className="absolute right-0 mt-2 w-40 bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden z-50">
+        <div className="absolute right-0 w-40 bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden z-50 bottom-full mb-2 md:bottom-auto md:top-full md:mt-2">
           {languages.map((lang) => (
             <button
               key={lang.code}

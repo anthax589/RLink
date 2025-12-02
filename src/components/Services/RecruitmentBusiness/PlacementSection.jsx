@@ -1,55 +1,44 @@
 import React, { memo } from "react";
 import Noise from "../../../assets/img/Noise2.png";
+import { useTranslations } from "../../../hooks/useTranslations";
 
 const PlacementSection = memo(() => {
+  const { t } = useTranslations();
+
   const cardStyle = {
     backgroundImage: `url(${Noise})`,
     backgroundSize: "cover",
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
   };
-
   const cards = [
     {
-      title: "ディープテック（シリーズB）",
-      items: [
-        "経理・財務責任者（リテーナー型）",
-        "CRO（リテーナー型）",
-        "UI・UXエンジニア × 3",
-        "人事部長",
-      ],
+      title: t("placement_card_1_title"),
+      items: t("placement_card_1_desc").split("\n"),
     },
     {
-      title: "フィンテック（シリーズC）",
-      items: [
-        "シニアソフトウェアエンジニア",
-        "プロダクトマネージャー",
-        "シニアセールスマネージャー（リテーナー型）",
-      ],
+      title: t("placement_card_2_title"),
+      items: t("placement_card_2_desc").split("\n"),
     },
     {
-      title: "SaaS（シリーズB）",
-      items: ["フィールドセールス × 2", "カスタマーサクセス"],
+      title: t("placement_card_3_title"),
+      items: t("placement_card_3_desc").split("\n"),
     },
     {
-      title: "総合系コンサルティングファーム（IPO）",
-      items: [
-        "マネージャー × 3",
-        "執行役員（リテーナー型）",
-        "関西事業部責任者候補（リテーナー型）",
-      ],
+      title: t("placement_card_4_title"),
+      items: t("placement_card_4_desc").split("\n"),
     },
     {
-      title: "SaaS（IPO）",
-      items: ["経営企画", "カスタマーサクセス"],
+      title: t("placement_card_5_title"),
+      items: t("placement_card_5_desc").split("\n"),
     },
     {
-      title: "外資系ソフトウェア子会社（日本法人立ち上げ）",
-      items: ["プロジェクトマネージャー × 3（リテーナー型）", "セールス部長"],
+      title: t("placement_card_6_title"),
+      items: t("placement_card_6_desc").split("\n"),
     },
     {
-      title: "外資系ロジスティクステック",
-      items: ["カントリーマネージャー（リテーナー型）"],
+      title: t("placement_card_7_title"),
+      items: t("placement_card_7_desc").split("\n"),
     },
   ];
 
@@ -62,7 +51,7 @@ const PlacementSection = memo(() => {
           style={{ textShadow: "2px 7px 2px rgba(0, 0, 0, 0.2)" }}
           data-aos="fade-up"
         >
-          紹介実績 2025
+          {t("placement_heading")}
         </h2>
 
         {/* Cards Grid */}
@@ -137,7 +126,7 @@ const PlacementSection = memo(() => {
             className="text-[#5B5B5B] text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl break-words"
             style={{ textShadow: "2px 7px 2px rgba(0, 0, 0, 0.2 )" }}
           >
-            *記載の内容は、2025年度における全実績ではなく代表的な事例を抜粋したものです
+            {t("placement_footer_note")}
           </p>
         </div>
       </div>
@@ -148,4 +137,3 @@ const PlacementSection = memo(() => {
 PlacementSection.displayName = "PlacementSection";
 
 export default PlacementSection;
-

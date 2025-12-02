@@ -65,18 +65,20 @@ function Services() {
       {/* Header */}
       <div className="flex flex-col items-center justify-center px-4">
         <TypewriterOnScroll
-          text="- サービス -"
+          text={t("services_section_title_decorator")}
           delay={20}
           threshold={0.5}
           className="ml-2"
           letterClassName="text-black text-base  md:text-3xl 2xl:text-4xl font-bold tracking-widest mb-6 text-center"
         />
+        
         <h1
           className="text-black text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold leading-tight text-center px-4 max-w-8xl"
           data-aos="fade-up"
           data-aos-once="true"
         >
-          Transforming Talent Acquisition through Expertise, Technology, and AI
+          {t("services_section_subtitle")}
+         
         </h1>
       </div>
 
@@ -127,7 +129,8 @@ function Services() {
               <div className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 pointer-events-none">
                 <div className="w-20 h-20 md:w-24 md:h-24 lg:w-40 lg:h-40 2xl:w-48 2xl:h-48 mb-6 md:mb-8"></div>
                 <p className="text-white text-sm md:text-base lg:text-lg font-semibold">
-                  See more
+                  {/* {t("see_more_hover")} */}
+                  See More
                 </p>
               </div>
             </div>

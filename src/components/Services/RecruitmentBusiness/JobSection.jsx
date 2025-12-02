@@ -1,11 +1,14 @@
 import React from "react";
 import userIcon from "../../../assets/svg/User.svg";
+import { useTranslations } from "../../../hooks/useTranslations";
 
 const JobCategories = () => {
+  const { t } = useTranslations();
+
   const categories = [
     {
       number: "01",
-      title: "経営・ビジネスリーダー職",
+      title: t("job_category_01_title"),
       icon: (
         <img
           src={userIcon}
@@ -14,16 +17,16 @@ const JobCategories = () => {
         />
       ),
       items: [
-        "カントリーマネージャー",
-        "CEO / COO / CFO / CAO",
-        "経営企画",
-        "事業企画",
-        "戦略コンサルタント",
+        t("job_category_01_item_1"),
+        t("job_category_01_item_2"),
+        t("job_category_01_item_3"),
+        t("job_category_01_item_4"),
+        t("job_category_01_item_5"),
       ],
     },
     {
       number: "02",
-      title: "ビジネス・コーポレート",
+      title: t("job_category_02_title"),
       icon: (
         <svg
           width="24"
@@ -40,18 +43,18 @@ const JobCategories = () => {
         </svg>
       ),
       items: [
-        "セールス",
-        "マーケティング",
-        "カスタマーサクセス",
-        "経理・財務",
-        "サプライチェーン",
-        "人事・総務",
-        "法務",
+        t("job_category_02_item_1"),
+        t("job_category_02_item_2"),
+        t("job_category_02_item_3"),
+        t("job_category_02_item_4"),
+        t("job_category_02_item_5"),
+        t("job_category_02_item_6"),
+        t("job_category_02_item_7"),
       ],
     },
     {
       number: "03",
-      title: "テクノロジー・コンサルティング",
+      title: t("job_category_03_title"),
       icon: (
         <svg
           width="24"
@@ -69,27 +72,26 @@ const JobCategories = () => {
         </svg>
       ),
       items: [
-        "エンジニア",
-        "バックエンド",
-        "フロントエンド",
-        "SRE",
-        "PM・PMO",
-        "システムエンジニア",
-        "ITコンサルタント",
+        t("job_category_03_item_1"),
+        t("job_category_03_item_2"),
+        t("job_category_03_item_3"),
+        t("job_category_03_item_4"),
+        t("job_category_03_item_5"),
+        t("job_category_03_item_6"),
+        t("job_category_03_item_7"),
       ],
     },
   ];
 
   return (
     <section className="bg-transparent px-4 sm:px-6 md:px-8 lg:px-12 pb-16 md:pb-20 lg:pb-28">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         {/* Heading */}
         <h2
           className="text-xl sm:text-2xl md:text-3xl font-bold text-center text-black py-12 sm:py-16 md:py-20 lg:py-28"
           data-aos="fade-up"
         >
-          <span className="text-[#1867D1]">R</span>
-          Link の担当職種一覧
+          <span className="text-[#1867D1]">R</span>Link{t("job_section_title")}
         </h2>
 
         {/* 3 Columns - Stacked on mobile, grid on larger screens */}
@@ -112,8 +114,8 @@ const JobCategories = () => {
                 {/* Triangle arrow pointing right */}
                 <div className="absolute left-[45px] sm:left-[50px] top-1/2 -translate-y-1/2 w-0 h-0 border-t-[8px] sm:border-t-[10px] border-b-[8px] sm:border-b-[10px] border-l-[10px] sm:border-l-[12px] border-t-transparent border-b-transparent border-l-[#1867D1] z-30"></div>
                 {/* Dark section with title */}
-                <div className="bg-[#05152A] text-white px-3 sm:px-4 pl-6 sm:pl-8 flex items-center rounded-l-md flex-1 z-20">
-                  <h3 className="font-bold text-xs sm:text-sm break-words">
+                <div className="bg-[#05152A] text-white px-2 sm:px-0 pl-5 sm:pl-8 flex items-center rounded-l-md flex-1 z-20">
+                  <h3 className="font-bold text-[10px] sm:text-sm break-words text-nowrap flex justify-center items-center mx-auto">
                     {category.title}
                   </h3>
                 </div>

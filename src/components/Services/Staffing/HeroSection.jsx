@@ -3,8 +3,11 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
 import Staffing from "../../../assets/svg/Staffing1.svg";
+import { useTranslations } from "../../../hooks/useTranslations";
 
 const HeroSection = () => {
+  const { t } = useTranslations();
+
   useEffect(() => {
     Aos.init({ duration: 1500 });
   }, []);
@@ -26,14 +29,17 @@ const HeroSection = () => {
         {/* Text Content */}
         <div className="space-y-6 sm:space-y-8 md:space-y-10 lg:space-y-12 text-black w-full lg:w-auto order-2 lg:order-1">
           <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl">
-            人材派遣/契約・業務委託事業
+            {t("service_staffing_title")}
           </h1>
-          <p className="text-sm sm:text-base md:text-lg mt-4 mb-8 text-black font-semibold break-words">
-            バイリンガル人材を含む幅広い職種・
-            <br className="sm:hidden" />
-            レイヤーの即戦力人材を、
-            <br className="sm:hidden" />
-            スピード感をもってご紹介します。
+          <p className="text-sm sm:text-base md:text-lg mt-4 mb-8 text-black font-semibold ">
+            {t("service_staffing_desc")
+              .split("\n")
+              .map((line, idx, arr) => (
+                <span key={idx}>
+                  {line}
+                  {idx < arr.length - 1 && <br className="sm:hidden lg:block" />}
+                </span>
+              ))}
           </p>
           <div className="flex justify-center lg:justify-start">
             <button className="bg-black text-white px-8 sm:px-12 md:px-16 lg:px-20 py-2 sm:py-2.5 md:py-3 rounded flex items-center gap-2 hover:bg-gray-800 transition-colors text-sm sm:text-base">
@@ -57,7 +63,7 @@ const HeroSection = () => {
                   strokeWidth="3.33333"
                 />
               </svg>
-              お問い合わせ
+              {t("service_contact_button")}
             </button>
           </div>
         </div>

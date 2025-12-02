@@ -1,8 +1,10 @@
 import React from "react";
 import Rectanglebg from "../../../assets/img/Rectangle 60.png";
 import tablebg from "../../../assets/img/OurServicesBackGround.png";
+import { useTranslations } from "../../../hooks/useTranslations";
 
 function StrategicApproach() {
+  const { t } = useTranslations();
   return (
     <div className="max-w-full mx-auto">
       <div
@@ -22,7 +24,7 @@ function StrategicApproach() {
             data-aos-offset="200"
             data-aos-delay="50"
           >
-            自社採用の戦略的アプローチ、および採用ポジションの決定支援
+            {t("strategic_approach_title")}
           </h2>
         </div>
 
@@ -41,9 +43,9 @@ function StrategicApproach() {
             data-aos-delay="150"
           >
             <h3 className="text-sm sm:text-base md:text-lg font-bold text-black mt-2 mb-2 md:mb-6 text-center">
-              クライアント概要
+              {t("strategic_client_heading")}
             </h3>
-            <ul className="space-y-2 text-xs sm:text-sm md:text-base text-black flex flex-col justify-center mx-auto">
+            <ul className="space-y-2 text-[10px] sm:text-sm md:text-base text-black flex flex-col justify-center mx-auto">
               <li className="flex items-center gap-2">
                 <svg
                   width="8"
@@ -55,7 +57,7 @@ function StrategicApproach() {
                 >
                   <polygon points="4,1 7,4 4,7 1,4" fill="black" />
                 </svg>
-                企業：SaaS企業（シリーズB）
+                {t("strategic_client_item_1")}
               </li>
               <li className="flex items-center gap-2">
                 <svg
@@ -68,7 +70,7 @@ function StrategicApproach() {
                 >
                   <polygon points="4,1 7,4 4,7 1,4" fill="black" />
                 </svg>
-                従業員数：約50名
+                {t("strategic_client_item_2")}
               </li>
               <li className="flex items-center gap-2">
                 <svg
@@ -81,7 +83,7 @@ function StrategicApproach() {
                 >
                   <polygon points="4,1 7,4 4,7 1,4" fill="black" />
                 </svg>
-                人事部構成：採用担当1名、採用事務1名
+                {t("strategic_client_item_3")}
               </li>
               <li className="flex items-center gap-2 mb-2">
                 <svg
@@ -94,7 +96,7 @@ function StrategicApproach() {
                 >
                   <polygon points="4,1 7,4 4,7 1,4" fill="black" />
                 </svg>
-                弊社チーム体制：2名
+                {t("strategic_client_item_4")}
               </li>
             </ul>
           </div>
@@ -113,10 +115,10 @@ function StrategicApproach() {
             data-aos-delay="200"
           >
             <h3 className="text-sm sm:text-base md:text-lg font-bold text-black mt-2 mb-2 md:mb-6 text-center">
-              課題
+              {t("strategic_challenge_heading")}
             </h3>
-            <ul className="space-y-2 text-xs sm:text-sm md:text-base text-black flex flex-col justify-center mx-auto">
-              <li className="flex items-start gap-2">
+            <ul className="space-y-1 text-[10px] sm:text-sm md:text-base text-black flex flex-col justify-center mx-auto">
+              <li className="flex items-start gap-2 ">
                 <div className="flex items-center pt-1 flex-shrink-0">
                   <svg
                     width="8"
@@ -128,11 +130,7 @@ function StrategicApproach() {
                     <polygon points="4,1 7,4 4,7 1,4" fill="black" />
                   </svg>
                 </div>
-                <span>
-                  複数の採用媒体を併用した結果、効果が分散し、
-                  <br className="hidden md:block" />
-                  候補者の母集団形成ができていない
-                </span>
+                <span>{t("strategic_challenge_item_1")}</span>
               </li>
               <li className="flex items-start gap-2">
                 <div className="flex items-center pt-1 flex-shrink-0">
@@ -146,9 +144,9 @@ function StrategicApproach() {
                     <polygon points="4,1 7,4 4,7 1,4" fill="black" />
                   </svg>
                 </div>
-                <span>目標採用数に対し、担当人員が不足している</span>
+                <span>{t("strategic_challenge_item_2")}</span>
               </li>
-              <li className="flex items-start gap-2">
+              <li className="flex items-start gap-2 mb-2">
                 <div className="flex items-center pt-1 flex-shrink-0">
                   <svg
                     width="8"
@@ -160,7 +158,7 @@ function StrategicApproach() {
                     <polygon points="4,1 7,4 4,7 1,4" fill="black" />
                   </svg>
                 </div>
-                <span>採用難易度の高いポジションに対する理解不足</span>
+                <span>{t("strategic_challenge_item_3")}</span>
               </li>
             </ul>
           </div>

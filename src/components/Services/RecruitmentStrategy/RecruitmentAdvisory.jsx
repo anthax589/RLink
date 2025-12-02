@@ -5,40 +5,53 @@ import { useEffect } from "react";
 import RLink from "../../../assets/svg/RLink.svg";
 import ServicesNav from "../../../shared/ServicesNav";
 import Radial from "../../../assets/img/RadialBackGround.png";
-const flowData = [
+import { useTranslations } from "../../../hooks/useTranslations";
+
+const getFlowData = (t) => [
   {
-    title: "採用戦略構築・設計",
+    title: t("advisory_flow_step_1"),
     color: "#1867D1",
     items: [
-      "人材要件特定",
-      "採用プロセス設計",
-      "タレント獲得デザイン",
-      "採用計画立案",
+      t("advisory_flow_step_1_item_1"),
+      t("advisory_flow_step_1_item_2"),
+      t("advisory_flow_step_1_item_3"),
+      t("advisory_flow_step_1_item_4"),
     ],
   },
   {
-    title: "採用施策立案・実行",
+    title: t("advisory_flow_step_2"),
     color: "#1867D1",
     items: [
-      "母集団マーケティング",
-      "候補者アプローチ",
-      "候補者選考/面接（CX）",
-      "候補者体験最適化",
+      t("advisory_flow_step_2_item_1"),
+      t("advisory_flow_step_2_item_2"),
+      t("advisory_flow_step_2_item_3"),
+      t("advisory_flow_step_2_item_4"),
     ],
   },
   {
-    title: "オペレーション",
+    title: t("advisory_flow_step_3"),
     color: "#D9D9D9",
-    items: ["採用業務管理", "採用プロセス運用", "候補者管理", "採用進捗管理"],
+    items: [
+      t("advisory_flow_step_3_item_1"),
+      t("advisory_flow_step_3_item_2"),
+      t("advisory_flow_step_3_item_3"),
+      t("advisory_flow_step_3_item_4"),
+    ],
   },
   {
-    title: "分析・最適化",
+    title: t("advisory_flow_step_4"),
     color: "#1867D1",
-    items: ["採用効果分析", "データドリブン改善", "最適化レポート"],
+    items: [
+      t("advisory_flow_step_4_item_1"),
+      t("advisory_flow_step_4_item_2"),
+      t("advisory_flow_step_4_item_3"),
+    ],
   },
 ];
 
 function RecruitmentAdvisory() {
+  const { t } = useTranslations();
+  const flowData = getFlowData(t);
   useEffect(() => {
     Aos.init({
       duration: 1000,
@@ -72,7 +85,7 @@ function RecruitmentAdvisory() {
               data-aos-offset="200"
               data-aos-delay="50"
             >
-              事業戦略や組織への深い理解に基づく採用支援
+              {t("advisory_hero_title")}
             </h1>
           </div>
           {/* Background Logo */}
@@ -114,26 +127,32 @@ function RecruitmentAdvisory() {
                   }}
                 >
                   <div
-                    className={`p-3 md:p-4 text-sm md:text-base text-center whitespace-nowrap h-20 md:h-24 flex justify-center items-center ${
-                      step.title === "オペレーション"
+                    className={`p-3 md:p-4 text-sm md:text-base lg:text-sm text-center whitespace-normal h-20 md:h-24 flex justify-center items-center ${
+                      step.title === "オペレーション" ||
+                      step.title === t("advisory_flow_step_3")
                         ? "text-black"
                         : "text-white"
                     }`}
                     style={{ textShadow: "2px 5px 2px rgba(0, 0, 0, 0.3)" }}
                   >
-                    {step.title}
+                    {step.title.split("\n").map((line, idx, arr) => (
+                      <React.Fragment key={idx}>
+                        {line}
+                        {idx < arr.length - 1 && <br />}
+                      </React.Fragment>
+                    ))}
                   </div>
                 </div>
                 <div className="mt-1">
                   <ul
-                    className={`flex-1 px-3 md:px-4 py-3 md:py-4 text-xs sm:text-xs md:text-xs w-full md:w-60 h-auto md:h-24 items-center ${
+                    className={`flex-1 px-3 md:px-4 py-3 md:py-4 text-xs sm:text-xs lg:text-[10.5px] w-full md:w-60 h-auto md:h-24 items-center justify-center self-center ${
                       idx === 2
                         ? "bg-[#1867D1]/75 text-white"
                         : "bg-[#D9D9D9] text-[#1867D1]"
                     }`}
                   >
                     {step.items.map((item) => (
-                      <li key={item} className="flex items-center gap-2">
+                      <li key={item} className="flex items-center gap-2 ">
                         <svg
                           width="8"
                           height="8"
