@@ -65,21 +65,6 @@ export default function SnappCheck() {
               </h1>
             </div>
 
-            <div
-              data-aos="fade-up"
-              data-aos-offset="100"
-              data-aos-delay="50"
-              className="w-full max-w-3xl h-24 sm:h-28 md:h-32 lg:h-36 flex items-center justify-center mx-auto bg-[#D9D9D9] mb-6 md:mb-8"
-            >
-              {/* <img
-              src={Executive}
-              alt="Executive Search"
-              className="w-full h-full"
-            /> */}
-              <span className="flex justify-center items-center mx-auto text-black text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
-                IMAGE.JPG
-              </span>
-            </div>
 
             {/* Subtitle */}
             <h2
